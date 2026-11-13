@@ -738,7 +738,7 @@ def video_cards(skip_film=False):
             url = "parliament.html" + url
         tgt = ' target="_blank" rel="noopener"' if ext else ""
         art = f'<img src="{img}" alt="" loading="lazy">' if img else f'<span class="vc-mark">{kicker.split(" · ")[0]}</span>'
-        cards += f"""<a class="vcard" href="{url}"{tgt}>
+        cards += f"""<a class="vcard{" has-cover" if "images/covers" in img else ""}" href="{url}"{tgt}>
         <div class="vc-img">{art}<span class="vc-play"></span>{'<span class="vc-ext">Opens on '+ ('YouTube' if 'youtube' in url else 'Apple Podcasts' if 'podcasts.apple' in url else 'Facebook' if 'facebook.com' in url else 'their site') +'</span>' if ext else ''}</div>
         <div class="vc-k">{kicker}</div><h3>{title}</h3><p>{blurb}</p></a>"""
     return cards

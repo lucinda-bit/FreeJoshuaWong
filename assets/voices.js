@@ -6,6 +6,12 @@
 // via: if we link to a news report of the post rather than the post itself, name the outlet here.
 // id: optional; needed if one person has two quotes on the same date.
 window.VOICES = [
+  {date:"2026-11-05", kind:"rights", who:"Committee for Freedom in Hong Kong Foundation", role:"US-based campaign group", country:"US", where:"Statement", via:"UPI",
+   quote:"We urge the international community to demand Joshua Wong’s immediate release and hold Hong Kong and Chinese officials accountable for their ongoing repression.",
+   url:"https://www.upi.com/Top_News/World-News/2026/11/05/Joshua-wong-sentenced/3641793851325/"},
+  {date:"2016-07-21", kind:"parliament", who:"Senator Tom Cotton", role:"US Senate", country:"US", where:"Statement",
+   quote:"These men stood up for the rights of all Hong Kongers with the simple demand that the Chinese government abide by its international commitment to respect the autonomy of Hong Kong.",
+   url:"https://www.cotton.senate.gov/news/press-releases/cotton-statement-on-convictions-of-pro-democracy-leaders-in-hong-kong/"},
   {date:"2020-12-02", kind:"parliament", who:"Lord Patten of Barnes", role:"Last Governor of Hong Kong", country:"UK", where:"Statement", via:"The Telegraph",
    quote:"A grim example of China’s determination to put Hong Kong in handcuffs.",
    url:"https://news.yahoo.com/joshua-wong-leads-young-hong-080602559.html"},
