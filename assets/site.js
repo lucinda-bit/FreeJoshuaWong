@@ -89,7 +89,7 @@
     });
   }
 
-  // Tabs (newsroom): #coverage, #statements, #letters
+  // Tabs (newsroom): #coverage, #releases, #statements, #letters, #presskit
   var tabs = document.querySelectorAll('.tabs a');
   if (tabs.length) {
     var show = function () {

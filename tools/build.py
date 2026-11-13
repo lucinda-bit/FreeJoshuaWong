@@ -10,7 +10,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 import re as _re
 PRESS_COUNT = len(_re.findall(r'^\s*\{date:', open(os.path.join(ROOT, "assets/press.js")).read(), _re.M))
 
-NAV = [("case.html", "The case"), ("film.html", "Watch"), ("newsroom.html", "Newsroom"), ("parliament.html", "Parliament"), ("voices.html", "Voices"), ("socials.html", "Socials"), ("resources.html", "Resources")]
+NAV = [("case.html", "The case"), ("film.html", "Watch"), ("newsroom.html", "Newsroom"), ("parliament.html", "Parliament"), ("voices.html", "Voices"), ("socials.html", "Socials")]
 
 def head(title, desc, path, depth=0):
     up = "../" * depth
@@ -87,7 +87,7 @@ def footer(depth=0, scripts=""):
     <div class="cols">
       <nav aria-label="Footer">
         <a href="{up}case.html">The case</a><a href="{up}film.html">Watch</a><a href="{up}newsroom.html">Newsroom</a><a href="{up}parliament.html">Parliament</a><a href="{up}voices.html">Voices</a><a href="{up}socials.html">Socials</a>
-        <a href="{up}resources.html">Resources</a><a href="{up}act.html">Take action</a>
+        <a href="{up}newsroom.html#presskit">Press kit</a><a href="{up}act.html">Take action</a>
       </nav>
       <div>
         <p style="font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:11px;color:var(--accent);margin:0">Press enquiries</p>
@@ -357,7 +357,7 @@ def case():
   <div class="wrap">
     <div class="sec-head">
       <div><div class="label">His life so far</div><h2 class="sec">From 15 <em>to 40</em></h2></div>
-      <a class="btn ghost" href="resources.html#factsheet">Download the fact sheet</a>
+      <a class="btn ghost" href="newsroom.html#presskit">Download the fact sheet</a>
     </div>
     <div class="timeline life">""" + items + """</div>
   </div>
@@ -467,15 +467,17 @@ STATEMENTS = """<div class="timeline">
     </div>"""
 
 def newsroom():
-    return head("Newsroom", "Press coverage, government statements, letters and releases on Joshua Wong’s case.", "newsroom.html") + nav("newsroom.html") + page_head(
+    return head("Newsroom", "Press coverage, press releases, government statements, letters and the press kit on Joshua Wong’s case.", "newsroom.html") + nav("newsroom.html") + page_head(
         "Newsroom", "The world is <em>watching</em>",
-        "Coverage of Joshua’s case, what governments have said on the record, and the campaign’s letters and releases.") + """
+        "Coverage of Joshua’s case, the campaign’s press releases, what governments have said on the record, letters, and the press kit.") + """
 <section style="border-top:0;padding-top:20px">
   <div class="wrap">
     <div class="tabs" role="tablist">
       <a href="#coverage" role="tab">Coverage</a>
+      <a href="#releases" role="tab">Press releases</a>
       <a href="#statements" role="tab">Government statements</a>
-      <a href="#letters" role="tab">Letters &amp; releases</a>
+      <a href="#letters" role="tab">Letters</a>
+      <a href="#presskit" role="tab">Press kit</a>
     </div>
 
     <div class="panel" id="panel-coverage">
@@ -513,8 +515,18 @@ def newsroom():
       """ + STATEMENTS + """
     </div>
 
+    <div class="panel" id="panel-releases" hidden>
+      <p class="lede" style="margin-bottom:34px">Statements and press releases from the Free Joshua Wong campaign.</p>
+      """ + releases_html() + """
+    </div>
+
+    <div class="panel" id="panel-presskit" hidden>
+      <p class="lede" style="margin-bottom:34px">For journalists and MPs’ offices: the key facts, images and interviews.</p>
+""" + PRESSKIT + """
+    </div>
+
     <div class="panel" id="panel-letters" hidden>
-      <p class="lede" style="margin-bottom:34px">Letters sent by the campaign and its supporters, and our statements to the media.</p>
+      <p class="lede" style="margin-bottom:34px">Letters from parliamentarians and supporters, to the Prime Minister and to the press.</p>
       <div class="rel">
         <div class="d">11 Nov 2026</div>
         <div>
@@ -560,7 +572,7 @@ def letter_pm():
     return head("Open letter to the Prime Minister", "Parliamentarians and human rights organisations ask the Prime Minister to raise Joshua Wong’s case with the Chinese Ambassador.", "letters/open-letter-prime-minister-sept-2026.html", 1) + nav("newsroom.html", 1) + page_head(
         "", "Britain should <em>stand for something</em>",
         "An open letter to the Prime Minister, Andy Burnham, sent on 13 September 2026.",
-        crumbs='<a href="../newsroom.html#letters">Newsroom</a> &nbsp;/&nbsp; Letters &amp; releases') + """
+        crumbs='<a href="../newsroom.html#letters">Newsroom</a> &nbsp;/&nbsp; Letters') + """
 <section class="letters letter-page" style="border-top:0">
   <div class="wrap">
     <div class="letter">
@@ -590,13 +602,15 @@ def letter_pm():
 
 # ---------------- RESOURCES ----------------
 def resources():
-    return head("Resources", "Fact sheet, press kit and policy briefs on Joshua Wong’s case, for journalists and parliamentary offices.", "resources.html") + nav("resources.html") + page_head(
-        "Resources", "For journalists <em>and MPs’ offices</em>",
-        "Everything you need on Joshua’s case in one place: the key facts, approved images and our policy work.") + """
-<section style="border-top:0;padding-top:20px" id="factsheet">
-  <div class="wrap">
-    <div class="facts-sheet">
-      <h2>Joshua Wong: fact sheet</h2>
+    # Resources now lives in the Newsroom (Press kit tab). This page sends old links there.
+    return """<!DOCTYPE html><html lang="en-GB"><head><meta charset="utf-8"><title>Press kit — Free Joshua Wong</title>
+<meta http-equiv="refresh" content="0; url=newsroom.html#presskit"><link rel="canonical" href="https://freejoshuawong.org/newsroom.html#presskit"></head>
+<body><p>The press kit has moved to the <a href="newsroom.html#presskit">Newsroom</a>.</p></body></html>
+"""
+
+
+PRESSKIT = """    <div class="facts-sheet">
+      <h2 id="factsheet">Joshua Wong: fact sheet</h2>
       <div class="sub">Updated 13 November 2026</div>
       <dl>
         <dt>Who</dt><dd>Joshua Wong Chi-fung, born 13 October 1996, Hong Kong. Democracy campaigner since age 14; leader of the 2012 campaign against a Beijing-backed “national education” curriculum and a face of the 2014 Umbrella Movement.</dd>
@@ -605,7 +619,7 @@ def resources():
         <dt>Previous release date</dt><dd>January 2027, at the end of his 4 year 8 month sentence in the Hong Kong 47 case.</dd>
         <dt>Possible release</dt><dd>Around 2036, when he will be about 40.</dd>
         <dt>The evidence</dt><dd>His own advocacy: meetings with foreign politicians, social media posts, op-eds and interviews, much of it from before the law existed.</dd>
-        <dt>International response</dt><dd>Joint statement of 6 November 2026 by Australia, Canada, France, Germany, Italy, Japan, the Netherlands, New Zealand, the UK and the US condemning the sentence.</dd>
+        <dt>International response</dt><dd>Joint statement of 6 November 2026 by Australia, Canada, France, Germany, Italy, Japan, the Netherlands, New Zealand, the UK and the US condemning the sentence. Taiwan and the EU issued their own statements.</dd>
         <dt>Why the UK</dt><dd>The UK signed the 1984 Joint Declaration guaranteeing Hong Kong’s freedoms for fifty years, and has declared China in breach of it.</dd>
         <dt>The asks</dt><dd>Raise Joshua’s case with the Chinese Ambassador; review the privileges of the Hong Kong Economic and Trade Office in London; sanction officials responsible for NSL prosecutions, with allies.</dd>
         <dt>Press contact</dt><dd>press@freejoshuawong.org</dd>
@@ -618,9 +632,18 @@ def resources():
       <div class="res" id="briefs"><div class="label">Policy briefs</div><h3>Transnational repression</h3><p>How Beijing’s National Security Law reaches Hong Kongers in Britain, and what the UK can do about it.</p><span class="soon">Coming soon</span></div>
       <div class="res"><div class="label">Interviews</div><h3>Speak to us</h3><p>Interviews with the film’s producer and campaign spokespeople can be arranged.</p><p><strong>press@freejoshuawong.org</strong></p></div>
     </div>
-  </div>
-</section>
-""" + footer()
+"""
+
+# Campaign press releases, newest first: (date, title, summary, url or "")
+RELEASES = []
+
+def releases_html():
+    if not RELEASES:
+        return """<div class="empty-rel"><h3>Press releases will appear here</h3><p>The campaign’s statements and releases will be published on this page, newest first. For comment or interviews, email <strong>press@freejoshuawong.org</strong>.</p></div>"""
+    out = ""
+    for d, t, summ, u in RELEASES:
+        out += f"""<div class="rel"><div class="d">{d}</div><div><div class="type">Press release</div><h3>{'<a href="'+u+'">'+t+'</a>' if u else t}</h3><p>{summ}</p></div></div>"""
+    return out
 
 # ---------------- TAKE ACTION ----------------
 def act():
@@ -697,9 +720,9 @@ RECORD = [
     ("2026-11-10", "commons", "“Calling for Joshua Wong’s release”", "Urgent question on China · House of Commons",
      "At an urgent question secured by Sir Iain Duncan Smith on China obtaining MPs’ phone and financial records, Emily Darlington MP asked the Government to summon the Chinese Ambassador and call for Joshua’s release, as it did for Jimmy Lai. Security Minister Dan Jarvis replied that the Government share the concerns about Joshua and Jimmy Lai. For the Opposition, Alicia Kearns MP said both remain imprisoned for speaking out for democracy. <a href=\"https://hansard.parliament.uk/Commons/2026-11-10/debates/580a4a8b-77d1-4dad-b849-9f1d47824e1c/CommonsChamber\" target=\"_blank\" rel=\"noopener\">Read it in Hansard</a>",
      "#exchange-nov", "Watch the clip", ""),
-    ("2026-11-10", "written", "What is the Government doing for Joshua?", "Written question · Richard Holden MP",
-     "Richard Holden MP asked the Foreign Secretary what diplomatic steps he is taking on Joshua’s detention following the new ten-year sentence. Tabled 10 November for answer on 12 November.",
-     "https://commonsbusiness.parliament.uk/Document/108853/Html?subType=Standard", "Order Paper", ""),
+    ("2026-11-10", "written", "Six written questions in one day", "Written questions · Richard Holden MP, Alex Barros-Curtis MP, Marie Rimmer MP",
+     "After the sentence, three MPs tabled six questions to the Foreign Secretary, including whether he has summoned the Chinese Ambassador, what diplomatic steps he is taking to secure Joshua’s release, and whether the Government will consider sanctions on the officials responsible. Due for answer on 12 November.",
+     "https://commonsbusiness.parliament.uk/Document/108853/Html?subType=Standard", "Questions tabled", ""),
     ("2026-10-22", "report", "Six-monthly Report on Hong Kong", "Foreign Secretary · Report to Parliament",
      "The Government’s report for January to June 2026 cites developments in Joshua’s case as reinforcing concerns about the broad use of national security legislation.",
      "https://www.gov.uk/government/publications/six-monthly-report-on-hong-kong-january-to-june-2026/six-monthly-report-on-hong-kong-1-january-to-30-june-2026", "GOV.UK", ""),
@@ -969,7 +992,7 @@ def letter_times():
     return head("Unjust prosecution: letter to The Times", "MPs and peers write to The Times: Britain should summon the Chinese ambassador, sanction those responsible and say what further consequences will follow.", "letters/times-letter-nov-2026.html", 1) + nav("newsroom.html", 1) + page_head(
         "", "Unjust <em>prosecution</em>",
         "A letter to the editor of The Times from MPs and peers across the parties, published on 11 November 2026.",
-        crumbs='<a href="../newsroom.html#letters">Newsroom</a> &nbsp;/&nbsp; Letters &amp; releases') + """
+        crumbs='<a href="../newsroom.html#letters">Newsroom</a> &nbsp;/&nbsp; Letters') + """
 <section class="letters letter-page" style="border-top:0">
   <div class="wrap">
     <div class="letter">
