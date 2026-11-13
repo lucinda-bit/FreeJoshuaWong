@@ -488,22 +488,23 @@ SIGNATORIES = [
     ("Tim Loughton", "Chair, Conservative Party Human Rights Commission"), ("The Rt Hon Sir Andrew Mitchell KCMG MP", ""),
     ("Meaghan Mobbs", "President, RT Weatherman Foundation"), ("James Naish MP", ""), ("Sir Geoffrey Nice KC", ""),
     ("The Rt Hon the Lord Patten of Barnes KG CH", ""), ("The Rt Hon Sir Malcolm Rifkind KCMG KC", ""),
-    ("Benedict Rogers", "Co-founder and Chair, Hong Kong Watch"), ("Jemimah Steinfeld", "Chief Executive, Index on Censorship"),
+    ("Benedict Rogers", "Co-founder and Chair, Hong Kong Watch; Senior Director, Fortify Rights"), ("Jemimah Steinfeld", "Chief Executive, Index on Censorship"),
     ("The Rt Hon Tom Tugendhat MBE VR MP", "Shadow Foreign Secretary"), ("Bess Weatherman", "Co-Founder, RT Weatherman Foundation"),
+    ("Sara Wilbourne", "ARTICLE 19"), ("Bobby Dean MP", ""), ("Lord Garnier KC", ""), ("Alex Barros-Curtis MP", ""),
 ]
 
 def letter_pm():
     sig = "".join(f"<li>{n}{f'<small>{r}</small>' if r else ''}</li>" for n, r in SIGNATORIES)
     return head("Open letter to the Prime Minister", "Parliamentarians and human rights organisations ask the Prime Minister to raise Joshua Wong’s case with the Chinese Ambassador.", "letters/open-letter-prime-minister-sept-2026.html", 1) + nav("newsroom.html", 1) + page_head(
         "", "Britain should <em>stand for something</em>",
-        "An open letter to the Prime Minister, September 2026.",
+        "An open letter to the Prime Minister, Andy Burnham, sent on 13 September 2026.",
         crumbs='<a href="../newsroom.html#letters">Newsroom</a> &nbsp;/&nbsp; Letters &amp; releases') + """
 <section class="letters letter-page" style="border-top:0">
   <div class="wrap">
     <div class="letter">
       <article class="paper">
         <div class="meta"><span class="status" style="margin:0"><i></i> Awaiting a reply from Downing Street</span></div>
-        <div class="head">Open letter to the Prime Minister · September 2026</div>
+        <div class="head">Open letter to the Prime Minister · 13 September 2026</div>
         <p style="margin-top:22px">Dear Prime Minister,</p>
         <p>This week, you said ‘it is more important than ever that Britain stands for something.’ The Foreign Secretary went further: that governments ‘have to make our own decisions about legality, values’ and act on them.</p>
         <p>We agree. We are asking you to apply that principle to Hong Kong and the Joint Declaration, and hold China to account for its abusive use of the National Security Law, criminalising peaceful democratic activity.</p>
@@ -513,6 +514,7 @@ def letter_pm():
         <p>It is time that you called the Chinese Ambassador to raise Joshua’s case and that of the others imprisoned for standing up for democracy.</p>
         <p><strong>Britain signed the Joint Declaration and guaranteed Hong Kong’s freedoms for fifty years. Joshua Wong only ever asked his government to keep its word. We are asking ours to keep it too.</strong></p>
         <p class="sign">Written before Joshua was sentenced on 5 November 2026.</p>
+        <p class="no-print" style="font-family:var(--label);font-size:14px">Published by <a href="https://www.hongkongwatch.org/all-posts/2026/9/14/cross-party-coalition-of-parliamentarians-and-human-rights-leaders-calls-on-prime-minister-to-act-on-hong-kong" target="_blank" rel="noopener">Hong Kong Watch</a> · <a href="https://static1.squarespace.com/static/58ecfa82e3df284d3a13dd41/t/6aa7a88c44264858a83ca2a9/1789372557008/Open+Letter+to+PM+-+Joshua+Wong.pdf" target="_blank" rel="noopener">Download the original letter (PDF)</a></p>
         <div class="no-print" style="margin-top:26px" data-share data-url="https://freejoshuawong.org/letters/open-letter-prime-minister-sept-2026.html" data-text="Open letter to the Prime Minister on Joshua Wong"></div>
       </article>
       <aside class="signs">
