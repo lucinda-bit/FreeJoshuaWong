@@ -6,6 +6,9 @@
 // via: if we link to a news report of the post rather than the post itself, name the outlet here.
 // id: optional; needed if one person has two quotes on the same date.
 window.VOICES = [
+  {date:"2026-11-11", kind:"parliament", who:"Emily Darlington MP, Lord Alton, Lord Patten and others", role:"Eight MPs and peers, letter to The Times", country:"UK", where:"Letter to The Times", id:"times-letter-2026-11-11",
+   quote:"A treaty broken without cost invites the next breach.",
+   url:"letters/times-letter-nov-2026.html"},
   {date:"2026-11-05", kind:"rights", who:"Committee for Freedom in Hong Kong Foundation", role:"US-based campaign group", country:"US", where:"Statement", via:"UPI",
    quote:"We urge the international community to demand Joshua Wong’s immediate release and hold Hong Kong and Chinese officials accountable for their ongoing repression.",
    url:"https://www.upi.com/Top_News/World-News/2026/11/05/Joshua-wong-sentenced/3641793851325/"},

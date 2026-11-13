@@ -291,11 +291,11 @@ def home():
 """ + footer(0)
 
 LATEST = [
+    ("The Times · Letters", "Unjust prosecution: MPs and peers ask what Britain will do for Joshua Wong", "11 Nov 2026", "letters/times-letter-nov-2026.html"),
     ("The Guardian · Today in Focus", "Podcast: Teen prodigy, Netflix star, prisoner, with Nathan Law", "13 Nov 2026", "https://podcasts.apple.com/gb/podcast/today-in-focus/id1440133626"),
     ("House of Commons", "Emily Darlington MP asks the Government to call for Joshua’s release", "10 Nov 2026", "parliament.html#exchange-nov"),
     ("Taipei Times", "Editorial: Joshua Wong was due for release in January", "7 Nov 2026", "https://www.taipeitimes.com/News/editorials/archives/2026/11/07/2003867296"),
     ("Reuters / CTV", "Canada, US, UK and others condemn 10-year sentence for Joshua Wong", "6 Nov 2026", "https://www.ctvnews.ca/world/article/canada-us-uk-and-others-condemn-10-year-sentence-for-hong-kong-activist-joshua-wong/"),
-    ("Human Rights Watch", "Joshua Wong gets nearly 10 more years in prison", "5 Nov 2026", "https://www.hrw.org/news/2026/11/05/hong-kong-joshua-wong-gets-nearly-10-more-years-in-prison"),
 ]
 
 # ---------------- THE CASE ----------------
@@ -314,7 +314,7 @@ TIMELINE = [
     ("29", "Sep 2026", "", "Raised in Parliament, then a guilty plea", "On 1 September Sir Iain Duncan Smith raises his case in the Commons and the Foreign Secretary says he will take it up. The next day Joshua pleads guilty. On 13 September, 31 parliamentarians and human rights leaders write to the Prime Minister."),
     ("30", "13 Oct 2026", "", "Turns thirty in prison", "Parliamentarians mark his birthday with a screening of the new film in the Houses of Parliament."),
     ("30", "5 Nov 2026", "", "Ten more years", "A Hong Kong court sentences him to ten years. Ten governments, including the UK, condemn the sentence the next day."),
-    ("30", "10 Nov 2026", "", "Raised again in the Commons", "Five days after the sentence, Emily Darlington MP asks the Government to summon the Chinese Ambassador and call for Joshua’s release."),
+    ("30", "10 Nov 2026", "", "Raised again in the Commons", "Five days after the sentence, Emily Darlington MP asks the Government to summon the Chinese Ambassador and call for Joshua’s release. The next day she and seven other MPs and peers set out the same demands in a letter to The Times."),
     ("40", "c. 2036", "future", "Release, if nothing changes", "Unless governments act, Joshua may not walk free until he is around 40, having spent most of his adult life in prison."),
 ]
 
@@ -515,6 +515,15 @@ def newsroom():
 
     <div class="panel" id="panel-letters" hidden>
       <p class="lede" style="margin-bottom:34px">Letters sent by the campaign and its supporters, and our statements to the media.</p>
+      <div class="rel">
+        <div class="d">11 Nov 2026</div>
+        <div>
+          <div class="type">Letter to the editor · The Times</div>
+          <h3><a href="letters/times-letter-nov-2026.html">Unjust prosecution</a></h3>
+          <p>Eight MPs and peers, including Emily Darlington MP, Lord Alton and Lord Patten, answer The Times’s leader: “condemnation is a statement, not a policy.” They ask the Government to summon the Chinese ambassador, sanction those responsible and tell Parliament what further consequences will follow.</p>
+        </div>
+        <span class="pill pub">Published</span>
+      </div>
       <div class="rel">
         <div class="d">13 Sep 2026</div>
         <div>
@@ -951,10 +960,40 @@ def socials():
 </section>
 """ + footer(0, '<script src="assets/socials.js"></script>\n')
 
+# ---------------- LETTER TO THE TIMES ----------------
+TIMES_SIGNATORIES = ["Emily Darlington MP", "Bobby Dean MP", "Lord David Alton of Liverpool", "Lord Patten of Barnes",
+    "Sir Geoffrey Nice KC", "Sir Malcolm Rifkind", "Lord Shinkwin", "Baroness Bennett of Manor Castle"]
+
+def letter_times():
+    sig = "".join(f"<li>{n}</li>" for n in TIMES_SIGNATORIES)
+    return head("Unjust prosecution: letter to The Times", "MPs and peers write to The Times: Britain should summon the Chinese ambassador, sanction those responsible and say what further consequences will follow.", "letters/times-letter-nov-2026.html", 1) + nav("newsroom.html", 1) + page_head(
+        "", "Unjust <em>prosecution</em>",
+        "A letter to the editor of The Times from MPs and peers across the parties, published on 11 November 2026.",
+        crumbs='<a href="../newsroom.html#letters">Newsroom</a> &nbsp;/&nbsp; Letters &amp; releases') + """
+<section class="letters letter-page" style="border-top:0">
+  <div class="wrap">
+    <div class="letter">
+      <article class="paper">
+        <div class="head">Letter to the editor · The Times · 11 November 2026</div>
+        <p style="margin-top:22px">Sir,</p>
+        <p>Your leading article is right to ask what Britain will do for Joshua Wong (“Supine Silence”, Nov 6). The government has joined nine allies in calling for an end to “unjust prosecutions” under Hong Kong’s national security law, but condemnation is a statement, not a policy. Joshua Wong, who has been sentenced to ten years’ imprisonment, stood up for the Sino-British joint declaration, a treaty Britain signed and registered at the United Nations, which our own government says China has breached. <strong>A treaty broken without cost invites the next breach.</strong></p>
+        <p>The government should summon the Chinese ambassador, as it did for Jimmy Lai; sanction those responsible for national security law prosecutions, as the US has; and tell parliament what further consequences will follow if Jimmy Lai, Joshua Wong and Benny Tai are not freed.</p>
+        <div class="no-print" style="margin-top:26px" data-share data-url="https://freejoshuawong.org/letters/times-letter-nov-2026.html" data-text="“A treaty broken without cost invites the next breach.” MPs and peers write to The Times on Joshua Wong"></div>
+      </article>
+      <aside class="signs">
+        <h4>Signed by</h4>
+        <ul>""" + sig + """</ul>
+      </aside>
+    </div>
+  </div>
+</section>
+""" + footer(1)
+
 PAGES = {
     "index.html": home, "case.html": case, "film.html": film, "newsroom.html": newsroom,
     "resources.html": resources, "act.html": act, "parliament.html": parliament, "voices.html": voices, "socials.html": socials,
     "letters/open-letter-prime-minister-sept-2026.html": letter_pm,
+    "letters/times-letter-nov-2026.html": letter_times,
 }
 
 def bake_numbers(html):
