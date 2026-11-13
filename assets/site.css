@@ -420,7 +420,7 @@ footer nav a:hover{color:var(--accent)}
 .h4-lead .days{color:#fff;white-space:nowrap;font-variant-numeric:tabular-nums;box-shadow:inset 0 -.32em 0 rgba(255,225,53,.35)}
 .h4-cta{display:flex;align-items:center;gap:30px;margin-top:40px;flex-wrap:wrap}
 .h4-pic{position:relative;margin:0;overflow:hidden;background:#111}
-.h4-pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:36% 0%}
+.h4-pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 100%}
 .h4-pic:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#000 0%,rgba(0,0,0,0) 16%)}
 .h4-pic figcaption{position:absolute;right:20px;bottom:16px;z-index:1;font-family:var(--label);font-size:12px;color:rgba(244,242,236,.7)}
 
@@ -479,7 +479,7 @@ footer nav a:hover{color:var(--accent)}
 @media(max-width:900px){
   .h4-hero{grid-template-columns:1fr}
   .h4-pic{order:-1;height:min(72vh,560px)}
-  .h4-pic img{object-position:40% 0%}
+  .h4-pic img{object-position:50% 100%}
   .h4-pic:after{background:linear-gradient(0deg,#000 0%,rgba(0,0,0,0) 22%)}
   .h4-text{padding:28px 22px 64px}
   .h4-hero h1{white-space:normal;font-size:clamp(52px,15vw,84px)}
@@ -817,7 +817,7 @@ a.s-link:hover{background:#f6f4ec}
 @keyframes fjw-slam{0%{opacity:0;transform:scale(1.18)}60%{opacity:1;transform:scale(.98)}100%{opacity:1;transform:scale(1)}}
 @keyframes fjw-bars{from{transform:translateY(-100%)}to{transform:none}}
 @keyframes fjw-fade{from{opacity:0}to{opacity:1}}
-.intro .h4-pic img{animation:fjw-photo 2.6s cubic-bezier(.2,.7,.2,1) both;transform-origin:40% 0}
+.intro .h4-pic img{animation:fjw-photo 2.6s cubic-bezier(.2,.7,.2,1) both;transform-origin:45% 30%}
 .intro .h4-hero h1{animation:fjw-wipe .9s cubic-bezier(.2,.8,.2,1) .2s both}
 .intro .h4-titles .then{animation:fjw-rise .6s ease-out .7s both}
 .intro .h4-titles s:after{animation:fjw-strike .5s cubic-bezier(.7,0,.3,1) 1.15s both}
