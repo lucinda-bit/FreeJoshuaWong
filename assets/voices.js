@@ -6,6 +6,9 @@
 // via: if we link to a news report of the post rather than the post itself, name the outlet here.
 // id: optional; needed if one person has two quotes on the same date.
 window.VOICES = [
+  {date:"2026-11-10", kind:"parliament", who:"Tom Tugendhat MP", role:"Conservative, Shadow Foreign Secretary", country:"UK", where:"House of Commons", id:"tom-tugendhat-commons-2026-11-10",
+   quote:"Given that the importance of the Caribbean to Britain is one subject on which I think we can all agree, what conversations has the hon. Member had on reversing the Chinese infiltration of those islands in the Americas so that we see islanders treated with the dignity they deserve—not, sadly, like the islanders Joshua Wong and Jimmy Lai in Hong Kong?",
+   url:"https://hansard.parliament.uk/Commons/2026-11-10/debates/580a4a8b-77d1-4dad-b849-9f1d47824e1c/CommonsChamber", watch:"parliament.html#exchange-tugendhat"},
   {date:"2026-11-11", kind:"parliament", who:"Emily Darlington MP, Lord Alton, Lord Patten and others", role:"Eight MPs and peers, letter to The Times", country:"UK", where:"Letter to The Times", id:"times-letter-2026-11-11",
    quote:"A treaty broken without cost invites the next breach.",
    url:"letters/times-letter-nov-2026.html"},

@@ -729,6 +729,9 @@ Yours sincerely,
 # ---------------- PARLIAMENT ----------------
 # kind: commons | lords | written | report | event
 RECORD = [
+    ("2026-11-10", "commons", "“Not, sadly, like the islanders Joshua Wong and Jimmy Lai”", "Commonwealth Heads of Government Meeting statement · House of Commons",
+     "The same day, responding to the Government’s statement on the Commonwealth summit, Shadow Foreign Secretary Tom Tugendhat contrasted the dignity owed to Caribbean islanders with the treatment of Joshua and Jimmy Lai in Hong Kong.",
+     "#exchange-tugendhat", "Watch the clip", ""),
     ("2026-11-10", "commons", "“Calling for Joshua Wong’s release”", "Urgent question on China · House of Commons",
      "At an urgent question secured by Sir Iain Duncan Smith on China obtaining MPs’ phone and financial records, Emily Darlington MP asked the Government to summon the Chinese Ambassador and call for Joshua’s release, as it did for Jimmy Lai. Security Minister Dan Jarvis replied that the Government share the concerns about Joshua and Jimmy Lai. For the Opposition, Alicia Kearns MP said both remain imprisoned for speaking out for democracy. <a href=\"https://hansard.parliament.uk/Commons/2026-11-10/debates/580a4a8b-77d1-4dad-b849-9f1d47824e1c/CommonsChamber\" target=\"_blank\" rel=\"noopener\">Read it in Hansard</a>",
      "#exchange-nov", "Watch the clip", ""),
@@ -767,6 +770,7 @@ VIDEOS = [
     ("https://podcasts.apple.com/gb/podcast/today-in-focus/id1440133626", "The Guardian · Today in Focus · 13 Nov 2026", "Teen prodigy, Netflix star, prisoner", "Podcast: Nathan Law and journalist Danny Vincent on Joshua’s story and his new sentence.", "images/covers/guardian-podcast.jpg", True),
     ("https://www.facebook.com/skynews/videos/friend-of-joshua-wong-nathan-law/2072604186823325/", "Sky News · 5 Nov 2026", "Nathan Law on Sky News", "On the day of the sentence, Nathan tells Yalda Hakim that democracy and human rights are “losing ground globally”.", "images/stills/sky-nathan.jpg", True),
     ("https://www.youtube.com/watch?v=gwQ1bK0KSJE", "Byline Times TV", "Andrew Duncan on Joshua’s story", "Video: the filmmaker behind both Joshua films on where Joshua is now.", "images/covers/byline-tv.jpg", True),
+    ("#exchange-tugendhat", "House of Commons · 10 Nov 2026", "Tom Tugendhat MP", "The Shadow Foreign Secretary names Joshua in the Commonwealth summit statement.", "images/commons-2026-11-10-tugendhat-poster.jpg", False),
     ("#exchange", "House of Commons · 1 Sep 2026", "Duncan Smith and the Foreign Secretary", "The exchange at Foreign Office Questions, the day before Joshua’s plea.", "images/commons-poster.jpg", False),
     ("https://podcasts.apple.com/gb/podcast/byline-times-podcast/id1522910878", "Byline Times Podcast · 26 Oct 2026", "China vs Joshua Wong", "Podcast: filmmaker Andrew Duncan tells Joshua’s story to Adrian Goldberg.", "images/covers/byline-podcast.jpg", True),
     ("https://www.channel4.com/news/hong-kong-pro-democracy-activist-joshua-wong-pleads-guilty-to-colluding-with-foreign-entities", "Channel 4 News · 2 Sep 2026", "Joshua pleads guilty", "Channel 4 News reports on the plea, with analysis on China and the UK.", "images/covers/c4-plea.jpg", True),
@@ -849,6 +853,27 @@ def parliament():
         </div>
         <p class="px-link"><a href="https://hansard.parliament.uk/Commons/2026-11-10/debates/580a4a8b-77d1-4dad-b849-9f1d47824e1c/CommonsChamber" target="_blank" rel="noopener">Read it in Hansard</a></p>
         <div data-share data-url="https://freejoshuawong.org/parliament.html#exchange-kearns" data-text="Alicia Kearns MP in the Commons: Jimmy Lai and Joshua Wong remain imprisoned for speaking out for democracy. #FreeJoshuaWong"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="parl-feature" id="exchange-tugendhat">
+  <div class="wrap">
+    <div class="px">
+      <div class="px-vid">
+        <div class="screen vid"><video controls preload="none" playsinline poster="images/commons-2026-11-10-tugendhat-poster.jpg"><source src="media/commons-2026-11-10-tugendhat.mp4" type="video/mp4">Your browser can’t play this video.</video></div>
+        <p class="px-cap">BBC Parliament, House of Commons, statement on the Commonwealth Heads of Government Meeting, 10 November 2026.</p>
+      </div>
+      <div class="px-side">
+        <div class="px-when">10 November 2026 · House of Commons · Shadow Foreign Secretary</div>
+        <div class="px-sp">
+          <div class="px-name">Tom Tugendhat MP</div>
+          <div class="px-role">Conservative, Tonbridge · Shadow Foreign Secretary</div>
+          <p>Responding to the Government’s statement on the Commonwealth summit, he asked about Chinese influence in the Caribbean, so that islanders there are treated with dignity, “not, sadly, like the islanders Joshua Wong and Jimmy Lai in Hong Kong”.</p>
+        </div>
+        <p class="px-link"><a href="https://hansard.parliament.uk/Commons/2026-11-10/debates/580a4a8b-77d1-4dad-b849-9f1d47824e1c/CommonsChamber" target="_blank" rel="noopener">Read it in Hansard</a></p>
+        <div data-share data-url="https://freejoshuawong.org/parliament.html#exchange-tugendhat" data-text="Tom Tugendhat MP raises Joshua Wong in the Commons. #FreeJoshuaWong"></div>
       </div>
     </div>
   </div>
