@@ -1186,9 +1186,55 @@ def zh():
 </section>
 """ + footer(0)
 
+# ===== Write to Joshua (unlisted until the address is set and his friends have agreed) =====
+WRITE_TO = ""   # the email address messages should go to, e.g. "letters@freejoshuawong.org"
+
+def write():
+    import urllib.parse as _u
+    body = "Dear Joshua,\n\n\n\nFrom [first name], in [town or city]"
+    if WRITE_TO:
+        mail = "mailto:" + WRITE_TO + "?" + _u.urlencode({"subject": "A message for Joshua", "body": body}, quote_via=_u.quote)
+        email_btn = f'<a class="btn" href="{mail}">Write your message</a>'
+    else:
+        email_btn = '<span class="btn ghost" aria-disabled="true">Email link coming soon</span>'
+    h = head("Write to Joshua", "Send Joshua Wong a message of hope in prison.", "write.html")
+    h = h.replace("<title>", '<meta name="robots" content="noindex">\n<title>', 1)
+    return h + nav("write.html") + page_head("Write to Joshua", "You are not <em>forgotten</em>",
+        "“The only thing I worry about is that people will forget Hong Kong.” Joshua, in a letter from prison, 2026.") + """
+<section class="wr" style="border-top:0;padding-top:20px">
+  <div class="wrap">
+    <div class="wr-grid">
+      <div class="wr-how">
+        <h2>Send him a few lines</h2>
+        <p>Joshua reads, studies and writes letters in prison. Letters from outside are how he knows people still care. Tell him who you are and something about your life.</p>
+        <ul>
+          <li><b>Keep it personal and kind.</b> A book you love, a song, your town, your work, what you see from your window.</li>
+          <li><b>Leave out politics.</b> Every letter is read by the prison. Messages about governments, sanctions or protest may never reach him, and could cause him trouble.</li>
+          <li><b>English or Chinese</b> are both fine.</li>
+          <li><b>Look after yourself.</b> Your first name and your town are enough, especially if you have family in Hong Kong.</li>
+        </ul>
+      </div>
+      <div class="wr-ways">
+        <div class="wr-way">
+          <h3>Email us your message</h3>
+          <p>We’ll pass messages on through people close to him, in the way that is safest for him. We can’t promise every message will reach him. We will never publish your name or share your email.</p>
+          """ + email_btn + """
+        </div>
+        <div class="wr-way">
+          <h3>Or write a postcard</h3>
+          <p>Print it, write on the back, then send us a photo of it.</p>
+          <div class="wr-cards"><img src="images/postcard-front.jpg" alt="Postcard front: You are not forgotten, with an umbrella"><img src="images/postcard-back.jpg" alt="Postcard back: Dear Joshua, with lines to write on"></div>
+          <a class="btn ghost" href="downloads/postcard-for-joshua.pdf" download>Download the postcard (PDF)</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+""" + footer(0)
+
 PAGES = {
     "index.html": home, "case.html": case, "film.html": film, "newsroom.html": newsroom,
-    "resources.html": resources, "act.html": act, "zh.html": zh, "parliament.html": parliament, "voices.html": voices, "socials.html": socials,
+    "resources.html": resources, "act.html": act, "zh.html": zh, "write.html": write, "parliament.html": parliament, "voices.html": voices, "socials.html": socials,
     "letters/open-letter-prime-minister-sept-2026.html": letter_pm,
     "letters/times-letter-nov-2026.html": letter_times,
 }

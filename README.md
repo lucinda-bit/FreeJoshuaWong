@@ -17,3 +17,5 @@ Hosted on Netlify: every change pushed to `main` goes live automatically.
 
 - Asked and answered tracker (home page and Newsroom): edit `TRACKER` in `tools/build.py`. When an answer comes in, change its status and wording.
 - Chinese page: `zh()` in `tools/build.py` (zh.html). Unlisted and hidden from search until Danny has reviewed it; then remove the noindex line and add it to the menu.
+
+- Write to Joshua page (write.html): unlisted for now. Set `WRITE_TO` in `tools/build.py` to the email address messages should go to; then link it from the menu/home page.
