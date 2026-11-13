@@ -33,6 +33,7 @@ window.PRESS = [
   // ---- 30th birthday, October 2026
   {date:"2026-10-13", outlet:"The Spectator", type:"opinion", region:"UK", moment:"birthday", paywall:true, by:"Benedict Rogers", title:"The bravery of Joshua Wong, on his 30th birthday", url:"https://www.spectator.com.au/?p=10944836"},
   // ---- Film, September 2026
+  {date:"2026-09-14", outlet:"Hong Kong Watch", type:"rights", region:"UK", moment:"plea", title:"Cross-party coalition of parliamentarians and human rights leaders calls on Prime Minister to act on Hong Kong", url:"https://www.hongkongwatch.org/all-posts/2026/9/14/cross-party-coalition-of-parliamentarians-and-human-rights-leaders-calls-on-prime-minister-to-act-on-hong-kong"},
   {date:"2026-09-15", outlet:"Dimsum Daily", type:"news", region:"Asia", moment:"film", title:"Security Bureau reviewing Netflix film on Joshua Wong", url:"https://www.dimsumdaily.hk/security-bureau-reviewing-netflix-film-on-joshua-wong/"},
   // ---- Plea, September 2026
   {date:"2026-09-03", outlet:"Taipei Times", type:"news", region:"Asia", moment:"plea", title:"Taiwanese civic groups call for Joshua Wong’s immediate release", url:"https://www.taipeitimes.com/News/taiwan/archives/2026/09/03/2003863605"},

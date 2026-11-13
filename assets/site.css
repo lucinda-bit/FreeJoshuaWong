@@ -658,3 +658,4 @@ nav .btn{font-size:13px}
 .rec-note{font-family:var(--label);font-size:14px;color:rgba(244,242,236,.6);border-top:1px solid rgba(244,242,236,.14);padding-top:22px}
 @media(max-width:900px){.px{grid-template-columns:1fr;gap:28px}.vwall{grid-template-columns:1fr 1fr}.vcard,.vcard:nth-child(n+4){grid-column:auto}.vcard:first-child{grid-column:span 2;grid-row:auto}.vcard:first-child .vc-img{aspect-ratio:16/9;height:auto;min-height:0}}
 @media(max-width:600px){.vwall{grid-template-columns:1fr}.vcard:first-child{grid-column:auto}.vwall .vcard:last-child{grid-column:auto}.rec{grid-template-columns:1fr;gap:10px}.px-count b{font-size:56px}}
+.h4-wait{margin:56px 0 28px}

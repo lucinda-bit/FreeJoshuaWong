@@ -213,6 +213,17 @@ def home():
       <div><h3>Review the Hong Kong trade office</h3><p>Its London office keeps diplomatic-style privileges, even after a senior manager there was convicted of spying on Hong Kongers in Britain.</p></div>
       <div><h3>Sanction those responsible</h3><p>Hold the officials behind National Security Law prosecutions to account, together with Britain’s allies.</p></div>
     </div>
+    <div class="waiting h4-wait">
+      <h3>Still waiting for an answer</h3>
+      <div class="wait-row">
+        <div class="wait-n"><span data-since="2026-09-01">73</span><small>days, no update</small></div>
+        <div><h4>The Foreign Secretary said he would take up Joshua’s case</h4><p>Ed Miliband, answering Sir Iain Duncan Smith in the Commons on 1 September 2026. <a href="parliament.html">Watch the exchange</a></p></div>
+      </div>
+      <div class="wait-row">
+        <div class="wait-n"><span data-since="2026-09-13">61</span><small>days, no reply</small></div>
+        <div><h4>31 parliamentarians and rights leaders wrote to the Prime Minister</h4><p>Their open letter to Andy Burnham, sent on 13 September 2026. <a href="letters/open-letter-prime-minister-sept-2026.html">Read the letter</a></p></div>
+      </div>
+    </div>
     <p class="h4-more"><a href="case.html">Read the full case</a></p>
   </div>
 </section>
@@ -272,6 +283,7 @@ TIMELINE = [
     ("24", "Jan 2021", "", "Charged as one of the Hong Kong 47", "Arrested under the National Security Law for taking part in an unofficial pro-democracy primary election."),
     ("28", "Nov 2024", "", "Sentenced to 4 years 8 months", "Sentenced in the largest national security trial in Hong Kong’s history. His release date is set for early 2027."),
     ("28", "Jun 2025", "", "Charged again from his cell", "Charged with conspiracy to collude with foreign forces, carrying a maximum of life imprisonment. The evidence is his own advocacy and public statements."),
+    ("29", "Sep 2026", "", "Raised in Parliament, then a guilty plea", "On 1 September Sir Iain Duncan Smith raises his case in the Commons and the Foreign Secretary says he will take it up. The next day Joshua pleads guilty. On 13 September, 31 parliamentarians and human rights leaders write to the Prime Minister."),
     ("30", "13 Oct 2026", "", "Turns thirty in prison", "Parliamentarians mark his birthday with a screening of the new film in the Houses of Parliament."),
     ("30", "5 Nov 2026", "", "Ten more years", "A Hong Kong court sentences him to ten years. Ten governments, including the UK, condemn the sentence the next day."),
     ("40", "c. 2036", "future", "Release, if nothing changes", "Unless governments act, Joshua may not walk free until he is around 40, having spent most of his adult life in prison."),
@@ -454,7 +466,7 @@ def newsroom():
         </div>
         <div class="wait-row">
           <div class="wait-n"><span data-since="2026-09-13">61</span><small>days, no reply</small></div>
-          <div><h4>The open letter to the Prime Minister</h4><p>Sent to the Prime Minister, Andy Burnham, on 13 September 2026, signed by parliamentarians, two former Foreign Secretaries and human rights organisations. No reply yet. <a href="letters/open-letter-prime-minister-sept-2026.html">Read the letter</a></p></div>
+          <div><h4>The open letter to the Prime Minister</h4><p>Sent to the Prime Minister, Andy Burnham, on 13 September 2026, signed by 31 parliamentarians, former Foreign Secretaries and human rights leaders. No reply yet. <a href="letters/open-letter-prime-minister-sept-2026.html">Read the letter</a></p></div>
         </div>
       </div>
       """ + STATEMENTS + """
@@ -467,7 +479,7 @@ def newsroom():
         <div>
           <div class="type">Open letter · to the Prime Minister</div>
           <h3><a href="letters/open-letter-prime-minister-sept-2026.html">Britain should stand for something</a></h3>
-          <p>Parliamentarians from every major party, two former Foreign Secretaries and leading human rights organisations ask the Prime Minister to raise Joshua’s case with the Chinese Ambassador.</p>
+          <p>31 parliamentarians from across the parties, former Foreign Secretaries and human rights leaders ask the Prime Minister to call in the Chinese Ambassador and raise Joshua’s case. Published by <a href="https://www.hongkongwatch.org/all-posts/2026/9/14/cross-party-coalition-of-parliamentarians-and-human-rights-leaders-calls-on-prime-minister-to-act-on-hong-kong" target="_blank" rel="noopener">Hong Kong Watch</a>.</p>
         </div>
         <span class="pill"><i></i>Awaiting reply</span>
       </div>
@@ -581,6 +593,8 @@ def act():
 I am writing as your constituent about Joshua Wong, the Hong Kong democracy campaigner who on 5 November was sentenced to a further ten years in prison under the National Security Law.
 
 Britain guaranteed Hong Kong’s freedoms in the Joint Declaration. Joshua only ever asked that this promise be kept.
+
+On 1 September the Foreign Secretary told the House of Commons he would take up Joshua’s case. There has been no public update since.
 
 Please ask the Foreign Secretary to raise his case directly with the Chinese Ambassador, and tell me what the Government is doing to secure his release.
 
