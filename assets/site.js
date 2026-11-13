@@ -202,14 +202,21 @@ document.querySelectorAll('[data-since]').forEach(function (el) {
     wall.innerHTML = V.filter(function (v) { return k === 'all' || v.kind === k; }).map(function (v) {
       var size = v.quote.length < 40 ? ' big' : (v.quote.length < 75 ? ' mid' : '');
       var ext = /^https?:/.test(v.url) ? ' target="_blank" rel="noopener"' : '';
-      var share = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent('“' + v.quote + '” — ' + v.who + ' #FreeJoshuaWong') + '&url=' + encodeURIComponent('https://freejoshuawong.org/voices.html');
+      var slug = v.id || (v.who + '-' + v.date).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+      var page = 'voices/' + slug + '.html', full = 'https://freejoshuawong.org/' + page;
+      var t = '“' + v.quote + '” — ' + v.who + ' #FreeJoshuaWong';
       return '<figure class="vq k-' + v.kind + size + '">' +
         '<div class="vq-top"><span class="vq-where">' + esc(v.where) + '</span><span class="vq-date">' + d(v.date) + '</span></div>' +
-        '<blockquote>' + esc(v.quote) + '</blockquote>' +
+        '<a class="vq-q" href="' + page + '"><blockquote>' + esc(v.quote) + '</blockquote></a>' +
         '<figcaption><b>' + esc(v.who) + '</b><span>' + esc(v.role) + (v.country && v.country !== 'Global' ? ' · ' + esc(v.country) : '') + '</span></figcaption>' +
         '<div class="vq-links"><a href="' + esc(v.url) + '"' + ext + '>Original</a>' +
         (v.watch ? '<a href="' + esc(v.watch) + '">Watch</a>' : '') +
-        '<a href="' + share + '" target="_blank" rel="noopener">Share this quote</a></div></figure>';
+        '</div><div class="vq-share"><span>Share</span>' +
+        '<a href="https://twitter.com/intent/tweet?text=' + encodeURIComponent(t) + '&url=' + encodeURIComponent(full) + '" target="_blank" rel="noopener">X</a>' +
+        '<a href="https://wa.me/?text=' + encodeURIComponent(t + ' ' + full) + '" target="_blank" rel="noopener">WhatsApp</a>' +
+        '<a href="https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(full) + '" target="_blank" rel="noopener">LinkedIn</a>' +
+        '<button type="button" class="sh" data-link="' + full + '">Copy link</button>' +
+        '<a href="images/quotes/' + slug + '.jpg" download>Image</a></div></figure>';
     }).join('');
   }
   var chips = document.querySelectorAll('.v-bar .chip');

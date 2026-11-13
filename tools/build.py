@@ -877,6 +877,33 @@ def voices():
 </section>
 """ + footer(0, '<script src="assets/voices.js"></script>\n')
 
+# ---------------- ONE PAGE PER QUOTE (for sharing) ----------------
+def quote_page(v):
+    import html as _h
+    e = _h.escape
+    url = f"{SITE}/voices/{v['slug']}.html"
+    title = f"“{v['quote']}” — {v['who']}"
+    ext = v["url"].startswith("http")
+    orig = v["url"] if ext else "../" + v["url"]
+    watch = f'<a class="btn ghost" href="../{e(v["watch"])}">Watch the clip</a>' if v.get("watch") else ""
+    page = head(title, f"{v['who']} on Joshua Wong. #FreeJoshuaWong", f"voices/{v['slug']}.html", 1)
+    page = page.replace(f"{SITE}/images/share-card.jpg", f"{SITE}/images/quotes/{v['slug']}.jpg")
+    return page + nav("voices.html", 1) + f"""
+<section class="qpage" style="border-top:0">
+  <div class="wrap">
+    <div class="crumbs"><a href="../voices.html">Voices</a> &nbsp;/&nbsp; {e(v['who'])}</div>
+    <figure class="vq qbig k-{e(v['kind'])}{' big' if len(v['quote']) < 40 else ' mid'}">
+      <div class="vq-top"><span class="vq-where">{e(v['where'])}</span><span class="vq-date">{int(v['date'][8:])} {MONTHS[int(v['date'][5:7])-1]} {v['date'][:4]}</span></div>
+      <blockquote>{e(v['quote'])}</blockquote>
+      <figcaption><b>{e(v['who'])}</b><span>{e(v['role'])}{' · ' + e(v['country']) if v.get('country') and v['country'] != 'Global' else ''}</span></figcaption>
+    </figure>
+    <div data-share data-url="{url}" data-text="“{e(v['quote'])}” — {e(v['who'])}"></div>
+    <p class="q-actions"><a class="btn" href="{e(orig)}"{' target="_blank" rel="noopener"' if ext else ''}>See where it was said</a>{watch}<a class="btn ghost" href="../voices.html">All voices</a></p>
+    <p class="q-img"><a href="../images/quotes/{v['slug']}.jpg" download>Download this quote as an image</a> for Instagram or WhatsApp.</p>
+  </div>
+</section>
+""" + footer(1)
+
 PAGES = {
     "index.html": home, "case.html": case, "film.html": film, "newsroom.html": newsroom,
     "resources.html": resources, "act.html": act, "parliament.html": parliament, "voices.html": voices,
@@ -900,6 +927,9 @@ if __name__ == "__main__":
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     import sharecard
     print("share card:", sharecard.make())
+    import quotecards
+    for v in quotecards.make_all():
+        PAGES[f"voices/{v['slug']}.html"] = (lambda v=v: quote_page(v))
     for path, fn in PAGES.items():
         out = os.path.join(ROOT, path)
         os.makedirs(os.path.dirname(out), exist_ok=True)
