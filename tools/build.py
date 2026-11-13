@@ -197,7 +197,7 @@ def home():
         </div>
       </div>
     </div>
-    <p class="h4-demand">Britain made Hong Kong a promise. Joshua is paying for it.</p>
+    <p class="h4-demand"><span>Britain made Hong Kong a&nbsp;promise.</span><span>Joshua is paying for it.</span></p>
     <p class="h4-lead">Joshua was born on British soil, in Hong Kong in 1996. He stood up for the freedoms Britain and Beijing promised Hong Kong, and has now been given ten more years. Britain must summon China’s ambassador.</p>
     <div class="h4-cta">
       <a class="btn" href="#write">Email your MP in 2 minutes</a>
@@ -235,7 +235,12 @@ def home():
         <p class="w-src">From his letters to friends, written between August and October 2026. <a href="https://www.theguardian.com/world/2026/nov/05/joshua-wong-hong-kong-prison-letters-sentenced-10-years" target="_blank" rel="noopener">The Guardian</a></p>
       </figure>
     </div>
-    <p class="w-life">He writes from Stanley, Hong Kong’s oldest maximum-security prison. He studies law, swaps books with the men around him, triad gang members among them, and is learning the guitar. He has spent his 21st, 25th and 30th birthdays behind bars.</p>
+    <div class="w-life">
+      <p>He writes from Stanley, Hong Kong’s oldest maximum-security prison. Every letter is read by the prison before it reaches his friends.</p>
+      <p>He is studying law. He swaps books with the men around him, triad gang members among them. One of the books in his cell is Alexei Navalny’s memoir. He is teaching himself the guitar.</p>
+      <p>He has spent his 21st, 25th and 30th birthdays behind bars. If the sentence stands, he will spend his 40th there too.</p>
+      <p class="w-src">From letters seen by <a href="https://www.theguardian.com/world/2026/nov/05/joshua-wong-hong-kong-prison-letters-sentenced-10-years" target="_blank" rel="noopener">the Guardian</a>, and reporting by the <a href="https://www.taipeitimes.com/News/editorials/archives/2026/11/07/2003867298" target="_blank" rel="noopener">Taipei Times</a>.</p>
+    </div>
   </div>
 </section>
 
@@ -853,7 +858,7 @@ VIDEOS = [
     ("#exchange-nov", "House of Commons · 10 Nov 2026", "Emily Darlington MP", "Asks the Government to call for Joshua’s release, five days after his sentence.", "images/commons-2026-11-10-poster.jpg", False),
     ("#exchange-kearns", "House of Commons · 10 Nov 2026", "Alicia Kearns MP", "For the Opposition: Joshua and Jimmy Lai remain imprisoned for speaking out for democracy.", "images/commons-2026-11-10-kearns-poster.jpg", False),
     ("https://podcasts.apple.com/gb/podcast/today-in-focus/id1440133626", "The Guardian · Today in Focus · 13 Nov 2026", "Teen prodigy, Netflix star, prisoner", "Podcast: Nathan Law and journalist Danny Vincent on Joshua’s story and his new sentence.", "images/covers/guardian-podcast.jpg", True),
-    ("https://x.com/SkyNews/status/2118468483625189737", "Sky News · 5 Nov 2026", "Nathan Law on Sky News", "On the day of the sentence, Nathan tells Yalda Hakim that democracy and human rights are “losing ground globally”.", "images/stills/sky-nathan.jpg", True),
+    ("https://x.com/SkyNews/status/2118468483625189737", "Sky News · 5 Nov 2026", "Nathan Law on Sky News", "On the day of the sentence, Nathan tells Yalda Hakim that democracy and human rights are “losing ground globally”.", "images/covers/sky-nathan.jpg", True),
     ("https://www.youtube.com/watch?v=gwQ1bK0KSJE", "Byline Times TV", "Andrew Duncan on Joshua’s story", "Video: the filmmaker behind both Joshua films on where Joshua is now.", "images/covers/byline-tv.jpg", True),
     ("#exchange-tugendhat", "House of Commons · 10 Nov 2026", "Tom Tugendhat MP", "The Shadow Foreign Secretary names Joshua in the Commonwealth summit statement.", "images/commons-2026-11-10-tugendhat-poster.jpg", False),
     ("#exchange", "House of Commons · 1 Sep 2026", "Duncan Smith and the Foreign Secretary", "The exchange at Foreign Office Questions, the day before Joshua’s plea.", "images/commons-poster.jpg", False),

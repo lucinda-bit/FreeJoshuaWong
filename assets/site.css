@@ -929,3 +929,16 @@ nav.top .links a.lang{font-weight:700;letter-spacing:.04em}
 .w-src a{color:rgba(244,242,236,.75)}
 .w-life{font-family:var(--serif);font-size:clamp(20px,1.6vw,24px);line-height:1.5;color:rgba(244,242,236,.85);max-width:52ch;margin:64px 0 0;padding-top:30px;border-top:1px solid rgba(244,242,236,.15)}
 @media(max-width:800px){.w-pair{grid-template-columns:1fr}.w-pair figure{padding:0}.w-pair .w-then{border-right:0;border-bottom:2px solid rgba(255,225,53,.6);padding-bottom:36px;margin-bottom:36px}}
+/* hero line: two separate lines */
+.h4-demand{max-width:none}
+.h4-demand span{display:block}
+/* In his own words: brighter, warmer */
+.w-pair figcaption{color:var(--accent)}
+.w-then blockquote,.w-now blockquote{color:#fff}
+.w-src{color:rgba(244,242,236,.78)}
+.w-src a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.w-life{max-width:56ch}
+.w-life p{margin:0 0 18px;color:#fff;font-family:var(--serif);font-size:clamp(21px,1.7vw,26px);line-height:1.5}
+.w-life p.w-src{font-family:var(--label);font-size:13px;color:rgba(244,242,236,.78);margin-top:22px}
+.h4-demand{font-size:clamp(26px,2.5vw,38px)}
+@media(max-width:600px){.h4-demand{font-size:clamp(24px,7vw,32px)}}

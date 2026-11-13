@@ -86,10 +86,10 @@ def rings(key):  # Sky: black, concentric rings, quote
     d.ellipse([cx - 40, cy - 40, cx + 40, cy + 40], fill=LEMON)
     pill(d, 70, 64, "INTERVIEW", LEMON, INK)
     d.text((70, 128), "Sky News · The World with Yalda Hakim", font=f("Montserrat-Bold.ttf", 30), fill=PAPER)
-    d.text((64, 190), "“", font=f("Anton.ttf", 180), fill=LEMON)
-    d.text((70, 330), "LOSING GROUND", font=f("Anton.ttf", 120), fill=PAPER)
-    d.text((70, 455), "GLOBALLY”", font=f("Anton.ttf", 120), fill=PAPER)
-    d.text((70, H - 62), "Nathan Law, the day Joshua was sentenced", font=f("Montserrat-SemiBold.ttf", 26), fill=(170, 168, 160))
+    d.text((70, 230), "NATHAN LAW", font=f("Anton.ttf", 130), fill=PAPER)
+    d.text((70, 375), "ON JOSHUA", font=f("Anton.ttf", 130), fill=LEMON)
+    d.text((70, 540), "Democracy and human rights are “losing ground globally”", font=f("Montserrat-SemiBold.ttf", 26), fill=PAPER)
+    d.text((70, H - 62), "Live on Sky News, the day Joshua was sentenced", font=f("Montserrat-SemiBold.ttf", 24), fill=(200, 198, 190))
     return save(img, key)
 
 def datestamp(key):  # Channel 4: split with big date
@@ -141,7 +141,7 @@ def frame(key, src, kind, outlet, title, credit, focus=0.55):  # a still from th
     return save(img, key, "images/stills")
 
 COVERS = {"guardian-podcast": waveform, "byline-podcast": versus, "byline-tv": duotone,
-          "sky-nathan": lambda k: frame(k, "images/frames/sky-nathan-src.png", "INTERVIEW", "Sky News · 5 Nov 2026", "Nathan Law: democracy and human rights are “losing ground globally”", "Image: Sky News"),
+          "sky-nathan": rings,
           "c4-plea": datestamp, "pelosi-floor": stripes}
 
 def make_all():
