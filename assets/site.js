@@ -111,7 +111,7 @@
   var nice = function (d) { var p = d.split('-'); return (+p[2]) + ' ' + months[+p[1] - 1] + ' ' + p[0]; };
   var label = { news: 'News', opinion: 'Opinion', rights: 'Rights group' };
   var items = window.PRESS.slice().sort(function (a, b) { return a.date < b.date ? 1 : a.date > b.date ? -1 : 0; });
-  var state = { moment: 'all', type: 'all' };
+  var state = { moment: 'all', type: 'all', q: '' };
 
   // headline numbers
   var outlets = {}; items.forEach(function (p) { outlets[p.outlet.split(' / ')[0]] = 1; });
@@ -120,7 +120,7 @@
     '<div><b>' + items.length + '</b><span>reports</span></div>' +
     '<div><b>' + Object.keys(outlets).length + '</b><span>outlets</span></div>' +
     '<div><b>' + Object.keys(regions).length + '</b><span>regions of the world</span></div>' +
-    '<div><b>' + (+items[items.length - 1].date.slice(0, 4)) + '</b><span>covered since</span></div>';
+    '<div><b>' + items.filter(function (p) { return p.moment === 'sentence'; }).length + '</b><span>since the sentence on 5 Nov</span></div>';
 
   // ticker: newest twelve headlines, doubled for a seamless loop
   var tk = items.slice(0, 12).map(function (p) { return '<span class="tk"><b>' + esc(p.outlet) + '</b>' + esc(p.title) + '</span>'; }).join('');
@@ -135,9 +135,10 @@
     }).join('');
 
   function render() {
-    var shown = items.filter(function (p) { return (state.moment === 'all' || p.moment === state.moment) && (state.type === 'all' || p.type === state.type); });
+    var q = state.q.toLowerCase();
+    var shown = items.filter(function (p) { return (state.moment === 'all' || p.moment === state.moment) && (state.type === 'all' || p.type === state.type) && (!q || (p.outlet + ' ' + p.title + ' ' + (p.by || '')).toLowerCase().indexOf(q) > -1); });
     var feat = document.getElementById('cov-feature');
-    var f = (state.moment === 'all' || state.moment === 'sentence') && state.type !== 'news' && state.type !== 'rights' ? items.filter(function (p) { return p.feature; })[0] : null;
+    var f = !q && (state.moment === 'all' || state.moment === 'sentence') && state.type !== 'news' && state.type !== 'rights' ? items.filter(function (p) { return p.feature; })[0] : null;
     feat.innerHTML = f ? '<a class="cov-feat" href="' + esc(f.url) + '" target="_blank" rel="noopener"><span class="o">' + esc(f.outlet) + (f.by ? ', ' + esc(f.by) : '') + '</span><span class="h">' + esc(f.title) + '</span><span class="d">' + nice(f.date) + (f.paywall ? '<span class="pay">Subscription</span>' : '') + '</span></a>' : '';
     if (f) shown = shown.filter(function (p) { return p !== f; });
     var html = '', last = '';
@@ -154,6 +155,8 @@
     list.innerHTML = html ? html + '</div>' : '<p class="empty">Nothing here yet for that combination. Try Everything.</p>';
   }
   render();
+  var qEl = document.getElementById('cov-q');
+  if (qEl) qEl.addEventListener('input', function () { state.q = qEl.value.trim(); render(); });
   mEl.addEventListener('click', function (e) {
     var b = e.target.closest('.mo'); if (!b) return;
     mEl.querySelectorAll('.mo').forEach(function (x) { x.setAttribute('aria-pressed', 'false'); });

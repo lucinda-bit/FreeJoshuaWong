@@ -10,7 +10,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 import re as _re
 PRESS_COUNT = len(_re.findall(r'^\s*\{date:', open(os.path.join(ROOT, "assets/press.js")).read(), _re.M))
 
-NAV = [("case.html", "The case"), ("film.html", "Film"), ("newsroom.html", "Newsroom"), ("parliament.html", "Parliament"), ("voices.html", "Voices"), ("socials.html", "Socials"), ("resources.html", "Resources")]
+NAV = [("case.html", "The case"), ("film.html", "Watch"), ("newsroom.html", "Newsroom"), ("parliament.html", "Parliament"), ("voices.html", "Voices"), ("socials.html", "Socials"), ("resources.html", "Resources")]
 
 def head(title, desc, path, depth=0):
     up = "../" * depth
@@ -86,7 +86,7 @@ def footer(depth=0, scripts=""):
     </div>
     <div class="cols">
       <nav aria-label="Footer">
-        <a href="{up}case.html">The case</a><a href="{up}film.html">Film</a><a href="{up}newsroom.html">Newsroom</a><a href="{up}parliament.html">Parliament</a><a href="{up}voices.html">Voices</a><a href="{up}socials.html">Socials</a>
+        <a href="{up}case.html">The case</a><a href="{up}film.html">Watch</a><a href="{up}newsroom.html">Newsroom</a><a href="{up}parliament.html">Parliament</a><a href="{up}voices.html">Voices</a><a href="{up}socials.html">Socials</a>
         <a href="{up}resources.html">Resources</a><a href="{up}act.html">Take action</a>
       </nav>
       <div>
@@ -366,7 +366,7 @@ def case():
 
 # ---------------- FILM ----------------
 def film():
-    return head("Film", "Joshua: Prisoner vs. Superpower — a new short film from the team behind the 2017 Sundance award winner.", "film.html") + nav("film.html") + page_head(
+    return head("Watch", "Joshua: Prisoner vs. Superpower, plus interviews, Commons clips and podcasts about Joshua Wong.", "film.html") + nav("film.html") + page_head(
         "The film", "Prisoner vs.<br><em>Superpower</em>",
         "The award-winning 2017 documentary followed a schoolboy who took on a superpower. This is what happened next.") + """
 <section class="film" style="border-top:0">
@@ -379,9 +379,13 @@ def film():
         <h3>Joshua: <span>Prisoner</span> vs. Superpower</h3>
         <p>A new short film from the team behind <em>Joshua: Teenager vs. Superpower</em>. Archive, new interviews, and the six years since the cameras stopped.</p>
         <p>First shown to parliamentarians in Committee Room 15, Houses of Parliament, on 13 October 2026, Joshua’s 30th birthday.</p>
-        <p><a class="btn" href="film.html">More on the film</a></p>
         <div data-share data-url="https://freejoshuawong.org/film.html" data-text="Joshua: Prisoner vs. Superpower — the second chapter"></div>
       </div>
+    </div>
+
+    <div class="watch-wall" id="watch">
+      <div class="sec-head"><div><div class="label">Watch and listen</div><h2 class="sec">Interviews, clips and <em>podcasts</em></h2></div></div>
+      <div class="vwall">""" + video_cards(skip_film=True) + """</div>
     </div>
 
     <div class="film-note">
@@ -475,6 +479,7 @@ def newsroom():
     </div>
 
     <div class="panel" id="panel-coverage">
+      <p class="cov-intro">Joshua has been in the headlines since he co-founded Scholarism at 14 and led the fight against Beijing’s “national education” plans. This wall follows the current case, from the new charge in June 2025 to today.</p>
       <div class="cov-stats" id="cov-stats"></div>
       <div class="ticker" aria-hidden="true"><div class="ticker-track" id="ticker"></div></div>
       <div class="moments" id="moments" role="group" aria-label="Filter by moment"></div>
@@ -485,6 +490,7 @@ def newsroom():
           <button class="chip" data-t="opinion" aria-pressed="false">Opinion</button>
           <button class="chip" data-t="rights" aria-pressed="false">Rights groups</button>
         </div>
+        <label class="cov-search"><span>Search</span><input type="search" id="cov-q" placeholder="Outlet or headline, e.g. Guardian"></label>
         <p class="cov-note">Headlines link to the original. Some outlets may ask you to subscribe.</p>
       </div>
       <div id="cov-feature"></div>
@@ -722,6 +728,21 @@ VIDEOS = [
     ("https://www.youtube.com/watch?v=gwQ1bK0KSJE", "YouTube", "Watch on YouTube", "Opens on YouTube.", "", True),
 ]
 
+def video_cards(skip_film=False):
+    cards = ""
+    for url, kicker, title, blurb, img, ext in VIDEOS:
+        if skip_film and url == "film.html":
+            continue
+        if url.startswith("#"):
+            url = "parliament.html" + url
+        tgt = ' target="_blank" rel="noopener"' if ext else ""
+        art = f'<img src="{img}" alt="" loading="lazy">' if img else f'<span class="vc-mark">{kicker.split(" · ")[0]}</span>'
+        if "podcasts.apple" in url: art = f'<span class="vc-mark">{kicker.split(" · ")[0]}<small>Podcast</small></span>'
+        cards += f"""<a class="vcard" href="{url}"{tgt}>
+        <div class="vc-img">{art}<span class="vc-play"></span>{'<span class="vc-ext">Opens on '+ ('YouTube' if 'youtube' in url else 'Apple Podcasts' if 'podcasts.apple' in url else 'their site') +'</span>' if ext else ''}</div>
+        <div class="vc-k">{kicker}</div><h3>{title}</h3><p>{blurb}</p></a>"""
+    return cards
+
 def parliament():
     def dfmt(d):
         y, m, dd = d.split("-"); return f"{int(dd)} {MONTHS[int(m)-1]} {y}"
@@ -738,17 +759,9 @@ def parliament():
         <div class="rec-d"><span>{dfmt(d)}</span><em class="k-{k}">{label[k]}</em></div>
         <div><div class="rec-who">{who}</div><h3>{title}</h3><p>{body}</p>{wait}<a class="src" href="{url}"{tgt}>{link}</a></div>
       </article>"""
-    cards = ""
-    for url, kicker, title, blurb, img, ext in VIDEOS:
-        tgt = ' target="_blank" rel="noopener"' if ext else ""
-        art = f'<img src="{img}" alt="" loading="lazy">' if img else f'<span class="vc-mark">{kicker.split(" · ")[0]}</span>'
-        if "podcasts.apple" in url: art = f'<span class="vc-mark">{kicker.split(" · ")[0]}<small>Podcast</small></span>'
-        cards += f"""<a class="vcard" href="{url}"{tgt}>
-        <div class="vc-img">{art}<span class="vc-play"></span>{'<span class="vc-ext">Opens on '+ ('YouTube' if 'youtube' in url else 'Apple Podcasts' if 'podcasts.apple' in url else 'their site') +'</span>' if ext else ''}</div>
-        <div class="vc-k">{kicker}</div><h3>{title}</h3><p>{blurb}</p></a>"""
-    return head("Parliament", "Every time Joshua Wong’s case has been raised at Westminster, and every film and clip, in one place.", "parliament.html") + nav("parliament.html") + page_head(
+    return head("Parliament", "Every time Joshua Wong’s case has been raised at Westminster, with the clips.", "parliament.html") + nav("parliament.html") + page_head(
         "Parliament", "On the <em>record</em>",
-        "Every time Joshua’s case has been raised at Westminster, and every film and clip, in one place.") + """
+        "Every time Joshua’s case has been raised at Westminster, with the clips to watch.") + """
 <section class="parl-feature" id="exchange-nov" style="border-top:0;padding-top:10px">
   <div class="wrap">
     <div class="px">
@@ -823,10 +836,9 @@ def parliament():
   </div>
 </section>
 
-<section class="parl-watch">
+<section class="parl-more">
   <div class="wrap">
-    <div class="sec-head"><div><div class="label">Watch</div><h2 class="sec">Watch and <em>listen</em></h2></div></div>
-    <div class="vwall">""" + cards + """</div>
+    <a class="to-socials" href="film.html#watch"><b>Watch and listen</b><span>The film, interviews and podcasts about Joshua are on the Watch page</span></a>
   </div>
 </section>
 
