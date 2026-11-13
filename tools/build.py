@@ -198,7 +198,7 @@ def home():
       </div>
     </div>
     <p class="h4-demand"><span>Britain made Hong Kong a&nbsp;promise.</span><span>Joshua is paying for it.</span></p>
-    <p class="h4-lead">Born on British soil in 1996. Now he has ten more years.</p>
+    <p class="h4-lead">He was born on British soil, in Hong Kong in 1996.</p>
     <div class="h4-cta">
       <a class="btn" href="#write">Email your MP in 2 minutes</a>
       <a class="btn ghost" href="#film">Watch the film</a>
