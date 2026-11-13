@@ -10,7 +10,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 import re as _re
 PRESS_COUNT = len(_re.findall(r'^\s*\{date:', open(os.path.join(ROOT, "assets/press.js")).read(), _re.M))
 
-NAV = [("case.html", "The case"), ("film.html", "Watch"), ("newsroom.html", "Newsroom"), ("parliament.html", "Parliament"), ("voices.html", "Voices"), ("socials.html", "Socials")]
+NAV = [("case.html", "The case"), ("film.html", "Watch"), ("newsroom.html", "Newsroom"), ("parliament.html", "Parliament"), ("voices.html", "Voices"), ("socials.html", "Socials"), ("write.html", "Write to Joshua")]
 
 def head(title, desc, path, depth=0):
     up = "../" * depth
@@ -1198,7 +1198,6 @@ def zh():
 # until it is approved and copied into assets/messages.js.
 def write():
     h = head("Messages for Joshua", "Write Joshua Wong a message of hope.", "write.html")
-    h = h.replace("<title>", '<meta name="robots" content="noindex">\n<title>', 1)
     return h + nav("write.html") + """
 <header class="mw-hero">
   <div class="wrap mw-hero-in">

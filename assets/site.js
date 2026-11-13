@@ -347,3 +347,15 @@ document.querySelectorAll('form[data-mp]').forEach(function (f) {
   }).join('');
   sec.hidden = false;
 })();
+
+// Until the site moves to Netlify, the form can't deliver messages: say so kindly instead of losing them
+(function () {
+  var f = document.querySelector('.mw-form'); if (!f) return;
+  if (!/github\.io$/.test(location.hostname)) return;
+  f.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var s = document.getElementById('sent');
+    s.textContent = 'Thank you. Messages open in the next few days. Please keep your words and come back to send them soon.';
+    s.hidden = false; s.scrollIntoView({ block: 'center' });
+  });
+})();

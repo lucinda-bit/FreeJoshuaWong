@@ -1041,3 +1041,6 @@ body:has(.mp-print){background:#fff}
 .mp-tools{display:flex;gap:12px;align-items:center;font-family:var(--label);font-size:14px}
 .mp-tools select{font-size:15px;padding:6px}
 @media print{.mp-tools{display:none}.mp-print{padding:0}}
+nav.top .links a[href$="write.html"]{color:var(--accent)}
+nav.top .links a,nav.top .btn{white-space:nowrap}
+@media(max-width:1200px) and (min-width:901px){nav.top .links{gap:14px}nav.top .links a{font-size:14px;margin:0}nav.top .brand{font-size:21px}}
