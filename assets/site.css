@@ -956,3 +956,28 @@ nav.top .links a.lang{font-weight:700;letter-spacing:.04em}
 .wr-cards img{width:100%;display:block;box-shadow:0 6px 18px rgba(0,0,0,.4)}
 .btn[aria-disabled]{opacity:.6;cursor:default}
 @media(max-width:900px){.wr-grid{grid-template-columns:1fr;gap:36px}}
+/* Messages for Joshua */
+.mw-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:start}
+.mw-form{background:var(--accent);color:var(--ink);padding:30px 30px 26px}
+.mw-form label{display:block;font-family:var(--label);font-weight:800;font-size:14px;margin:0 0 8px}
+.mw-form textarea,.mw-form input:not([type=checkbox]){width:100%;box-sizing:border-box;border:2px solid var(--ink);background:#fff;color:var(--ink);font:400 19px/1.5 var(--serif);padding:12px 14px;border-radius:0}
+.mw-form input:not([type=checkbox]){font:600 17px var(--label);min-height:48px}
+.mw-starts{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}
+.mw-starts button{font:700 13px var(--label);background:transparent;border:1.5px solid var(--ink);color:var(--ink);padding:7px 11px;border-radius:16px;cursor:pointer}
+.mw-starts button:hover{background:var(--ink);color:var(--accent)}
+.mw-count{font:600 12px var(--label);text-align:right;margin:6px 0 16px;opacity:.7}
+.mw-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
+.mw-form .mw-check{display:flex;gap:10px;align-items:flex-start;font-weight:600;font-size:14px;margin:4px 0 18px}
+.mw-check input{width:20px;height:20px;margin:0;flex:0 0 auto}
+.mw-form .btn{background:var(--ink);color:var(--accent);border-color:var(--ink);width:100%;min-height:52px}
+.mw-note{font:500 13px/1.55 var(--label);margin:16px 0 0;color:rgba(12,12,11,.85)}
+.mw-sent{font:700 16px var(--label);background:var(--ink);color:var(--accent);padding:12px 14px;margin:14px 0 0}
+.mw-wall-wrap h2{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(34px,3.4vw,48px);margin:0 0 22px;color:#fff}
+.mw-wall{columns:2 240px;column-gap:16px}
+.mw-card{break-inside:avoid;margin:0 0 16px;background:#141413;border-left:3px solid var(--accent);padding:20px 22px}
+.mw-card blockquote{margin:0;font-family:var(--serif);font-size:19px;line-height:1.5;color:#fff}
+.mw-card figcaption{font:700 13px var(--label);color:var(--accent);margin-top:12px}
+.mw-empty{border:2px dashed rgba(255,225,53,.5);padding:30px 28px;column-span:all}
+.mw-empty b{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:30px;color:#fff;display:block}
+.mw-empty p{color:#fff;font-size:18px;margin:8px 0 0}
+@media(max-width:900px){.mw-grid{grid-template-columns:1fr;gap:40px}.mw-row{grid-template-columns:1fr}}

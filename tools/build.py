@@ -1186,51 +1186,46 @@ def zh():
 </section>
 """ + footer(0)
 
-# ===== Write to Joshua (unlisted until the address is set and his friends have agreed) =====
-WRITE_TO = ""   # the email address messages should go to, e.g. "letters@freejoshuawong.org"
-
+# ===== Messages for Joshua: a virtual wall of hope (unlisted until hosting is on Netlify) =====
+# The form posts to Netlify Forms (works once the site is hosted on Netlify). Nothing is shown on the wall
+# until it is approved and copied into assets/messages.js.
 def write():
-    import urllib.parse as _u
-    body = "Dear Joshua,\n\n\n\nFrom [first name], in [town or city]"
-    if WRITE_TO:
-        mail = "mailto:" + WRITE_TO + "?" + _u.urlencode({"subject": "A message for Joshua", "body": body}, quote_via=_u.quote)
-        email_btn = f'<a class="btn" href="{mail}">Write your message</a>'
-    else:
-        email_btn = '<span class="btn ghost" aria-disabled="true">Email link coming soon</span>'
-    h = head("Write to Joshua", "Send Joshua Wong a message of hope in prison.", "write.html")
+    h = head("Messages for Joshua", "Write Joshua Wong a message of hope.", "write.html")
     h = h.replace("<title>", '<meta name="robots" content="noindex">\n<title>', 1)
-    return h + nav("write.html") + page_head("Write to Joshua", "You are not <em>forgotten</em>",
-        "“The only thing I worry about is that people will forget Hong Kong.” Joshua, in a letter from prison, 2026.") + """
-<section class="wr" style="border-top:0;padding-top:20px">
+    return h + nav("write.html") + page_head("Messages for Joshua", "Tell him the world <em>has not forgotten</em>",
+        "Joshua’s greatest fear is that people will forget Hong Kong. Write him a few words of hope, and show him it hasn’t happened.") + """
+<section class="mw" style="border-top:0;padding-top:10px">
   <div class="wrap">
-    <div class="wr-grid">
-      <div class="wr-how">
-        <h2>Send him a few lines</h2>
-        <p>Joshua reads, studies and writes letters in prison. Letters from outside are how he knows people still care. Tell him who you are and something about your life.</p>
-        <ul>
-          <li><b>Keep it personal and kind.</b> A book you love, a song, your town, your work, what you see from your window.</li>
-          <li><b>Leave out politics.</b> Every letter is read by the prison. Messages about governments, sanctions or protest may never reach him, and could cause him trouble.</li>
-          <li><b>English or Chinese</b> are both fine.</li>
-          <li><b>Look after yourself.</b> Your first name and your town are enough, especially if you have family in Hong Kong.</li>
-        </ul>
-      </div>
-      <div class="wr-ways">
-        <div class="wr-way">
-          <h3>Email us your message</h3>
-          <p>We’ll pass messages on through people close to him, in the way that is safest for him. We can’t promise every message will reach him. We will never publish your name or share your email.</p>
-          """ + email_btn + """
+    <div class="mw-grid">
+      <form class="mw-form" name="joshua-messages" method="POST" action="write.html?sent=1#sent" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="joshua-messages">
+        <p hidden><label>Leave this empty <input name="bot-field"></label></p>
+        <label for="mw-msg">Your message to Joshua</label>
+        <div class="mw-starts" aria-label="Ideas to start">
+          <button type="button" data-start="What gives me hope is ">What gives me hope…</button>
+          <button type="button" data-start="Where I live, ">Where I live…</button>
+          <button type="button" data-start="A book I think you would love is ">A book for you…</button>
+          <button type="button" data-start="When I heard your story, ">When I heard your story…</button>
         </div>
-        <div class="wr-way">
-          <h3>Or write a postcard</h3>
-          <p>Print it, write on the back, then send us a photo of it.</p>
-          <div class="wr-cards"><img src="images/postcard-front.jpg" alt="Postcard front: You are not forgotten, with an umbrella"><img src="images/postcard-back.jpg" alt="Postcard back: Dear Joshua, with lines to write on"></div>
-          <a class="btn ghost" href="downloads/postcard-for-joshua.pdf" download>Download the postcard (PDF)</a>
+        <textarea id="mw-msg" name="message" rows="7" maxlength="600" required placeholder="Dear Joshua,"></textarea>
+        <div class="mw-count"><span id="mw-left">600</span> characters left</div>
+        <div class="mw-row">
+          <div><label for="mw-name">First name</label><input id="mw-name" name="first-name" maxlength="40" required></div>
+          <div><label for="mw-town">Town or country</label><input id="mw-town" name="place" maxlength="60" required></div>
         </div>
+        <label class="mw-check"><input type="checkbox" name="show-on-wall" value="yes" checked> You can show my message, first name and town on this page</label>
+        <button class="btn" type="submit">Send my message</button>
+        <p class="mw-note">Every message is read before it appears here. We never ask for your email or surname. Messages are passed on to Joshua through people close to him, in the way that is safest for him. Please keep it personal: the prison reads his post, and politics may stop it reaching him.</p>
+        <p class="mw-sent" id="sent" hidden>Thank you. Your message is on its way. It will appear here once it has been read.</p>
+      </form>
+      <div class="mw-wall-wrap">
+        <h2>From around the world</h2>
+        <div class="mw-wall" id="mw-wall"></div>
       </div>
     </div>
   </div>
 </section>
-""" + footer(0)
+""" + footer(0, '<script src="assets/messages.js"></script>\n')
 
 PAGES = {
     "index.html": home, "case.html": case, "film.html": film, "newsroom.html": newsroom,

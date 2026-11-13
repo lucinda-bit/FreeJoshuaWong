@@ -315,3 +315,23 @@ document.querySelectorAll('form[data-mp]').forEach(function (f) {
     // the form itself opens WriteToThem in a new tab
   });
 });
+
+// ===== Messages for Joshua =====
+(function () {
+  var form = document.querySelector('.mw-form'); if (!form) return;
+  var ta = document.getElementById('mw-msg'), left = document.getElementById('mw-left');
+  function upd() { left.textContent = 600 - ta.value.length; }
+  ta.addEventListener('input', upd);
+  form.querySelectorAll('[data-start]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var base = ta.value.trim() ? ta.value.replace(/\s*$/, '\n\n') : 'Dear Joshua,\n\n';
+      ta.value = base + b.getAttribute('data-start'); ta.focus(); upd();
+    });
+  });
+  if (/[?&]sent=1/.test(location.search)) { var s = document.getElementById('sent'); if (s) s.hidden = false; }
+  var wall = document.getElementById('mw-wall'), M = window.MESSAGES || [];
+  var esc = function (t) { return String(t).replace(/[&<>"]/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); };
+  wall.innerHTML = M.length ? M.map(function (m) {
+    return '<figure class="mw-card"><blockquote>' + esc(m.text).replace(/\n/g, '<br>') + '</blockquote><figcaption>' + esc(m.name) + ', ' + esc(m.place) + '</figcaption></figure>';
+  }).join('') : '<div class="mw-empty"><b>Be one of the first.</b><p>The first messages will appear here soon. Yours could be one of them.</p></div>';
+})();
