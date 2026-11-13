@@ -832,3 +832,4 @@ a.s-link:hover{background:#f6f4ec}
 .lifebar.wait .c{opacity:0;transform:scaleY(.2)}
 @media(prefers-reduced-motion:reduce){.intro *{animation:none!important}}
 @media(max-width:900px){.h4-titles s:after{left:54px}}
+.home4 .h4-pressure h2{color:var(--ink)}

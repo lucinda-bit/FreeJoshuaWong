@@ -1117,9 +1117,13 @@ if __name__ == "__main__":
     import quotecards
     for v in quotecards.make_all():
         PAGES[f"voices/{v['slug']}.html"] = (lambda v=v: quote_page(v))
+    import hashlib
+    ASSET_V = hashlib.md5(b"".join(open(os.path.join(ROOT, "assets", a), "rb").read() for a in ["site.css","site.js","press.js","voices.js","socials.js"])).hexdigest()[:8]
     for path, fn in PAGES.items():
         out = os.path.join(ROOT, path)
         os.makedirs(os.path.dirname(out), exist_ok=True)
+        html = bake_numbers(fn())
+        html = _re.sub(r'(assets/(?:site\.css|site\.js|press\.js|voices\.js|socials\.js))"', lambda m: m.group(1) + "?v=" + ASSET_V + '"', html)
         with open(out, "w") as f:
-            f.write(bake_numbers(fn()))
+            f.write(html)
         print("wrote", path)
