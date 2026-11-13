@@ -185,3 +185,39 @@ document.querySelectorAll('[data-since]').forEach(function (el) {
     });
   });
 })();
+
+/* Voices wall */
+(function () {
+  var wall = document.getElementById('vwall');
+  if (!wall || !window.VOICES) return;
+  var V = window.VOICES.slice().sort(function (a, b) { return a.date < b.date ? 1 : -1; });
+  var M = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var KIND = {parliament:'Parliamentarian', government:'Government', rights:'Rights group', social:'On social media'};
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function d(s) { var p = s.split('-'); return +p[2] + ' ' + M[+p[1] - 1] + ' ' + p[0]; }
+  var countries = {}; V.forEach(function (v) { if (v.country && v.country !== 'Global') countries[v.country] = 1; });
+  var st = document.getElementById('v-stats');
+  if (st) st.innerHTML = '<b>' + V.length + '</b> voices &nbsp;·&nbsp; <b>' + Object.keys(countries).length + '</b> countries and blocs, plus global rights groups';
+  function render(k) {
+    wall.innerHTML = V.filter(function (v) { return k === 'all' || v.kind === k; }).map(function (v) {
+      var size = v.quote.length < 40 ? ' big' : (v.quote.length < 75 ? ' mid' : '');
+      var ext = /^https?:/.test(v.url) ? ' target="_blank" rel="noopener"' : '';
+      var share = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent('“' + v.quote + '” — ' + v.who + ' #FreeJoshuaWong') + '&url=' + encodeURIComponent('https://freejoshuawong.org/voices.html');
+      return '<figure class="vq k-' + v.kind + size + '">' +
+        '<div class="vq-top"><span class="vq-where">' + esc(v.where) + '</span><span class="vq-date">' + d(v.date) + '</span></div>' +
+        '<blockquote>' + esc(v.quote) + '</blockquote>' +
+        '<figcaption><b>' + esc(v.who) + '</b><span>' + esc(v.role) + (v.country && v.country !== 'Global' ? ' · ' + esc(v.country) : '') + '</span></figcaption>' +
+        '<div class="vq-links"><a href="' + esc(v.url) + '"' + ext + '>Original</a>' +
+        (v.watch ? '<a href="' + esc(v.watch) + '">Watch</a>' : '') +
+        '<a href="' + share + '" target="_blank" rel="noopener">Share this quote</a></div></figure>';
+    }).join('');
+  }
+  var chips = document.querySelectorAll('.v-bar .chip');
+  chips.forEach(function (c) {
+    c.addEventListener('click', function () {
+      chips.forEach(function (x) { x.setAttribute('aria-pressed', x === c ? 'true' : 'false'); });
+      render(c.getAttribute('data-k'));
+    });
+  });
+  render('all');
+})();

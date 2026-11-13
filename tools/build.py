@@ -10,7 +10,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 import re as _re
 PRESS_COUNT = len(_re.findall(r'^\s*\{date:', open(os.path.join(ROOT, "assets/press.js")).read(), _re.M))
 
-NAV = [("case.html", "The case"), ("film.html", "Film"), ("newsroom.html", "Newsroom"), ("parliament.html", "Parliament"), ("resources.html", "Resources")]
+NAV = [("case.html", "The case"), ("film.html", "Film"), ("newsroom.html", "Newsroom"), ("parliament.html", "Parliament"), ("voices.html", "Voices"), ("resources.html", "Resources")]
 
 def head(title, desc, path, depth=0):
     up = "../" * depth
@@ -24,7 +24,10 @@ def head(title, desc, path, depth=0):
 <meta name="description" content="{desc}">
 <meta property="og:title" content="{full}">
 <meta property="og:description" content="{desc}">
-<meta property="og:image" content="{SITE}/images/joshua.jpg">
+<meta property="og:image" content="{SITE}/images/share-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:image" content="{SITE}/images/share-card.jpg">
 <meta property="og:url" content="{SITE}/{path}">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -57,6 +60,14 @@ COLLEAGUES = [
     ("Inter-Parliamentary Alliance on China", "https://www.ipac.global"),
 ]
 
+import datetime as _dt
+try:
+    from zoneinfo import ZoneInfo as _Z
+    _now = _dt.datetime.now(_Z("Europe/London"))
+except Exception:
+    _now = _dt.datetime.now()
+UPDATED = f"{_now.day} {_now:%B %Y}"
+
 def footer(depth=0, scripts=""):
     up = "../" * depth
     col = "".join(f'<a href="{u}" target="_blank" rel="noopener">{n}</a>' for n, u in COLLEAGUES)
@@ -71,11 +82,11 @@ def footer(depth=0, scripts=""):
     <div>
       <div class="brand">Free <span>Joshua Wong</span></div>
       <p>A campaign for the release of Joshua Wong, the Hong Kong democracy campaigner in prison since November 2020.</p>
-      <p class="updated" style="font-size:12px;opacity:.6">Last updated 13 November 2026, 2.30pm</p>
+      <p class="updated" style="font-size:12px;opacity:.6">Last updated {UPDATED}</p>
     </div>
     <div class="cols">
       <nav aria-label="Footer">
-        <a href="{up}case.html">The case</a><a href="{up}film.html">Film</a><a href="{up}newsroom.html">Newsroom</a><a href="{up}parliament.html">Parliament</a>
+        <a href="{up}case.html">The case</a><a href="{up}film.html">Film</a><a href="{up}newsroom.html">Newsroom</a><a href="{up}parliament.html">Parliament</a><a href="{up}voices.html">Voices</a>
         <a href="{up}resources.html">Resources</a><a href="{up}act.html">Take action</a>
       </nav>
       <div>
@@ -829,16 +840,69 @@ def parliament():
 </section>
 """ + CTA.replace("{up}", "") + footer()
 
+# ---------------- VOICES ----------------
+def voices():
+    return head("Voices", "What parliamentarians, governments and human rights leaders are saying about Joshua Wong.", "voices.html") + nav("voices.html") + page_head(
+        "Voices", "They are <em>speaking up</em>",
+        "Parliamentarians, governments and human rights leaders, in their own words. Every quote links to where it was said.") + """
+<section class="voices-page" style="border-top:0;padding-top:0">
+  <div class="wrap">
+    <div class="v-stats" id="v-stats"></div>
+    <div class="filters v-bar" role="group" aria-label="Filter voices">
+      <button class="chip" data-k="all" aria-pressed="true">Everyone</button>
+      <button class="chip" data-k="parliament" aria-pressed="false">Parliamentarians</button>
+      <button class="chip" data-k="government" aria-pressed="false">Governments</button>
+      <button class="chip" data-k="rights" aria-pressed="false">Rights groups</button>
+      <button class="chip" data-k="social" aria-pressed="false">On social media</button>
+    </div>
+    <div class="vwall2" id="vwall"></div>
+  </div>
+</section>
+
+<section class="add-voice">
+  <div class="wrap">
+    <div class="av">
+      <div>
+        <div class="label">Add your voice</div>
+        <h2 class="sec">Post it. <em>Tag your MP.</em></h2>
+        <p class="lede">Copy a line, add your MP’s handle, and post it with #FreeJoshuaWong. If you are a parliamentarian or public figure and have spoken about Joshua, tell us at press@freejoshuawong.org and we’ll add you here.</p>
+      </div>
+      <div class="av-posts">
+        <div class="post"><p>Joshua Wong was two months from freedom. Hong Kong has given him ten more years for speaking up to foreign parliaments. <b>#FreeJoshuaWong</b></p><button class="copy" type="button">Copy</button><a class="sh-x" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?text=Joshua%20Wong%20was%20two%20months%20from%20freedom.%20Hong%20Kong%20has%20given%20him%20ten%20more%20years%20for%20speaking%20up%20to%20foreign%20parliaments.%20%23FreeJoshuaWong&url=https%3A%2F%2Ffreejoshuawong.org">Post on X</a></div>
+        <div class="post"><p>The Foreign Secretary promised to take up Joshua Wong’s case on 1 September. We’re still waiting. <b>#FreeJoshuaWong</b></p><button class="copy" type="button">Copy</button><a class="sh-x" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?text=The%20Foreign%20Secretary%20promised%20to%20take%20up%20Joshua%20Wong%E2%80%99s%20case%20on%201%20September.%20We%E2%80%99re%20still%20waiting.%20%23FreeJoshuaWong&url=https%3A%2F%2Ffreejoshuawong.org%2Fparliament.html">Post on X</a></div>
+        <div class="post"><p>He has been in prison since he was 24. He may not walk free until he is 40. <b>#FreeJoshuaWong</b></p><button class="copy" type="button">Copy</button><a class="sh-x" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?text=He%20has%20been%20in%20prison%20since%20he%20was%2024.%20He%20may%20not%20walk%20free%20until%20he%20is%2040.%20%23FreeJoshuaWong&url=https%3A%2F%2Ffreejoshuawong.org">Post on X</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+""" + footer(0, '<script src="assets/voices.js"></script>\n')
+
 PAGES = {
     "index.html": home, "case.html": case, "film.html": film, "newsroom.html": newsroom,
-    "resources.html": resources, "act.html": act, "parliament.html": parliament,
+    "resources.html": resources, "act.html": act, "parliament.html": parliament, "voices.html": voices,
     "letters/open-letter-prime-minister-sept-2026.html": letter_pm,
 }
 
+def bake_numbers(html):
+    """Write today's counts into the page so they are right even before the page's script runs."""
+    import re, datetime
+    from sharecard import days_inside
+    today = datetime.date.today()
+    def since(m):
+        y, mo, d = map(int, m.group(1).split("-"))
+        return f'data-since="{m.group(1)}">{(today - datetime.date(y, mo, d)).days}<'
+    html = re.sub(r'data-since="(\d{4}-\d{2}-\d{2})">[^<]*<', since, html)
+    html = re.sub(r'(id="days">)[^<]*(<)', lambda m: f"{m.group(1)}{days_inside():,}{m.group(2)}", html)
+    return html
+
 if __name__ == "__main__":
+    import sys, datetime
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import sharecard
+    print("share card:", sharecard.make())
     for path, fn in PAGES.items():
         out = os.path.join(ROOT, path)
         os.makedirs(os.path.dirname(out), exist_ok=True)
         with open(out, "w") as f:
-            f.write(fn())
+            f.write(bake_numbers(fn()))
         print("wrote", path)
