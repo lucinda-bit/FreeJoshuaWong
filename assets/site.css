@@ -332,3 +332,5 @@ footer nav a:hover{color:var(--accent)}
 @media(max-width:900px){nav.top.open .links .mob-only{display:block}}
 .screen.yt{border:0;width:100%;cursor:pointer;background-size:cover;background-position:center;font:inherit;color:inherit;padding:0}
 .yt-frame{width:100%;aspect-ratio:16/9;border:0;display:block;background:#000}
+.screen.vid{display:block;padding:0;background:#000}
+.screen.vid video{width:100%;height:100%;display:block;object-fit:cover;background:#000}

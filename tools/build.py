@@ -181,16 +181,12 @@ def home():
       <p class="lede">The award-winning 2017 documentary followed a schoolboy who took on a superpower. This is what happened next.</p>
     </div>
     <div class="film-card">
-<button class="screen yt" type="button" data-yt="RNVPZe8nK8I" aria-label="Play Joshua: Prisoner vs. Superpower" style="background-image:linear-gradient(rgba(12,12,11,.35),rgba(12,12,11,.55)),url('https://i.ytimg.com/vi/RNVPZe8nK8I/hqdefault.jpg')">
-        <span class="tag label">New · 10 minutes</span>
-        <span class="play" aria-hidden="true"></span>
-        <span class="dur">JOSHUA: PRISONER VS. SUPERPOWER</span>
-      </button>
+<div class="screen vid"><video controls preload="none" playsinline poster="images/film-poster.jpg"><source src="media/joshua-prisoner-vs-superpower.mp4" type="video/mp4">Your browser can’t play this video.</video></div>
       <div class="film-copy">
         <div class="label dim">Producer Andrew Duncan</div>
         <h3>Joshua: <span>Prisoner</span> vs. Superpower</h3>
-        <p>A new ten-minute film from the team behind the 2017 Sundance audience award winner. Archive, new interviews, and the six years since the cameras stopped.</p>
-        <a class="btn" href="https://www.youtube.com/watch?v=RNVPZe8nK8I" target="_blank" rel="noopener">Watch on YouTube</a>
+        <p>A new short film from the team behind the 2017 Sundance audience award winner. Archive, new interviews, and the six years since the cameras stopped.</p>
+        <a class="btn" href="film.html">More on the film</a>
       </div>
     </div>
   </div>
@@ -225,7 +221,7 @@ TIMELINE = [
     ("19", "Oct 2016", "", "Detained at Bangkok airport", "Held and deported by Thai authorities on his way to speak at a university, an early sign of how far Beijing’s pressure would reach."),
     ("20", "2017", "", "First prison sentence, and the film", "Jailed over the 2014 Civic Square protest; Hong Kong’s top court later quashes the sentence. <em>Joshua: Teenager vs. Superpower</em> premieres at Sundance and wins the audience award."),
     ("22", "Sep 2019", "", "Testifies to the US Congress", "Gives evidence to the Congressional-Executive Commission on China on human rights in Hong Kong. Years later, testimony like this is cited as evidence against him."),
-    ("23", "Jun 2020", "", "The National Security Law", "Beijing imposes the National Security Law on Hong Kong. His party, Demosistō, disbands the same day. He chooses to stay."),
+    ("23", "Jun 2020", "", "The National Security Law", "Beijing imposes the National Security Law on Hong Kong. His party, Demosistō, disbands the same day."),
     ("24", "Nov 2020", "", "Into prison, where he remains", "Jailed over a 2019 protest outside police headquarters. He has not been free since."),
     ("24", "Jan 2021", "", "Charged as one of the Hong Kong 47", "Arrested under the National Security Law for taking part in an unofficial pro-democracy primary election."),
     ("28", "Nov 2024", "", "Sentenced to 4 years 8 months", "Sentenced in the largest national security trial in Hong Kong’s history. His release date is set for early 2027."),
@@ -249,7 +245,6 @@ def case():
       <div>
         <h3>Who he is</h3>
         <p>Joshua Wong has campaigned for democracy in Hong Kong since he was a schoolboy. At fifteen he stopped a Beijing-written curriculum; at seventeen he was the face of the Umbrella Movement; at twenty he was the subject of an award-winning Netflix documentary.</p>
-        <p>When the National Security Law came into force in 2020, others got on planes. He took the view that leaving would concede the argument, and stayed.</p>
       </div>
       <div>
         <h3>What he is charged with</h3>
@@ -284,24 +279,20 @@ def case():
 
 # ---------------- FILM ----------------
 def film():
-    return head("Film", "Joshua: Prisoner vs. Superpower — a new ten-minute film from the team behind the 2017 Sundance award winner.", "film.html") + nav("film.html") + page_head(
+    return head("Film", "Joshua: Prisoner vs. Superpower — a new short film from the team behind the 2017 Sundance award winner.", "film.html") + nav("film.html") + page_head(
         "The film", "Prisoner vs.<br><em>Superpower</em>",
         "The award-winning 2017 documentary followed a schoolboy who took on a superpower. This is what happened next.") + """
 <section class="film" style="border-top:0">
   <div class="wrap">
     <div class="film-card">
-      <!-- FILM: YouTube ID is in data-yt -->
-      <button class="screen yt" type="button" data-yt="RNVPZe8nK8I" aria-label="Play Joshua: Prisoner vs. Superpower" style="background-image:linear-gradient(rgba(12,12,11,.35),rgba(12,12,11,.55)),url('https://i.ytimg.com/vi/RNVPZe8nK8I/hqdefault.jpg')">
-        <span class="tag label">New · 10 minutes</span>
-        <span class="play" aria-hidden="true"></span>
-        <span class="dur">JOSHUA: PRISONER VS. SUPERPOWER</span>
-      </button>
+      <!-- FILM: self-hosted in media/ -->
+      <div class="screen vid"><video controls preload="none" playsinline poster="images/film-poster.jpg"><source src="media/joshua-prisoner-vs-superpower.mp4" type="video/mp4">Your browser can’t play this video.</video></div>
       <div class="film-copy">
         <div class="label dim">Producer Andrew Duncan</div>
         <h3>Joshua: <span>Prisoner</span> vs. Superpower</h3>
-        <p>A new ten-minute film from the team behind <em>Joshua: Teenager vs. Superpower</em>. Archive, new interviews, and the six years since the cameras stopped.</p>
+        <p>A new short film from the team behind <em>Joshua: Teenager vs. Superpower</em>. Archive, new interviews, and the six years since the cameras stopped.</p>
         <p>First shown to parliamentarians in Committee Room 15, Houses of Parliament, on 13 October 2026, Joshua’s 30th birthday.</p>
-        <p><a class="btn" href="https://www.youtube.com/watch?v=RNVPZe8nK8I" target="_blank" rel="noopener">Watch on YouTube</a></p>
+        <p><a class="btn" href="film.html">More on the film</a></p>
         <div data-share data-url="https://freejoshuawong.org/film.html" data-text="Joshua: Prisoner vs. Superpower — the second chapter"></div>
       </div>
     </div>
