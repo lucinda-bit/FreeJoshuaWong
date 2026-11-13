@@ -20,6 +20,10 @@ def head(title, desc, path, depth=0):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0C0C0B">
+<meta name="apple-mobile-web-app-title" content="Free Joshua">
+<link rel="apple-touch-icon" href="{up}images/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="{up}images/favicon.png">
 <title>{full}</title>
 <meta name="description" content="{desc}">
 <meta property="og:title" content="{full}">
