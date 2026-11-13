@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Phone preview · Free Joshua Wong</title>
+<style>
+  body{margin:0;background:#ECE9E2;font-family:Helvetica,Arial,sans-serif;color:#0C0C0B;min-height:100vh;display:flex;flex-direction:column;align-items:center}
+  header{width:100%;max-width:980px;padding:22px 20px 8px;box-sizing:border-box;display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;justify-content:center}
+  header b{font-size:15px}
+  .sizes button,.pages a{font:600 13px Helvetica,Arial,sans-serif;border:1px solid #0C0C0B;background:transparent;color:#0C0C0B;padding:7px 12px;border-radius:18px;cursor:pointer;text-decoration:none}
+  .sizes button[aria-pressed=true],.pages a.on{background:#0C0C0B;color:#FFE135}
+  .pages{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;max-width:980px;padding:6px 20px 18px}
+  .phone{background:#1C1C1E;border-radius:54px;padding:14px;box-shadow:0 30px 60px rgba(0,0,0,.25);margin-bottom:40px}
+  .phone iframe{display:block;border:0;border-radius:42px;background:#0C0C0B}
+  p.note{font-size:13px;color:#555;margin:0 0 30px;text-align:center;padding:0 20px}
+</style>
+</head>
+<body>
+<header>
+  <b>Phone preview</b>
+  <span class="sizes" role="group" aria-label="Phone size">
+    <button type="button" data-w="390" data-h="844" aria-pressed="true">iPhone 15</button>
+    <button type="button" data-w="375" data-h="667" aria-pressed="false">iPhone SE</button>
+    <button type="button" data-w="430" data-h="932" aria-pressed="false">iPhone Pro Max</button>
+    <button type="button" data-w="360" data-h="780" aria-pressed="false">Android</button>
+  </span>
+</header>
+<nav class="pages" aria-label="Pages">
+  <a href="index.html" class="on">Home</a><a href="case.html">The case</a><a href="film.html">Watch</a><a href="newsroom.html">Newsroom</a><a href="parliament.html">Parliament</a><a href="voices.html">Voices</a><a href="socials.html">Socials</a><a href="act.html">Take action</a>
+</nav>
+<div class="phone"><iframe id="f" src="index.html" width="390" height="844" title="Site at phone size"></iframe></div>
+<p class="note">This is the live site at phone width. Scroll and tap inside the phone as you would on a real one.</p>
+<script>
+  var f = document.getElementById('f');
+  document.querySelectorAll('.sizes button').forEach(function (b) {
+    b.onclick = function () {
+      document.querySelectorAll('.sizes button').forEach(function (x) { x.setAttribute('aria-pressed', 'false'); });
+      b.setAttribute('aria-pressed', 'true'); f.width = b.dataset.w; f.height = b.dataset.h;
+    };
+  });
+  document.querySelectorAll('.pages a').forEach(function (a) {
+    a.onclick = function (e) {
+      e.preventDefault(); f.src = a.getAttribute('href');
+      document.querySelectorAll('.pages a').forEach(function (x) { x.classList.remove('on'); }); a.classList.add('on');
+    };
+  });
+</script>
+</body>
