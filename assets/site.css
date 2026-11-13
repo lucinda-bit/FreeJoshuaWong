@@ -627,7 +627,7 @@ nav .btn{font-size:13px}
 .px-count span{font-family:var(--label);font-weight:700;font-size:15px;line-height:1.35}
 .vwall{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:28px}
 .vcard{grid-column:span 2}
-.vcard:nth-child(n+4){grid-column:span 2}
+.vcard:nth-child(n+4){grid-column:span 3}
 .vcard{display:block;color:inherit;text-decoration:none}
 .vcard:first-child{grid-column:span 4;grid-row:span 2}
 .vc-img{position:relative;aspect-ratio:16/9;background:var(--ink-2);border:1px solid rgba(244,242,236,.12);overflow:hidden;display:flex;align-items:center;justify-content:center}

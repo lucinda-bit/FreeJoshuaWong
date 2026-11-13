@@ -685,6 +685,7 @@ MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec
 VIDEOS = [
     ("film.html", "Film", "Joshua: Prisoner vs. Superpower", "The new short film, first shown in Parliament on 13 October 2026.", "images/film-poster.jpg", False),
     ("#exchange-nov", "House of Commons · 10 Nov 2026", "Emily Darlington MP", "Asks the Government to call for Joshua’s release, five days after his sentence.", "images/commons-2026-11-10-poster.jpg", False),
+    ("#exchange-kearns", "House of Commons · 10 Nov 2026", "Alicia Kearns MP", "For the Opposition: Joshua and Jimmy Lai remain imprisoned for speaking out for democracy.", "images/commons-2026-11-10-kearns-poster.jpg", False),
     ("#exchange", "House of Commons · 1 Sep 2026", "Duncan Smith and the Foreign Secretary", "The exchange at Foreign Office Questions, the day before Joshua’s plea.", "images/commons-poster.jpg", False),
     ("https://www.channel4.com/news/hong-kong-pro-democracy-activist-joshua-wong-pleads-guilty-to-colluding-with-foreign-entities", "Channel 4 News · 2 Sep 2026", "Joshua pleads guilty", "Channel 4 News reports on the plea, with analysis on China and the UK.", "", True),
     ("https://pelosi.house.gov/news/press-releases/pelosi-calls-joshua-wongs-freedom-house-floor-we-want-be-sure-they-know-we", "US House of Representatives · 2 Sep 2026", "Pelosi on the House floor", "Speaker Emerita Nancy Pelosi calls for Joshua’s freedom.", "", True),
@@ -736,13 +737,30 @@ def parliament():
           <div class="px-role">Minister of State for Security</div>
           <p>Replying to her: “The Government share the concerns about Mr Wong and Jimmy Lai.”</p>
         </div>
+
+        <p class="px-link"><a href="https://hansard.parliament.uk/Commons/2026-11-10/debates/580a4a8b-77d1-4dad-b849-9f1d47824e1c/CommonsChamber" target="_blank" rel="noopener">Read the exchange in Hansard</a></p>
+        <div data-share data-url="https://freejoshuawong.org/parliament.html#exchange-nov" data-text="In the Commons, Emily Darlington MP asked the Government to call for Joshua Wong’s release. #FreeJoshuaWong"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="parl-feature" id="exchange-kearns">
+  <div class="wrap">
+    <div class="px">
+      <div class="px-vid">
+        <div class="screen vid"><video controls preload="none" playsinline poster="images/commons-2026-11-10-kearns-poster.jpg"><source src="media/commons-2026-11-10-kearns.mp4" type="video/mp4">Your browser can’t play this video.</video></div>
+        <p class="px-cap">BBC Parliament, House of Commons, urgent question on China, 10 November 2026.</p>
+      </div>
+      <div class="px-side">
+        <div class="px-when">10 November 2026 · House of Commons · For the Opposition</div>
         <div class="px-sp">
           <div class="px-name">Alicia Kearns MP</div>
           <div class="px-role">Conservative, Rutland and Stamford · Shadow Minister</div>
-          <p>Speaking for the Opposition, reminded the House that Jimmy Lai and Joshua Wong remain imprisoned for speaking out for democracy.</p>
+          <p>Responding for the Opposition in the same urgent question, she reminded the House that Jimmy Lai and Joshua Wong remain imprisoned in Hong Kong for speaking out for democracy.</p>
         </div>
-        <p class="px-link"><a href="https://hansard.parliament.uk/Commons/2026-11-10/debates/580a4a8b-77d1-4dad-b849-9f1d47824e1c/CommonsChamber" target="_blank" rel="noopener">Read the exchange in Hansard</a></p>
-        <div data-share data-url="https://freejoshuawong.org/parliament.html#exchange-nov" data-text="In the Commons, Emily Darlington MP asked the Government to call for Joshua Wong’s release. #FreeJoshuaWong"></div>
+        <p class="px-link"><a href="https://hansard.parliament.uk/Commons/2026-11-10/debates/580a4a8b-77d1-4dad-b849-9f1d47824e1c/CommonsChamber" target="_blank" rel="noopener">Read it in Hansard</a></p>
+        <div data-share data-url="https://freejoshuawong.org/parliament.html#exchange-kearns" data-text="Alicia Kearns MP in the Commons: Jimmy Lai and Joshua Wong remain imprisoned for speaking out for democracy. #FreeJoshuaWong"></div>
       </div>
     </div>
   </div>
