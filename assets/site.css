@@ -330,3 +330,5 @@ footer nav a:hover{color:var(--accent)}
 @media print{nav.top,footer,.no-print,.colleagues{display:none!important}body{background:#fff}.facts-sheet{padding:0}}
 .links .mob-only{display:none}
 @media(max-width:900px){nav.top.open .links .mob-only{display:block}}
+.screen.yt{border:0;width:100%;cursor:pointer;background-size:cover;background-position:center;font:inherit;color:inherit;padding:0}
+.yt-frame{width:100%;aspect-ratio:16/9;border:0;display:block;background:#000}

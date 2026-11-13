@@ -25,6 +25,19 @@
     catch (e) { btn.textContent = 'Select & copy'; }
   }
 
+  // Film: load YouTube only when someone presses play (privacy-enhanced, no cookies until then)
+  document.querySelectorAll('.screen.yt').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + b.getAttribute('data-yt') + '?autoplay=1&rel=0';
+      f.title = 'Joshua: Prisoner vs. Superpower';
+      f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+      f.allowFullscreen = true;
+      f.className = 'yt-frame';
+      b.replaceWith(f);
+    });
+  });
+
   // Share links
   window.shareRow = function (url, text) {
     var u = encodeURIComponent(url), t = encodeURIComponent(text + ' #FreeJoshuaWong');
