@@ -157,11 +157,17 @@ def home():
     <div class="h4-titles" aria-label="The film: in 2017, Teenager vs. Superpower; in 2026, Prisoner vs. Superpower">
       <div class="r then"><span class="y">2017</span><s>Teenager vs. Superpower</s></div>
       <div class="r now"><span class="y">2026</span><b>Prisoner vs. Superpower</b></div>
+      <div class="r cell-row"><span class="y">Now</span>
+        <div class="cell" role="timer" aria-label="Days Joshua Wong has spent in prison">
+          <div class="cell-in"><span class="n" id="days">2,181</span><span class="u">days<br>behind bars</span></div>
+          <div class="cell-clock" id="clock">and counting</div>
+        </div>
+      </div>
     </div>
-    <p class="h4-lead">The Hong Kong democracy campaigner has spent <span class="days"><span id="days">2,181</span> days</span> in prison. On 5 November, a court gave him ten more years.</p>
+    <p class="h4-lead">The Hong Kong democracy campaigner was due to walk free in January 2027. On 5 November, a court gave him ten more years.</p>
     <div class="h4-cta">
       <a class="btn" href="act.html#mp">Write to your MP</a>
-      <a class="h4-link" href="#film">Watch the film</a>
+      <a class="btn ghost" href="#film">Watch the film</a>
     </div>
   </div>
   <figure class="h4-pic">
@@ -236,11 +242,15 @@ def home():
   window.addEventListener('resize',fit);
 })();
 (function(){
-  var start=Date.UTC(2020,10,22,16,0,0), el=document.getElementById('days');
+  var start=Date.UTC(2020,10,22,16,0,0), el=document.getElementById('days'), clock=document.getElementById('clock');
   if(!el) return;
-  var total=Math.floor((Date.now()-start)/864e5), fmt=function(n){return n.toLocaleString('en-GB');};
-  if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){el.textContent=fmt(total);return;}
-  var t0=null;(function step(ts){if(!t0)t0=ts;var k=Math.min(1,(ts-t0)/1400);k=1-Math.pow(1-k,3);el.textContent=fmt(Math.round(total*k));if(k<1)requestAnimationFrame(step);})(performance.now());
+  var fmt=function(n){return n.toLocaleString('en-GB');}, pl=function(n,w){return n+' '+w+(n===1?'':'s');};
+  function tick(){var ms=Date.now()-start, s=Math.floor(ms/1000)%86400;
+    clock.textContent=pl(Math.floor(s/3600),'hour')+', '+pl(Math.floor(s%3600/60),'minute')+' and '+pl(s%60,'second')+', and counting';}
+  var total=Math.floor((Date.now()-start)/864e5);
+  if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){el.textContent=fmt(total);}
+  else{var t0=null;(function step(ts){if(!t0)t0=ts;var k=Math.min(1,(ts-t0)/1600);k=1-Math.pow(1-k,3);el.textContent=fmt(Math.round(total*k));if(k<1)requestAnimationFrame(step);})(performance.now());}
+  tick(); setInterval(function(){tick(); el.textContent=fmt(Math.floor((Date.now()-start)/864e5));},1000);
 })();
 </script>
 """ + footer(0)

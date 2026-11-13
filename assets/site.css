@@ -517,3 +517,19 @@ nav .btn{font-size:13px}
 @media(max-width:900px){.h4-hero{grid-template-columns:1fr}.h4-titles .r{grid-template-columns:44px 1fr}}
 @media(max-width:900px){.h4-hero{grid-template-columns:minmax(0,1fr)}.h4-hero h1.fit span{font-size:12vw}.h4-titles b{font-size:22px}.h4-titles s{font-size:17px}}
 .h4-text{min-width:0}
+/* counter behind bars */
+.cell-row{margin-top:6px}
+.cell-row .y{font-family:var(--label);font-weight:700;font-size:13px;color:var(--accent);align-self:start;padding-top:18px}
+.cell{position:relative;border:2px solid var(--accent);padding:16px 22px 14px;overflow:hidden;background:#000}
+.cell:after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(90deg,transparent 0 30px,rgba(244,242,236,.55) 30px 33px,transparent 33px 36px);
+  -webkit-mask:linear-gradient(180deg,#000,#000);opacity:.55}
+.cell-in{position:relative;display:flex;align-items:center;justify-content:center;gap:16px}
+.cell .n{font-family:var(--display);font-size:clamp(56px,5.6vw,84px);line-height:.9;color:var(--accent);font-variant-numeric:tabular-nums;letter-spacing:.01em}
+.cell .u{font-family:var(--display);text-transform:uppercase;font-size:clamp(18px,1.6vw,24px);line-height:1;color:#fff}
+.cell-clock{position:relative;text-align:center;margin-top:10px;font-family:var(--label);font-weight:600;font-size:12px;color:rgba(244,242,236,.75);font-variant-numeric:tabular-nums}
+.h4-cta{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:stretch;margin-top:34px;margin-left:70px}
+.h4-cta .btn{justify-content:center;text-align:center;padding:16px 10px}
+.h4-lead{margin-left:70px;max-width:none}
+@media(max-width:900px){.h4-cta,.h4-lead{margin-left:0}.h4-titles .r.cell-row{grid-template-columns:44px 1fr}}
+.cell-clock{z-index:2;display:table;margin:10px auto 0;background:#000;padding:3px 10px}
