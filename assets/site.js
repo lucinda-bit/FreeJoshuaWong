@@ -335,3 +335,15 @@ document.querySelectorAll('form[data-mp]').forEach(function (f) {
     return '<figure class="mw-card"><blockquote>' + esc(m.text).replace(/\n/g, '<br>') + '</blockquote><figcaption>' + esc(m.name) + ', ' + esc(m.place) + '</figcaption></figure>';
   }).join('') : '<figure class="mw-card mw-ghost"><blockquote>Your words could be the first thing he reads here.</blockquote><figcaption>You, wherever you are</figcaption></figure><figure class="mw-card mw-ghost g2"><blockquote>A song, a book, a view from your window…</blockquote><figcaption>Anyone, anywhere</figcaption></figure><figure class="mw-card mw-ghost g3"><blockquote>Tell him what gives you hope.</blockquote><figcaption>Be one of the first</figcaption></figure>';
 })();
+
+// ===== Home: strip of approved messages (only shows once there are some) =====
+(function () {
+  var sec = document.getElementById('h4-msgs'), row = document.getElementById('h4-msgs-row'), M = window.MESSAGES || [];
+  if (!sec || !row || !M.length) return;
+  var esc = function (t) { return String(t).replace(/[&<>"]/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); };
+  row.innerHTML = M.slice(0, 6).map(function (m) {
+    var t = m.text.length > 180 ? m.text.slice(0, 177).replace(/\s+\S*$/, '') + '…' : m.text;
+    return '<figure class="mw-card"><blockquote>' + esc(t) + '</blockquote><figcaption>' + esc(m.name) + ', ' + esc(m.place) + '</figcaption></figure>';
+  }).join('');
+  sec.hidden = false;
+})();

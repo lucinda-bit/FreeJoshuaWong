@@ -219,6 +219,13 @@ def home():
   </div>
 </section>
 
+<section class="h4-msgs" id="h4-msgs" hidden aria-label="Messages for Joshua">
+  <div class="wrap">
+    <div class="h4-msgs-head"><h2>Messages for Joshua</h2><a class="btn" href="write.html">Write yours</a></div>
+    <div class="h4-msgs-row" id="h4-msgs-row"></div>
+  </div>
+</section>
+
 <section class="h4-words">
   <div class="wrap">
     <blockquote>“The only thing I worry about is that people will forget Hong Kong.”</blockquote>
@@ -313,7 +320,7 @@ def home():
       nums.forEach(function(b){var to=+b.dataset.to,t0=null;requestAnimationFrame(function st(ts){if(!t0)t0=ts;var k=Math.min(1,(ts-t0)/1200);k=1-Math.pow(1-k,3);b.textContent=Math.round(to*k);if(k<1)requestAnimationFrame(st);});});});},{threshold:.4}).observe(box);}
 })();
 </script>
-""" + footer(0)
+""" + footer(0, '<script src="assets/messages.js"></script>\n')
 
 LATEST = [
     ("The Times · Letters", "Unjust prosecution: MPs and peers ask what Britain will do for Joshua Wong", "11 Nov 2026", "letters/times-letter-nov-2026.html"),
@@ -1210,7 +1217,7 @@ def write():
     <ol>
       <li><b>Write</b><span>A few lines about you, your life, or what gives you hope.</span></li>
       <li><b>We read every one</b><span>So the wall stays a kind place.</span></li>
-      <li><b>It reaches him</b><span>On this wall, and passed on to Joshua through people close to him.</span></li>
+      <li><b>It goes on the wall</b><span>For everyone to see, and shared with people close to Joshua to pass on when they can.</span></li>
     </ol>
   </div>
 </section>
@@ -1251,9 +1258,35 @@ def write():
 </section>
 """ + footer(0, '<script src="assets/messages.js"></script>\n')
 
+def messages_print():
+    h = head("Messages for Joshua: print", "Approved messages for Joshua, ready to print.", "messages-print.html")
+    h = h.replace("<title>", '<meta name="robots" content="noindex">\n<title>', 1)
+    return h + """<main class="mp-print">
+  <div class="mp-tools"><label>Month <select id="mp-month"></select></label><button class="btn" type="button" onclick="window.print()">Print</button></div>
+  <h1>Messages for Joshua</h1>
+  <p class="mp-sub" id="mp-sub"></p>
+  <p class="mp-open">Dear Joshua, these are some of the messages people around the world have written to you. Hong Kong has not been forgotten, and neither have you.</p>
+  <div id="mp-list"></div>
+</main>
+<script src="assets/messages.js"></script>
+<script>
+(function(){
+  var M=window.MESSAGES||[], months=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  var keys=[]; M.forEach(function(m){var k=(m.date||'').slice(0,7); if(k&&keys.indexOf(k)<0) keys.push(k);}); keys.sort().reverse();
+  var sel=document.getElementById('mp-month'); sel.innerHTML='<option value="">All</option>'+keys.map(function(k){var p=k.split('-');return '<option value="'+k+'">'+months[+p[1]-1]+' '+p[0]+'</option>';}).join('');
+  var q=new URLSearchParams(location.search).get('month'); if(q) sel.value=q;
+  var esc=function(t){return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});};
+  function render(){var k=sel.value, L=M.filter(function(m){return !k||(m.date||'').slice(0,7)===k;});
+    document.getElementById('mp-sub').textContent=(k?months[+k.split('-')[1]-1]+' '+k.split('-')[0]:'All messages')+' \u00b7 '+L.length+' messages';
+    document.getElementById('mp-list').innerHTML=L.length?L.map(function(m){return '<div class="mp-m"><p>'+esc(m.text).replace(/\\n/g,'<br>')+'</p><span>'+esc(m.name)+', '+esc(m.place)+'</span></div>';}).join(''):'<p>No approved messages yet.</p>';}
+  sel.onchange=render; render();
+})();
+</script>
+</body></html>"""
+
 PAGES = {
     "index.html": home, "case.html": case, "film.html": film, "newsroom.html": newsroom,
-    "resources.html": resources, "act.html": act, "zh.html": zh, "write.html": write, "parliament.html": parliament, "voices.html": voices, "socials.html": socials,
+    "resources.html": resources, "act.html": act, "zh.html": zh, "write.html": write, "messages-print.html": messages_print, "parliament.html": parliament, "voices.html": voices, "socials.html": socials,
     "letters/open-letter-prime-minister-sept-2026.html": letter_pm,
     "letters/times-letter-nov-2026.html": letter_times,
 }
