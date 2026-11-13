@@ -128,26 +128,31 @@ CTA = """<section class="cta-band">
 """
 
 # ---------------- HOME ----------------
+PLAYER = '''<div class="screen vid"><video controls preload="none" playsinline poster="images/film-poster.jpg"><source src="media/joshua-prisoner-vs-superpower.mp4" type="video/mp4">Your browser can’t play this video.</video></div>'''
+
+FLAGS = ["UK","US","Australia","Canada","France","Germany","Italy","Japan","Netherlands","New Zealand"]
+
 def home():
+    flags = "".join(f"<span>{f}</span>" for f in FLAGS)
     return head("Free Joshua Wong", "Joshua Wong spoke up for Hong Kong. He has been in prison since November 2020, and on 5 November 2026 was given ten more years.", "") + nav("index.html") + """
-<header class="hero" id="top">
+<header class="hero hero2" id="top">
   <div class="grid">
     <div class="col">
       <div class="label">#FreeJoshuaWong</div>
       <div class="free">Free</div>
       <h1 class="name">Joshua Wong</h1>
-      <div class="titles">
-        <div class="trow"><div class="yr">2017</div><div class="bar"><span>Teenager vs. Superpower</span></div></div>
-        <div class="trow"><div class="yr"></div><div class="note">Hong Kong wants it banned. Hong Kongers made it #1.</div></div>
-        <div class="trow"><div class="yr now">2026</div><div class="bar now"><span>Prisoner vs. Superpower</span></div></div>
+      <div class="counter" aria-live="off">
+        <div class="days"><span class="num" id="days">2,181</span><span class="txt">days behind bars<br><span class="dim">and counting</span></span></div>
+        <div class="tick" id="tick">5 years · 11 months · 21 days · 00:00:00</div>
+        <div class="served" aria-label="Time served so far, out of a sentence that could keep him in prison until around 2036">
+          <div class="track"><div class="fill" id="fill" style="width:38%"></div><div class="mark" style="left:40%"><span>Due out<br>Jan 2027</span></div></div>
+          <div class="ends"><span>Nov 2020</span><span>c. 2036</span></div>
+        </div>
       </div>
-      <div class="hook">
-        <div class="a">He spoke up for Hong Kong.</div>
-        <div class="b">Now he faces<br>ten more years.</div>
-      </div>
+      <p class="hero-line">His “crime”: asking parliaments around the world to stand up for Hong Kong.</p>
       <div class="hero-cta">
-        <a class="btn" href="act.html#mp">Write to your MP</a>
-        <a class="btn ghost" href="film.html">Watch the film</a>
+        <a class="btn big" href="act.html#mp">Write to your MP</a>
+        <a class="btn ghost" href="#film">Watch the film</a>
       </div>
     </div>
     <div class="pic">
@@ -156,49 +161,52 @@ def home():
     </div>
   </div>
 </header>
-""" + FACTS + """
-<section>
+
+<section class="words">
   <div class="wrap">
-    <div class="sec-head">
-      <div><div class="label">The case in 30 seconds</div><h2 class="sec">He is serving a sentence <em>for believing us.</em></h2></div>
+    <blockquote>“The only thing I worry about is that people will <em>forget Hong Kong.</em>”</blockquote>
+    <div class="by">Joshua Wong, writing from prison after his sentence, November 2026</div>
+  </div>
+</section>
+
+<section class="facts" aria-label="Key facts">
+  <div class="wrap">
+    <div class="fact"><div class="n">15</div><div class="t">His age when he defeated a Beijing curriculum</div></div>
+    <div class="fact"><div class="n">Jan 2027</div><div class="t">When he was due to walk free</div></div>
+    <div class="fact"><div class="n">+10 years</div><div class="t">Added on 5 November 2026</div></div>
+    <div class="fact"><div class="n">40</div><div class="t">His age when he may finally be released</div></div>
+  </div>
+</section>
+
+<section class="film" id="film">
+  <div class="wrap">
+    <div class="film-title">
+      <div class="titles">
+        <div class="trow"><div class="yr">2017</div><div class="bar"><span>Teenager vs. Superpower</span></div></div>
+        <div class="trow"><div class="yr"></div><div class="note">Hong Kong wants it banned. Hong Kongers made it #1.</div></div>
+        <div class="trow"><div class="yr now">2026</div><div class="bar now"><span>Prisoner vs. Superpower</span></div></div>
+      </div>
+      <p class="lede">The award-winning documentary followed a schoolboy who took on a superpower. This is what happened next.</p>
     </div>
-    <div class="two">
-      <div>
-        <p>At fifteen, Joshua forced the Hong Kong government to drop a school curriculum written in Beijing. At seventeen he was the face of the Umbrella Movement. Everything he campaigned for came back to one thing: holding Beijing to the promises Britain negotiated and guaranteed in 1984.</p>
-      </div>
-      <div>
-        <p>He has been in prison since November 2020. He was due out in January 2027. Instead, he was charged again under the National Security Law, and on 5 November 2026 a Hong Kong court gave him ten more years. The evidence was his own public words, including testimony to parliaments.</p>
-        <p><a class="src" href="case.html" style="font-family:var(--label);font-weight:800;font-size:12px;letter-spacing:.16em;text-transform:uppercase">Read the full case →</a></p>
-      </div>
+    <div class="film-wide">
+      """ + PLAYER + """
+    </div>
+    <div class="film-meta">
+      <span class="label dim">Produced by Andrew Duncan</span>
+      <div data-share data-url="https://freejoshuawong.org/film.html" data-text="Joshua: Prisoner vs. Superpower — watch the film"></div>
     </div>
   </div>
 </section>
 
-<section class="film">
-  <div class="wrap">
-    <div class="sec-head">
-      <div><div class="label">The film</div><h2 class="sec">The second <em>chapter</em></h2></div>
-      <p class="lede">The award-winning 2017 documentary followed a schoolboy who took on a superpower. This is what happened next.</p>
-    </div>
-    <div class="film-card">
-<div class="screen vid"><video controls preload="none" playsinline poster="images/film-poster.jpg"><source src="media/joshua-prisoner-vs-superpower.mp4" type="video/mp4">Your browser can’t play this video.</video></div>
-      <div class="film-copy">
-        <div class="label dim">Producer Andrew Duncan</div>
-        <h3>Joshua: <span>Prisoner</span> vs. Superpower</h3>
-        <p>A new short film from the team behind the 2017 Sundance audience award winner. Archive, new interviews, and the six years since the cameras stopped.</p>
-        <a class="btn" href="film.html">More on the film</a>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section>
   <div class="wrap">
     <div class="sec-head">
-      <div><div class="label">What Britain should do</div><h2 class="sec">Three <em>asks</em></h2></div>
-      <p class="lede">Britain gave its word on Hong Kong. Statements matter. Action matters more.</p>
+      <div><div class="label">The world has spoken</div><h2 class="sec">Now Britain <em>must act.</em></h2></div>
+      <p class="lede">Ten governments, including our own, condemned his sentence. Britain guaranteed Hong Kong’s freedoms in 1984. It has a duty to do more than issue statements.</p>
     </div>
+    <div class="flags big-flags">""" + flags + """</div>
     """ + ASKS + """
+    <p style="margin-top:28px"><a class="src" href="case.html" style="font-family:var(--label);font-weight:800;font-size:12px;letter-spacing:.16em;text-transform:uppercase">Why this is Britain’s business →</a></p>
   </div>
 </section>
 """ + CTA.format(up="") + """
@@ -211,6 +219,37 @@ def home():
     <div class="press-grid" id="press-grid" data-limit="3"></div>
   </div>
 </section>
+<script>
+(function(){ // live count since he was taken into custody, 23 November 2020 (Hong Kong time)
+  var start=Date.UTC(2020,10,22,16,0,0), end=Date.UTC(2036,0,1), due=Date.UTC(2027,0,15);
+  var daysEl=document.getElementById('days'), tick=document.getElementById('tick'), fill=document.getElementById('fill');
+  var mark=document.querySelector('.served .mark');
+  if(!daysEl) return;
+  var pct=function(t){return Math.max(0,Math.min(100,(t-start)/(end-start)*100));};
+  if(mark) mark.style.left=pct(due).toFixed(1)+'%';
+  var fmt=function(n){return n.toLocaleString('en-GB');};
+  var pad=function(n){return (n<10?'0':'')+n;};
+  function parts(now){
+    var hk=8*36e5, a=new Date(start+hk), b=new Date(now+hk); // count calendar days in Hong Kong time
+    var y=b.getUTCFullYear()-a.getUTCFullYear(), m=b.getUTCMonth()-a.getUTCMonth(), d=b.getUTCDate()-a.getUTCDate();
+    if(d<0){m--; d+=new Date(Date.UTC(b.getUTCFullYear(),b.getUTCMonth(),0)).getUTCDate();}
+    if(m<0){y--; m+=12;}
+    var s=Math.floor((now-start)/1000)%86400;
+    return y+' years · '+m+' months · '+d+' days · '+pad(Math.floor(s/3600))+':'+pad(Math.floor(s%3600/60))+':'+pad(s%60);
+  }
+  var total=Math.floor((Date.now()-start)/864e5);
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce){daysEl.textContent=fmt(total); if(fill) fill.style.width=pct(Date.now())+'%';}
+  else{
+    if(fill){fill.style.width='0%'; requestAnimationFrame(function(){fill.style.width=pct(Date.now())+'%';});}
+    var t0=null, dur=1800;
+    (function step(ts){ if(!t0) t0=ts; var k=Math.min(1,(ts-t0)/dur); k=1-Math.pow(1-k,3);
+      daysEl.textContent=fmt(Math.round(total*k)); if(k<1) requestAnimationFrame(step); })(performance.now());
+  }
+  function upd(){ tick.textContent=parts(Date.now()); }
+  upd(); setInterval(upd,1000);
+})();
+</script>
 """ + footer(0, '<script src="assets/press.js"></script>\n')
 
 # ---------------- THE CASE ----------------
@@ -521,7 +560,7 @@ Yours sincerely,
         <div data-share data-url="https://freejoshuawong.org" data-text="Joshua Wong spoke up for Hong Kong. Now he faces ten more years."></div>
       </div>
       <div>
-        <div class="post"><p>Joshua Wong was two months from freedom. Hong Kong has given him ten more years for speaking to parliaments, including ours. <b>#FreeJoshuaWong</b></p><button class="copy" type="button">Copy</button></div>
+        <div class="post"><p>Joshua Wong was two months from freedom. Hong Kong has given him ten more years for speaking up to foreign parliaments. <b>#FreeJoshuaWong</b></p><button class="copy" type="button">Copy</button></div>
         <div class="post"><p>Britain guaranteed Hong Kong’s freedoms for fifty years. Joshua Wong only asked us to keep our word. <b>#FreeJoshuaWong</b></p><button class="copy" type="button">Copy</button></div>
         <div class="post"><p>He has been in prison since he was 24. He may not walk free until he is 40. <b>#FreeJoshuaWong</b></p><button class="copy" type="button">Copy</button></div>
       </div>
