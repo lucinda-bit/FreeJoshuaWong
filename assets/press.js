@@ -10,7 +10,8 @@ window.MOMENTS = [
   {id:"sentence", label:"Ten more years",     when:"November 2026"}
 ];
 window.PRESS = [
-  {date:"2026-11-11", outlet:"The Times", type:"opinion", region:"UK", moment:"sentence", by:"Emily Darlington MP, Lord Alton, Lord Patten and five others", title:"Letter: Unjust prosecution", url:"letters/times-letter-nov-2026.html"},
+  {date:"2026-11-06", outlet:"The Times", type:"opinion", region:"UK", moment:"sentence", paywall:true, feature:false, title:"Leading article: Supine Silence", url:"https://www.thetimes.com/comment/the-times-view/article/joshua-wong-jailed-hong-kong-uk-china-nn9c6vpzc"},
+  {date:"2026-11-11", outlet:"The Times", type:"opinion", region:"UK", moment:"sentence", paywall:true, by:"Emily Darlington MP, Lord Alton, Lord Patten and five others", title:"Letter: Unjust prosecution", url:"https://www.thetimes.com/comment/letters-to-editor/article/times-letters-civil-service-needs-urgent-reform-wq3bcj955"},
   {date:"2026-11-05", outlet:"Sky News", type:"news", region:"UK", moment:"sentence", title:"Video: Friend of Joshua Wong, Nathan Law, on The World with Yalda Hakim", url:"https://www.facebook.com/skynews/videos/friend-of-joshua-wong-nathan-law/2072604186823325/"},
   {date:"2026-10-26", outlet:"Byline Times TV", type:"news", region:"UK", moment:"birthday", title:"Video: Andrew Duncan on Joshua Wong’s story", url:"https://www.youtube.com/watch?v=gwQ1bK0KSJE"},
   {date:"2026-11-06", outlet:"The Guardian (via inkl)", type:"opinion", region:"UK", moment:"sentence", by:"Nathan Law", title:"Hong Kong’s prisoners are China’s signal to the world: there is no hope for democracy on its soil", url:"https://www.inkl.com/news/hong-kongs-prisoners-are-chinas-signal-to-the-world-there-is-no-hope-for-democracy-on-its-soil"},

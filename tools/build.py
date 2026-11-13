@@ -520,7 +520,7 @@ def newsroom():
         <div>
           <div class="type">Letter to the editor · The Times</div>
           <h3><a href="letters/times-letter-nov-2026.html">Unjust prosecution</a></h3>
-          <p>Eight MPs and peers, including Emily Darlington MP, Lord Alton and Lord Patten, answer The Times’s leader: “condemnation is a statement, not a policy.” They ask the Government to summon the Chinese ambassador, sanction those responsible and tell Parliament what further consequences will follow.</p>
+          <p>Eight MPs and peers, including Emily Darlington MP, Lord Alton and Lord Patten, answer The Times’s leader: “condemnation is a statement, not a policy.” They ask the Government to summon the Chinese ambassador, sanction those responsible and tell Parliament what further consequences will follow. <a href="https://www.thetimes.com/comment/letters-to-editor/article/times-letters-civil-service-needs-urgent-reform-wq3bcj955" target="_blank" rel="noopener">In The Times</a></p>
         </div>
         <span class="pill pub">Published</span>
       </div>
@@ -978,6 +978,7 @@ def letter_times():
         <p style="margin-top:22px">Sir,</p>
         <p>Your leading article is right to ask what Britain will do for Joshua Wong (“Supine Silence”, Nov 6). The government has joined nine allies in calling for an end to “unjust prosecutions” under Hong Kong’s national security law, but condemnation is a statement, not a policy. Joshua Wong, who has been sentenced to ten years’ imprisonment, stood up for the Sino-British joint declaration, a treaty Britain signed and registered at the United Nations, which our own government says China has breached. <strong>A treaty broken without cost invites the next breach.</strong></p>
         <p>The government should summon the Chinese ambassador, as it did for Jimmy Lai; sanction those responsible for national security law prosecutions, as the US has; and tell parliament what further consequences will follow if Jimmy Lai, Joshua Wong and Benny Tai are not freed.</p>
+        <p class="no-print" style="font-family:var(--label);font-size:14px">Published in The Times: <a href="https://www.thetimes.com/comment/letters-to-editor/article/times-letters-civil-service-needs-urgent-reform-wq3bcj955" target="_blank" rel="noopener">read it on thetimes.com</a> (subscription may be needed). The letter responds to The Times’s leading article, <a href="https://www.thetimes.com/comment/the-times-view/article/joshua-wong-jailed-hong-kong-uk-china-nn9c6vpzc" target="_blank" rel="noopener">“Supine Silence”</a>.</p>
         <div class="no-print" style="margin-top:26px" data-share data-url="https://freejoshuawong.org/letters/times-letter-nov-2026.html" data-text="“A treaty broken without cost invites the next breach.” MPs and peers write to The Times on Joshua Wong"></div>
       </article>
       <aside class="signs">
