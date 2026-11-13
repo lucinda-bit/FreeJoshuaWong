@@ -135,25 +135,22 @@ FLAGS = ["UK","US","Australia","Canada","France","Germany","Italy","Japan","Neth
 def home():
     flags = "".join(f"<span>{f}</span>" for f in FLAGS)
     return head("Free Joshua Wong", "Joshua Wong spoke up for Hong Kong. He has been in prison since November 2020, and on 5 November 2026 was given ten more years.", "") + nav("index.html") + """
-<header class="hero hero2" id="top">
+<header class="hero hero3" id="top">
   <div class="grid">
     <div class="col">
-      <div class="label">#FreeJoshuaWong</div>
-      <div class="stack">
-      <h1 class="title"><span class="w">Free</span> <span>Joshua</span> <span>Wong</span></h1>
-      <div class="counter" aria-live="off">
-        <div class="days"><span class="num" id="days">2,181</span><span class="txt">days behind bars<br><span class="dim">and counting</span></span></div>
-        <div class="tick" id="tick">5 years · 11 months · 21 days · 00:00:00</div>
+      <div class="inner3">
+        <div class="label">#FreeJoshuaWong</div>
+        <h1 class="t3">Free <span>Joshua Wong</span></h1>
+        <p class="lead3">The Hong Kong democracy campaigner has now spent <strong><span id="days">2,181</span> days</strong> in prison. On 5 November, a court gave him ten more years.</p>
         <div class="served" aria-label="Time served so far, out of a sentence that could keep him in prison until around 2036">
-          <div class="track"><div class="fill" id="fill" style="width:38%"></div><div class="mark" style="left:40%"><span>Due out<br>Jan 2027</span></div></div>
-          <div class="ends"><span>Nov 2020</span><span>c. 2036</span></div>
+          <div class="track"><div class="fill" id="fill" style="width:38%"></div><div class="mark" style="left:40%"></div></div>
+          <div class="ends"><span>Jailed Nov 2020</span><span class="due">Due out Jan 2027</span><span>Now c. 2036</span></div>
         </div>
-      </div>
-      </div>
-      <p class="hero-line">His “crime”: asking parliaments around the world to stand up for Hong Kong.</p>
-      <div class="hero-cta">
-        <a class="btn big" href="act.html#mp">Write to your MP</a>
-        <a class="btn ghost" href="#film">Watch the film</a>
+        <div class="tick" id="tick">5 years · 11 months · 21 days · 00:00:00</div>
+        <div class="hero-cta">
+          <a class="btn" href="act.html#mp">Write to your MP</a>
+          <a class="btn ghost" href="#film">Watch the film</a>
+        </div>
       </div>
     </div>
     <div class="pic">
@@ -228,6 +225,7 @@ def home():
   if(!daysEl) return;
   var pct=function(t){return Math.max(0,Math.min(100,(t-start)/(end-start)*100));};
   if(mark) mark.style.left=pct(due).toFixed(1)+'%';
+  var dueLbl=document.querySelector('.served .ends .due'); if(dueLbl) dueLbl.style.left=pct(due).toFixed(1)+'%';
   var fmt=function(n){return n.toLocaleString('en-GB');};
   var pad=function(n){return (n<10?'0':'')+n;};
   function parts(now){
