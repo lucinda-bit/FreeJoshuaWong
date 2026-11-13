@@ -663,3 +663,21 @@ nav .btn{font-size:13px}
 .px-link{font-family:var(--label);font-weight:700;font-size:14px;margin:0 0 20px}
 .parl-feature+.parl-feature{padding-top:60px}
 .vc-mark small{display:block;font-family:var(--label);font-size:13px;font-weight:700;color:var(--accent);margin-top:10px;opacity:.9}
+
+/* ===== Light surfaces: never yellow text on white ===== */
+.letters a,.paper a,.facts-sheet a,.cta-band a:not(.btn),.facts a{color:var(--ink);font-weight:700;text-decoration:underline;text-decoration-color:#C9A800;text-decoration-thickness:3px;text-underline-offset:3px}
+.letters a:hover,.paper a:hover,.facts-sheet a:hover{background:var(--accent);text-decoration-color:var(--ink)}
+.letters .share-row .lbl,.paper .share-row .lbl,.facts-sheet .share-row .lbl{color:rgba(12,12,11,.7)}
+.letters .share-row a,.letters .share-row button,.paper .share-row a,.paper .share-row button,.facts-sheet .share-row a,.facts-sheet .share-row button{color:var(--ink);border-color:rgba(12,12,11,.45);background:transparent;text-decoration:none;font-weight:800}
+.letters .share-row a:hover,.letters .share-row button:hover,.paper .share-row a:hover,.paper .share-row button:hover{background:var(--ink);color:var(--accent);border-color:var(--ink)}
+.paper .head{color:rgba(12,12,11,.72)}
+.h4-pressure{background:var(--accent);color:var(--ink);border:0}
+.h4-pressure h2{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(34px,4vw,52px);line-height:1;margin:0 0 30px}
+.pstats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:2px solid var(--ink)}
+.pstats a{display:block;color:var(--ink);text-decoration:none;padding:22px 22px 6px 0;border-right:2px solid rgba(12,12,11,.15)}
+.pstats a+a{padding-left:22px}
+.pstats a:last-child{border-right:0}
+.pstats b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(56px,6vw,88px);line-height:.9}
+.pstats span{display:block;font-family:var(--label);font-weight:700;font-size:15px;line-height:1.35;margin-top:10px;max-width:22ch}
+.pstats a:hover span{text-decoration:underline}
+@media(max-width:800px){.pstats{grid-template-columns:1fr 1fr}.pstats a{border-right:0;border-bottom:2px solid rgba(12,12,11,.15);padding:18px 12px 18px 0}.pstats a+a{padding-left:0}}

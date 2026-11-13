@@ -7,6 +7,9 @@ import os
 SITE = "https://freejoshuawong.org"
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+import re as _re
+PRESS_COUNT = len(_re.findall(r'^\s*\{date:', open(os.path.join(ROOT, "assets/press.js")).read(), _re.M))
+
 NAV = [("case.html", "The case"), ("film.html", "Film"), ("newsroom.html", "Newsroom"), ("parliament.html", "Parliament"), ("resources.html", "Resources")]
 
 def head(title, desc, path, depth=0):
@@ -205,6 +208,18 @@ def home():
   </div>
 </section>
 
+<section class="h4-pressure" aria-label="The pressure so far">
+  <div class="wrap">
+    <h2>The pressure is building</h2>
+    <div class="pstats">
+      <a href="newsroom.html#statements"><b>10</b><span>governments condemned his sentence</span></a>
+      <a href="letters/open-letter-prime-minister-sept-2026.html"><b>""" + str(len(SIGNATORIES)) + """</b><span>parliamentarians and rights leaders wrote to the Prime Minister</span></a>
+      <a href="parliament.html"><b>""" + str(len(RECORD)) + """</b><span>times his case has come up in Parliament</span></a>
+      <a href="newsroom.html"><b>""" + str(PRESS_COUNT) + """</b><span>news reports, podcasts and editorials worldwide</span></a>
+    </div>
+  </div>
+</section>
+
 <section class="h4-asks">
   <div class="wrap">
     <h2>What Britain should do</h2>
@@ -265,9 +280,10 @@ def home():
 """ + footer(0)
 
 LATEST = [
+    ("The Guardian · Today in Focus", "Podcast: Teen prodigy, Netflix star, prisoner, with Nathan Law", "13 Nov 2026", "https://podcasts.apple.com/gb/podcast/today-in-focus/id1440133626"),
+    ("House of Commons", "Emily Darlington MP asks the Government to call for Joshua’s release", "10 Nov 2026", "parliament.html#exchange-nov"),
     ("Taipei Times", "Editorial: Joshua Wong was due for release in January", "7 Nov 2026", "https://www.taipeitimes.com/News/editorials/archives/2026/11/07/2003867296"),
     ("Reuters / CTV", "Canada, US, UK and others condemn 10-year sentence for Joshua Wong", "6 Nov 2026", "https://www.ctvnews.ca/world/article/canada-us-uk-and-others-condemn-10-year-sentence-for-hong-kong-activist-joshua-wong/"),
-    ("The Spectator", "Joshua Wong’s imprisonment shows China is running scared", "5 Nov 2026", "https://www.spectator.com.au/?p=10947071"),
     ("Human Rights Watch", "Joshua Wong gets nearly 10 more years in prison", "5 Nov 2026", "https://www.hrw.org/news/2026/11/05/hong-kong-joshua-wong-gets-nearly-10-more-years-in-prison"),
 ]
 
