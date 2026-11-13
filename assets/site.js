@@ -110,7 +110,7 @@
   var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
   var nice = function (d) { var p = d.split('-'); return (+p[2]) + ' ' + months[+p[1] - 1] + ' ' + p[0]; };
   var label = { news: 'News', opinion: 'Opinion', rights: 'Rights group' };
-  var items = window.PRESS.slice().sort(function (a, b) { return a.date < b.date ? 1 : a.date > b.date ? -1 : 0; });
+  var items = window.PRESS.map(function (p) { if (!p.moment) p.moment = 'ongoing'; return p; }).sort(function (a, b) { return a.date < b.date ? 1 : a.date > b.date ? -1 : 0; });
   var state = { moment: 'all', type: 'all', q: '' };
 
   // headline numbers
@@ -130,7 +130,7 @@
   var mEl = document.getElementById('moments');
   var count = function (id) { return items.filter(function (p) { return id === 'all' || p.moment === id; }).length; };
   mEl.innerHTML = '<button class="mo" data-m="all" aria-pressed="true"><span class="w">June 2025 to now</span><span class="l">Everything</span><span class="c">' + count('all') + '</span></button>' +
-    window.MOMENTS.slice().reverse().map(function (m) {
+    window.MOMENTS.filter(function (m) { return m.id === 'ongoing'; }).concat(window.MOMENTS.filter(function (m) { return m.id !== 'ongoing'; }).reverse()).map(function (m) {
       return '<button class="mo" data-m="' + m.id + '" aria-pressed="false"><span class="w">' + m.when + '</span><span class="l">' + m.label + '</span><span class="c">' + count(m.id) + '</span></button>';
     }).join('');
 

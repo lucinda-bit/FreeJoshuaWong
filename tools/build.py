@@ -225,7 +225,7 @@ def home():
     <div class="pstats">
       <a href="newsroom.html#statements"><b>11</b><span>governments, plus the EU, condemned his sentence</span></a>
       <a href="letters/open-letter-prime-minister-sept-2026.html"><b>""" + str(len(SIGNATORIES)) + """</b><span>MPs, peers and rights leaders signed the open letter to the Prime Minister</span></a>
-      <a href="parliament.html"><b>""" + str(sum(1 for r in RECORD if r[1] != "event")) + """</b><span>times raised in Parliament since the new charge in June 2025</span></a>
+      <a href="parliament.html"><b>""" + str(sum(1 for r in RECORD if r[1] != "event" and r[0] >= "2025-06-06")) + """</b><span>times raised in Parliament since the new charge in June 2025</span></a>
       <a href="newsroom.html"><b>""" + str(PRESS_COUNT) + """</b><span>reports, podcasts and editorials since June 2025</span></a>
     </div>
   </div>
@@ -736,22 +736,31 @@ RECORD = [
      "At an urgent question secured by Sir Iain Duncan Smith on China obtaining MPs’ phone and financial records, Emily Darlington MP asked the Government to summon the Chinese Ambassador and call for Joshua’s release, as it did for Jimmy Lai. Security Minister Dan Jarvis replied that the Government share the concerns about Joshua and Jimmy Lai. For the Opposition, Alicia Kearns MP said both remain imprisoned for speaking out for democracy. <a href=\"https://hansard.parliament.uk/Commons/2026-11-10/debates/580a4a8b-77d1-4dad-b849-9f1d47824e1c/CommonsChamber\" target=\"_blank\" rel=\"noopener\">Read it in Hansard</a>",
      "#exchange-nov", "Watch the clip", ""),
     ("2026-11-10", "written", "Six written questions in one day", "Written questions · Richard Holden MP, Alex Barros-Curtis MP, Marie Rimmer MP",
-     "After the sentence, three MPs tabled six questions to the Foreign Secretary, including whether he has summoned the Chinese Ambassador, what diplomatic steps he is taking to secure Joshua’s release, and whether the Government will consider sanctions on the officials responsible. Due for answer on 12 November.",
+     "After the sentence, three MPs tabled six questions to the Foreign Secretary, including whether he has summoned the Chinese Ambassador, what diplomatic steps he is taking to secure Joshua’s release, and whether the Government will consider sanctions on the officials responsible. Answers were due on 12 November and will be added here once published.",
      "https://commonsbusiness.parliament.uk/Document/108853/Html?subType=Standard", "Questions tabled", ""),
+    ("2026-11-03", "written", "The Chinese Embassy and Joshua’s treatment", "Written question · Alex Barros-Curtis MP",
+     "Alex Barros-Curtis MP asked whether Joshua’s treatment would be taken into account in any further approvals for the proposed Chinese Embassy at Royal Mint Court. Minister Chris Elmore replied that the planning decision was taken independently and that the Government does not comment on ongoing legal proceedings.",
+     "https://www.parallelparliament.co.uk/mp/alex-barros-curtis/writtenanswers?document_type=writtenanswers&memb_pk=5175&page=1", "Parliamentary answer", ""),
+    ("2026-10-20", "written", "How often has Joshua’s case been raised?", "Written questions · James Naish MP",
+     "James Naish MP asked what steps the Foreign Office has taken to raise Joshua’s case with Chinese counterparts since 1 September, on how many occasions and at what level, and whether the next six-monthly report would set out the Government’s assessment of his case.",
+     "https://commonsbusiness.parliament.uk/Document/108191/Html?subType=Standard", "Questions tabled", ""),
     ("2026-10-22", "report", "Six-monthly Report on Hong Kong", "Foreign Secretary · Report to Parliament",
      "The Government’s report for January to June 2026 cites developments in Joshua’s case as reinforcing concerns about the broad use of national security legislation.",
      "https://www.gov.uk/government/publications/six-monthly-report-on-hong-kong-january-to-june-2026/six-monthly-report-on-hong-kong-1-january-to-30-june-2026", "GOV.UK", ""),
     ("2026-10-13", "event", "The film is shown in Parliament", "Committee Room 15 · Houses of Parliament",
      "<em>Joshua: Prisoner vs. Superpower</em> was first shown to parliamentarians on Joshua’s 30th birthday.",
      "film.html", "Watch the film", ""),
+    ("2026-09-08", "written", "Six questions, one answer", "Written questions · Gregory Stafford MP",
+     "Gregory Stafford MP asked six questions on Joshua’s case, including what representations the UK has made to the Hong Kong authorities and its assessment of the rule of law in his case. Minister Chris Elmore gave a single answer: the Government continues to monitor the case, reports on it in the six-monthly reports, and repeats its call for the National Security Law to be repealed.",
+     "https://qna.files.parliament.uk/qnadailyreports/Written-Questions-Answers-Statements-Daily-Report-Commons-2026-09-08.pdf", "Daily Report, p.478", ""),
     ("2026-09-01", "commons", "“Enough is enough”", "Foreign Office Questions · House of Commons",
      "Sir Iain Duncan Smith urged the Government to raise Joshua’s case with Beijing. Foreign Secretary Ed Miliband said he would take it up. No update has been made public since.",
      "#exchange", "Watch the exchange", "2026-09-01"),
     ("2025-12-17", "lords", "Named in the Lords after Jimmy Lai’s conviction", "Jimmy Lai Conviction · House of Lords",
      "Lord Alton asked what the Government is doing to raise the cases of pro-democracy prisoners “such as Joshua Wong and Andy Li”.",
      "https://parallelparliament.co.uk/debate/2025-12-17/lords/lords-chamber/jimmy-lai-conviction", "Read the debate", ""),
-    ("2025-10-28", "commons", "Hong Kong human rights violations", "House of Commons",
-     "MPs pressed ministers on Hong Kong, noting that Joshua had been rearrested and faced new charges under the National Security Law.",
+    ("2025-10-28", "commons", "Hong Kong human rights violations", "Foreign Office Questions · Luke Akehurst MP",
+     "At questions led by Alison Bennett MP, Luke Akehurst MP raised Joshua’s rearrest and the new charges against him, and asked whether the National Security Law is being used to erode rights.",
      "https://hansard.parliament.uk/Commons/2025-10-28/debates/FCFA35AB-A007-4F6D-BF8A-3D80321D4046/HongKongHumanRightsViolations", "Hansard", ""),
     ("2025-10-23", "report", "His re-arrest on the record", "Foreign Secretary · Report to Parliament",
      "The six-monthly report for January to June 2025 records Joshua’s re-arrest on 6 June on suspicion of collusion with foreign forces.",
@@ -759,6 +768,15 @@ RECORD = [
     ("2025-07-03", "written", "The UK is “deeply concerned”", "Written question · Alicia Kearns MP",
      "Answering Alicia Kearns MP, the Foreign Office said it was deeply concerned by the further charges against Joshua.",
      "https://www.parallelparliament.co.uk/question/63014/hong-kong-politics-and-government", "Parliamentary answer", ""),
+    ("2024-12-19", "lords", "China: human rights and security", "Debate · House of Lords · Lord Alton",
+     "Opening a Lords debate on China, Lord Alton urged the Government to condemn the jailing of the Hong Kong pro-democracy leaders, including Joshua and Benny Tai.",
+     "https://parallelparliament.co.uk/debate/2024-12-19/lords/lords-chamber/china-human-rights-and-security", "Read the debate", ""),
+    ("2024-11-28", "written", "Raised during a ministerial visit?", "Written question · Lord Alton (HL2535)",
+     "Lord Alton asked whether the minister raised political prisoners, including Joshua, Gwyneth Ho, Jimmy Lai and Owen Chow, during her visit to Hong Kong. Answered by Baroness Chapman.",
+     "https://parallelparliament.co.uk/question/HL2535/hong-kong-human-rights", "Parliamentary answer", ""),
+    ("2020-12-07", "commons", "Urgent question on Joshua’s sentencing", "Urgent question · Alyn Smith MP",
+     "The Commons held an urgent question on the sentencing of Joshua, Agnes Chow and Ivan Lam for their part in the 2019 protests.",
+     "https://www.parliament.uk/business/news/2020/december/this-week-in-the-commons-7---11-december/", "UK Parliament", ""),
 ]
 KINDS = [("commons", "Commons"), ("lords", "Lords"), ("written", "Written questions"), ("report", "Government reports"), ("event", "In Parliament")]
 MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]

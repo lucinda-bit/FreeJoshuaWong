@@ -1,8 +1,9 @@
 // PRESS COVERAGE. Add new pieces anywhere; the page sorts by date.
 // date: YYYY-MM-DD. type: news | opinion | rights. region: UK | US | Asia | Europe | Global
-// moment: charge | plea | film | birthday | sentence. paywall: true if the outlet may ask readers to subscribe.
+// moment: charge | plea | film | birthday | sentence | ongoing. Use "ongoing" (or leave it out) for anything that is not tied to one of the big moments. paywall: true if the outlet may ask readers to subscribe.
 // We only show the outlet, date and headline and link to the original. Never copy article text here.
 window.MOMENTS = [
+  {id:"ongoing",  label:"Ongoing coverage",   when:"Between the big moments"},
   {id:"charge",   label:"Charged again",      when:"June 2025"},
   {id:"plea",     label:"Pleads guilty",      when:"September 2026"},
   {id:"film",     label:"Film targeted",      when:"September 2026"},
@@ -13,10 +14,10 @@ window.PRESS = [
   {date:"2026-11-06", outlet:"The Times", type:"opinion", region:"UK", moment:"sentence", paywall:true, feature:false, title:"Leading article: Supine Silence", url:"https://www.thetimes.com/comment/the-times-view/article/joshua-wong-jailed-hong-kong-uk-china-nn9c6vpzc"},
   {date:"2026-11-11", outlet:"The Times", type:"opinion", region:"UK", moment:"sentence", paywall:true, by:"Emily Darlington MP, Lord Alton, Lord Patten and five others", title:"Letter: Unjust prosecution", url:"https://www.thetimes.com/comment/letters-to-editor/article/times-letters-civil-service-needs-urgent-reform-wq3bcj955"},
   {date:"2026-11-05", outlet:"Sky News", type:"news", region:"UK", moment:"sentence", title:"Video: Friend of Joshua Wong, Nathan Law, on The World with Yalda Hakim", url:"https://www.facebook.com/skynews/videos/friend-of-joshua-wong-nathan-law/2072604186823325/"},
-  {date:"2026-10-26", outlet:"Byline Times TV", type:"news", region:"UK", moment:"birthday", title:"Video: Andrew Duncan on Joshua Wong’s story", url:"https://www.youtube.com/watch?v=gwQ1bK0KSJE"},
+  {date:"2026-10-26", outlet:"Byline Times TV", type:"news", region:"UK", moment:"ongoing", title:"Video: Andrew Duncan on Joshua Wong’s story", url:"https://www.youtube.com/watch?v=gwQ1bK0KSJE"},
   {date:"2026-11-06", outlet:"The Guardian (via inkl)", type:"opinion", region:"UK", moment:"sentence", by:"Nathan Law", title:"Hong Kong’s prisoners are China’s signal to the world: there is no hope for democracy on its soil", url:"https://www.inkl.com/news/hong-kongs-prisoners-are-chinas-signal-to-the-world-there-is-no-hope-for-democracy-on-its-soil"},
   {date:"2026-11-13", outlet:"The Guardian · Today in Focus", type:"news", region:"UK", moment:"sentence", title:"Podcast: Teen prodigy, Netflix star, prisoner — the story of Hong Kong dissident Joshua Wong, with Nathan Law", url:"https://podcasts.apple.com/gb/podcast/today-in-focus/id1440133626"},
-  {date:"2026-10-26", outlet:"Byline Times Podcast", type:"news", region:"UK", moment:"birthday", title:"Podcast: China vs Joshua Wong — Andrew Duncan tells Joshua’s story to Adrian Goldberg", url:"https://podcasts.apple.com/gb/podcast/byline-times-podcast/id1522910878"},
+  {date:"2026-10-26", outlet:"Byline Times Podcast", type:"news", region:"UK", moment:"ongoing", title:"Podcast: China vs Joshua Wong — Andrew Duncan tells Joshua’s story to Adrian Goldberg", url:"https://podcasts.apple.com/gb/podcast/byline-times-podcast/id1522910878"},
   // ---- Sentence, November 2026
   {date:"2026-11-09", outlet:"Taipei Times", type:"opinion", region:"Asia", moment:"sentence", title:"Taipei Times editorial on Joshua Wong’s ten-year sentence", url:"https://www.taipeitimes.com/News/editorials/archives/2026/11/09/2003867391"},
   {date:"2026-11-08", outlet:"Free Press Journal", type:"opinion", region:"Asia", moment:"sentence", title:"Joshua Wong: A beacon of freedom brought down", url:"https://www.freepressjournal.in/analysis/joshua-wong-a-beacon-of-freedom-brought-down"},
@@ -40,7 +41,7 @@ window.PRESS = [
   // ---- 30th birthday, October 2026
   {date:"2026-10-13", outlet:"The Spectator", type:"opinion", region:"UK", moment:"birthday", paywall:true, by:"Benedict Rogers", title:"The bravery of Joshua Wong, on his 30th birthday", url:"https://www.spectator.com.au/?p=10944836"},
   // ---- Film, September 2026
-  {date:"2026-09-14", outlet:"Hong Kong Watch", type:"rights", region:"UK", moment:"plea", title:"Cross-party coalition of parliamentarians and human rights leaders calls on Prime Minister to act on Hong Kong", url:"https://www.hongkongwatch.org/all-posts/2026/9/14/cross-party-coalition-of-parliamentarians-and-human-rights-leaders-calls-on-prime-minister-to-act-on-hong-kong"},
+  {date:"2026-09-14", outlet:"Hong Kong Watch", type:"rights", region:"UK", moment:"ongoing", title:"Cross-party coalition of parliamentarians and human rights leaders calls on Prime Minister to act on Hong Kong", url:"https://www.hongkongwatch.org/all-posts/2026/9/14/cross-party-coalition-of-parliamentarians-and-human-rights-leaders-calls-on-prime-minister-to-act-on-hong-kong"},
   {date:"2026-09-15", outlet:"Dimsum Daily", type:"news", region:"Asia", moment:"film", title:"Security Bureau reviewing Netflix film on Joshua Wong", url:"https://www.dimsumdaily.hk/security-bureau-reviewing-netflix-film-on-joshua-wong/"},
   // ---- Plea, September 2026
   {date:"2026-09-03", outlet:"Taipei Times", type:"news", region:"Asia", moment:"plea", title:"Taiwanese civic groups call for Joshua Wong’s immediate release", url:"https://www.taipeitimes.com/News/taiwan/archives/2026/09/03/2003863605"},
