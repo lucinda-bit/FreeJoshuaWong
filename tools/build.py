@@ -185,6 +185,7 @@ def home():
       </div>
     </div>
     <p class="h4-lead">He was due out in January 2027. Instead, he has been given ten more years.</p>
+    <p class="h4-demand">Britain must press China to free him.</p>
     <div class="h4-cta">
       <a class="btn" href="act.html#mp">Write to your MP</a>
       <a class="btn ghost" href="#film">Watch the film</a>
@@ -246,17 +247,7 @@ def home():
       <div><h3>Review the Hong Kong trade office</h3><p>Its London office keeps diplomatic-style privileges, even after a senior manager there was convicted of spying on Hong Kongers in Britain.</p></div>
       <div><h3>Sanction those responsible</h3><p>Hold the officials behind National Security Law prosecutions to account, together with Britain’s allies.</p></div>
     </div>
-    <div class="waiting h4-wait">
-      <h3>Still waiting for an answer</h3>
-      <div class="wait-row">
-        <div class="wait-n"><span data-since="2026-09-01">73</span><small>days, no update</small></div>
-        <div><h4>The Foreign Secretary said he would take up Joshua’s case</h4><p>Ed Miliband, answering Sir Iain Duncan Smith in the Commons on 1 September 2026. <a href="parliament.html">Watch the exchange</a></p></div>
-      </div>
-      <div class="wait-row">
-        <div class="wait-n"><span data-since="2026-09-13">61</span><small>days, no reply</small></div>
-        <div><h4>31 MPs, peers and rights leaders signed an open letter to the Prime Minister</h4><p>Their open letter to Andy Burnham, sent on 13 September 2026. <a href="letters/open-letter-prime-minister-sept-2026.html">Read the letter</a></p></div>
-      </div>
-    </div>
+    """ + tracker() + """
     <p class="h4-more"><a href="case.html">Read the full case</a></p>
   </div>
 </section>
@@ -534,17 +525,7 @@ def newsroom():
 
     <div class="panel" id="panel-statements" hidden>
       <p class="lede" style="margin-bottom:40px">What governments have said officially about Joshua: ministers, foreign ministries and official reports. For what MPs, peers and members of Congress have said, see <a href="parliament.html">Parliament</a> and <a href="voices.html">Voices</a>.</p>
-      <div class="waiting">
-        <h3>Still waiting for an answer</h3>
-        <div class="wait-row">
-          <div class="wait-n"><span data-since="2026-09-01">73</span><small>days</small></div>
-          <div><h4>The Foreign Secretary’s promise to take up Joshua’s case</h4><p>Raised in the Commons by Sir Iain Duncan Smith on 1 September 2026. Ed Miliband said he would take up the case. No update since. <a href="parliament.html">Watch the exchange</a></p></div>
-        </div>
-        <div class="wait-row">
-          <div class="wait-n"><span data-since="2026-09-13">61</span><small>days, no reply</small></div>
-          <div><h4>The open letter to the Prime Minister</h4><p>Sent to the Prime Minister, Andy Burnham, on 13 September 2026, signed by 31 MPs, peers, former Foreign Secretaries and human rights leaders and organisations. No reply yet. <a href="letters/open-letter-prime-minister-sept-2026.html">Read the letter</a></p></div>
-        </div>
-      </div>
+      """ + tracker() + """
       """ + STATEMENTS + """
     </div>
 
@@ -802,12 +783,53 @@ RECORD = [
 KINDS = [("commons", "Commons"), ("lords", "Lords"), ("written", "Written questions"), ("report", "Government reports"), ("event", "In Parliament")]
 MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
 
+# ===== Asked and answered: the accountability tracker (home page and Newsroom) =====
+# (date asked, status, what was asked, who/when detail, link, link text). Newest first. Status: "none" | "noupdate" | "weak" | "due".
+TRACKER = [
+    ("2026-11-10", "due", "Has the Foreign Secretary summoned the Chinese Ambassador over Joshua?",
+     "Written question from Alex Barros-Curtis MP, one of six tabled after the sentence. The answer was due on 12 November.",
+     "https://commonsbusiness.parliament.uk/Document/108853/Html?subType=Standard", "The questions"),
+    ("2026-11-10", "weak", "Summon the Ambassador and call for Joshua’s release, as the Government did for Jimmy Lai",
+     "Emily Darlington MP in the Commons. The Security Minister said the Government “share the concerns” but made no commitment.",
+     "parliament.html#exchange-nov", "Watch the exchange"),
+    ("2026-11-03", "weak", "Will Joshua’s treatment count in decisions on China’s new embassy?",
+     "Written question from Alex Barros-Curtis MP. The Government said it does not comment on ongoing legal proceedings.",
+     "https://www.parallelparliament.co.uk/mp/alex-barros-curtis/writtenanswers?document_type=writtenanswers&memb_pk=5175&page=1", "The answer"),
+    ("2026-09-13", "none", "Act on Joshua’s case: the open letter to the Prime Minister",
+     "Signed by 31 MPs, peers and rights leaders and sent to Andy Burnham. No reply.",
+     "letters/open-letter-prime-minister-sept-2026.html", "Read the letter"),
+    ("2026-09-08", "weak", "What has the UK said to Hong Kong about Joshua’s case?",
+     "Six written questions from Gregory Stafford MP. One answer for all six: the Government “continues to monitor” the case.",
+     "parliament.html", "On the record"),
+    ("2026-09-01", "noupdate", "Take Joshua’s case up with China",
+     "Sir Iain Duncan Smith in the Commons. The Foreign Secretary, Ed Miliband, said he would. No update has been made public.",
+     "parliament.html#exchange", "Watch the exchange"),
+]
+STATUS = {"none": "No reply", "noupdate": "No update", "weak": "No action", "due": "Awaiting answer"}
+
+def tracker(h="Asked and answered"):
+    rows = ""
+    for d, st, ask, detail, url, link in TRACKER:
+        y, m, dd = d.split("-")
+        when = f"{int(dd)} {MONTHS[int(m)-1]}"
+        ext = ' target="_blank" rel="noopener"' if url.startswith("http") else ""
+        rows += f"""
+      <div class="wait-row">
+        <div class="wait-n"><span data-since="{d}">0</span><small>days since {when}</small></div>
+        <div><em class="tk-st st-{st}">{STATUS[st]}</em><h4>{ask}</h4><p>{detail} <a href="{url}"{ext}>{link}</a></p></div>
+      </div>"""
+    return f"""<div class="waiting h4-wait tracker">
+      <h3>{h}</h3>
+      <p class="tk-lede">What ministers have been asked about Joshua since September, and what they have said.</p>{rows}
+      <p class="tk-foot">For comparison: the Foreign Office summoned the Chinese Ambassador over Jimmy Lai’s conviction on 15 December 2025. <a href="https://www.gov.uk/government/news/statement-fcdo-summons-chinese-ambassador-15-december-2025" target="_blank" rel="noopener">GOV.UK</a></p>
+    </div>"""
+
 VIDEOS = [
     ("film.html", "Film", "Joshua: Prisoner vs. Superpower", "The new short film, first shown in Parliament on 13 October 2026.", "images/film-poster.jpg", False),
     ("#exchange-nov", "House of Commons · 10 Nov 2026", "Emily Darlington MP", "Asks the Government to call for Joshua’s release, five days after his sentence.", "images/commons-2026-11-10-poster.jpg", False),
     ("#exchange-kearns", "House of Commons · 10 Nov 2026", "Alicia Kearns MP", "For the Opposition: Joshua and Jimmy Lai remain imprisoned for speaking out for democracy.", "images/commons-2026-11-10-kearns-poster.jpg", False),
     ("https://podcasts.apple.com/gb/podcast/today-in-focus/id1440133626", "The Guardian · Today in Focus · 13 Nov 2026", "Teen prodigy, Netflix star, prisoner", "Podcast: Nathan Law and journalist Danny Vincent on Joshua’s story and his new sentence.", "images/covers/guardian-podcast.jpg", True),
-    ("https://www.facebook.com/skynews/videos/friend-of-joshua-wong-nathan-law/2072604186823325/", "Sky News · 5 Nov 2026", "Nathan Law on Sky News", "On the day of the sentence, Nathan tells Yalda Hakim that democracy and human rights are “losing ground globally”.", "images/stills/sky-nathan.jpg", True),
+    ("https://x.com/SkyNews/status/2118468483625189737", "Sky News · 5 Nov 2026", "Nathan Law on Sky News", "On the day of the sentence, Nathan tells Yalda Hakim that democracy and human rights are “losing ground globally”.", "images/stills/sky-nathan.jpg", True),
     ("https://www.youtube.com/watch?v=gwQ1bK0KSJE", "Byline Times TV", "Andrew Duncan on Joshua’s story", "Video: the filmmaker behind both Joshua films on where Joshua is now.", "images/covers/byline-tv.jpg", True),
     ("#exchange-tugendhat", "House of Commons · 10 Nov 2026", "Tom Tugendhat MP", "The Shadow Foreign Secretary names Joshua in the Commonwealth summit statement.", "images/commons-2026-11-10-tugendhat-poster.jpg", False),
     ("#exchange", "House of Commons · 1 Sep 2026", "Duncan Smith and the Foreign Secretary", "The exchange at Foreign Office Questions, the day before Joshua’s plea.", "images/commons-poster.jpg", False),
@@ -826,7 +848,7 @@ def video_cards(skip_film=False):
         tgt = ' target="_blank" rel="noopener"' if ext else ""
         art = f'<img src="{img}" alt="" loading="lazy">' if img else f'<span class="vc-mark">{kicker.split(" · ")[0]}</span>'
         cards += f"""<a class="vcard{" has-cover" if "images/covers" in img else ""}" href="{url}"{tgt}>
-        <div class="vc-img">{art}<span class="vc-play"></span>{'<span class="vc-ext">Opens on '+ ('YouTube' if 'youtube' in url else 'Apple Podcasts' if 'podcasts.apple' in url else 'Facebook' if 'facebook.com' in url else 'their site') +'</span>' if ext else ''}</div>
+        <div class="vc-img">{art}<span class="vc-play"></span>{'<span class="vc-ext">Opens on '+ ('YouTube' if 'youtube' in url else 'Apple Podcasts' if 'podcasts.apple' in url else 'Facebook' if 'facebook.com' in url else 'X' if 'x.com/' in url else 'their site') +'</span>' if ext else ''}</div>
         <div class="vc-k">{kicker}</div><h3>{title}</h3><p>{blurb}</p></a>"""
     return cards
 
@@ -1089,9 +1111,71 @@ def letter_times():
 </section>
 """ + footer(1)
 
+def zh():
+    h = head("釋放黃之鋒", "黃之鋒自2020年11月起身陷囹圄，2026年11月再被加判十年。了解他的案件，以及身在英國的你可以怎樣幫忙。", "zh.html")
+    h = h.replace('<html lang="en-GB">', '<html lang="zh-Hant-HK">').replace("<title>", '<meta name="robots" content="noindex">\n<title>', 1)
+    return h + nav("zh.html") + page_head("中文",
+        "釋放<em>黃之鋒</em>",
+        "他原定於2027年1月出獄。如今，他被加判十年。") + """
+<section class="zh" style="border-top:0;padding-top:20px">
+  <div class="wrap zh-body">
+    <div class="zh-count"><b data-since="2020-11-22">—</b><span>日<br>身陷囹圄</span></div>
+
+    <h2 class="zh-h">他是誰</h2>
+    <p>黃之鋒十四歲時與同學創立學民思潮，2012年帶領反對國民教育科的運動。2014年雨傘運動期間，他是學生領袖之一。2016年，他與羅冠聰等人創立香港眾志。</p>
+    <p>他自2020年11月起一直被羈押。</p>
+
+    <h2 class="zh-h">發生了甚麼事</h2>
+    <ul class="zh-list">
+      <li><b>2021年2月</b>　作為「香港47人」案被告之一，被控串謀顛覆國家政權罪。</li>
+      <li><b>2024年11月</b>　被判囚四年八個月，原定於2027年1月出獄。</li>
+      <li><b>2025年6月6日</b>　在獄中再被控串謀勾結外國或者境外勢力危害國家安全罪。</li>
+      <li><b>2026年9月2日</b>　承認控罪。</li>
+      <li><b>2026年11月5日</b>　被判囚十年。</li>
+    </ul>
+    <p>控方引用他在《國安法》實施前會見外國政界人士的游說活動，以及其後的社交媒體帖文、評論文章和訪問，指有關活動一直持續。</p>
+
+    <h2 class="zh-h">為甚麼英國有責任</h2>
+    <p>英國在1984年簽署《中英聯合聲明》，承諾香港的權利和自由五十年不變。黃之鋒所爭取的，正是這個承諾得到兌現。</p>
+    <p>判刑後，11個國家及地區政府，連同歐盟，就判決發表聲明，表達譴責或關注，當中包括英國。</p>
+
+    <h2 class="zh-h">我們要求英國政府</h2>
+    <div class="zh-asks">
+      <div><h3>召見中國駐英大使</h3><p>首相應召見中國大使，點名提出黃之鋒及其他因爭取民主而入獄的人士的個案。</p></div>
+      <div><h3>檢討香港駐倫敦經濟貿易辦事處</h3><p>該辦事處仍享有類似外交機構的特權，即使其一名高級經理已被裁定在英國監視港人罪成。</p></div>
+      <div><h3>制裁相關官員</h3><p>聯同英國的盟友，追究負責《國安法》檢控的官員。</p></div>
+    </div>
+
+    <h2 class="zh-h">仍在等待回應</h2>
+    <p>2026年9月1日，外相文禮彬（Ed Miliband）在下議院表示會跟進黃之鋒的個案，至今沒有公開的進展。9月13日，31名國會議員、上議院議員及人權界人士聯署公開信致首相，至今未獲回覆。</p>
+
+    <h2 class="zh-h">身在英國的你可以怎樣幫忙</h2>
+    <div class="zh-act">
+      <div>
+        <h3>寫信給你的國會議員</h3>
+        <p>請你選區的國會議員向外相提出黃之鋒的個案。我們已準備好英文信件範本，你只需複製，加上姓名和地址，再透過 WriteToThem 網站輸入郵遞區號寄出。</p>
+        <p><a class="btn" href="act.html#mp">取得英文信件範本</a></p>
+        <p class="zh-small">WriteToThem 由獨立機構 mySociety 營運。本網站不會看到或儲存你寄出的內容。</p>
+      </div>
+      <div>
+        <h3>分享他的故事</h3>
+        <p>使用標籤 #FreeJoshuaWong，並標註你的國會議員。</p>
+        <p class="zh-small">如你在香港有家人，或擔心自身安全，可以只轉發本網站或其他公開內容，無須公開表態。請先照顧好自己。</p>
+      </div>
+      <div>
+        <h3>觀看新短片</h3>
+        <p>《Joshua: Prisoner vs. Superpower》（英語）講述2017年紀錄片之後，黃之鋒的遭遇。</p>
+        <p><a class="btn ghost" href="film.html">觀看短片</a></p>
+      </div>
+    </div>
+    <p class="zh-small" style="margin-top:40px"><a href="index.html">English</a></p>
+  </div>
+</section>
+""" + footer(0)
+
 PAGES = {
     "index.html": home, "case.html": case, "film.html": film, "newsroom.html": newsroom,
-    "resources.html": resources, "act.html": act, "parliament.html": parliament, "voices.html": voices, "socials.html": socials,
+    "resources.html": resources, "act.html": act, "zh.html": zh, "parliament.html": parliament, "voices.html": voices, "socials.html": socials,
     "letters/open-letter-prime-minister-sept-2026.html": letter_pm,
     "letters/times-letter-nov-2026.html": letter_times,
 }

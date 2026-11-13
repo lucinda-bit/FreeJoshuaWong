@@ -14,3 +14,6 @@ Hosted on Netlify: every change pushed to `main` goes live automatically.
 - Push to `main`; GitHub Pages publishes automatically.
 - Each quote in `assets/voices.js` automatically gets its own share page (`voices/<name>-<date>.html`) and share picture (`images/quotes/`). If two quotes share a speaker and date, give one an `id:"..."`.
 - Social posts: `assets/socials.js` (Socials page). Copy post text exactly; add the post's own link as `url` when you have it.
+
+- Asked and answered tracker (home page and Newsroom): edit `TRACKER` in `tools/build.py`. When an answer comes in, change its status and wording.
+- Chinese page: `zh()` in `tools/build.py` (zh.html). Unlisted and hidden from search until Danny has reviewed it; then remove the noindex line and add it to the menu.
