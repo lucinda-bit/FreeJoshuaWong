@@ -139,8 +139,8 @@ def home():
   <div class="grid">
     <div class="col">
       <div class="label">#FreeJoshuaWong</div>
-      <div class="free">Free</div>
-      <h1 class="name">Joshua Wong</h1>
+      <div class="stack">
+      <h1 class="title"><span class="w">Free</span> <span>Joshua</span> <span>Wong</span></h1>
       <div class="counter" aria-live="off">
         <div class="days"><span class="num" id="days">2,181</span><span class="txt">days behind bars<br><span class="dim">and counting</span></span></div>
         <div class="tick" id="tick">5 years · 11 months · 21 days · 00:00:00</div>
@@ -148,6 +148,7 @@ def home():
           <div class="track"><div class="fill" id="fill" style="width:38%"></div><div class="mark" style="left:40%"><span>Due out<br>Jan 2027</span></div></div>
           <div class="ends"><span>Nov 2020</span><span>c. 2036</span></div>
         </div>
+      </div>
       </div>
       <p class="hero-line">His “crime”: asking parliaments around the world to stand up for Hong Kong.</p>
       <div class="hero-cta">
