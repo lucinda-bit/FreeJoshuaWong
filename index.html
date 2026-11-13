@@ -28,7 +28,11 @@
 <main class="home4">
 <header class="h4-hero" id="top">
   <div class="h4-text">
-    <h1>Free Joshua Wong</h1>
+    <h1 class="fit"><span>Free Joshua Wong</span></h1>
+    <div class="h4-titles" aria-label="The film: in 2017, Teenager vs. Superpower; in 2026, Prisoner vs. Superpower">
+      <div class="r then"><span class="y">2017</span><s>Teenager vs. Superpower</s></div>
+      <div class="r now"><span class="y">2026</span><b>Prisoner vs. Superpower</b></div>
+    </div>
     <p class="h4-lead">The Hong Kong democracy campaigner has spent <span class="days"><span id="days">2,181</span> days</span> in prison. On 5 November, a court gave him ten more years.</p>
     <div class="h4-cta">
       <a class="btn" href="act.html#mp">Write to your MP</a>
@@ -99,6 +103,13 @@
 </section>
 </main>
 <script>
+(function(){ // fit the title to the width of its column
+  function fit(){document.querySelectorAll('h1.fit span').forEach(function(s){
+    var box=s.parentElement.clientWidth; s.style.fontSize='100px';
+    var w=s.getBoundingClientRect().width; if(w>0) s.style.fontSize=Math.min(170,100*box/w)+'px';});}
+  fit(); if(document.fonts&&document.fonts.ready) document.fonts.ready.then(fit);
+  window.addEventListener('resize',fit);
+})();
 (function(){
   var start=Date.UTC(2020,10,22,16,0,0), el=document.getElementById('days');
   if(!el) return;
