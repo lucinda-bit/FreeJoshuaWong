@@ -105,6 +105,19 @@ def footer(depth=0, scripts=""):
 </html>
 """
 
+LETTER = """Dear [MP name],
+
+I am writing as your constituent about Joshua Wong, the Hong Kong democracy campaigner who on 5 November was sentenced to a further ten years in prison under the National Security Law.
+
+Britain guaranteed Hong Kong’s freedoms in the Joint Declaration. Joshua only ever asked that this promise be kept.
+
+On 1 September the Foreign Secretary told the House of Commons he would take up Joshua’s case. There has been no public update since.
+
+Please urge the Government to summon the Chinese Ambassador over Joshua’s case, as it did for Jimmy Lai, and tell me what it is doing to secure his release.
+
+Yours sincerely,
+[Name, address]"""
+
 def page_head(label, title_html, lede, crumbs=None):
     c = f'<div class="crumbs">{crumbs}</div>' if crumbs else f'<div class="label">{label}</div>'
     return f"""<header class="phead">
@@ -187,7 +200,7 @@ def home():
     <p class="h4-lead">He was due out in January 2027. Instead, he has been given ten more years.</p>
     <p class="h4-demand">Summon China’s ambassador. Free Joshua Wong.</p>
     <div class="h4-cta">
-      <a class="btn" href="act.html#mp">Write to your MP</a>
+      <a class="btn" href="#write">Email your MP in 2 minutes</a>
       <a class="btn ghost" href="#film">Watch the film</a>
     </div>
   </div>
@@ -252,11 +265,12 @@ def home():
   </div>
 </section>
 
-<section class="h4-act">
+<section class="h4-act" id="write">
   <div class="wrap">
-    <h2>Ask your MP to raise Joshua’s case</h2>
-    <p>It takes two minutes. We give you the letter; you add your name and send it.</p>
-    <a class="btn dark" href="act.html#mp">Write to your MP</a>
+    <h2>Tell your MP: summon China’s Ambassador</h2>
+    <p>Two minutes. We’ve written the letter. Put in your postcode, and we’ll copy it and take you straight to your MP. <a href="act.html#mp">Read the letter first</a></p>
+    """ + mp_box() + """
+    <div class="tpl" id="tpl" hidden>""" + LETTER + """</div>
   </div>
 </section>
 
@@ -660,6 +674,16 @@ def releases_html():
     return out
 
 # ---------------- TAKE ACTION ----------------
+def mp_box(dark=False):
+    return f"""<form class="pcbox{' on-dark' if dark else ''}" data-mp action="https://www.writetothem.com/" method="get" target="_blank">
+      <label for="pc-{'h' if dark else 'a'}">Your postcode</label>
+      <div class="pc-row"><input id="pc-{'h' if dark else 'a'}" name="pc" autocomplete="postal-code" placeholder="e.g. SW1A 1AA" required>
+      <input type="hidden" name="a" value="westminstermp"><input type="hidden" name="message_type" value="campaigning">
+      <button type="submit" class="btn{' dark' if not dark else ''}">Copy the letter and write to my MP</button></div>
+      <p class="pc-ok" hidden>The letter is copied. Paste it into the message box on WriteToThem, add your name and address, and send.</p>
+      <p class="pc-note">WriteToThem is run independently by mySociety. We don’t see or store your postcode or anything you send.</p>
+    </form>"""
+
 def act():
     return head("Take action", "Write to your MP about Joshua Wong and share his story.", "act.html") + nav("act.html") + page_head(
         "Take action", "Don’t let him <em>be forgotten</em>",
@@ -669,24 +693,12 @@ def act():
     <div class="mp" style="margin-top:0">
       <div>
         <div class="label" style="color:#6f6a2a">In the UK</div>
-        <h3>Write to your MP</h3>
-        <p>Ask them to raise Joshua’s case with the Foreign Secretary. Copy the letter, then find your MP with your postcode and paste it in.</p>
-        <a class="btn dark" href="https://www.writetothem.com" target="_blank" rel="noopener">Find my MP</a>
-        <p style="font-size:14px;margin-top:16px;color:rgba(12,12,11,.65)">WriteToThem is run independently by mySociety. We don’t see or store anything you send.</p>
+        <h3>Tell your MP: summon China’s Ambassador</h3>
+        <p>Two minutes. We’ve written the letter. Put in your postcode, and we’ll copy the letter and take you straight to your MP.</p>
+        """ + mp_box() + """
       </div>
       <div>
-        <div class="tpl" id="tpl">Dear [MP name],
-
-I am writing as your constituent about Joshua Wong, the Hong Kong democracy campaigner who on 5 November was sentenced to a further ten years in prison under the National Security Law.
-
-Britain guaranteed Hong Kong’s freedoms in the Joint Declaration. Joshua only ever asked that this promise be kept.
-
-On 1 September the Foreign Secretary told the House of Commons he would take up Joshua’s case. There has been no public update since.
-
-Please ask the Foreign Secretary to raise his case directly with the Chinese Ambassador, and tell me what the Government is doing to secure his release.
-
-Yours sincerely,
-[Name, address]</div>
+        <div class="tpl" id="tpl">""" + LETTER + """</div>
         <button class="copy" type="button" data-target="tpl">Copy letter</button>
       </div>
     </div>

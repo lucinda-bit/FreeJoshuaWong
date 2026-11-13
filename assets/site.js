@@ -300,3 +300,18 @@ document.querySelectorAll('[data-since]').forEach(function (el) {
   render();
   if (location.hash) { var el = document.getElementById(location.hash.slice(1)); if (el) { el.classList.add('s-hl'); el.scrollIntoView({block: 'center'}); } }
 })();
+
+// ===== Postcode box: copy the letter, then open WriteToThem for the person's MP =====
+document.querySelectorAll('form[data-mp]').forEach(function (f) {
+  f.addEventListener('submit', function () {
+    var tpl = document.getElementById('tpl');
+    var text = tpl ? tpl.textContent.trim() : '';
+    var ok = f.querySelector('.pc-ok');
+    function shown() { if (ok) ok.hidden = false; }
+    try {
+      if (navigator.clipboard && text) navigator.clipboard.writeText(text).then(shown, shown);
+      else shown();
+    } catch (e) { shown(); }
+    // the form itself opens WriteToThem in a new tab
+  });
+});

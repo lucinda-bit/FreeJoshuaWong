@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=fa31ab2c">
+<link rel="stylesheet" href="assets/site.css?v=4f883f8b">
 </head>
 <body>
 <nav class="top" aria-label="Main">
@@ -50,7 +50,7 @@
     <p class="h4-lead">He was due out in January 2027. Instead, he has been given ten more years.</p>
     <p class="h4-demand">Summon China’s ambassador. Free Joshua Wong.</p>
     <div class="h4-cta">
-      <a class="btn" href="act.html#mp">Write to your MP</a>
+      <a class="btn" href="#write">Email your MP in 2 minutes</a>
       <a class="btn ghost" href="#film">Watch the film</a>
     </div>
   </div>
@@ -143,11 +143,30 @@
   </div>
 </section>
 
-<section class="h4-act">
+<section class="h4-act" id="write">
   <div class="wrap">
-    <h2>Ask your MP to raise Joshua’s case</h2>
-    <p>It takes two minutes. We give you the letter; you add your name and send it.</p>
-    <a class="btn dark" href="act.html#mp">Write to your MP</a>
+    <h2>Tell your MP: summon China’s Ambassador</h2>
+    <p>Two minutes. We’ve written the letter. Put in your postcode, and we’ll copy it and take you straight to your MP. <a href="act.html#mp">Read the letter first</a></p>
+    <form class="pcbox" data-mp action="https://www.writetothem.com/" method="get" target="_blank">
+      <label for="pc-a">Your postcode</label>
+      <div class="pc-row"><input id="pc-a" name="pc" autocomplete="postal-code" placeholder="e.g. SW1A 1AA" required>
+      <input type="hidden" name="a" value="westminstermp"><input type="hidden" name="message_type" value="campaigning">
+      <button type="submit" class="btn dark">Copy the letter and write to my MP</button></div>
+      <p class="pc-ok" hidden>The letter is copied. Paste it into the message box on WriteToThem, add your name and address, and send.</p>
+      <p class="pc-note">WriteToThem is run independently by mySociety. We don’t see or store your postcode or anything you send.</p>
+    </form>
+    <div class="tpl" id="tpl" hidden>Dear [MP name],
+
+I am writing as your constituent about Joshua Wong, the Hong Kong democracy campaigner who on 5 November was sentenced to a further ten years in prison under the National Security Law.
+
+Britain guaranteed Hong Kong’s freedoms in the Joint Declaration. Joshua only ever asked that this promise be kept.
+
+On 1 September the Foreign Secretary told the House of Commons he would take up Joshua’s case. There has been no public update since.
+
+Please urge the Government to summon the Chinese Ambassador over Joshua’s case, as it did for Jimmy Lai, and tell me what it is doing to secure his release.
+
+Yours sincerely,
+[Name, address]</div>
   </div>
 </section>
 
@@ -216,6 +235,6 @@
     </div>
   </div>
 </footer>
-<script src="assets/site.js?v=fa31ab2c"></script>
+<script src="assets/site.js?v=4f883f8b"></script>
 </body>
 </html>

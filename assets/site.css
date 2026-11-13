@@ -881,3 +881,18 @@ html[lang^="zh"] .phead h1{font-family:var(--display),"PingFang HK","Noto Sans T
 .zh-demand{font-weight:800;font-size:clamp(24px,3vw,34px);color:var(--accent);margin:0 0 10px;letter-spacing:.04em}
 .zh-asks .ask-lead{border-color:var(--accent);background:rgba(255,225,53,.08)}
 @media(max-width:900px){.asklist{grid-template-columns:1fr}.asklist .ask-lead{margin:0}}
+/* postcode box */
+.pcbox{margin-top:22px;max-width:640px}
+.pcbox label{display:block;font-family:var(--label);font-weight:700;font-size:13px;margin-bottom:8px}
+.pc-row{display:flex;gap:10px;flex-wrap:wrap}
+.pc-row input{flex:1 1 180px;min-height:52px;font:600 18px var(--label);padding:0 16px;border:2px solid var(--ink);background:#fff;color:var(--ink);text-transform:uppercase;border-radius:0}
+.pc-row .btn{min-height:52px;flex:0 0 auto}
+.pc-ok{margin:12px 0 0;font-family:var(--label);font-weight:700;font-size:15px;background:var(--ink);color:var(--accent);padding:10px 14px}
+.pc-note{font-size:14px;margin:12px 0 0;opacity:.7}
+.h4-act .pcbox label,.h4-act .pc-note{color:var(--ink)}
+@media(max-width:600px){.pc-row .btn{width:100%}}
+.h4-act .pcbox{margin:26px auto 0;text-align:left}
+.pc-row input::placeholder{text-transform:none;font-weight:500}
+.home4 .h4-act h2{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(40px,5.2vw,76px);line-height:.95;color:var(--ink);max-width:16ch;margin:0 auto}
+.home4 .h4-act p{max-width:46ch;margin-left:auto;margin-right:auto}
+.home4 .h4-act p a{color:var(--ink);text-decoration:underline;text-underline-offset:3px;font-weight:600}
