@@ -627,7 +627,7 @@ nav .btn{font-size:13px}
 .px-count span{font-family:var(--label);font-weight:700;font-size:15px;line-height:1.35}
 .vwall{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:28px}
 .vcard{grid-column:span 2}
-.vcard:nth-child(n+4){grid-column:span 3}
+.vcard:nth-child(n+4){grid-column:span 2}
 .vcard{display:block;color:inherit;text-decoration:none}
 .vcard:first-child{grid-column:span 4;grid-row:span 2}
 .vc-img{position:relative;aspect-ratio:16/9;background:var(--ink-2);border:1px solid rgba(244,242,236,.12);overflow:hidden;display:flex;align-items:center;justify-content:center}
@@ -659,3 +659,6 @@ nav .btn{font-size:13px}
 @media(max-width:900px){.px{grid-template-columns:1fr;gap:28px}.vwall{grid-template-columns:1fr 1fr}.vcard,.vcard:nth-child(n+4){grid-column:auto}.vcard:first-child{grid-column:span 2;grid-row:auto}.vcard:first-child .vc-img{aspect-ratio:16/9;height:auto;min-height:0}}
 @media(max-width:600px){.vwall{grid-template-columns:1fr}.vcard:first-child{grid-column:auto}.vwall .vcard:last-child{grid-column:auto}.rec{grid-template-columns:1fr;gap:10px}.px-count b{font-size:56px}}
 .h4-wait{margin:56px 0 28px}
+
+.px-link{font-family:var(--label);font-weight:700;font-size:14px;margin:0 0 20px}
+.parl-feature+.parl-feature{padding-top:60px}

@@ -286,6 +286,7 @@ TIMELINE = [
     ("29", "Sep 2026", "", "Raised in Parliament, then a guilty plea", "On 1 September Sir Iain Duncan Smith raises his case in the Commons and the Foreign Secretary says he will take it up. The next day Joshua pleads guilty. On 13 September, 31 parliamentarians and human rights leaders write to the Prime Minister."),
     ("30", "13 Oct 2026", "", "Turns thirty in prison", "Parliamentarians mark his birthday with a screening of the new film in the Houses of Parliament."),
     ("30", "5 Nov 2026", "", "Ten more years", "A Hong Kong court sentences him to ten years. Ten governments, including the UK, condemn the sentence the next day."),
+    ("30", "10 Nov 2026", "", "Raised again in the Commons", "Five days after the sentence, Emily Darlington MP asks the Government to summon the Chinese Ambassador and call for Joshua’s release."),
     ("40", "c. 2036", "future", "Release, if nothing changes", "Unless governments act, Joshua may not walk free until he is around 40, having spent most of his adult life in prison."),
 ]
 
@@ -371,6 +372,12 @@ def film():
 
 # ---------------- NEWSROOM ----------------
 STATEMENTS = """<div class="timeline">
+      <div class="titem"><div class="d">10 Nov 2026</div><div>
+          <div class="who">House of Commons · Urgent question on China</div>
+          <div class="flags"><span>UK</span></div>
+          <h3>Emily Darlington MP asks the Government to call for Joshua’s release</h3>
+          <p>At an urgent question secured by Sir Iain Duncan Smith, she asked ministers to summon the Chinese Ambassador and call for Joshua’s release, as they did for Jimmy Lai.</p>
+          <a class="src" href="parliament.html#exchange-nov">Watch the clip</a> &nbsp; <a class="src" href="https://hansard.parliament.uk/Commons/2026-11-10/debates/580a4a8b-77d1-4dad-b849-9f1d47824e1c/CommonsChamber" target="_blank" rel="noopener">Hansard</a></div></div>
       <div class="titem"><div class="d">6 Nov 2026</div><div>
           <div class="who">Joint statement · 10 foreign ministries</div>
           <h3>Ten governments, including the UK, condemn the sentence</h3>
@@ -644,6 +651,9 @@ Yours sincerely,
 # ---------------- PARLIAMENT ----------------
 # kind: commons | lords | written | report | event
 RECORD = [
+    ("2026-11-10", "commons", "“Calling for Joshua Wong’s release”", "Urgent question on China · House of Commons",
+     "At an urgent question secured by Sir Iain Duncan Smith on China obtaining MPs’ phone and financial records, Emily Darlington MP asked the Government to summon the Chinese Ambassador and call for Joshua’s release, as it did for Jimmy Lai. <a href=\"https://hansard.parliament.uk/Commons/2026-11-10/debates/580a4a8b-77d1-4dad-b849-9f1d47824e1c/CommonsChamber\" target=\"_blank\" rel=\"noopener\">Read it in Hansard</a>",
+     "#exchange-nov", "Watch the clip", ""),
     ("2026-10-22", "report", "Six-monthly Report on Hong Kong", "Foreign Secretary · Report to Parliament",
      "The Government’s report for January to June 2026 cites developments in Joshua’s case as reinforcing concerns about the broad use of national security legislation.",
      "https://www.gov.uk/government/publications/six-monthly-report-on-hong-kong-january-to-june-2026/six-monthly-report-on-hong-kong-1-january-to-30-june-2026", "GOV.UK", ""),
@@ -671,6 +681,7 @@ MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec
 
 VIDEOS = [
     ("film.html", "Film", "Joshua: Prisoner vs. Superpower", "The new short film, first shown in Parliament on 13 October 2026.", "images/film-poster.jpg", False),
+    ("#exchange-nov", "House of Commons · 10 Nov 2026", "Emily Darlington MP", "Asks the Government to call for Joshua’s release, five days after his sentence.", "images/commons-2026-11-10-poster.jpg", False),
     ("#exchange", "House of Commons · 1 Sep 2026", "Duncan Smith and the Foreign Secretary", "The exchange at Foreign Office Questions, the day before Joshua’s plea.", "images/commons-poster.jpg", False),
     ("https://www.channel4.com/news/hong-kong-pro-democracy-activist-joshua-wong-pleads-guilty-to-colluding-with-foreign-entities", "Channel 4 News · 2 Sep 2026", "Joshua pleads guilty", "Channel 4 News reports on the plea, with analysis on China and the UK.", "", True),
     ("https://pelosi.house.gov/news/press-releases/pelosi-calls-joshua-wongs-freedom-house-floor-we-want-be-sure-they-know-we", "US House of Representatives · 2 Sep 2026", "Pelosi on the House floor", "Speaker Emerita Nancy Pelosi calls for Joshua’s freedom.", "", True),
@@ -703,7 +714,33 @@ def parliament():
     return head("Parliament", "Every time Joshua Wong’s case has been raised at Westminster, and every film and clip, in one place.", "parliament.html") + nav("parliament.html") + page_head(
         "Parliament", "On the <em>record</em>",
         "Every time Joshua’s case has been raised at Westminster, and every film and clip, in one place.") + """
-<section class="parl-feature" id="exchange" style="border-top:0;padding-top:10px">
+<section class="parl-feature" id="exchange-nov" style="border-top:0;padding-top:10px">
+  <div class="wrap">
+    <div class="px">
+      <div class="px-vid">
+        <div class="screen vid"><video controls preload="none" playsinline poster="images/commons-2026-11-10-poster.jpg"><source src="media/commons-2026-11-10.mp4" type="video/mp4">Your browser can’t play this video.</video></div>
+        <p class="px-cap">BBC Parliament, House of Commons, urgent question on China, 10 November 2026.</p>
+      </div>
+      <div class="px-side">
+        <div class="px-when">10 November 2026 · House of Commons · Latest</div>
+        <div class="px-sp">
+          <div class="px-name">Emily Darlington MP</div>
+          <div class="px-role">Labour, Milton Keynes Central</div>
+          <p>Five days after Joshua was sentenced, she asked the Government to summon the Chinese Ambassador and call for his release, as it did for Jimmy Lai.</p>
+        </div>
+        <div class="px-sp">
+          <div class="px-name">Dan Jarvis MP</div>
+          <div class="px-role">Minister of State for Security</div>
+          <p>Answered for the Government at the urgent question, secured by Sir Iain Duncan Smith, on China obtaining MPs’ phone and financial records.</p>
+        </div>
+        <p class="px-link"><a href="https://hansard.parliament.uk/Commons/2026-11-10/debates/580a4a8b-77d1-4dad-b849-9f1d47824e1c/CommonsChamber" target="_blank" rel="noopener">Read the exchange in Hansard</a></p>
+        <div data-share data-url="https://freejoshuawong.org/parliament.html#exchange-nov" data-text="In the Commons, Emily Darlington MP asked the Government to call for Joshua Wong’s release. #FreeJoshuaWong"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="parl-feature" id="exchange">
   <div class="wrap">
     <div class="px">
       <div class="px-vid">
