@@ -791,3 +791,22 @@ a.s-link:hover{background:#f6f4ec}
 .empty-rel p{margin:0;font-size:18px;color:rgba(244,242,236,.8)}
 #panel-presskit .facts-sheet{margin-bottom:34px}
 .tabs{flex-wrap:wrap}
+
+/* Phone fixes: nothing wider than the screen, bigger tap targets */
+@media(max-width:600px){
+  html,body{overflow-x:clip}
+  .phead h1{font-size:min(56px,11vw)}
+  .hashtag{font-size:min(46px,9.6vw);padding:22px 12px 18px;letter-spacing:0}
+  footer .brand{font-size:min(34px,7.6vw);white-space:normal}
+  .share-row a,.share-row button,.copy,.chip,.mo,.filters button{min-height:40px}
+  .share-row a,.share-row button{display:inline-flex;align-items:center;padding-left:12px;padding-right:12px}
+}
+@media(max-width:600px){
+  .film-card,.av{grid-template-columns:minmax(0,1fr)}
+  .film-card>*,.av>*,.sec-head>*,.moments>*{min-width:0}
+  .moments{grid-template-columns:repeat(2,minmax(0,1fr))}
+  h2.sec{font-size:min(52px,10.5vw)}
+  .mo .l{font-size:18px}
+}
+@media(max-width:380px){ nav.top .brand{font-size:20px} }
+@media(max-width:600px){ .post{flex-wrap:wrap;gap:12px} .post p{flex-basis:100%} .post .sh-x{margin-left:0;display:inline-flex;align-items:center;min-height:40px} }
