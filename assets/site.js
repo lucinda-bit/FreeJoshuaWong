@@ -101,3 +101,75 @@
     window.addEventListener('hashchange', show); show();
   }
 })();
+
+// ===== Coverage wall (newsroom) =====
+(function () {
+  var list = document.getElementById('cov-list');
+  if (!list || !window.PRESS) return;
+  var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+  var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  var nice = function (d) { var p = d.split('-'); return (+p[2]) + ' ' + months[+p[1] - 1] + ' ' + p[0]; };
+  var label = { news: 'News', opinion: 'Opinion', rights: 'Rights group' };
+  var items = window.PRESS.slice().sort(function (a, b) { return a.date < b.date ? 1 : a.date > b.date ? -1 : 0; });
+  var state = { moment: 'all', type: 'all' };
+
+  // headline numbers
+  var outlets = {}; items.forEach(function (p) { outlets[p.outlet.split(' / ')[0]] = 1; });
+  var regions = {}; items.forEach(function (p) { if (p.region !== 'Global') regions[p.region] = 1; });
+  document.getElementById('cov-stats').innerHTML =
+    '<div><b>' + items.length + '</b><span>reports</span></div>' +
+    '<div><b>' + Object.keys(outlets).length + '</b><span>outlets</span></div>' +
+    '<div><b>' + Object.keys(regions).length + '</b><span>regions of the world</span></div>' +
+    '<div><b>' + (+items[items.length - 1].date.slice(0, 4)) + '</b><span>covered since</span></div>';
+
+  // ticker: newest twelve headlines, doubled for a seamless loop
+  var tk = items.slice(0, 12).map(function (p) { return '<span class="tk"><b>' + esc(p.outlet) + '</b>' + esc(p.title) + '</span>'; }).join('');
+  document.getElementById('ticker').innerHTML = tk + tk;
+
+  // moment buttons with counts
+  var mEl = document.getElementById('moments');
+  var count = function (id) { return items.filter(function (p) { return id === 'all' || p.moment === id; }).length; };
+  mEl.innerHTML = '<button class="mo" data-m="all" aria-pressed="true"><span class="w">June 2025 to now</span><span class="l">Everything</span><span class="c">' + count('all') + '</span></button>' +
+    window.MOMENTS.slice().reverse().map(function (m) {
+      return '<button class="mo" data-m="' + m.id + '" aria-pressed="false"><span class="w">' + m.when + '</span><span class="l">' + m.label + '</span><span class="c">' + count(m.id) + '</span></button>';
+    }).join('');
+
+  function render() {
+    var shown = items.filter(function (p) { return (state.moment === 'all' || p.moment === state.moment) && (state.type === 'all' || p.type === state.type); });
+    var feat = document.getElementById('cov-feature');
+    var f = (state.moment === 'all' || state.moment === 'sentence') && state.type !== 'news' && state.type !== 'rights' ? items.filter(function (p) { return p.feature; })[0] : null;
+    feat.innerHTML = f ? '<a class="cov-feat" href="' + esc(f.url) + '" target="_blank" rel="noopener"><span class="o">' + esc(f.outlet) + (f.by ? ', ' + esc(f.by) : '') + '</span><span class="h">' + esc(f.title) + '</span><span class="d">' + nice(f.date) + (f.paywall ? '<span class="pay">Subscription</span>' : '') + '</span></a>' : '';
+    if (f) shown = shown.filter(function (p) { return p !== f; });
+    var html = '', last = '';
+    shown.forEach(function (p) {
+      if (p.date !== last) {
+        var n = shown.filter(function (q) { return q.date === p.date; }).length;
+        html += (last ? '</div>' : '') + '<div class="day"><h3 class="day-h">' + nice(p.date) + '<span>' + n + (n === 1 ? ' report' : ' reports') + '</span></h3>';
+        last = p.date;
+      }
+      html += '<article class="row"><div class="o">' + esc(p.outlet) + '<span class="tag">' + label[p.type] + ' · ' + esc(p.region) + '</span></div>' +
+        '<h4><a href="' + esc(p.url) + '" target="_blank" rel="noopener">' + esc(p.title) + '</a>' + (p.paywall ? '<span class="pay">Subscription</span>' : '') + (p.by ? '<span class="by">' + esc(p.by) + '</span>' : '') + '</h4>' +
+        window.shareRow(p.url, p.title) + '</article>';
+    });
+    list.innerHTML = html ? html + '</div>' : '<p class="empty">Nothing here yet for that combination. Try Everything.</p>';
+  }
+  render();
+  mEl.addEventListener('click', function (e) {
+    var b = e.target.closest('.mo'); if (!b) return;
+    mEl.querySelectorAll('.mo').forEach(function (x) { x.setAttribute('aria-pressed', 'false'); });
+    b.setAttribute('aria-pressed', 'true'); state.moment = b.getAttribute('data-m'); render();
+  });
+  document.querySelectorAll('.cov-bar .chip').forEach(function (b) {
+    b.addEventListener('click', function () {
+      document.querySelectorAll('.cov-bar .chip').forEach(function (x) { x.setAttribute('aria-pressed', 'false'); });
+      b.setAttribute('aria-pressed', 'true'); state.type = b.getAttribute('data-t'); render();
+    });
+  });
+})();
+
+// ===== "Still waiting" day counters =====
+document.querySelectorAll('[data-since]').forEach(function (el) {
+  var p = el.getAttribute('data-since').split('-');
+  var d = Math.floor((Date.now() - Date.UTC(+p[0], +p[1] - 1, +p[2])) / 864e5);
+  if (d >= 0) el.textContent = d;
+});

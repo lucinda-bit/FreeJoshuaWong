@@ -41,57 +41,89 @@
     </div>
 
     <div class="panel" id="panel-coverage">
-      <div class="sec-head" style="margin-bottom:28px">
-        <p class="lede" style="max-width:56ch">Newest first. We link to the original article; some outlets may ask you to subscribe.</p>
-        <div class="filters" role="group" aria-label="Filter coverage">
-          <button class="chip" data-f="all" aria-pressed="true">All</button>
-          <button class="chip" data-f="opinion" aria-pressed="false">Opinion</button>
-          <button class="chip" data-f="news" aria-pressed="false">News</button>
-          <button class="chip" data-f="rights" aria-pressed="false">Rights groups</button>
+      <div class="cov-stats" id="cov-stats"></div>
+      <div class="ticker" aria-hidden="true"><div class="ticker-track" id="ticker"></div></div>
+      <div class="moments" id="moments" role="group" aria-label="Filter by moment"></div>
+      <div class="cov-bar">
+        <div class="filters" role="group" aria-label="Filter by type">
+          <button class="chip" data-t="all" aria-pressed="true">Everything</button>
+          <button class="chip" data-t="news" aria-pressed="false">News</button>
+          <button class="chip" data-t="opinion" aria-pressed="false">Opinion</button>
+          <button class="chip" data-t="rights" aria-pressed="false">Rights groups</button>
         </div>
+        <p class="cov-note">Headlines link to the original. Some outlets may ask you to subscribe.</p>
       </div>
-      <div class="press-grid" id="press-grid"></div>
+      <div id="cov-feature"></div>
+      <div id="cov-list" class="cov-list"></div>
     </div>
 
     <div class="panel" id="panel-statements" hidden>
-      <p class="lede" style="margin-bottom:44px">Joshua’s case has been raised in the House of Commons, in the US Congress and by foreign ministries on three continents.</p>
+      <p class="lede" style="margin-bottom:40px">Joshua’s case has been raised in the House of Commons, in the US Congress and by foreign ministries on three continents.</p>
+      <div class="waiting">
+        <h3>Still waiting for an answer</h3>
+        <div class="wait-row">
+          <div class="wait-n"><span data-since="2026-09-01">73</span><small>days</small></div>
+          <div><h4>Miliband’s promise to take up Joshua’s case</h4><p>Raised in the Commons by Sir Iain Duncan Smith on 1 September 2026. Miliband said he would take up the case. No update since.</p></div>
+        </div>
+        <div class="wait-row">
+          <div class="wait-n"><span>—</span><small>no reply</small></div>
+          <div><h4>The open letter to the Prime Minister</h4><p>Sent to Andy Burnham in September 2026, signed by parliamentarians, two former Foreign Secretaries and human rights organisations. No reply yet. <a href="letters/open-letter-prime-minister-sept-2026.html">Read the letter</a></p></div>
+        </div>
+      </div>
       <div class="timeline">
       <div class="titem"><div class="d">6 Nov 2026</div><div>
           <div class="who">Joint statement · 10 foreign ministries</div>
           <h3>Ten governments, including the UK, condemn the sentence</h3>
           <div class="flags"><span>UK</span><span>US</span><span>Australia</span><span>Canada</span><span>France</span><span>Germany</span><span>Italy</span><span>Japan</span><span>Netherlands</span><span>New Zealand</span></div>
           <p>The day after sentencing, the foreign ministries said the case shows how the National Security Law is used to target people for political expression. They called for an end to unjust NSL prosecutions and for the rights promised under the 1984 Sino-British Joint Declaration to be honoured.</p>
-          <a class="src" href="https://www.dfat.gov.au/news/statement-sentencing-joshua-wong" target="_blank" rel="noopener">Read the statement →</a></div></div>
+          <a class="src" href="https://www.dfat.gov.au/news/statement-sentencing-joshua-wong" target="_blank" rel="noopener">Read the statement</a></div></div>
       <div class="titem"><div class="d">5 Nov 2026</div><div>
           <div class="who">US Consulate General, Hong Kong</div>
           <div class="flags"><span>US</span></div>
           <h3>“Unjustly imprisoned”</h3>
           <p>The US Consulate said Joshua has been unjustly imprisoned since late 2020, and that Beijing will go to extraordinary lengths to silence those who advocate for fundamental freedoms.</p>
-          <a class="src" href="https://www.wamc.org/2026-11-05/hong-kong-activist-joshua-wong-is-sentenced-to-10-more-years-in-prison" target="_blank" rel="noopener">AP report →</a></div></div>
+          <a class="src" href="https://www.wamc.org/2026-11-05/hong-kong-activist-joshua-wong-is-sentenced-to-10-more-years-in-prison" target="_blank" rel="noopener">AP report</a></div></div>
+      <div class="titem"><div class="d">5 Nov 2026</div><div>
+          <div class="who">Presidential Office, Taiwan</div>
+          <div class="flags"><span>Taiwan</span></div>
+          <h3>Taiwan condemns the sentence</h3>
+          <p>Taiwan’s Presidential Office condemned the 10-year sentence and urged Beijing and Hong Kong to release detained pro-democracy figures.</p>
+          <a class="src" href="https://focustaiwan.tw/politics/202611050018" target="_blank" rel="noopener">Focus Taiwan</a></div></div>
       <div class="titem"><div class="d">22 Oct 2026</div><div>
           <div class="who">UK Foreign Secretary · Report to Parliament</div>
           <div class="flags"><span>UK</span></div>
           <h3>Named in the Six-monthly Report on Hong Kong</h3>
           <p>The Government’s report to Parliament cites developments in Joshua’s case as reinforcing concerns about the increasingly broad application of national security legislation.</p>
-          <a class="src" href="https://www.gov.uk/government/publications/six-monthly-report-on-hong-kong-january-to-june-2026/six-monthly-report-on-hong-kong-1-january-to-30-june-2026" target="_blank" rel="noopener">GOV.UK →</a></div></div>
+          <a class="src" href="https://www.gov.uk/government/publications/six-monthly-report-on-hong-kong-january-to-june-2026/six-monthly-report-on-hong-kong-1-january-to-30-june-2026" target="_blank" rel="noopener">GOV.UK</a></div></div>
       <div class="titem"><div class="d">2 Sep 2026</div><div>
           <div class="who">US House of Representatives</div>
           <div class="flags"><span>US</span></div>
           <h3>Nancy Pelosi calls for his freedom on the House floor</h3>
           <blockquote>“We must speak out for freedom. We must not let this be ignored.”</blockquote>
-          <a class="src" href="https://pelosi.house.gov/news/press-releases/pelosi-calls-joshua-wongs-freedom-house-floor-we-want-be-sure-they-know-we" target="_blank" rel="noopener">Speaker Emerita Pelosi →</a></div></div>
+          <a class="src" href="https://pelosi.house.gov/news/press-releases/pelosi-calls-joshua-wongs-freedom-house-floor-we-want-be-sure-they-know-we" target="_blank" rel="noopener">Speaker Emerita Pelosi</a></div></div>
+      <div class="titem"><div class="d">1 Sep 2026</div><div>
+          <div class="who">House of Commons</div>
+          <div class="flags"><span>UK</span></div>
+          <h3>Raised by Sir Iain Duncan Smith; Miliband says he will take up the case</h3>
+          <p>The day before Joshua’s plea hearing, Sir Iain Duncan Smith raised his case in the Commons. Miliband said he would take it up. There has been no public update since.</p></div></div>
       <div class="titem"><div class="d">28 Oct 2025</div><div>
           <div class="who">House of Commons · FCDO oral questions</div>
           <div class="flags"><span>UK</span></div>
           <h3>Raised in the Commons</h3>
           <p>MPs pressed ministers on Hong Kong human rights, noting that Joshua had been rearrested and faced further charges under the National Security Law.</p>
-          <a class="src" href="https://hansard.parliament.uk/Commons/2025-10-28/debates/FCFA35AB-A007-4F6D-BF8A-3D80321D4046/HongKongHumanRightsViolations" target="_blank" rel="noopener">Hansard →</a></div></div>
-      <div class="titem" style="padding-bottom:0"><div class="d">Jun 2025</div><div>
+          <a class="src" href="https://hansard.parliament.uk/Commons/2025-10-28/debates/FCFA35AB-A007-4F6D-BF8A-3D80321D4046/HongKongHumanRightsViolations" target="_blank" rel="noopener">Hansard</a></div></div>
+      <div class="titem"><div class="d">23 Oct 2025</div><div>
+          <div class="who">UK Foreign Secretary · Report to Parliament</div>
+          <div class="flags"><span>UK</span></div>
+          <h3>His re-arrest recorded in the Six-monthly Report on Hong Kong</h3>
+          <p>The Government’s report to Parliament for January to June 2025 records Joshua’s re-arrest on 6 June on suspicion of collusion with foreign forces.</p>
+          <a class="src" href="https://www.gov.uk/government/publications/six-monthly-report-on-hong-kong-january-to-june-2025/six-monthly-report-on-hong-kong-1-january-to-30-june-2025" target="_blank" rel="noopener">GOV.UK</a></div></div>
+      <div class="titem" style="padding-bottom:0"><div class="d">3 Jul 2025</div><div>
           <div class="who">Written question · Alicia Kearns MP</div>
           <div class="flags"><span>UK</span></div>
           <h3>The UK is “deeply concerned”</h3>
           <p>Answering Alicia Kearns MP, the Foreign Office said it was deeply concerned by the news of further charges against Joshua.</p>
-          <a class="src" href="https://www.parallelparliament.co.uk/question/63014/hong-kong-politics-and-government" target="_blank" rel="noopener">Parliamentary answer →</a></div></div>
+          <a class="src" href="https://www.parallelparliament.co.uk/question/63014/hong-kong-politics-and-government" target="_blank" rel="noopener">Parliamentary answer</a></div></div>
     </div>
     </div>
 
