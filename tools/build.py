@@ -220,10 +220,22 @@ def home():
   </div>
 </section>
 
-<section class="h4-words">
+<section class="h4-words" aria-labelledby="words-h">
   <div class="wrap">
-    <blockquote>“The only thing I worry about is that people will forget Hong Kong.”</blockquote>
-    <p class="by">Joshua Wong, in a letter to a friend from prison, published in November 2026</p>
+    <h2 id="words-h" class="w-label">In his own words</h2>
+    <div class="w-pair">
+      <figure class="w-then">
+        <figcaption>At 16, writing to his future self</figcaption>
+        <blockquote>“I can at least tell everyone that I have lived vibrantly and meaningfully.”</blockquote>
+        <p class="w-src">From a Scholarism keepsake book his friend Louis Lee still keeps. <a href="https://www.stamfordadvocate.com/news/world/article/once-a-teen-activist-hong-kong-s-joshua-wong-is-22513311.php" target="_blank" rel="noopener">Associated Press</a></p>
+      </figure>
+      <figure class="w-now">
+        <figcaption>Now, from a maximum-security prison</figcaption>
+        <blockquote>“The only thing I worry about is that people will forget Hong Kong.”</blockquote>
+        <p class="w-src">From his letters to friends, written between August and October 2026. <a href="https://www.theguardian.com/world/2026/nov/05/joshua-wong-hong-kong-prison-letters-sentenced-10-years" target="_blank" rel="noopener">The Guardian</a></p>
+      </figure>
+    </div>
+    <p class="w-life">He writes from Stanley, Hong Kong’s oldest maximum-security prison. He studies law, swaps books with the men around him, triad gang members among them, and is learning the guitar. He has spent his 21st, 25th and 30th birthdays behind bars.</p>
   </div>
 </section>
 

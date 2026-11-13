@@ -915,3 +915,17 @@ nav.top .links a.lang{font-weight:700;letter-spacing:.04em}
 .h4-human .hsrc a{color:rgba(244,242,236,.75)}
 @media(max-width:900px){.h4-human .hgrid{grid-template-columns:1fr 1fr}}
 @media(max-width:520px){.h4-human .hgrid{grid-template-columns:1fr}}
+/* In his own words: then and now */
+.h4-words .w-label{font-family:var(--label);font-weight:700;font-size:14px;letter-spacing:.04em;color:var(--accent);margin:0 0 40px}
+.w-pair{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:0;align-items:end}
+.w-pair figure{margin:0;padding:0 48px}
+.w-pair .w-then{padding-left:0;border-right:2px solid rgba(255,225,53,.6)}
+.w-pair .w-now{padding-right:0}
+.w-pair figcaption{font-family:var(--label);font-weight:700;font-size:14px;color:rgba(244,242,236,.6);margin-bottom:18px}
+.w-pair blockquote{margin:0;font-family:var(--serif);font-style:italic;font-weight:300;line-height:1.14;text-indent:-.4em;color:#fff}
+.w-then blockquote{font-size:clamp(26px,2.6vw,38px);color:rgba(244,242,236,.82)}
+.w-now blockquote{font-size:clamp(36px,4.2vw,62px)}
+.w-src{font-family:var(--label);font-size:13px;color:rgba(244,242,236,.5);margin:20px 0 0;max-width:46ch}
+.w-src a{color:rgba(244,242,236,.75)}
+.w-life{font-family:var(--serif);font-size:clamp(20px,1.6vw,24px);line-height:1.5;color:rgba(244,242,236,.85);max-width:52ch;margin:64px 0 0;padding-top:30px;border-top:1px solid rgba(244,242,236,.15)}
+@media(max-width:800px){.w-pair{grid-template-columns:1fr}.w-pair figure{padding:0}.w-pair .w-then{border-right:0;border-bottom:2px solid rgba(255,225,53,.6);padding-bottom:36px;margin-bottom:36px}}
