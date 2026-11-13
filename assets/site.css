@@ -896,3 +896,7 @@ html[lang^="zh"] .phead h1{font-family:var(--display),"PingFang HK","Noto Sans T
 .home4 .h4-act h2{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(40px,5.2vw,76px);line-height:.95;color:var(--ink);max-width:16ch;margin:0 auto}
 .home4 .h4-act p{max-width:46ch;margin-left:auto;margin-right:auto}
 .home4 .h4-act p a{color:var(--ink);text-decoration:underline;text-underline-offset:3px;font-weight:600}
+.h4-demand{font-size:clamp(30px,2.9vw,44px);margin:26px 0 0;max-width:18ch}
+.h4-demand+.h4-lead{margin-top:14px}
+.intro .h4-demand{animation:fjw-rise .7s ease-out 3.1s both}
+.intro .h4-demand+.h4-lead{animation:fjw-rise .7s ease-out 3.4s both}
