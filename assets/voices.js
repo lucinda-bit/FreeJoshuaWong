@@ -15,7 +15,7 @@ window.VOICES = [
   {date:"2016-07-21", kind:"parliament", who:"Senator Tom Cotton", role:"US Senate", country:"US", where:"Statement",
    quote:"These men stood up for the rights of all Hong Kongers with the simple demand that the Chinese government abide by its international commitment to respect the autonomy of Hong Kong.",
    url:"https://www.cotton.senate.gov/news/press-releases/cotton-statement-on-convictions-of-pro-democracy-leaders-in-hong-kong/"},
-  {date:"2020-12-02", kind:"parliament", who:"Lord Patten of Barnes", role:"Last Governor of Hong Kong", country:"UK", where:"Statement", via:"The Telegraph",
+  {date:"2020-12-02", kind:"parliament", who:"Lord Patten of Barnes", role:"Last Governor of Hong Kong", country:"UK", where:"Statement", via:"Yahoo News",
    quote:"A grim example of China’s determination to put Hong Kong in handcuffs.",
    url:"https://news.yahoo.com/joshua-wong-leads-young-hong-080602559.html"},
   {date:"2020-12-02", kind:"parliament", who:"Senator Marsha Blackburn", role:"US Senate", country:"US", where:"Statement", via:"Al Jazeera",

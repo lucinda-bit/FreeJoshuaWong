@@ -122,7 +122,7 @@ FACTS = """<section class="facts" aria-label="Key facts">
   <div class="wrap">
     <div class="fact"><div class="n">Nov 2020</div><div class="t">In prison continuously since</div></div>
     <div class="fact"><div class="n">Jan 2027</div><div class="t">When he was due to walk free</div></div>
-    <div class="fact"><div class="n">+10 years</div><div class="t">Added on 5 November 2026</div></div>
+    <div class="fact"><div class="n">10 years</div><div class="t">New sentence, handed down on 5 November 2026</div></div>
     <div class="fact"><div class="n">2036</div><div class="t">Around when he may be released, aged 40</div></div>
   </div>
 </section>
@@ -203,7 +203,7 @@ def home():
 <section class="h4-words">
   <div class="wrap">
     <blockquote>“The only thing I worry about is that people will forget Hong Kong.”</blockquote>
-    <p class="by">Joshua Wong, in a letter from prison after his sentence</p>
+    <p class="by">Joshua Wong, in a letter to a friend from prison, published in November 2026</p>
   </div>
 </section>
 
@@ -234,7 +234,7 @@ def home():
 <section class="h4-asks">
   <div class="wrap">
     <h2>What Britain should do</h2>
-    <p class="h4-sub">Britain guaranteed Hong Kong’s freedoms in 1984. Ten governments, including our own, have condemned Joshua’s sentence. Now words need to become action.</p>
+    <p class="h4-sub">Britain guaranteed Hong Kong’s freedoms in 1984. Ten governments, including our own, signed a joint statement condemning Joshua’s sentence. Now words need to become action.</p>
     <div class="asklist">
       <div><h3>Raise his case with China’s ambassador</h3><p>The Prime Minister should call in the Ambassador and name Joshua and the others jailed for standing up for democracy.</p></div>
       <div><h3>Review the Hong Kong trade office</h3><p>Its London office keeps diplomatic-style privileges, even after a senior manager there was convicted of spying on Hong Kongers in Britain.</p></div>
@@ -248,7 +248,7 @@ def home():
       </div>
       <div class="wait-row">
         <div class="wait-n"><span data-since="2026-09-13">61</span><small>days, no reply</small></div>
-        <div><h4>31 parliamentarians and rights leaders wrote to the Prime Minister</h4><p>Their open letter to Andy Burnham, sent on 13 September 2026. <a href="letters/open-letter-prime-minister-sept-2026.html">Read the letter</a></p></div>
+        <div><h4>31 MPs, peers and rights leaders signed an open letter to the Prime Minister</h4><p>Their open letter to Andy Burnham, sent on 13 September 2026. <a href="letters/open-letter-prime-minister-sept-2026.html">Read the letter</a></p></div>
       </div>
     </div>
     <p class="h4-more"><a href="case.html">Read the full case</a></p>
@@ -301,17 +301,17 @@ LATEST = [
 # ---------------- THE CASE ----------------
 TIMELINE = [
     ("Born", "Oct 1996", "", "Born in Hong Kong", "Joshua Wong Chi-fung grows up in a city promised a high degree of autonomy until 2047."),
-    ("15", "Sep 2012", "", "Defeats a Beijing curriculum", "With the student group Scholarism, which he co-founded at 14, he leads the protests that force the Hong Kong government to shelve a compulsory “national education” curriculum."),
+    ("15", "Sep 2012", "", "Defeats “national education”", "With the student group Scholarism, which he co-founded at 14, he leads the protests that force the Hong Kong government to shelve a compulsory “national education” curriculum."),
     ("17", "Sep 2014", "", "The Umbrella Movement", "His arrest at Civic Square helps spark 79 days of street occupation demanding genuine universal suffrage. <em>Time</em> puts him on its cover."),
     ("19", "Oct 2016", "", "Detained at Bangkok airport", "Held and deported by Thai authorities on his way to speak at a university, an early sign of how far Beijing’s pressure would reach."),
     ("20", "2017", "", "First prison sentence, and the film", "Jailed over the 2014 Civic Square protest; Hong Kong’s top court later quashes the sentence. <em>Joshua: Teenager vs. Superpower</em> premieres at Sundance and wins the audience award."),
-    ("22", "Sep 2019", "", "Testifies to the US Congress", "Gives evidence to the Congressional-Executive Commission on China on human rights in Hong Kong. Years later, testimony like this is cited as evidence against him."),
+    ("22", "Sep 2019", "", "Testifies to the US Congress", "Gives evidence to the Congressional-Executive Commission on China on human rights in Hong Kong. Years later, prosecutors cite his lobbying in Washington against him."),
     ("23", "Jun 2020", "", "The National Security Law", "Beijing imposes the National Security Law on Hong Kong. His party, Demosistō, disbands the same day."),
     ("24", "Nov 2020", "", "Into prison, where he remains", "Jailed over a 2019 protest outside police headquarters. He has not been free since."),
-    ("24", "Jan 2021", "", "Charged as one of the Hong Kong 47", "Arrested under the National Security Law for taking part in an unofficial pro-democracy primary election."),
+    ("24", "Jan 2021", "", "Arrested as one of the Hong Kong 47", "Arrested in his cell under the National Security Law for taking part in an unofficial pro-democracy primary election, and charged with subversion in February."),
     ("28", "Nov 2024", "", "Sentenced to 4 years 8 months", "Sentenced in the largest national security trial in Hong Kong’s history. His release date is set for early 2027."),
     ("28", "Jun 2025", "", "Charged again from his cell", "Charged with conspiracy to collude with foreign forces, carrying a maximum of life imprisonment. The evidence is his own advocacy and public statements."),
-    ("29", "Sep 2026", "", "Raised in Parliament, then a guilty plea", "On 1 September Sir Iain Duncan Smith raises his case in the Commons and the Foreign Secretary says he will take it up. The next day Joshua pleads guilty. On 13 September, 31 parliamentarians and human rights leaders write to the Prime Minister."),
+    ("29", "Sep 2026", "", "Raised in Parliament, then a guilty plea", "On 1 September Sir Iain Duncan Smith raises his case in the Commons and the Foreign Secretary says he will take it up. The next day Joshua pleads guilty. On 13 September, 31 MPs, peers and rights leaders sign an open letter to the Prime Minister."),
     ("30", "13 Oct 2026", "", "Turns thirty in prison", "Parliamentarians mark his birthday with a screening of the new film in the Houses of Parliament."),
     ("30", "5 Nov 2026", "", "Ten more years", "A Hong Kong court sentences him to ten years. Ten governments, including the UK, condemn the sentence the next day."),
     ("30", "10 Nov 2026", "", "Raised again in the Commons", "Five days after the sentence, Emily Darlington MP asks the Government to summon the Chinese Ambassador and call for Joshua’s release. The next day she and seven other MPs and peers set out the same demands in a letter to The Times."),
@@ -331,14 +331,14 @@ def case():
     <div class="two">
       <div>
         <h3>Who he is</h3>
-        <p>Joshua Wong has campaigned for democracy in Hong Kong since he was a schoolboy. At fifteen he stopped a Beijing-written curriculum; at seventeen he was the face of the Umbrella Movement; at twenty he was the subject of an award-winning Netflix documentary.</p>
+        <p>Joshua Wong has campaigned for democracy in Hong Kong since he was a schoolboy. At fifteen he stopped a Beijing-backed “national education” curriculum; at seventeen he was the face of the Umbrella Movement; at twenty he was the subject of an award-winning Netflix documentary.</p>
       </div>
       <div>
         <h3>What he is charged with</h3>
         <p>“Conspiracy to collude with foreign forces” under the National Security Law, a law imposed by Beijing in 2020.</p>
         <ul>
-          <li><strong>The evidence is his own words:</strong> testimony to parliaments and human rights bodies, interviews and op-eds.</li>
-          <li><strong>Much of it predates the law:</strong> the prosecution relies largely on advocacy from before the law existed.</li>
+          <li><strong>The evidence is his own words:</strong> his meetings with foreign politicians, social media posts, op-eds and interviews.</li>
+          <li><strong>Much of it predates the law:</strong> prosecutors relied on his lobbying from before the law existed, and on later posts and interviews to argue it carried on.</li>
           <li><strong>He was already in prison:</strong> he was charged from his cell, while still serving another sentence.</li>
           <li><strong>The result:</strong> ten more years, handed down on 5 November 2026.</li>
         </ul>
@@ -347,7 +347,7 @@ def case():
     <p class="pull">He is serving a sentence for believing us.</p>
     <div class="why">
       <div><div class="k">1984</div><h4>Britain gave its word</h4><p>The UK signed the Joint Declaration and guaranteed Hong Kong’s freedoms for fifty years. The Government has itself declared China in breach of it.</p></div>
-      <div><div class="k">2026</div><h4>It has reached our streets</h4><p>Two men were jailed at the Old Bailey this year for spying on Hong Kong dissidents in Britain. Hong Kongers settled here have bounties on their heads.</p></div>
+      <div><div class="k">2026</div><h4>It has reached our streets</h4><p>Two men were convicted at the Old Bailey this year of spying on Hong Kong dissidents in Britain, and jailed. Hong Kongers settled here have bounties on their heads.</p></div>
       <div><div class="k">BN(O)</div><h4>It is a test of what we stand for</h4><p>Human beings must come before commercial interests. If Britain stays quiet about Joshua, what is its promise to Hong Kongers worth?</p></div>
     </div>
   </div>
@@ -507,7 +507,7 @@ def newsroom():
         </div>
         <div class="wait-row">
           <div class="wait-n"><span data-since="2026-09-13">61</span><small>days, no reply</small></div>
-          <div><h4>The open letter to the Prime Minister</h4><p>Sent to the Prime Minister, Andy Burnham, on 13 September 2026, signed by 31 parliamentarians, former Foreign Secretaries and human rights leaders. No reply yet. <a href="letters/open-letter-prime-minister-sept-2026.html">Read the letter</a></p></div>
+          <div><h4>The open letter to the Prime Minister</h4><p>Sent to the Prime Minister, Andy Burnham, on 13 September 2026, signed by 31 MPs, peers, former Foreign Secretaries and human rights leaders and organisations. No reply yet. <a href="letters/open-letter-prime-minister-sept-2026.html">Read the letter</a></p></div>
         </div>
       </div>
       """ + STATEMENTS + """
@@ -529,7 +529,7 @@ def newsroom():
         <div>
           <div class="type">Open letter · to the Prime Minister</div>
           <h3><a href="letters/open-letter-prime-minister-sept-2026.html">Britain should stand for something</a></h3>
-          <p>31 parliamentarians from across the parties, former Foreign Secretaries and human rights leaders ask the Prime Minister to call in the Chinese Ambassador and raise Joshua’s case. Published by <a href="https://www.hongkongwatch.org/all-posts/2026/9/14/cross-party-coalition-of-parliamentarians-and-human-rights-leaders-calls-on-prime-minister-to-act-on-hong-kong" target="_blank" rel="noopener">Hong Kong Watch</a>.</p>
+          <p>31 MPs and peers from across the parties, former Foreign Secretaries and human rights leaders and organisations ask the Prime Minister to call in the Chinese Ambassador and raise Joshua’s case. Published by <a href="https://www.hongkongwatch.org/all-posts/2026/9/14/cross-party-coalition-of-parliamentarians-and-human-rights-leaders-calls-on-prime-minister-to-act-on-hong-kong" target="_blank" rel="noopener">Hong Kong Watch</a>.</p>
         </div>
         <span class="pill"><i></i>Awaiting reply</span>
       </div>
@@ -599,12 +599,12 @@ def resources():
       <h2>Joshua Wong: fact sheet</h2>
       <div class="sub">Updated 13 November 2026</div>
       <dl>
-        <dt>Who</dt><dd>Joshua Wong Chi-fung, born 13 October 1996, Hong Kong. Democracy campaigner since age 14; leader of the 2012 campaign against a Beijing-written curriculum and a face of the 2014 Umbrella Movement.</dd>
+        <dt>Who</dt><dd>Joshua Wong Chi-fung, born 13 October 1996, Hong Kong. Democracy campaigner since age 14; leader of the 2012 campaign against a Beijing-backed “national education” curriculum and a face of the 2014 Umbrella Movement.</dd>
         <dt>In prison since</dt><dd>November 2020, continuously.</dd>
         <dt>Latest sentence</dt><dd>Ten years, handed down 5 November 2026, for “conspiracy to collude with foreign forces” under the National Security Law.</dd>
         <dt>Previous release date</dt><dd>January 2027, at the end of his 4 year 8 month sentence in the Hong Kong 47 case.</dd>
         <dt>Possible release</dt><dd>Around 2036, when he will be about 40.</dd>
-        <dt>The evidence</dt><dd>His own advocacy: testimony to parliaments and human rights bodies, interviews and op-eds, much of it from before the law existed.</dd>
+        <dt>The evidence</dt><dd>His own advocacy: meetings with foreign politicians, social media posts, op-eds and interviews, much of it from before the law existed.</dd>
         <dt>International response</dt><dd>Joint statement of 6 November 2026 by Australia, Canada, France, Germany, Italy, Japan, the Netherlands, New Zealand, the UK and the US condemning the sentence.</dd>
         <dt>Why the UK</dt><dd>The UK signed the 1984 Joint Declaration guaranteeing Hong Kong’s freedoms for fifty years, and has declared China in breach of it.</dd>
         <dt>The asks</dt><dd>Raise Joshua’s case with the Chinese Ambassador; review the privileges of the Hong Kong Economic and Trade Office in London; sanction officials responsible for NSL prosecutions, with allies.</dd>
@@ -626,7 +626,7 @@ def resources():
 def act():
     return head("Take action", "Write to your MP about Joshua Wong and share his story.", "act.html") + nav("act.html") + page_head(
         "Take action", "Don’t let him <em>be forgotten</em>",
-        "“The only thing I worry about is that people will forget Hong Kong.” Joshua, writing from prison after his sentence.") + """
+        "“The only thing I worry about is that people will forget Hong Kong.” Joshua, in a letter to a friend from prison, 2026.") + """
 <section style="border-top:0;padding-top:30px" id="mp">
   <div class="wrap">
     <div class="mp" style="margin-top:0">
