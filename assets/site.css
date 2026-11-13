@@ -1044,3 +1044,4 @@ body:has(.mp-print){background:#fff}
 nav.top .links a[href$="write.html"]{color:var(--accent)}
 nav.top .links a,nav.top .btn{white-space:nowrap}
 @media(max-width:1200px) and (min-width:901px){nav.top .links{gap:14px}nav.top .links a{font-size:14px;margin:0}nav.top .brand{font-size:21px}}
+.mw-paper{transform:none}
