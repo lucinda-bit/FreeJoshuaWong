@@ -36,10 +36,10 @@ def pill(d, x, y, text, bg, fg):
     d.rounded_rectangle([x, y, x + w + 40, y + 46], radius=23, fill=bg)
     d.text((x + 20, y + 9), text, font=ft, fill=fg)
 
-def save(img, key):
-    os.makedirs(os.path.join(ROOT, "images/covers"), exist_ok=True)
-    img.save(os.path.join(ROOT, "images/covers", key + ".jpg"), quality=86)
-    return "images/covers/" + key + ".jpg"
+def save(img, key, folder="images/covers"):
+    os.makedirs(os.path.join(ROOT, folder), exist_ok=True)
+    img.save(os.path.join(ROOT, folder, key + ".jpg"), quality=86)
+    return folder + "/" + key + ".jpg"
 
 def waveform(key):  # Guardian podcast: lemon, audio waveform
     img = Image.new("RGB", (W, H), LEMON); d = ImageDraw.Draw(img)
@@ -120,8 +120,29 @@ def stripes(key):  # Pelosi: paper with stripes, quote
     d.text((70, H - 62), "Nancy Pelosi on the House floor", font=f("Montserrat-SemiBold.ttf", 26), fill=GREY)
     return save(img, key)
 
+def frame(key, src, kind, outlet, title, credit, focus=0.55):  # a still from the interview itself, with our branding
+    fw = int(W * 0.6)
+    fr = ImageOps.fit(Image.open(os.path.join(ROOT, src)).convert("RGB"), (fw, H), Image.LANCZOS, centering=(focus, 0.4))
+    img = Image.new("RGB", (W, H), INK).convert("RGBA")
+    img.paste(fr, (W - fw, 0))
+    ov = Image.new("RGBA", (W, H), (0, 0, 0, 0)); od = ImageDraw.Draw(ov)
+    for i in range(140):
+        od.line([(W - fw + i, 0), (W - fw + i, H)], fill=INK + (int(255 * (1 - i / 140) ** 1.5),))
+    img = Image.alpha_composite(img, ov).convert("RGB")
+    d = ImageDraw.Draw(img)
+    pill(d, 60, 64, kind, LEMON, INK)
+    d.text((60, 128), outlet, font=f("Montserrat-Bold.ttf", 28), fill=PAPER)
+    ft, lines, lh = fit_lines(d, title.upper(), W - fw - 60, 380, 110)
+    y = 220
+    for ln in lines:
+        d.text((60, y), ln, font=ft, fill=LEMON); y += lh
+    cf = f("Montserrat-SemiBold.ttf", 18)
+    d.text((W - 24 - d.textlength(credit, font=cf), H - 34), credit, font=cf, fill=PAPER, stroke_width=2, stroke_fill=INK)
+    return save(img, key, "images/stills")
+
 COVERS = {"guardian-podcast": waveform, "byline-podcast": versus, "byline-tv": duotone,
-          "sky-nathan": rings, "c4-plea": datestamp, "pelosi-floor": stripes}
+          "sky-nathan": lambda k: frame(k, "images/frames/sky-nathan-src.png", "INTERVIEW", "Sky News · 5 Nov 2026", "Nathan Law: “losing ground globally”", "Image: Sky News"),
+          "c4-plea": datestamp, "pelosi-floor": stripes}
 
 def make_all():
     return {k: fn(k) for k, fn in COVERS.items()}
