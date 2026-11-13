@@ -223,10 +223,10 @@ def home():
   <div class="wrap">
     <h2>The pressure is building</h2>
     <div class="pstats">
-      <a href="newsroom.html#statements"><b>10</b><span>governments condemned his sentence</span></a>
-      <a href="letters/open-letter-prime-minister-sept-2026.html"><b>""" + str(len(SIGNATORIES)) + """</b><span>parliamentarians and rights leaders wrote to the Prime Minister</span></a>
-      <a href="parliament.html"><b>""" + str(len(RECORD)) + """</b><span>times his case has come up in Parliament</span></a>
-      <a href="newsroom.html"><b>""" + str(PRESS_COUNT) + """</b><span>news reports, podcasts and editorials worldwide</span></a>
+      <a href="newsroom.html#statements"><b>11</b><span>governments, plus the EU, condemned his sentence</span></a>
+      <a href="letters/open-letter-prime-minister-sept-2026.html"><b>""" + str(len(SIGNATORIES)) + """</b><span>MPs, peers and rights leaders signed the open letter to the Prime Minister</span></a>
+      <a href="parliament.html"><b>""" + str(sum(1 for r in RECORD if r[1] != "event")) + """</b><span>times raised in Parliament since the new charge in June 2025</span></a>
+      <a href="newsroom.html"><b>""" + str(PRESS_COUNT) + """</b><span>reports, podcasts and editorials since June 2025</span></a>
     </div>
   </div>
 </section>
