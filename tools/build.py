@@ -49,7 +49,7 @@ def nav(current, depth=0):
     return f"""<nav class="top" aria-label="Main">
   <div class="wrap">
     <a class="brand" href="{up}index.html">Free <span>Joshua Wong</span></a>
-    <div class="links">{links}<a href="{up}act.html" class="mob-only"{" aria-current=\"page\"" if current == "act.html" else ""}>Take action</a></div>
+    <div class="links">{links}<a href="{up}zh.html" lang="zh-Hant-HK" class="lang"{" aria-current=\"page\"" if current == "zh.html" else ""}>中文</a><a href="{up}act.html" class="mob-only"{" aria-current=\"page\"" if current == "act.html" else ""}>Take action</a></div>
     <a class="btn" href="{up}act.html">Take action</a>
     <button class="menu-btn" type="button" aria-expanded="false">Menu</button>
   </div>
@@ -137,9 +137,9 @@ ASKS = """<div class="asks">
 
 FACTS = """<section class="facts" aria-label="Key facts">
   <div class="wrap">
-    <div class="fact"><div class="n">Nov 2020</div><div class="t">In prison continuously since</div></div>
-    <div class="fact"><div class="n">Jan 2027</div><div class="t">When he was due to walk free</div></div>
-    <div class="fact"><div class="n">10 years</div><div class="t">New sentence, handed down on 5 November 2026</div></div>
+    <div class="fact"><div class="n">Nov&nbsp;2020</div><div class="t">In prison continuously since</div></div>
+    <div class="fact"><div class="n">Jan&nbsp;2027</div><div class="t">When he was due to walk free</div></div>
+    <div class="fact"><div class="n">10&nbsp;years</div><div class="t">New sentence, handed down on 5 November 2026</div></div>
     <div class="fact"><div class="n">2036</div><div class="t">Around when he may be released, aged 40</div></div>
   </div>
 </section>
@@ -209,6 +209,20 @@ def home():
     <figcaption>Hong Kong, 2014</figcaption>
   </figure>
 </header>
+
+<section class="h4-human" aria-labelledby="human-h">
+  <div class="wrap">
+    <h2 id="human-h">Not a case. A young man.</h2>
+    <p class="h4-sub">He was a schoolboy when he first stood up to Beijing. He is 30 now, and he has spent most of his twenties in prison.</p>
+    <div class="hgrid">
+      <div><b>14</b><p>The age he started. As a schoolboy he rallied classmates against Beijing’s plan to bring “national education” into Hong Kong’s schools, and won.</p></div>
+      <div><b>500+</b><p>Books his friends say he has read in prison. He has been learning the guitar, and taking a business course.</p></div>
+      <div><b>30</b><p>The birthday he spent in a cell, on 13 October 2026. Friends gathered in Parliament to mark it.</p></div>
+      <div><b>Home</b><p>Where he wants to be. His lawyer told the court he wants to be released to look after his ageing parents.</p></div>
+    </div>
+    <p class="hsrc">From his friends, as reported by <a href="https://briankernkongtsunggan.substack.com/p/the-regime-is-trying-to-make-joshua" target="_blank" rel="noopener">Kong Tsung-gan</a>, and from court reporting by <a href="https://www.christiantoday.com/news/calls-for-release-of-christian-pro-democracy-activist-joshua-wong" target="_blank" rel="noopener">Reuters via Christian Today</a>.</p>
+  </div>
+</section>
 
 <section class="h4-life" aria-labelledby="life-h">
   <div class="wrap">
@@ -349,7 +363,7 @@ def case():
         f'<div class="titem{" future" if fut else ""}"><div class="d">{d}<span class="age">{age if age=="Born" else "Age " + age}</span></div><div><h3>{h}</h3><p>{p}</p></div></div>'
         for age, d, fut, h, p in TIMELINE)
     return head("The case", "Who Joshua Wong is, what he is charged with, and why Britain has a responsibility to act.", "case.html") + nav("case.html") + page_head(
-        "The case", "He kept his word.<br><em>Will we?</em>",
+        "The case", "He kept his&nbsp;word.<br><em>Will&nbsp;we?</em>",
         "Joshua Wong has spent his adult life asking Beijing to keep the promises it made to Hong Kong. He is now serving ten more years for it.") + """
 """ + FACTS + """
 <section>

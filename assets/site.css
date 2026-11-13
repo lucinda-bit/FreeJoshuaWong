@@ -900,3 +900,18 @@ html[lang^="zh"] .phead h1{font-family:var(--display),"PingFang HK","Noto Sans T
 .h4-demand+.h4-lead{margin-top:14px}
 .intro .h4-demand{animation:fjw-rise .7s ease-out 3.1s both}
 .intro .h4-demand+.h4-lead{animation:fjw-rise .7s ease-out 3.4s both}
+/* case page headline: give the two lines room */
+.phead h1{line-height:.96}
+.phead h1 em{display:inline-block;margin-top:.06em}
+/* nav language link */
+nav.top .links a.lang{font-weight:700;letter-spacing:.04em}
+/* the human side */
+.h4-human{background:#0C0C0B}
+.h4-human .hgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;margin-top:48px}
+.h4-human .hgrid>div{border-top:2px solid var(--accent);padding-top:20px}
+.h4-human .hgrid b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(52px,5vw,76px);line-height:.9;color:var(--accent);text-transform:uppercase}
+.h4-human .hgrid p{font-family:var(--serif);font-size:19px;line-height:1.5;color:rgba(244,242,236,.88);margin:14px 0 0}
+.h4-human .hsrc{font-family:var(--label);font-size:13px;color:rgba(244,242,236,.55);margin-top:30px}
+.h4-human .hsrc a{color:rgba(244,242,236,.75)}
+@media(max-width:900px){.h4-human .hgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.h4-human .hgrid{grid-template-columns:1fr}}
