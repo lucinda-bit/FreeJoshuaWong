@@ -731,3 +731,8 @@ nav .btn{font-size:13px}
 .q-actions{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0 14px}
 .q-img{font-family:var(--label);font-size:14px;color:rgba(244,242,236,.7)}
 .q-img a{color:var(--accent)}
+.v-sec{margin:46px 0 22px}
+.v-sec:first-of-type{margin-top:10px}
+.v-sec h2{margin:0 0 6px}
+.v-sec p{margin:0;font-size:18px;color:rgba(244,242,236,.75)}
+.vq-share button{text-transform:none;letter-spacing:0}

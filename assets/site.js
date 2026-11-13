@@ -198,8 +198,7 @@ document.querySelectorAll('[data-since]').forEach(function (el) {
   var countries = {}; V.forEach(function (v) { if (v.country && v.country !== 'Global') countries[v.country] = 1; });
   var st = document.getElementById('v-stats');
   if (st) st.innerHTML = '<b>' + V.length + '</b> voices &nbsp;·&nbsp; <b>' + Object.keys(countries).length + '</b> countries and blocs, plus global rights groups';
-  function render(k) {
-    wall.innerHTML = V.filter(function (v) { return k === 'all' || v.kind === k; }).map(function (v) {
+  function card(v) {
       var size = v.quote.length < 40 ? ' big' : (v.quote.length < 75 ? ' mid' : '');
       var ext = /^https?:/.test(v.url) ? ' target="_blank" rel="noopener"' : '';
       var slug = v.id || (v.who + '-' + v.date).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
@@ -209,7 +208,7 @@ document.querySelectorAll('[data-since]').forEach(function (el) {
         '<div class="vq-top"><span class="vq-where">' + esc(v.where) + '</span><span class="vq-date">' + d(v.date) + '</span></div>' +
         '<a class="vq-q" href="' + page + '"><blockquote>' + esc(v.quote) + '</blockquote></a>' +
         '<figcaption><b>' + esc(v.who) + '</b><span>' + esc(v.role) + (v.country && v.country !== 'Global' ? ' · ' + esc(v.country) : '') + '</span></figcaption>' +
-        '<div class="vq-links"><a href="' + esc(v.url) + '"' + ext + '>Original</a>' +
+        '<div class="vq-links"><a href="' + esc(v.url) + '"' + ext + '>' + (v.via ? 'As reported by ' + esc(v.via) : (/On (X|Twitter)/.test(v.where) ? 'See the post' : 'Original')) + '</a>' +
         (v.watch ? '<a href="' + esc(v.watch) + '">Watch</a>' : '') +
         '</div><div class="vq-share"><span>Share</span>' +
         '<a href="https://twitter.com/intent/tweet?text=' + encodeURIComponent(t) + '&url=' + encodeURIComponent(full) + '" target="_blank" rel="noopener">X</a>' +
@@ -217,7 +216,11 @@ document.querySelectorAll('[data-since]').forEach(function (el) {
         '<a href="https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(full) + '" target="_blank" rel="noopener">LinkedIn</a>' +
         '<button type="button" class="sh" data-link="' + full + '">Copy link</button>' +
         '<a href="images/quotes/' + slug + '.jpg" download>Image</a></div></figure>';
-    }).join('');
+  }
+  var soc = document.getElementById('vsocial');
+  if (soc) soc.innerHTML = V.filter(function (v) { return v.kind === 'social'; }).map(card).join('');
+  function render(k) {
+    wall.innerHTML = V.filter(function (v) { return v.kind !== 'social' && (k === 'all' || v.kind === k); }).map(card).join('');
   }
   var chips = document.querySelectorAll('.v-bar .chip');
   chips.forEach(function (c) {

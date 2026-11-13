@@ -848,12 +848,14 @@ def voices():
 <section class="voices-page" style="border-top:0;padding-top:0">
   <div class="wrap">
     <div class="v-stats" id="v-stats"></div>
+    <div class="v-sec"><h2 class="sec">On <em>social media</em></h2><p>What MPs, ministers and campaigners have posted about Joshua.</p></div>
+    <div class="vwall2" id="vsocial"></div>
+    <div class="v-sec"><h2 class="sec">On the <em>record</em></h2><p>In Parliament, in Congress, and in official statements.</p></div>
     <div class="filters v-bar" role="group" aria-label="Filter voices">
       <button class="chip" data-k="all" aria-pressed="true">Everyone</button>
       <button class="chip" data-k="parliament" aria-pressed="false">Parliamentarians</button>
       <button class="chip" data-k="government" aria-pressed="false">Governments</button>
       <button class="chip" data-k="rights" aria-pressed="false">Rights groups</button>
-      <button class="chip" data-k="social" aria-pressed="false">On social media</button>
     </div>
     <div class="vwall2" id="vwall"></div>
   </div>
@@ -898,7 +900,7 @@ def quote_page(v):
       <figcaption><b>{e(v['who'])}</b><span>{e(v['role'])}{' · ' + e(v['country']) if v.get('country') and v['country'] != 'Global' else ''}</span></figcaption>
     </figure>
     <div data-share data-url="{url}" data-text="“{e(v['quote'])}” — {e(v['who'])}"></div>
-    <p class="q-actions"><a class="btn" href="{e(orig)}"{' target="_blank" rel="noopener"' if ext else ''}>See where it was said</a>{watch}<a class="btn ghost" href="../voices.html">All voices</a></p>
+    <p class="q-actions"><a class="btn" href="{e(orig)}"{' target="_blank" rel="noopener"' if ext else ''}>{'As reported by ' + e(v['via']) if v.get('via') else 'See where it was said'}</a>{watch}<a class="btn ghost" href="../voices.html">All voices</a></p>
     <p class="q-img"><a href="../images/quotes/{v['slug']}.jpg" download>Download this quote as an image</a> for Instagram or WhatsApp.</p>
   </div>
 </section>
