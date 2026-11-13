@@ -6,6 +6,18 @@
 // via: if we link to a news report of the post rather than the post itself, name the outlet here.
 // id: optional; needed if one person has two quotes on the same date.
 window.VOICES = [
+  {date:"2020-12-02", kind:"parliament", who:"Lord Patten of Barnes", role:"Last Governor of Hong Kong", country:"UK", where:"Statement", via:"The Telegraph",
+   quote:"A grim example of China’s determination to put Hong Kong in handcuffs.",
+   url:"https://news.yahoo.com/joshua-wong-leads-young-hong-080602559.html"},
+  {date:"2020-12-02", kind:"parliament", who:"Senator Marsha Blackburn", role:"US Senate", country:"US", where:"Statement", via:"Al Jazeera",
+   quote:"Keep the faith, Joshua, you are truly an inspiration to freedom fighters everywhere.",
+   url:"https://www.aljazeera.com/news/2020/12/2/joshua-wong-jailed-for-xx-years-over-2019-illegal-assembly"},
+  {date:"2017-08-17", kind:"rights", who:"Benedict Rogers", role:"Chair, Hong Kong Watch", country:"UK", where:"Statement",
+   quote:"Nathan Law, Joshua Wong and Alex Chow are brave, principled young men with extraordinary integrity who should be commended, not jailed.",
+   url:"https://www.hongkongwatch.org/all-posts/2017/10/11/joshua-wong-nathan-law-and-alex-chow-jailed-over-occupy-protests"},
+  {date:"2026-11-05", kind:"parliament", who:"Congressional-Executive Commission on China", role:"US Congress", country:"US", where:"Statement", via:"The Epoch Times",
+   quote:"His case again shows how Hong Kong’s courts are being weaponized to advance repression, and today’s sentence should be globally condemned.",
+   url:"https://www.theepochtimes.com/china/hong-kong-pro-democracy-activist-joshua-wong-sentenced-to-10-years-in-prison-6118318"},
   {date:"2026-11-06", kind:"social", who:"Marco Rubio", role:"US Secretary of State", country:"US", where:"On X", via:"VOA",
    quote:"[The United States] strongly condemns the Hong Kong Court’s decision to once again sentence Joshua Wong for exercising his freedom of speech.",
    url:"https://www.voanews.com/a/us-condemns-hong-kong-courts-sentencing-of-pro-democracy-activist-joshua-wong-20261106/8219799.html"},

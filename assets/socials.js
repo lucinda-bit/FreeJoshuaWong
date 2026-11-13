@@ -3,13 +3,14 @@
 // group: uk (UK politicians) | world (politicians elsewhere) | gov (governments) | campaign (campaigners and rights groups) | media
 // handle: without @. url: link to the post itself if you have it; otherwise the card links to their profile.
 // link: optional article the post shares {site, title, url}. via: if we only know the post from a news report.
+// month:true shows only the month (when the exact day is not known). platform: if not X (e.g. "Facebook").
 // joshua:true marks Joshua's own words (shown as the lead card).
 window.SOCIALS = [
   {id:"hkdc-letter", date:"2026-11-06", name:"Hong Kong Democracy Council", handle:"hkdc_us", group:"campaign", joshua:true,
    text:"A letter from Joshua Wong:\n“‘There is no fear in love; perfect love casts out fear.’… Only when fear has come true in these past few years can we better understand what this means. It applies to love between companions, love for a community & love for a city.”"},
   {id:"rogers-op-ed", date:"2026-11-10", name:"Benedict Rogers", handle:"benedictrogers", group:"campaign",
    text:"My new op-ed about #JoshuaWong and all #HongKong political prisoners\n\n“Wong’s sentencing last week is symbolic of the relentless assault on basic rights in Hong Kong over the past decade – in complete violation of promises made in the Sino-British Joint Declaration. …",
-   link:{site:"premierchristianity.com", title:"The Christian faith of jailed Hong Kong freedom fighter Joshua Wong"}},
+   link:{site:"premierchristianity.com", title:"The Christian faith of jailed Hong Kong freedom fighter Joshua Wong", url:"https://www.premierchristianity.com/the-christian-faith-of-jailed-hong-kong-freedom-fighter-joshua-wong/22506.article"}},
   {id:"merkley", date:"2026-11-09", name:"Senator Jeff Merkley", handle:"SenJeffMerkley", group:"world", role:"US Senator",
    text:"The U.S. can’t be silent as the Chinese government continues to harshly punish those speaking out about Hong Kong’s struggle for democracy, including Joshua Wong. Joshua should be freed immediately, and we need to support free speech worldwide.",
    link:{site:"cnn.com", title:"Hong Kong democracy campaigner Joshua Wong handed another 10 years in jail"}},
@@ -22,8 +23,8 @@ window.SOCIALS = [
   {id:"rogers-law", date:"2026-11-07", name:"Benedict Rogers", handle:"benedictrogers", group:"campaign",
    text:"An important article by @nathanlawkc\n\nIn jailing Joshua Wong, China is telling the world it would crush every hope for democracy on its soil\n\n#FreeJoshuaWong",
    link:{site:"theguardian.com", title:"In jailing Joshua Wong, China is telling the world they’d crush every hope for democracy"}},
-  {id:"rubio", date:"2026-11-06", name:"Secretary Marco Rubio", handle:"SecRubio", group:"gov", role:"US Secretary of State",
-   text:"The U.S. strongly condemns the Hong Kong Court’s decision to once again sentence Joshua Wong for exercising his freedom of speech. He has used peaceful means to defend the rights promised to all individuals in Hong Kong.\n\nWe call for his immediate release and that of all unjustly …"},
+  {id:"rubio", date:"2026-11-06", name:"Secretary Marco Rubio", handle:"SecRubio", group:"gov", role:"US Secretary of State", url:"https://x.com/SecRubio/status/2118728915464176060",
+   text:"The U.S. strongly condemns the Hong Kong Court’s decision to once again sentence Joshua Wong for exercising his freedom of speech. He has used peaceful means to defend the rights promised to all individuals in Hong Kong.\n\nWe call for his immediate release and that of all unjustly detained persons."},
   {id:"fcdo", date:"2026-11-06", name:"Foreign, Commonwealth & Development Office", handle:"FCDOGovUK", group:"gov", role:"UK Government",
    text:"Joint statement on the sentencing of Joshua Wong ⬇️",
    link:{site:"Statement", title:"Ten foreign ministries, including the UK: “We call for an immediate end to all unjust prosecutions of individuals charged under the NSL”", url:"newsroom.html#statements"}},
@@ -60,6 +61,10 @@ window.SOCIALS = [
    text:"Joshua Wong – already in prison on one baseless charge – was set to be released in 2027. … Joshua must not be allowed to languish in prison."},
   {id:"nandy-2020", date:"2020-12-02", name:"Lisa Nandy MP", handle:"lisanandy", group:"uk", role:"then Shadow Foreign Secretary", via:"The Epoch Times", viaUrl:"https://www.theepochtimes.com/world/uk-politicians-voice-concern-call-for-sanctions-over-sentencing-of-3-hong-kong-activists-3601609",
    text:"“The detention of pro-democracy activists for exercising this right must be universally condemned.”"},
+  {id:"rogers-2024", date:"2024-11-25", month:true, name:"Benedict Rogers", handle:"benedictrogers", group:"campaign", url:"https://x.com/benedictrogers/status/1860713935264973185",
+   text:"An important article on #HongKong prisoners by @nathanlawkc\n\nMy friend Joshua Wong is among those jailed in Hong Kong – the UK must stand up for these political prisoners"},
+  {id:"rubio-2016", date:"2016-11-15", month:true, name:"Senator Marco Rubio", handle:"", profile:"https://www.facebook.com/SenatorMarcoRubio", platform:"Facebook", group:"world", role:"then US Senator", via:"The Epoch Times", viaUrl:"https://www.theepochtimes.com/china/hong-kong-pro-democracy-activist-joshua-wong-sentenced-to-10-years-in-prison-6118318",
+   text:"Joshua is an impressive and thoughtful young man who, along with his fellow activists, represents the future of Hong Kong—a future that must not go the way of Beijing’s failed authoritarianism and one-party rule."},
   {id:"raab-2020", date:"2020-09-24", name:"Dominic Raab", handle:"DominicRaab", group:"uk", role:"then Foreign Secretary",
    text:"I am deeply concerned about the arrest of Joshua Wong, another example of HK authorities targeting activists. Chinese and HK authorities must respect the rights and freedoms of the people of Hong Kong, as protected in the Joint Declaration."}
 ];

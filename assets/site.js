@@ -243,7 +243,7 @@ document.querySelectorAll('[data-since]').forEach(function (el) {
   var M = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   var G = {uk:'UK politicians', world:'Politicians worldwide', gov:'Governments', campaign:'Campaigners & rights groups', media:'Media'};
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
-  function d(s) { var p = s.split('-'), y = +p[0]; return +p[2] + ' ' + M[+p[1] - 1] + (y !== 2026 ? ' ' + y : ''); }
+  function d(s, month) { var p = s.split('-'), y = +p[0]; return month ? M[+p[1] - 1] + ' ' + y : +p[2] + ' ' + M[+p[1] - 1] + (y !== 2026 ? ' ' + y : ''); }
   function initials(n) { return n.replace(/\(.*?\)|Sir |Lord |Senator |Secretary |The /g, '').split(/\s+/).filter(Boolean).slice(0, 2).map(function (w) { return w[0]; }).join('').toUpperCase(); }
   function body(t) {
     return esc(t).replace(/(#\w+)/g, '<span class="s-tag">$1</span>').replace(/(@\w+)/g, '<span class="s-tag">$1</span>')
@@ -254,7 +254,7 @@ document.querySelectorAll('[data-since]').forEach(function (el) {
     var here = 'https://freejoshuawong.org/socials.html#' + p.id;
     var t = p.name + ' on #FreeJoshuaWong';
     var src = p.via
-      ? '<a href="' + esc(p.viaUrl) + '" target="_blank" rel="noopener">Posted on X · as reported by ' + esc(p.via) + '</a>'
+      ? '<a href="' + esc(p.viaUrl) + '" target="_blank" rel="noopener">Posted on ' + esc(p.platform || 'X') + ' · as reported by ' + esc(p.via) + '</a>'
       : '<a href="' + esc(link) + '" target="_blank" rel="noopener">' + (p.url ? 'See the post on X' : (p.handle ? 'See @' + esc(p.handle) + ' on X' : 'Visit their site')) + '</a>';
     var lk = p.link ? (p.link.url
       ? '<a class="s-link" href="' + esc(p.link.url) + '"' + (/^https?:/.test(p.link.url) ? ' target="_blank" rel="noopener"' : '') + '><small>' + esc(p.link.site) + '</small>' + esc(p.link.title) + '</a>'
@@ -262,7 +262,7 @@ document.querySelectorAll('[data-since]').forEach(function (el) {
     return '<article class="s-post g-' + p.group + (lead ? ' s-lead' : '') + '" id="' + esc(p.id) + '">' +
       (lead ? '<div class="s-lead-k">In his own words · a letter from prison</div>' : '') +
       '<header><span class="s-av">' + initials(p.name) + '</span><div><b>' + esc(p.name) + '</b><span>' +
-      (p.handle ? '@' + esc(p.handle) + ' · ' : '') + d(p.date) + '</span>' + (p.role ? '<em>' + esc(p.role) + '</em>' : '') + '</div></header>' +
+      (p.handle ? '@' + esc(p.handle) + ' · ' : (p.platform ? esc(p.platform) + ' · ' : '')) + d(p.date, p.month) + '</span>' + (p.role ? '<em>' + esc(p.role) + '</em>' : '') + '</div></header>' +
       '<p class="s-text">' + body(p.text) + '</p>' + lk +
       '<footer>' + src + '<span class="s-sh">' +
       '<a href="https://twitter.com/intent/tweet?text=' + encodeURIComponent(t) + '&url=' + encodeURIComponent(here) + '" target="_blank" rel="noopener">Share</a>' +
@@ -277,12 +277,26 @@ document.querySelectorAll('[data-since]').forEach(function (el) {
     Object.keys(G).filter(function (g) { return counts[g]; }).map(function (g) { return '<button class="chip" data-g="' + g + '" aria-pressed="false">' + G[g] + ' <i>' + counts[g] + '</i></button>'; }).join('');
   var pol = rest.filter(function (p) { return p.group === 'uk' || p.group === 'world'; }).length;
   document.getElementById('s-stats').innerHTML = '<b>' + rest.length + '</b> posts &nbsp;·&nbsp; <b>' + pol + '</b> from parliamentarians';
-  function render(g) { wall.innerHTML = rest.filter(function (p) { return g === 'all' || p.group === g; }).map(function (p) { return card(p); }).join(''); }
+  var W = [['all','All years'],['now','Since the new charge (2025–)'],['before','Earlier years (2016–2024)']];
+  var wb = document.createElement('div'); wb.className = 'filters s-when'; wb.setAttribute('role','group'); wb.setAttribute('aria-label','Filter by year');
+  wb.innerHTML = W.map(function (w, i) { return '<button class="chip" data-w="' + w[0] + '" aria-pressed="' + (i ? 'false' : 'true') + '">' + w[1] + '</button>'; }).join('');
+  bar.parentNode.insertBefore(wb, bar.nextSibling);
+  var st = {g: 'all', w: 'all'};
+  function render() {
+    wall.innerHTML = rest.filter(function (p) {
+      return (st.g === 'all' || p.group === st.g) && (st.w === 'all' || (st.w === 'now' ? p.date >= '2025-06' : p.date < '2025-06'));
+    }).map(function (p) { return card(p); }).join('') || '<p class="empty">Nothing for that combination yet.</p>';
+  }
   bar.addEventListener('click', function (e) {
     var c = e.target.closest('.chip'); if (!c) return;
     bar.querySelectorAll('.chip').forEach(function (x) { x.setAttribute('aria-pressed', x === c ? 'true' : 'false'); });
-    render(c.getAttribute('data-g'));
+    st.g = c.getAttribute('data-g'); render();
   });
-  render('all');
+  wb.addEventListener('click', function (e) {
+    var c = e.target.closest('.chip'); if (!c) return;
+    wb.querySelectorAll('.chip').forEach(function (x) { x.setAttribute('aria-pressed', x === c ? 'true' : 'false'); });
+    st.w = c.getAttribute('data-w'); render();
+  });
+  render();
   if (location.hash) { var el = document.getElementById(location.hash.slice(1)); if (el) { el.classList.add('s-hl'); el.scrollIntoView({block: 'center'}); } }
 })();
