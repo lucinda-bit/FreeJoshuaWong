@@ -720,12 +720,13 @@ VIDEOS = [
     ("film.html", "Film", "Joshua: Prisoner vs. Superpower", "The new short film, first shown in Parliament on 13 October 2026.", "images/film-poster.jpg", False),
     ("#exchange-nov", "House of Commons · 10 Nov 2026", "Emily Darlington MP", "Asks the Government to call for Joshua’s release, five days after his sentence.", "images/commons-2026-11-10-poster.jpg", False),
     ("#exchange-kearns", "House of Commons · 10 Nov 2026", "Alicia Kearns MP", "For the Opposition: Joshua and Jimmy Lai remain imprisoned for speaking out for democracy.", "images/commons-2026-11-10-kearns-poster.jpg", False),
+    ("https://podcasts.apple.com/gb/podcast/today-in-focus/id1440133626", "The Guardian · Today in Focus · 13 Nov 2026", "Teen prodigy, Netflix star, prisoner", "Podcast: Nathan Law and journalist Danny Vincent on Joshua’s story and his new sentence.", "images/covers/guardian-podcast.jpg", True),
+    ("https://www.facebook.com/skynews/videos/friend-of-joshua-wong-nathan-law/2072604186823325/", "Sky News · 5 Nov 2026", "Nathan Law on Sky News", "On the day of the sentence, Nathan tells Yalda Hakim that democracy and human rights are “losing ground globally”.", "images/covers/sky-nathan.jpg", True),
+    ("https://www.youtube.com/watch?v=gwQ1bK0KSJE", "Byline Times TV", "Andrew Duncan on Joshua’s story", "Video: the filmmaker behind both Joshua films on where Joshua is now.", "images/covers/byline-tv.jpg", True),
     ("#exchange", "House of Commons · 1 Sep 2026", "Duncan Smith and the Foreign Secretary", "The exchange at Foreign Office Questions, the day before Joshua’s plea.", "images/commons-poster.jpg", False),
-    ("https://podcasts.apple.com/gb/podcast/today-in-focus/id1440133626", "The Guardian · Today in Focus · 13 Nov 2026", "Teen prodigy, Netflix star, prisoner", "Podcast: Nathan Law and journalist Danny Vincent on Joshua’s story and his new sentence.", "", True),
-    ("https://podcasts.apple.com/gb/podcast/byline-times-podcast/id1522910878", "Byline Times Podcast · 26 Oct 2026", "China vs Joshua Wong", "Podcast: filmmaker Andrew Duncan tells Joshua’s story to Adrian Goldberg.", "", True),
-    ("https://www.channel4.com/news/hong-kong-pro-democracy-activist-joshua-wong-pleads-guilty-to-colluding-with-foreign-entities", "Channel 4 News · 2 Sep 2026", "Joshua pleads guilty", "Channel 4 News reports on the plea, with analysis on China and the UK.", "", True),
-    ("https://pelosi.house.gov/news/press-releases/pelosi-calls-joshua-wongs-freedom-house-floor-we-want-be-sure-they-know-we", "US House of Representatives · 2 Sep 2026", "Pelosi on the House floor", "Speaker Emerita Nancy Pelosi calls for Joshua’s freedom.", "", True),
-    ("https://www.youtube.com/watch?v=gwQ1bK0KSJE", "YouTube", "Watch on YouTube", "Opens on YouTube.", "", True),
+    ("https://podcasts.apple.com/gb/podcast/byline-times-podcast/id1522910878", "Byline Times Podcast · 26 Oct 2026", "China vs Joshua Wong", "Podcast: filmmaker Andrew Duncan tells Joshua’s story to Adrian Goldberg.", "images/covers/byline-podcast.jpg", True),
+    ("https://www.channel4.com/news/hong-kong-pro-democracy-activist-joshua-wong-pleads-guilty-to-colluding-with-foreign-entities", "Channel 4 News · 2 Sep 2026", "Joshua pleads guilty", "Channel 4 News reports on the plea, with analysis on China and the UK.", "images/covers/c4-plea.jpg", True),
+    ("https://pelosi.house.gov/news/press-releases/pelosi-calls-joshua-wongs-freedom-house-floor-we-want-be-sure-they-know-we", "US House of Representatives · 2 Sep 2026", "Pelosi on the House floor", "Speaker Emerita Nancy Pelosi calls for Joshua’s freedom.", "images/covers/pelosi-floor.jpg", True),
 ]
 
 def video_cards(skip_film=False):
@@ -737,9 +738,8 @@ def video_cards(skip_film=False):
             url = "parliament.html" + url
         tgt = ' target="_blank" rel="noopener"' if ext else ""
         art = f'<img src="{img}" alt="" loading="lazy">' if img else f'<span class="vc-mark">{kicker.split(" · ")[0]}</span>'
-        if "podcasts.apple" in url: art = f'<span class="vc-mark">{kicker.split(" · ")[0]}<small>Podcast</small></span>'
         cards += f"""<a class="vcard" href="{url}"{tgt}>
-        <div class="vc-img">{art}<span class="vc-play"></span>{'<span class="vc-ext">Opens on '+ ('YouTube' if 'youtube' in url else 'Apple Podcasts' if 'podcasts.apple' in url else 'their site') +'</span>' if ext else ''}</div>
+        <div class="vc-img">{art}<span class="vc-play"></span>{'<span class="vc-ext">Opens on '+ ('YouTube' if 'youtube' in url else 'Apple Podcasts' if 'podcasts.apple' in url else 'Facebook' if 'facebook.com' in url else 'their site') +'</span>' if ext else ''}</div>
         <div class="vc-k">{kicker}</div><h3>{title}</h3><p>{blurb}</p></a>"""
     return cards
 
@@ -972,8 +972,9 @@ def bake_numbers(html):
 if __name__ == "__main__":
     import sys, datetime
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-    import sharecard
+    import sharecard, covers
     print("share card:", sharecard.make())
+    covers.make_all()
     import quotecards
     for v in quotecards.make_all():
         PAGES[f"voices/{v['slug']}.html"] = (lambda v=v: quote_page(v))

@@ -780,3 +780,5 @@ a.s-link:hover{background:#f6f4ec}
 .cov-search input:focus{outline:2px solid var(--accent);border-color:var(--accent)}
 .watch-wall{margin:70px 0 30px}
 .parl-more{padding-top:20px;padding-bottom:10px}
+.vc-img img+.vc-play,.vc-ext{z-index:1}.vc-ext{background:rgba(12,12,11,.75);padding:3px 8px;border-radius:12px;color:#fff}
+.vc-play{left:auto;right:18px}
