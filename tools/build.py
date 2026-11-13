@@ -360,7 +360,7 @@ def case():
     <div class="why">
       <div><div class="k">1984</div><h4>Britain gave its word</h4><p>The UK signed the Joint Declaration and guaranteed Hong Kong’s freedoms for fifty years. The Government has itself declared China in breach of it.</p></div>
       <div><div class="k">2026</div><h4>It has reached our streets</h4><p>Two men were convicted at the Old Bailey this year of spying on Hong Kong dissidents in Britain, and jailed. Hong Kongers settled here have bounties on their heads.</p></div>
-      <div><div class="k">1996</div><h4>He was born under the British flag</h4><p>Joshua was born in Hong Kong in October 1996, eight months before the handover. Britain should stand up for every Hong Konger born while it was responsible for them.</p></div>
+      <div><div class="k">1996</div><h4>Britain was responsible for him the day he was born. It still is.</h4><p>Joshua was born in Hong Kong in October 1996, eight months before the handover, under the British flag. Britain cannot look away from the people it once governed.</p></div>
     </div>
   </div>
 </section>
@@ -1137,6 +1137,7 @@ def zh():
     <p>控方引用他在《國安法》實施前會見外國政界人士的游說活動，以及其後的社交媒體帖文、評論文章和訪問，指有關活動一直持續。</p>
 
     <h2 class="zh-h">為甚麼英國有責任</h2>
+    <p>黃之鋒於1996年10月在香港出生，距離回歸只有八個月，當時香港仍由英國管治。他出生那天，英國對他負有責任；今天依然如此。</p>
     <p>英國在1984年簽署《中英聯合聲明》，承諾香港的權利和自由五十年不變。黃之鋒所爭取的，正是這個承諾得到兌現。</p>
     <p>判刑後，11個國家及地區政府，連同歐盟，就判決發表聲明，表達譴責或關注，當中包括英國。</p>
 
