@@ -185,7 +185,7 @@ def home():
       </div>
     </div>
     <p class="h4-lead">He was due out in January 2027. Instead, he has been given ten more years.</p>
-    <p class="h4-demand">Britain must press China to free him.</p>
+    <p class="h4-demand">Summon China’s ambassador. Free Joshua Wong.</p>
     <div class="h4-cta">
       <a class="btn" href="act.html#mp">Write to your MP</a>
       <a class="btn ghost" href="#film">Watch the film</a>
@@ -795,8 +795,8 @@ TRACKER = [
     ("2026-11-03", "weak", "Will Joshua’s treatment count in decisions on China’s new embassy?",
      "Written question from Alex Barros-Curtis MP. The Government said it does not comment on ongoing legal proceedings.",
      "https://www.parallelparliament.co.uk/mp/alex-barros-curtis/writtenanswers?document_type=writtenanswers&memb_pk=5175&page=1", "The answer"),
-    ("2026-09-13", "none", "Act on Joshua’s case: the open letter to the Prime Minister",
-     "Signed by 31 MPs, peers and rights leaders and sent to Andy Burnham. No reply.",
+    ("2026-09-13", "none", "Call in China’s Ambassador to raise Joshua’s case",
+     "The open letter to the Prime Minister, Andy Burnham, signed by 31 MPs, peers and rights leaders. No reply.",
      "letters/open-letter-prime-minister-sept-2026.html", "Read the letter"),
     ("2026-09-08", "weak", "What has the UK said to Hong Kong about Joshua’s case?",
      "Six written questions from Gregory Stafford MP. One answer for all six: the Government “continues to monitor” the case.",
