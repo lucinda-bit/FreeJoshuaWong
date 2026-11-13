@@ -324,7 +324,7 @@ document.querySelectorAll('form[data-mp]').forEach(function (f) {
   ta.addEventListener('input', upd);
   form.querySelectorAll('[data-start]').forEach(function (b) {
     b.addEventListener('click', function () {
-      var base = ta.value.trim() ? ta.value.replace(/\s*$/, '\n\n') : 'Dear Joshua,\n\n';
+      var base = ta.value.trim() ? ta.value.replace(/\s*$/, '\n\n') : '';
       ta.value = base + b.getAttribute('data-start'); ta.focus(); upd();
     });
   });
@@ -333,5 +333,5 @@ document.querySelectorAll('form[data-mp]').forEach(function (f) {
   var esc = function (t) { return String(t).replace(/[&<>"]/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); };
   wall.innerHTML = M.length ? M.map(function (m) {
     return '<figure class="mw-card"><blockquote>' + esc(m.text).replace(/\n/g, '<br>') + '</blockquote><figcaption>' + esc(m.name) + ', ' + esc(m.place) + '</figcaption></figure>';
-  }).join('') : '<div class="mw-empty"><b>Be one of the first.</b><p>The first messages will appear here soon. Yours could be one of them.</p></div>';
+  }).join('') : '<figure class="mw-card mw-ghost"><blockquote>Your words could be the first thing he reads here.</blockquote><figcaption>You, wherever you are</figcaption></figure><figure class="mw-card mw-ghost g2"><blockquote>A song, a book, a view from your window…</blockquote><figcaption>Anyone, anywhere</figcaption></figure><figure class="mw-card mw-ghost g3"><blockquote>Tell him what gives you hope.</blockquote><figcaption>Be one of the first</figcaption></figure>';
 })();

@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=2ef93082">
+<link rel="stylesheet" href="assets/site.css?v=184e985d">
 </head>
 <body>
 <nav class="top" aria-label="Main">
@@ -32,37 +32,55 @@
     <button class="menu-btn" type="button" aria-expanded="false">Menu</button>
   </div>
 </nav>
-<header class="phead">
-  <div class="wrap">
-    <div class="label">Messages for Joshua</div>
-    <h1>Tell him the world <em>has not forgotten</em></h1>
-    <p class="lede">Joshua’s greatest fear is that people will forget Hong Kong. Write him a few words of hope, and show him it hasn’t happened.</p>
+
+<header class="mw-hero">
+  <div class="wrap mw-hero-in">
+    <div>
+      <div class="label">Messages for Joshua</div>
+      <h1>Send Joshua <em>a little hope</em></h1>
+      <p>His greatest fear is that the world will forget Hong Kong. A few kind words from you can show him it hasn’t.</p>
+      <a class="btn" href="#write-box">Write your message</a>
+    </div>
+    <figure class="mw-photo"><img src="images/joshua.jpg?v=2" alt="Joshua Wong raising a V sign beneath an umbrella, Hong Kong, 2014"></figure>
   </div>
 </header>
 
-<section class="mw" style="border-top:0;padding-top:10px">
+<section class="mw-steps" aria-label="How it works">
+  <div class="wrap">
+    <ol>
+      <li><b>Write</b><span>A few lines about you, your life, or what gives you hope.</span></li>
+      <li><b>We read every one</b><span>So the wall stays a kind place.</span></li>
+      <li><b>It reaches him</b><span>On this wall, and passed on to Joshua through people close to him.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="mw" id="write-box">
   <div class="wrap">
     <div class="mw-grid">
       <form class="mw-form" name="joshua-messages" method="POST" action="write.html?sent=1#sent" data-netlify="true" netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="joshua-messages">
         <p hidden><label>Leave this empty <input name="bot-field"></label></p>
-        <label for="mw-msg">Your message to Joshua</label>
-        <div class="mw-starts" aria-label="Ideas to start">
+        <div class="mw-paper">
+          <div class="mw-dear">Dear Joshua,</div>
+          <label for="mw-msg" class="sr">Your message to Joshua</label>
+          <textarea id="mw-msg" name="message" rows="8" maxlength="600" required placeholder="Write from the heart…"></textarea>
+          <div class="mw-count"><span id="mw-left">600</span> characters left</div>
+          <div class="mw-row">
+            <div><label for="mw-name">From</label><input id="mw-name" name="first-name" maxlength="40" required placeholder="Your first name"></div>
+            <div><label for="mw-town">In</label><input id="mw-town" name="place" maxlength="60" required placeholder="Town or country"></div>
+          </div>
+        </div>
+        <div class="mw-starts" aria-label="Need a start?"><span>Need a start?</span>
           <button type="button" data-start="What gives me hope is ">What gives me hope…</button>
           <button type="button" data-start="Where I live, ">Where I live…</button>
           <button type="button" data-start="A book I think you would love is ">A book for you…</button>
           <button type="button" data-start="When I heard your story, ">When I heard your story…</button>
         </div>
-        <textarea id="mw-msg" name="message" rows="7" maxlength="600" required placeholder="Dear Joshua,"></textarea>
-        <div class="mw-count"><span id="mw-left">600</span> characters left</div>
-        <div class="mw-row">
-          <div><label for="mw-name">First name</label><input id="mw-name" name="first-name" maxlength="40" required></div>
-          <div><label for="mw-town">Town or country</label><input id="mw-town" name="place" maxlength="60" required></div>
-        </div>
         <label class="mw-check"><input type="checkbox" name="show-on-wall" value="yes" checked> You can show my message, first name and town on this page</label>
         <button class="btn" type="submit">Send my message</button>
-        <p class="mw-note">Every message is read before it appears here. We never ask for your email or surname. Messages are passed on to Joshua through people close to him, in the way that is safest for him. Please keep it personal: the prison reads his post, and politics may stop it reaching him.</p>
-        <p class="mw-sent" id="sent" hidden>Thank you. Your message is on its way. It will appear here once it has been read.</p>
+        <p class="mw-note">We never ask for your email or surname. Please keep it personal: the prison reads his post, and politics may stop it reaching him.</p>
+        <p class="mw-sent" id="sent" hidden>Thank you. Your message is on its way, and will appear on the wall once it has been read.</p>
       </form>
       <div class="mw-wall-wrap">
         <h2>From around the world</h2>
@@ -97,6 +115,6 @@
   </div>
 </footer>
 <script src="assets/messages.js"></script>
-<script src="assets/site.js?v=2ef93082"></script>
+<script src="assets/site.js?v=184e985d"></script>
 </body>
 </html>

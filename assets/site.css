@@ -981,3 +981,45 @@ nav.top .links a.lang{font-weight:700;letter-spacing:.04em}
 .mw-empty b{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:30px;color:#fff;display:block}
 .mw-empty p{color:#fff;font-size:18px;margin:8px 0 0}
 @media(max-width:900px){.mw-grid{grid-template-columns:1fr;gap:40px}.mw-row{grid-template-columns:1fr}}
+/* ===== Messages for Joshua: warmer ===== */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.mw-hero{background:#0C0C0B;padding:70px 0 50px}
+.mw-hero-in{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:56px;align-items:center}
+.mw-hero h1{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(52px,6.4vw,104px);line-height:.92;margin:14px 0 22px;color:#fff}
+.mw-hero h1 em{font-style:normal;color:var(--accent);display:block}
+.mw-hero p{font-family:var(--serif);font-size:clamp(20px,1.7vw,25px);line-height:1.5;color:#fff;max-width:30ch;margin:0 0 28px}
+.mw-photo{margin:0;position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:4px;box-shadow:0 0 0 2px var(--accent),0 30px 80px rgba(255,225,53,.18)}
+.mw-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 70%;display:block}
+.mw-steps{background:var(--accent);color:var(--ink);padding:34px 0!important;border:0}
+.mw-steps ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;counter-reset:s}
+.mw-steps li{counter-increment:s;display:grid;grid-template-columns:auto 1fr;column-gap:14px;align-items:baseline}
+.mw-steps li:before{content:counter(s);grid-row:span 2;font-family:var(--display);font-size:44px;line-height:1}
+.mw-steps b{font-family:var(--label);font-weight:800;font-size:17px}
+.mw-steps span{font-family:var(--serif);font-size:17px;line-height:1.45}
+.mw{background:#0C0C0B}
+.mw-form{background:transparent;padding:0;color:#fff}
+.mw-paper{background:#F6F1E4;color:var(--ink);padding:30px 32px 24px;border-radius:3px;box-shadow:0 18px 50px rgba(0,0,0,.45);transform:rotate(-.6deg);border-top:6px solid var(--accent)}
+.mw-dear{font-family:var(--serif);font-style:italic;font-size:30px;margin:0 0 8px;color:var(--ink)}
+.mw-paper textarea{width:100%;box-sizing:border-box;border:0!important;background:transparent repeating-linear-gradient(180deg,transparent 0 37px,rgba(12,12,11,.16) 37px 38px)!important;font:italic 400 21px/38px var(--serif)!important;color:var(--ink);padding:0 2px!important;min-height:304px;resize:vertical;outline:none}
+.mw-paper textarea:focus{background-color:rgba(255,225,53,.08)!important}
+.mw-paper .mw-count{color:rgba(12,12,11,.55)}
+.mw-paper .mw-row label{font-family:var(--serif);font-style:italic;font-weight:400;font-size:19px;color:rgba(12,12,11,.75)}
+.mw-paper .mw-row input{border:0!important;border-bottom:1.5px solid rgba(12,12,11,.35)!important;background:transparent!important;font:italic 400 20px var(--serif)!important;min-height:40px!important;padding:0 2px!important}
+.mw-starts{margin:26px 0 14px;align-items:center}
+.mw-starts span{font:700 13px var(--label);color:rgba(244,242,236,.8);margin-right:4px}
+.mw-starts button{border-color:var(--accent);color:var(--accent)}
+.mw-starts button:hover{background:var(--accent);color:var(--ink)}
+.mw-form .mw-check{color:#fff}
+.mw-form .btn{background:var(--accent);color:var(--ink);border-color:var(--accent);font-size:18px;min-height:58px}
+.mw-form .btn:hover{background:#fff;border-color:#fff}
+.mw-note{color:rgba(244,242,236,.85)}
+.mw-sent{background:var(--accent);color:var(--ink)}
+.mw-card{background:#F6F1E4;border-left:0;border-top:5px solid var(--accent);border-radius:3px;padding:22px 24px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.mw-card:nth-child(3n+1){transform:rotate(-1deg)}.mw-card:nth-child(3n+2){transform:rotate(.8deg)}
+.mw-card blockquote{color:var(--ink);font-style:italic}
+.mw-card figcaption{color:rgba(12,12,11,.7)}
+.mw-ghost{background:transparent;border:2px dashed rgba(255,225,53,.55);box-shadow:none}
+.mw-ghost blockquote{color:#fff}
+.mw-ghost figcaption{color:var(--accent)}
+@media(max-width:900px){.mw-hero-in{grid-template-columns:1fr}.mw-photo{aspect-ratio:16/11}.mw-steps ol{grid-template-columns:1fr;gap:16px}}
+@media(max-width:900px){.mw-photo{aspect-ratio:1/1}.mw-photo img{object-position:50% 100%}}
