@@ -7,7 +7,7 @@ import os
 SITE = "https://freejoshuawong.org"
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-NAV = [("case.html", "The case"), ("film.html", "Film"), ("newsroom.html", "Newsroom"), ("resources.html", "Resources")]
+NAV = [("case.html", "The case"), ("film.html", "Film"), ("newsroom.html", "Newsroom"), ("parliament.html", "Parliament"), ("resources.html", "Resources")]
 
 def head(title, desc, path, depth=0):
     up = "../" * depth
@@ -71,7 +71,7 @@ def footer(depth=0, scripts=""):
     </div>
     <div class="cols">
       <nav aria-label="Footer">
-        <a href="{up}case.html">The case</a><a href="{up}film.html">Film</a><a href="{up}newsroom.html">Newsroom</a>
+        <a href="{up}case.html">The case</a><a href="{up}film.html">Film</a><a href="{up}newsroom.html">Newsroom</a><a href="{up}parliament.html">Parliament</a>
         <a href="{up}resources.html">Resources</a><a href="{up}act.html">Take action</a>
       </nav>
       <div>
@@ -392,8 +392,9 @@ STATEMENTS = """<div class="timeline">
       <div class="titem"><div class="d">1 Sep 2026</div><div>
           <div class="who">House of Commons</div>
           <div class="flags"><span>UK</span></div>
-          <h3>Raised by Sir Iain Duncan Smith; Miliband says he will take up the case</h3>
-          <p>The day before Joshua’s plea hearing, Sir Iain Duncan Smith raised his case in the Commons. Miliband said he would take it up. There has been no public update since.</p></div></div>
+          <h3>Raised by Sir Iain Duncan Smith; the Foreign Secretary says he will take up the case</h3>
+          <p>The day before Joshua’s plea hearing, Sir Iain Duncan Smith raised his case at Foreign Office Questions. Foreign Secretary Ed Miliband said he would take it up. There has been no public update since.</p>
+          <a class="src" href="parliament.html">Watch the exchange</a></div></div>
       <div class="titem"><div class="d">28 Oct 2025</div><div>
           <div class="who">House of Commons · FCDO oral questions</div>
           <div class="flags"><span>UK</span></div>
@@ -449,11 +450,11 @@ def newsroom():
         <h3>Still waiting for an answer</h3>
         <div class="wait-row">
           <div class="wait-n"><span data-since="2026-09-01">73</span><small>days</small></div>
-          <div><h4>Miliband’s promise to take up Joshua’s case</h4><p>Raised in the Commons by Sir Iain Duncan Smith on 1 September 2026. Miliband said he would take up the case. No update since.</p></div>
+          <div><h4>The Foreign Secretary’s promise to take up Joshua’s case</h4><p>Raised in the Commons by Sir Iain Duncan Smith on 1 September 2026. Ed Miliband said he would take up the case. No update since. <a href="parliament.html">Watch the exchange</a></p></div>
         </div>
         <div class="wait-row">
-          <div class="wait-n"><span>—</span><small>no reply</small></div>
-          <div><h4>The open letter to the Prime Minister</h4><p>Sent to Andy Burnham in September 2026, signed by parliamentarians, two former Foreign Secretaries and human rights organisations. No reply yet. <a href="letters/open-letter-prime-minister-sept-2026.html">Read the letter</a></p></div>
+          <div class="wait-n"><span data-since="2026-09-13">61</span><small>days, no reply</small></div>
+          <div><h4>The open letter to the Prime Minister</h4><p>Sent to the Prime Minister, Andy Burnham, on 13 September 2026, signed by parliamentarians, two former Foreign Secretaries and human rights organisations. No reply yet. <a href="letters/open-letter-prime-minister-sept-2026.html">Read the letter</a></p></div>
         </div>
       </div>
       """ + STATEMENTS + """
@@ -462,7 +463,7 @@ def newsroom():
     <div class="panel" id="panel-letters" hidden>
       <p class="lede" style="margin-bottom:34px">Letters sent by the campaign and its supporters, and our statements to the media.</p>
       <div class="rel">
-        <div class="d">Sep 2026</div>
+        <div class="d">13 Sep 2026</div>
         <div>
           <div class="type">Open letter · to the Prime Minister</div>
           <h3><a href="letters/open-letter-prime-minister-sept-2026.html">Britain should stand for something</a></h3>
@@ -624,9 +625,114 @@ Yours sincerely,
 </section>
 """ + footer()
 
+# ---------------- PARLIAMENT ----------------
+# kind: commons | lords | written | report | event
+RECORD = [
+    ("2026-10-22", "report", "Six-monthly Report on Hong Kong", "Foreign Secretary · Report to Parliament",
+     "The Government’s report for January to June 2026 cites developments in Joshua’s case as reinforcing concerns about the broad use of national security legislation.",
+     "https://www.gov.uk/government/publications/six-monthly-report-on-hong-kong-january-to-june-2026/six-monthly-report-on-hong-kong-1-january-to-30-june-2026", "GOV.UK", ""),
+    ("2026-10-13", "event", "The film is shown in Parliament", "Committee Room 15 · Houses of Parliament",
+     "<em>Joshua: Prisoner vs. Superpower</em> was first shown to parliamentarians on Joshua’s 30th birthday.",
+     "film.html", "Watch the film", ""),
+    ("2026-09-01", "commons", "“Enough is enough”", "Foreign Office Questions · House of Commons",
+     "Sir Iain Duncan Smith urged the Government to raise Joshua’s case with Beijing. Foreign Secretary Ed Miliband said he would take it up. No update has been made public since.",
+     "#exchange", "Watch the exchange", "2026-09-01"),
+    ("2025-12-17", "lords", "Named in the Lords after Jimmy Lai’s conviction", "Jimmy Lai Conviction · House of Lords",
+     "Lord Alton asked what the Government is doing to raise the cases of pro-democracy prisoners “such as Joshua Wong and Andy Li”.",
+     "https://parallelparliament.co.uk/debate/2025-12-17/lords/lords-chamber/jimmy-lai-conviction", "Read the debate", ""),
+    ("2025-10-28", "commons", "Hong Kong human rights violations", "House of Commons",
+     "MPs pressed ministers on Hong Kong, noting that Joshua had been rearrested and faced new charges under the National Security Law.",
+     "https://hansard.parliament.uk/Commons/2025-10-28/debates/FCFA35AB-A007-4F6D-BF8A-3D80321D4046/HongKongHumanRightsViolations", "Hansard", ""),
+    ("2025-10-23", "report", "His re-arrest on the record", "Foreign Secretary · Report to Parliament",
+     "The six-monthly report for January to June 2025 records Joshua’s re-arrest on 6 June on suspicion of collusion with foreign forces.",
+     "https://www.gov.uk/government/publications/six-monthly-report-on-hong-kong-january-to-june-2025/six-monthly-report-on-hong-kong-1-january-to-30-june-2025", "GOV.UK", ""),
+    ("2025-07-03", "written", "The UK is “deeply concerned”", "Written question · Alicia Kearns MP",
+     "Answering Alicia Kearns MP, the Foreign Office said it was deeply concerned by the further charges against Joshua.",
+     "https://www.parallelparliament.co.uk/question/63014/hong-kong-politics-and-government", "Parliamentary answer", ""),
+]
+KINDS = [("commons", "Commons"), ("lords", "Lords"), ("written", "Written questions"), ("report", "Government reports"), ("event", "In Parliament")]
+MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+
+VIDEOS = [
+    ("film.html", "Film", "Joshua: Prisoner vs. Superpower", "The new short film, first shown in Parliament on 13 October 2026.", "images/film-poster.jpg", False),
+    ("#exchange", "House of Commons · 1 Sep 2026", "Duncan Smith and the Foreign Secretary", "The exchange at Foreign Office Questions, the day before Joshua’s plea.", "images/commons-poster.jpg", False),
+    ("https://www.channel4.com/news/hong-kong-pro-democracy-activist-joshua-wong-pleads-guilty-to-colluding-with-foreign-entities", "Channel 4 News · 2 Sep 2026", "Joshua pleads guilty", "Channel 4 News reports on the plea, with analysis on China and the UK.", "", True),
+    ("https://pelosi.house.gov/news/press-releases/pelosi-calls-joshua-wongs-freedom-house-floor-we-want-be-sure-they-know-we", "US House of Representatives · 2 Sep 2026", "Pelosi on the House floor", "Speaker Emerita Nancy Pelosi calls for Joshua’s freedom.", "", True),
+    ("https://www.youtube.com/watch?v=gwQ1bK0KSJE", "YouTube", "Watch on YouTube", "Opens on YouTube.", "", True),
+]
+
+def parliament():
+    def dfmt(d):
+        y, m, dd = d.split("-"); return f"{int(dd)} {MONTHS[int(m)-1]} {y}"
+    counts = {k: sum(1 for r in RECORD if r[1] == k) for k, _ in KINDS}
+    label = dict(KINDS)
+    chips = '<button class="chip" data-k="all" aria-pressed="true">Everything <i>' + str(len(RECORD)) + '</i></button>' + "".join(
+        f'<button class="chip" data-k="{k}" aria-pressed="false">{t} <i>{counts[k]}</i></button>' for k, t in KINDS if counts[k])
+    rows = ""
+    for d, k, title, who, body, url, link, since in RECORD:
+        ext = url.startswith("http")
+        tgt = ' target="_blank" rel="noopener"' if ext else ""
+        wait = f'<div class="rec-wait"><b data-since="{since}">—</b> days, no update</div>' if since else ""
+        rows += f"""<article class="rec" data-k="{k}"{' id="rec-'+d+'"' if since else ''}>
+        <div class="rec-d"><span>{dfmt(d)}</span><em class="k-{k}">{label[k]}</em></div>
+        <div><div class="rec-who">{who}</div><h3>{title}</h3><p>{body}</p>{wait}<a class="src" href="{url}"{tgt}>{link}</a></div>
+      </article>"""
+    cards = ""
+    for url, kicker, title, blurb, img, ext in VIDEOS:
+        tgt = ' target="_blank" rel="noopener"' if ext else ""
+        art = f'<img src="{img}" alt="" loading="lazy">' if img else f'<span class="vc-mark">{kicker.split(" · ")[0]}</span>'
+        cards += f"""<a class="vcard" href="{url}"{tgt}>
+        <div class="vc-img">{art}<span class="vc-play"></span>{'<span class="vc-ext">Opens on '+ ('YouTube' if 'youtube' in url else 'their site') +'</span>' if ext else ''}</div>
+        <div class="vc-k">{kicker}</div><h3>{title}</h3><p>{blurb}</p></a>"""
+    return head("Parliament", "Every time Joshua Wong’s case has been raised at Westminster, and every film and clip, in one place.", "parliament.html") + nav("parliament.html") + page_head(
+        "Parliament", "On the <em>record</em>",
+        "Every time Joshua’s case has been raised at Westminster, and every film and clip, in one place.") + """
+<section class="parl-feature" id="exchange" style="border-top:0;padding-top:10px">
+  <div class="wrap">
+    <div class="px">
+      <div class="px-vid">
+        <div class="screen vid"><video controls preload="none" playsinline poster="images/commons-poster.jpg"><source src="media/commons-2026-09-01.mp4" type="video/mp4">Your browser can’t play this video.</video></div>
+        <p class="px-cap">BBC Parliament, House of Commons, Foreign Office Questions, 1 September 2026.</p>
+      </div>
+      <div class="px-side">
+        <div class="px-when">1 September 2026 · House of Commons</div>
+        <div class="px-sp">
+          <div class="px-name">Sir Iain Duncan Smith</div>
+          <div class="px-role">Conservative, Chingford and Woodford Green</div>
+          <p>Asked the Government to raise Joshua’s case with Beijing.</p>
+        </div>
+        <div class="px-sp">
+          <div class="px-name">Ed Miliband</div>
+          <div class="px-role">Foreign Secretary</div>
+          <p>Said he would take up Joshua’s case.</p>
+        </div>
+        <div class="px-count"><b data-since="2026-09-01">73</b><span>days since that promise.<br>No update has been made public.</span></div>
+        <div data-share data-url="https://freejoshuawong.org/parliament.html" data-text="The Foreign Secretary promised to take up Joshua Wong’s case. No update since. #FreeJoshuaWong"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="parl-watch">
+  <div class="wrap">
+    <div class="sec-head"><div><div class="label">Watch</div><h2 class="sec">Films and <em>clips</em></h2></div></div>
+    <div class="vwall">""" + cards + """</div>
+  </div>
+</section>
+
+<section class="parl-record">
+  <div class="wrap">
+    <div class="sec-head"><div><div class="label">The record</div><h2 class="sec">Raised at <em>Westminster</em></h2></div></div>
+    <div class="filters rec-bar" role="group" aria-label="Filter the record">""" + chips + """</div>
+    <div class="recs">""" + rows + """</div>
+    <p class="rec-note">Know of a mention we’ve missed? Tell us at press@freejoshuawong.org.</p>
+  </div>
+</section>
+""" + CTA.replace("{up}", "") + footer()
+
 PAGES = {
     "index.html": home, "case.html": case, "film.html": film, "newsroom.html": newsroom,
-    "resources.html": resources, "act.html": act,
+    "resources.html": resources, "act.html": act, "parliament.html": parliament,
     "letters/open-letter-prime-minister-sept-2026.html": letter_pm,
 }
 

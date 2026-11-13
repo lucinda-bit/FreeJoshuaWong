@@ -173,3 +173,15 @@ document.querySelectorAll('[data-since]').forEach(function (el) {
   var d = Math.floor((Date.now() - Date.UTC(+p[0], +p[1] - 1, +p[2])) / 864e5);
   if (d >= 0) el.textContent = d;
 });
+
+/* Parliament record filter */
+(function () {
+  var chips = document.querySelectorAll('.rec-bar .chip');
+  chips.forEach(function (c) {
+    c.addEventListener('click', function () {
+      var k = c.getAttribute('data-k');
+      chips.forEach(function (x) { x.setAttribute('aria-pressed', x === c ? 'true' : 'false'); });
+      document.querySelectorAll('.rec').forEach(function (r) { r.hidden = k !== 'all' && r.getAttribute('data-k') !== k; });
+    });
+  });
+})();
