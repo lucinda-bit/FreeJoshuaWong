@@ -117,7 +117,7 @@ def page_head(label, title_html, lede, crumbs=None):
 """
 
 ASKS = """<div class="asks">
-      <div class="ask"><h3>Raise Joshua’s case with the Chinese Ambassador</h3><p>The Prime Minister should call in the Ambassador and raise Joshua and the others imprisoned for standing up for democracy, by name.</p></div>
+      <div class="ask ask-lead"><h3>Summon China’s Ambassador</h3><p>The Prime Minister should call in the Ambassador and raise Joshua and the others imprisoned for standing up for democracy, by name, as the Government did for Jimmy Lai.</p></div>
       <div class="ask"><h3>Review the Hong Kong trade office’s privileges</h3><p>The Hong Kong Economic and Trade Office in London keeps diplomatic-style privileges, even after a senior manager there was convicted of spying on Hong Kongers in Britain.</p></div>
       <div class="ask"><h3>Sanction those responsible</h3><p>Hold to account the officials behind National Security Law prosecutions, working with Britain’s allies.</p></div>
     </div>"""
@@ -243,7 +243,7 @@ def home():
     <h2>What Britain should do</h2>
     <p class="h4-sub">Britain guaranteed Hong Kong’s freedoms in 1984. Ten governments, including our own, signed a joint statement condemning Joshua’s sentence. Now words need to become action.</p>
     <div class="asklist">
-      <div><h3>Raise his case with China’s ambassador</h3><p>The Prime Minister should call in the Ambassador and name Joshua and the others jailed for standing up for democracy.</p></div>
+      <div class="ask-lead"><span class="ask-tag">Our first ask</span><h3>Summon China’s Ambassador</h3><p>The Prime Minister should call in the Ambassador and name Joshua and the others jailed for standing up for democracy, as the Government did for Jimmy Lai.</p><a class="btn" href="letters/open-letter-prime-minister-sept-2026.html">Read the open letter</a></div>
       <div><h3>Review the Hong Kong trade office</h3><p>Its London office keeps diplomatic-style privileges, even after a senior manager there was convicted of spying on Hong Kongers in Britain.</p></div>
       <div><h3>Sanction those responsible</h3><p>Hold the officials behind National Security Law prosecutions to account, together with Britain’s allies.</p></div>
     </div>
@@ -1117,6 +1117,7 @@ def zh():
     return h + nav("zh.html") + page_head("中文",
         "釋放<em>黃之鋒</em>",
         "他原定於2027年1月出獄。如今，他被加判十年。") + """
+<div class="wrap"><p class="zh-demand">召見中國大使，釋放黃之鋒。</p></div>
 <section class="zh" style="border-top:0;padding-top:20px">
   <div class="wrap zh-body">
     <div class="zh-count"><b data-since="2020-11-22">—</b><span>日<br>身陷囹圄</span></div>
@@ -1141,7 +1142,7 @@ def zh():
 
     <h2 class="zh-h">我們要求英國政府</h2>
     <div class="zh-asks">
-      <div><h3>召見中國駐英大使</h3><p>首相應召見中國大使，點名提出黃之鋒及其他因爭取民主而入獄的人士的個案。</p></div>
+      <div class="ask-lead"><h3>召見中國駐英大使</h3><p>首相應召見中國大使，點名提出黃之鋒及其他因爭取民主而入獄的人士的個案，正如英國政府曾為黎智英所做的一樣。</p></div>
       <div><h3>檢討香港駐倫敦經濟貿易辦事處</h3><p>該辦事處仍享有類似外交機構的特權，即使其一名高級經理已被裁定在英國監視港人罪成。</p></div>
       <div><h3>制裁相關官員</h3><p>聯同英國的盟友，追究負責《國安法》檢控的官員。</p></div>
     </div>

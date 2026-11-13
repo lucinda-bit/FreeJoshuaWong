@@ -870,3 +870,14 @@ html[lang^="zh"] .phead h1{font-family:var(--display),"PingFang HK","Noto Sans T
 .zh-body a:not(.btn){color:var(--accent)}
 @media(max-width:800px){.zh-asks,.zh-act{grid-template-columns:1fr}}
 .tracker .st-noupdate{background:#C8352B;color:#fff}
+/* the lead ask stands out */
+.asklist{grid-template-columns:1.25fr 1fr 1fr}
+.asklist .ask-lead{background:var(--accent);color:var(--ink);padding:26px 26px 28px;margin:-26px 0 0}
+.asklist .ask-lead h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:34px;line-height:1;color:var(--ink)}
+.asklist .ask-lead p{color:rgba(12,12,11,.85)}
+.asklist .ask-lead .btn{margin-top:18px;background:var(--ink);color:var(--accent);border-color:var(--ink)}
+.ask-tag{display:inline-block;font-family:var(--label);font-weight:800;font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px}
+.asks .ask-lead{border-color:var(--accent)!important;background:rgba(255,225,53,.08)}
+.zh-demand{font-weight:800;font-size:clamp(24px,3vw,34px);color:var(--accent);margin:0 0 10px;letter-spacing:.04em}
+.zh-asks .ask-lead{border-color:var(--accent);background:rgba(255,225,53,.08)}
+@media(max-width:900px){.asklist{grid-template-columns:1fr}.asklist .ask-lead{margin:0}}
