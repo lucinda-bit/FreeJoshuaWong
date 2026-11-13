@@ -42,27 +42,27 @@ def save(img, key, folder="images/covers"):
     return folder + "/" + key + ".jpg"
 
 def waveform(key):  # Guardian podcast: lemon, audio waveform
-    img = Image.new("RGB", (W, H), LEMON); d = ImageDraw.Draw(img)
-    pill(d, 70, 64, "PODCAST", INK, LEMON)
-    d.text((70, 128), "The Guardian · Today in Focus", font=f("Montserrat-Bold.ttf", 30), fill=INK)
+    img = Image.new("RGB", (W, H), (22, 22, 20)); d = ImageDraw.Draw(img)
+    pill(d, 70, 64, "PODCAST", LEMON, INK)
+    d.text((70, 128), "The Guardian · Today in Focus", font=f("Montserrat-Bold.ttf", 30), fill=PAPER)
     rnd = random.Random(7); cx = 70
     while cx < W - 70:
         h = int(30 + 150 * abs(math.sin(cx / 37.0)) * (0.5 + rnd.random() * 0.6))
-        d.rounded_rectangle([cx, 300 - h // 2, cx + 9, 300 + h // 2], radius=4, fill=INK)
+        d.rounded_rectangle([cx, 300 - h // 2, cx + 9, 300 + h // 2], radius=4, fill=(120, 118, 110))
         cx += 17
     ft, lines, lh = fit_lines(d, "NATHAN LAW ON HIS FRIEND JOSHUA", W - 140, 230, 120)
     y = H - 60 - len(lines) * lh
     for ln in lines:
-        d.text((70, y), ln, font=ft, fill=INK); y += lh
+        d.text((70, y), ln, font=ft, fill=PAPER); y += lh
     return save(img, key)
 
 def versus(key):  # Byline podcast: black, giant outline VS
     img = Image.new("RGB", (W, H), INK); d = ImageDraw.Draw(img)
-    d.text((W - 600, -60), "VS", font=f("Anton.ttf", 640), fill=INK, stroke_width=5, stroke_fill=LEMON)
+    d.text((W - 600, -60), "VS", font=f("Anton.ttf", 640), fill=INK, stroke_width=5, stroke_fill=(70, 70, 64))
     pill(d, 70, 64, "PODCAST", LEMON, INK)
     d.text((70, 128), "Byline Times Podcast", font=f("Montserrat-Bold.ttf", 30), fill=PAPER)
     d.text((70, 290), "CHINA", font=f("Anton.ttf", 150), fill=PAPER)
-    d.text((70, 445), "VS JOSHUA", font=f("Anton.ttf", 150), fill=LEMON)
+    d.text((70, 445), "VS JOSHUA", font=f("Anton.ttf", 150), fill=PAPER)
     d.text((70, H - 58), "Andrew Duncan with Adrian Goldberg", font=f("Montserrat-SemiBold.ttf", 24), fill=(170, 168, 160))
     return save(img, key)
 
@@ -70,11 +70,11 @@ def duotone(key):  # Byline TV: film still in lemon/black duotone
     src = Image.open(os.path.join(ROOT, "images/film-poster.jpg")).convert("L")
     src = src.crop((0, 0, src.width, int(src.height * 0.74)))
     g = ImageOps.autocontrast(ImageOps.fit(src, (W, H), centering=(0.35, 0.3)))
-    img = ImageOps.colorize(g, black=INK, white=LEMON)
+    img = ImageOps.colorize(g, black=(10, 10, 9), white=(236, 233, 224), mid=(120, 117, 110))
     d = ImageDraw.Draw(img)
     d.rectangle([0, H - 190, W, H], fill=INK)
-    pill(d, 70, 64, "VIDEO", INK, LEMON)
-    d.text((70, H - 172), "BYLINE TIMES TV", font=f("Montserrat-Bold.ttf", 26), fill=LEMON)
+    pill(d, 70, 64, "VIDEO", LEMON, INK)
+    d.text((70, H - 172), "BYLINE TIMES TV", font=f("Montserrat-Bold.ttf", 26), fill=(190, 188, 180))
     d.text((70, H - 132), "ANDREW DUNCAN ON JOSHUA’S STORY", font=f("Anton.ttf", 78), fill=PAPER)
     return save(img, key)
 
@@ -94,9 +94,9 @@ def rings(key):  # Sky: black, concentric rings, quote
 
 def datestamp(key):  # Channel 4: split with big date
     img = Image.new("RGB", (W, H), INK); d = ImageDraw.Draw(img)
-    d.polygon([(0, 0), (560, 0), (440, H), (0, H)], fill=LEMON)
-    d.text((70, 100), "2", font=f("Anton.ttf", 340), fill=INK)
-    d.text((70, 480), "SEP 2026", font=f("Anton.ttf", 96), fill=INK)
+    d.polygon([(0, 0), (560, 0), (440, H), (0, H)], fill=(34, 34, 31))
+    d.text((70, 100), "2", font=f("Anton.ttf", 340), fill=PAPER)
+    d.text((70, 480), "SEP 2026", font=f("Anton.ttf", 96), fill=LEMON)
     pill(d, 560, 64, "NEWS REPORT", LEMON, INK)
     d.text((560, 128), "Channel 4 News", font=f("Montserrat-Bold.ttf", 30), fill=PAPER)
     ft, lines, lh = fit_lines(d, "JOSHUA PLEADS GUILTY", W - 560 - 60, 330, 130)
@@ -135,13 +135,13 @@ def frame(key, src, kind, outlet, title, credit, focus=0.55):  # a still from th
     ft, lines, lh = fit_lines(d, title.upper(), W - fw - 60, 380, 110)
     y = 220
     for ln in lines:
-        d.text((60, y), ln, font=ft, fill=LEMON); y += lh
+        d.text((60, y), ln, font=ft, fill=PAPER); y += lh
     cf = f("Montserrat-SemiBold.ttf", 18)
     d.text((W - 24 - d.textlength(credit, font=cf), H - 34), credit, font=cf, fill=PAPER, stroke_width=2, stroke_fill=INK)
     return save(img, key, "images/stills")
 
 COVERS = {"guardian-podcast": waveform, "byline-podcast": versus, "byline-tv": duotone,
-          "sky-nathan": lambda k: frame(k, "images/frames/sky-nathan-src.png", "INTERVIEW", "Sky News · 5 Nov 2026", "Nathan Law: “losing ground globally”", "Image: Sky News"),
+          "sky-nathan": lambda k: frame(k, "images/frames/sky-nathan-src.png", "INTERVIEW", "Sky News · 5 Nov 2026", "Nathan Law: democracy and human rights are “losing ground globally”", "Image: Sky News"),
           "c4-plea": datestamp, "pelosi-floor": stripes}
 
 def make_all():
