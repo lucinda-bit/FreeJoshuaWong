@@ -688,6 +688,8 @@ VIDEOS = [
     ("#exchange-nov", "House of Commons · 10 Nov 2026", "Emily Darlington MP", "Asks the Government to call for Joshua’s release, five days after his sentence.", "images/commons-2026-11-10-poster.jpg", False),
     ("#exchange-kearns", "House of Commons · 10 Nov 2026", "Alicia Kearns MP", "For the Opposition: Joshua and Jimmy Lai remain imprisoned for speaking out for democracy.", "images/commons-2026-11-10-kearns-poster.jpg", False),
     ("#exchange", "House of Commons · 1 Sep 2026", "Duncan Smith and the Foreign Secretary", "The exchange at Foreign Office Questions, the day before Joshua’s plea.", "images/commons-poster.jpg", False),
+    ("https://podcasts.apple.com/gb/podcast/today-in-focus/id1440133626", "The Guardian · Today in Focus · 13 Nov 2026", "Teen prodigy, Netflix star, prisoner", "Podcast: Nathan Law and journalist Danny Vincent on Joshua’s story and his new sentence.", "", True),
+    ("https://podcasts.apple.com/gb/podcast/byline-times-podcast/id1522910878", "Byline Times Podcast · 26 Oct 2026", "China vs Joshua Wong", "Podcast: filmmaker Andrew Duncan tells Joshua’s story to Adrian Goldberg.", "", True),
     ("https://www.channel4.com/news/hong-kong-pro-democracy-activist-joshua-wong-pleads-guilty-to-colluding-with-foreign-entities", "Channel 4 News · 2 Sep 2026", "Joshua pleads guilty", "Channel 4 News reports on the plea, with analysis on China and the UK.", "", True),
     ("https://pelosi.house.gov/news/press-releases/pelosi-calls-joshua-wongs-freedom-house-floor-we-want-be-sure-they-know-we", "US House of Representatives · 2 Sep 2026", "Pelosi on the House floor", "Speaker Emerita Nancy Pelosi calls for Joshua’s freedom.", "", True),
     ("https://www.youtube.com/watch?v=gwQ1bK0KSJE", "YouTube", "Watch on YouTube", "Opens on YouTube.", "", True),
@@ -713,8 +715,9 @@ def parliament():
     for url, kicker, title, blurb, img, ext in VIDEOS:
         tgt = ' target="_blank" rel="noopener"' if ext else ""
         art = f'<img src="{img}" alt="" loading="lazy">' if img else f'<span class="vc-mark">{kicker.split(" · ")[0]}</span>'
+        if "podcasts.apple" in url: art = f'<span class="vc-mark">{kicker.split(" · ")[0]}<small>Podcast</small></span>'
         cards += f"""<a class="vcard" href="{url}"{tgt}>
-        <div class="vc-img">{art}<span class="vc-play"></span>{'<span class="vc-ext">Opens on '+ ('YouTube' if 'youtube' in url else 'their site') +'</span>' if ext else ''}</div>
+        <div class="vc-img">{art}<span class="vc-play"></span>{'<span class="vc-ext">Opens on '+ ('YouTube' if 'youtube' in url else 'Apple Podcasts' if 'podcasts.apple' in url else 'their site') +'</span>' if ext else ''}</div>
         <div class="vc-k">{kicker}</div><h3>{title}</h3><p>{blurb}</p></a>"""
     return head("Parliament", "Every time Joshua Wong’s case has been raised at Westminster, and every film and clip, in one place.", "parliament.html") + nav("parliament.html") + page_head(
         "Parliament", "On the <em>record</em>",
@@ -795,7 +798,7 @@ def parliament():
 
 <section class="parl-watch">
   <div class="wrap">
-    <div class="sec-head"><div><div class="label">Watch</div><h2 class="sec">Films and <em>clips</em></h2></div></div>
+    <div class="sec-head"><div><div class="label">Watch</div><h2 class="sec">Watch and <em>listen</em></h2></div></div>
     <div class="vwall">""" + cards + """</div>
   </div>
 </section>

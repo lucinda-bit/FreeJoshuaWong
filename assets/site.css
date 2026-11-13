@@ -662,3 +662,4 @@ nav .btn{font-size:13px}
 
 .px-link{font-family:var(--label);font-weight:700;font-size:14px;margin:0 0 20px}
 .parl-feature+.parl-feature{padding-top:60px}
+.vc-mark small{display:block;font-family:var(--label);font-size:13px;font-weight:700;color:var(--accent);margin-top:10px;opacity:.9}

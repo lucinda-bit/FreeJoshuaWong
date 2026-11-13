@@ -10,6 +10,8 @@ window.MOMENTS = [
   {id:"sentence", label:"Ten more years",     when:"November 2026"}
 ];
 window.PRESS = [
+  {date:"2026-11-13", outlet:"The Guardian · Today in Focus", type:"news", region:"UK", moment:"sentence", title:"Podcast: Teen prodigy, Netflix star, prisoner — the story of Hong Kong dissident Joshua Wong, with Nathan Law", url:"https://podcasts.apple.com/gb/podcast/today-in-focus/id1440133626"},
+  {date:"2026-10-26", outlet:"Byline Times Podcast", type:"news", region:"UK", moment:"birthday", title:"Podcast: China vs Joshua Wong — Andrew Duncan tells Joshua’s story to Adrian Goldberg", url:"https://podcasts.apple.com/gb/podcast/byline-times-podcast/id1522910878"},
   // ---- Sentence, November 2026
   {date:"2026-11-09", outlet:"Taipei Times", type:"opinion", region:"Asia", moment:"sentence", title:"Taipei Times editorial on Joshua Wong’s ten-year sentence", url:"https://www.taipeitimes.com/News/editorials/archives/2026/11/09/2003867391"},
   {date:"2026-11-08", outlet:"Free Press Journal", type:"opinion", region:"Asia", moment:"sentence", title:"Joshua Wong: A beacon of freedom brought down", url:"https://www.freepressjournal.in/analysis/joshua-wong-a-beacon-of-freedom-brought-down"},
