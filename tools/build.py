@@ -197,8 +197,7 @@ def home():
         </div>
       </div>
     </div>
-    <p class="h4-demand"><span>Britain made Hong Kong a&nbsp;promise.</span><span>Joshua is paying for it.</span></p>
-    <p class="h4-lead">He was born on British soil, in Hong Kong in 1996.</p>
+    <p class="h4-lead">He was due out in January 2027. Instead, he has been given ten more years.</p>
     <div class="h4-cta">
       <a class="btn" href="#write">Email your MP in 2 minutes</a>
       <a class="btn ghost" href="#film">Watch the film</a>
