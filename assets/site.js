@@ -1,3 +1,4 @@
+var SITE_URL = 'https://lucinda-bit.github.io/FreeJoshuaWong'; // see SITE in tools/build.py
 // Free Joshua Wong — shared scripts
 (function () {
   // Mobile menu
@@ -205,7 +206,7 @@ document.querySelectorAll('[data-since]').forEach(function (el) {
       var size = v.quote.length < 40 ? ' big' : (v.quote.length < 75 ? ' mid' : '');
       var ext = /^https?:/.test(v.url) ? ' target="_blank" rel="noopener"' : '';
       var slug = v.id || (v.who + '-' + v.date).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-      var page = 'voices/' + slug + '.html', full = 'https://freejoshuawong.org/' + page;
+      var page = 'voices/' + slug + '.html', full = SITE_URL + '/' + page;
       var t = '“' + v.quote + '” — ' + v.who + ' #FreeJoshuaWong';
       return '<figure class="vq k-' + v.kind + size + '">' +
         '<div class="vq-top"><span class="vq-where">' + esc(v.where) + '</span><span class="vq-date">' + d(v.date) + '</span></div>' +
@@ -251,7 +252,7 @@ document.querySelectorAll('[data-since]').forEach(function (el) {
   }
   function card(p, lead) {
     var link = p.url || (p.handle ? 'https://x.com/' + p.handle : p.profile);
-    var here = 'https://freejoshuawong.org/socials.html#' + p.id;
+    var here = SITE_URL + '/socials.html#' + p.id;
     var t = p.name + ' on #FreeJoshuaWong';
     var src = p.via
       ? '<a href="' + esc(p.viaUrl) + '" target="_blank" rel="noopener">Posted on ' + esc(p.platform || 'X') + ' · as reported by ' + esc(p.via) + '</a>'

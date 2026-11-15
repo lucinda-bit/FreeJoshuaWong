@@ -4,7 +4,10 @@ Run from the repo root:  python3 tools/build.py
 Edit page content in this file, then re-run. Output: *.html in the repo root and letters/."""
 import os
 
-SITE = "https://freejoshuawong.org"
+# The site's full address. Until freejoshuawong.org points straight at the site (DNS, not GoDaddy forwarding),
+# links and share previews must use the GitHub address. When the domain is connected properly, set this back to
+# "https://freejoshuawong.org" and change SITE_URL at the top of assets/site.js to match.
+SITE = "https://lucinda-bit.github.io/FreeJoshuaWong"
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 import re as _re
@@ -1316,7 +1319,7 @@ if __name__ == "__main__":
     for path, fn in PAGES.items():
         out = os.path.join(ROOT, path)
         os.makedirs(os.path.dirname(out), exist_ok=True)
-        html = bake_numbers(fn())
+        html = bake_numbers(fn()).replace("https://freejoshuawong.org", SITE)
         html = _re.sub(r'(assets/(?:site\.css|site\.js|press\.js|voices\.js|socials\.js))"', lambda m: m.group(1) + "?v=" + ASSET_V + '"', html)
         with open(out, "w") as f:
             f.write(html)
