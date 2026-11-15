@@ -1,4 +1,4 @@
-var SITE_URL = 'https://lucinda-bit.github.io/FreeJoshuaWong'; // see SITE in tools/build.py
+var SITE_URL = 'https://freejoshuawong.org'; // see SITE in tools/build.py
 // Free Joshua Wong — shared scripts
 (function () {
   // Mobile menu

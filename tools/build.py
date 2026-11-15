@@ -7,7 +7,7 @@ import os
 # The site's full address. Until freejoshuawong.org points straight at the site (DNS, not GoDaddy forwarding),
 # links and share previews must use the GitHub address. When the domain is connected properly, set this back to
 # "https://freejoshuawong.org" and change SITE_URL at the top of assets/site.js to match.
-SITE = "https://lucinda-bit.github.io/FreeJoshuaWong"
+SITE = "https://freejoshuawong.org"
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 import re as _re
