@@ -692,6 +692,7 @@ def mp_box(dark=False):
       <div class="pc-ok" hidden>
         <p class="pc-mp"></p>
         <p class="pc-links"><a class="btn pc-mail" href="#">Open the email</a> <span class="pc-or">or open in <a class="pc-alt pc-gmail" href="#" target="_blank" rel="noopener">Gmail</a> · <a class="pc-alt pc-outlook" href="#" target="_blank" rel="noopener">Outlook</a></span></p>
+        <p class="pc-pasted" hidden>We’ve also copied the letter. If your email opens empty, paste it in.</p>
         <p class="pc-tip">The letter is filled in for you. Add your name and full address at the bottom (MPs only reply to their own constituents), then send. If no email opens, <button type="button" class="pc-copy">copy the letter</button> and send it to <b class="pc-addr"></b>.</p>
       </div>
       <p class="pc-note">Your postcode is used only to look up your MP on UK Parliament’s website. We don’t see or store it, or anything you send.</p>

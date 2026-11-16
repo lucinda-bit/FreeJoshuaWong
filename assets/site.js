@@ -315,6 +315,13 @@ document.querySelectorAll('form[data-mp]').forEach(function (f) {
     var b = this;
     try { navigator.clipboard.writeText(letter).then(function () { b.textContent = 'letter copied'; }); } catch (e) {}
   });
+  // Some email apps ignore the pre-filled text, so copy the letter as well whenever an email button is pressed
+  f.querySelectorAll('.pc-mail, .pc-gmail, .pc-outlook').forEach(function (a) {
+    a.addEventListener('click', function () {
+      try { if (navigator.clipboard && letter) navigator.clipboard.writeText(letter); } catch (e) {}
+      var n = q('.pc-pasted'); if (n) n.hidden = false;
+    });
+  });
   f.addEventListener('submit', function (ev) {
     ev.preventDefault();
     var pc = input.value.replace(/\s+/g, ' ').trim().toUpperCase();
@@ -336,7 +343,7 @@ document.querySelectorAll('form[data-mp]').forEach(function (f) {
         mp.email = pick ? pick.email.trim() : '';
         var tpl = document.getElementById('tpl');
         letter = (tpl ? tpl.textContent.trim() : '').replace('[MP name]', mp.name);
-        var s = encodeURIComponent(SUBJECT), b = encodeURIComponent(letter), to = encodeURIComponent(mp.email);
+        var s = encodeURIComponent(SUBJECT), b = encodeURIComponent(letter.replace(/\r?\n/g, '\r\n')), to = encodeURIComponent(mp.email);
         q('.pc-mp').textContent = 'Your MP is ' + mp.title + (mp.party ? ' (' + mp.party + ')' : '') + ', ' + mp.seat + '.';
         q('.pc-mail').href = 'mailto:' + mp.email + '?subject=' + s + '&body=' + b;
         q('.pc-mail').textContent = 'Email ' + mp.name;

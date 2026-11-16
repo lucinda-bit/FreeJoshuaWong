@@ -895,6 +895,7 @@ html[lang^="zh"] .phead h1{font-family:var(--display),"PingFang HK","Noto Sans T
 .pc-ok .pc-mail{background:var(--accent);color:var(--ink);min-height:46px}
 .pc-alt{color:#fff;font-weight:700;text-decoration:underline}
 .pc-tip{font-size:14px;opacity:.9}
+.pc-pasted{font-weight:700;color:var(--accent)}
 .pc-copy{font:inherit;color:var(--accent);background:none;border:0;padding:0;text-decoration:underline;cursor:pointer}
 .pc-addr{overflow-wrap:anywhere}
 .pc-err{margin:12px 0 0;font-family:var(--label);font-weight:700;font-size:15px;background:#fff;color:#b00020;border:2px solid #b00020;padding:10px 14px}
