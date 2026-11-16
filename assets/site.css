@@ -1057,3 +1057,13 @@ nav.top .links a,nav.top .btn{white-space:nowrap}
 .tracker .wait-row:nth-of-type(6) .tk-st{animation-delay:3.7s}
 @media(prefers-reduced-motion:reduce){.tracker .tk-st,.tracker .tk-st:before{animation:none}}
 .tracker .tk-st{animation:none!important}
+/* quote section with a short silent loop from the film */
+.words-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}
+.has-loop blockquote{font-size:clamp(32px,3.4vw,52px)!important;text-align:left}
+.has-loop .by{text-align:left}
+.words-loop{margin:0}
+.words-loop video{width:100%;display:block;border-radius:3px;box-shadow:0 0 0 2px var(--accent),0 24px 60px rgba(0,0,0,.5);background:#000}
+.words-loop figcaption{font-family:var(--label);font-size:13px;color:rgba(244,242,236,.8);margin-top:12px}
+.words-loop figcaption a{color:var(--accent)}
+@media(max-width:900px){.words-grid{grid-template-columns:1fr;gap:32px}}
+@media(prefers-reduced-motion:reduce){.words-loop video{display:none}.words-loop{background:url(../images/joshua-loop-poster.jpg) center/cover;aspect-ratio:16/9}}
