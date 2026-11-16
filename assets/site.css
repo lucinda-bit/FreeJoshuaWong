@@ -1056,3 +1056,4 @@ nav.top .links a,nav.top .btn{white-space:nowrap}
 .tracker .wait-row:nth-of-type(5) .tk-st{animation-delay:3s}
 .tracker .wait-row:nth-of-type(6) .tk-st{animation-delay:3.7s}
 @media(prefers-reduced-motion:reduce){.tracker .tk-st,.tracker .tk-st:before{animation:none}}
+.tracker .tk-st{animation:none!important}
