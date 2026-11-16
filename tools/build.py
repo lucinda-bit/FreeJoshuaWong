@@ -326,11 +326,11 @@ def home():
 """ + footer(0, '<script src="assets/messages.js"></script>\n')
 
 LATEST = [
+    ("Australian Senate", "“Some call it collusion. I call it courage.” Senator Raff Ciccone on Joshua’s sentence", "16 Nov 2026", "https://www.abc.net.au/news/2026-11-16/federal-politics-live-blog-senate-gas-nov-16/107388656"),
     ("The Times · Letters", "Unjust prosecution: MPs and peers ask what Britain will do for Joshua Wong", "11 Nov 2026", "letters/times-letter-nov-2026.html"),
     ("The Guardian · Today in Focus", "Podcast: Teen prodigy, Netflix star, prisoner, with Nathan Law", "13 Nov 2026", "https://podcasts.apple.com/gb/podcast/today-in-focus/id1440133626"),
     ("House of Commons", "Emily Darlington MP asks the Government to call for Joshua’s release", "10 Nov 2026", "parliament.html#exchange-nov"),
-    ("Taipei Times", "Editorial: Joshua Wong was due for release in January", "7 Nov 2026", "https://www.taipeitimes.com/News/editorials/archives/2026/11/07/2003867296"),
-    ("Reuters / CTV", "Canada, US, UK and others condemn 10-year sentence for Joshua Wong", "6 Nov 2026", "https://www.ctvnews.ca/world/article/canada-us-uk-and-others-condemn-10-year-sentence-for-hong-kong-activist-joshua-wong/"),
+    ("House of Lords", "A minister’s answer to Lord Alton points to Joshua’s case", "9 Nov 2026", "parliament.html"),
 ]
 
 # ---------------- THE CASE ----------------
@@ -757,6 +757,9 @@ def act():
 # ---------------- PARLIAMENT ----------------
 # kind: commons | lords | written | report | event
 RECORD = [
+    ("2026-11-11", "written", "Sanctions on the officials responsible?", "Written question · Richard Holden MP",
+     "Richard Holden MP asked whether the Foreign Secretary will assess the merits of targeted sanctions on the Chinese and Hong Kong officials responsible for jailing Joshua and other activists. The answer was due on 13 November.",
+     "https://questions-statements.parliament.uk/written-questions/detail/2026-11-11/42157", "The question", ""),
     ("2026-11-10", "commons", "“Not, sadly, like the islanders Joshua Wong and Jimmy Lai”", "Commonwealth Heads of Government Meeting statement · House of Commons",
      "The same day, responding to the Government’s statement on the Commonwealth summit, Shadow Foreign Secretary Tom Tugendhat contrasted the dignity owed to Caribbean islanders with the treatment of Joshua and Jimmy Lai in Hong Kong.",
      "#exchange-tugendhat", "Watch the clip", ""),
@@ -764,14 +767,20 @@ RECORD = [
      "At an urgent question secured by Sir Iain Duncan Smith on China obtaining MPs’ phone and financial records, Emily Darlington MP asked the Government to summon the Chinese Ambassador and call for Joshua’s release, as it did for Jimmy Lai. Security Minister Dan Jarvis replied that the Government share the concerns about Joshua and Jimmy Lai. For the Opposition, Alicia Kearns MP said both remain imprisoned for speaking out for democracy. <a href=\"https://hansard.parliament.uk/Commons/2026-11-10/debates/580a4a8b-77d1-4dad-b849-9f1d47824e1c/CommonsChamber\" target=\"_blank\" rel=\"noopener\">Read it in Hansard</a>",
      "#exchange-nov", "Watch the clip", ""),
     ("2026-11-10", "written", "Six written questions in one day", "Written questions · Richard Holden MP, Alex Barros-Curtis MP, Marie Rimmer MP",
-     "After the sentence, three MPs tabled six questions to the Foreign Secretary, including whether he has summoned the Chinese Ambassador, what diplomatic steps he is taking to secure Joshua’s release, and whether the Government will consider sanctions on the officials responsible. Answers were due on 12 November and will be added here once published.",
+     "After the sentence, three MPs tabled six questions to the Foreign Secretary, including whether he has summoned the Chinese Ambassador, what diplomatic steps he is taking to secure Joshua’s release, and whether the Government will consider sanctions on the officials responsible. Answers were due on 12 November. None had been published by 16 November.",
      "https://commonsbusiness.parliament.uk/Document/108853/Html?subType=Standard", "Questions tabled", ""),
+    ("2026-11-09", "written", "Named in a Lords answer on a ministerial visit", "Written question · Lord Alton (HL4687)",
+     "Lord Alton asked what the minister raised during her visit to Hong Kong on 29 October. Answering, Baroness Winterton said she raised concerns including Jimmy Lai’s continued detention, and pointed to the six-monthly report, which highlights Joshua’s case.",
+     "https://questions-statements.parliament.uk/written-questions/detail/2026-10-29/HL4687", "Parliamentary answer", ""),
+    ("2026-11-03", "written", "What has the Foreign Secretary said to his Chinese counterpart?", "Written question · Catherine West MP",
+     "Catherine West MP asked what recent discussions the Foreign Secretary has had with his Chinese counterpart on Joshua. Minister Chris Elmore simply referred her to his earlier answer to James Naish MP.",
+     "https://questions-statements.parliament.uk/written-questions/detail/2026-10-27/38519", "Parliamentary answer", ""),
     ("2026-11-03", "written", "The Chinese Embassy and Joshua’s treatment", "Written question · Alex Barros-Curtis MP",
      "Alex Barros-Curtis MP asked whether Joshua’s treatment would be taken into account in any further approvals for the proposed Chinese Embassy at Royal Mint Court. Minister Chris Elmore replied that the planning decision was taken independently and that the Government does not comment on ongoing legal proceedings.",
      "https://www.parallelparliament.co.uk/mp/alex-barros-curtis/writtenanswers?document_type=writtenanswers&memb_pk=5175&page=1", "Parliamentary answer", ""),
-    ("2026-10-20", "written", "How often has Joshua’s case been raised?", "Written questions · James Naish MP",
-     "James Naish MP asked what steps the Foreign Office has taken to raise Joshua’s case with Chinese counterparts since 1 September, on how many occasions and at what level, and whether the next six-monthly report would set out the Government’s assessment of his case.",
-     "https://commonsbusiness.parliament.uk/Document/108191/Html?subType=Standard", "Questions tabled", ""),
+    ("2026-10-28", "written", "How often has Joshua’s case been raised?", "Written questions · James Naish MP",
+     "James Naish MP asked what steps the Foreign Office has taken to raise Joshua’s case with Chinese counterparts since 1 September, on how many occasions and at what level, and whether the next six-monthly report would set out the Government’s assessment of his case. Answering on 28 October, Minister Chris Elmore said the further charges reinforce concerns about national security legislation and that the UK continues to call for the law’s repeal. He did not say how often the case had been raised, or at what level.",
+     "https://questions-statements.parliament.uk/written-questions/detail/2026-10-20/36419", "Parliamentary answer", ""),
     ("2026-10-22", "report", "Six-monthly Report on Hong Kong", "Foreign Secretary · Report to Parliament",
      "The Government’s report for January to June 2026 cites developments in Joshua’s case as reinforcing concerns about the broad use of national security legislation.",
      "https://www.gov.uk/government/publications/six-monthly-report-on-hong-kong-january-to-june-2026/six-monthly-report-on-hong-kong-1-january-to-30-june-2026", "GOV.UK", ""),
@@ -813,7 +822,7 @@ MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec
 # (date asked, status, what was asked, who/when detail, link, link text). Newest first. Status: "none" | "noupdate" | "weak" | "due".
 TRACKER = [
     ("2026-11-10", "due", "Has the Foreign Secretary summoned the Chinese Ambassador over Joshua?",
-     "Written question from Alex Barros-Curtis MP, one of six tabled after the sentence. The answer was due on 12 November.",
+     "Written question from Alex Barros-Curtis MP, one of six tabled after the sentence. The answer was due on 12 November and is now overdue.",
      "https://commonsbusiness.parliament.uk/Document/108853/Html?subType=Standard", "The questions"),
     ("2026-11-10", "weak", "Summon the Ambassador and call for Joshua’s release, as the Government did for Jimmy Lai",
      "Emily Darlington MP in the Commons. The Security Minister said the Government “share the concerns” but made no commitment.",
