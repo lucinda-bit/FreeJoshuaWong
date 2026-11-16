@@ -302,18 +302,56 @@ document.querySelectorAll('[data-since]').forEach(function (el) {
   if (location.hash) { var el = document.getElementById(location.hash.slice(1)); if (el) { el.classList.add('s-hl'); el.scrollIntoView({block: 'center'}); } }
 })();
 
-// ===== Postcode box: copy the letter, then open WriteToThem for the person's MP =====
+// ===== Postcode box: find the person's MP (UK Parliament Members API), then open an email with the letter filled in =====
 document.querySelectorAll('form[data-mp]').forEach(function (f) {
-  f.addEventListener('submit', function () {
-    var tpl = document.getElementById('tpl');
-    var text = tpl ? tpl.textContent.trim() : '';
-    var ok = f.querySelector('.pc-ok');
-    function shown() { if (ok) ok.hidden = false; }
-    try {
-      if (navigator.clipboard && text) navigator.clipboard.writeText(text).then(shown, shown);
-      else shown();
-    } catch (e) { shown(); }
-    // the form itself opens WriteToThem in a new tab
+  var API = 'https://members-api.parliament.uk/api/';
+  var SUBJECT = 'Joshua Wong: please ask the Government to summon the Chinese Ambassador';
+  var q = function (s) { return f.querySelector(s); };
+  var input = q('input[name=pc]'), btn = q('button[type=submit]'), err = q('.pc-err'), ok = q('.pc-ok');
+  var label = btn.textContent, letter = '';
+  function fail(msg) { err.textContent = msg; err.hidden = false; ok.hidden = true; }
+  function getJSON(u) { return fetch(u, {headers: {Accept: 'application/json'}}).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }); }
+  q('.pc-copy').addEventListener('click', function () {
+    var b = this;
+    try { navigator.clipboard.writeText(letter).then(function () { b.textContent = 'letter copied'; }); } catch (e) {}
+  });
+  f.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var pc = input.value.replace(/\s+/g, ' ').trim().toUpperCase();
+    if (!/^[A-Z]{1,2}[0-9][0-9A-Z]? ?[0-9][A-Z]{2}$/.test(pc)) { fail('Please enter a full UK postcode, for example SW1A 1AA.'); return; }
+    err.hidden = true; btn.disabled = true; btn.textContent = 'Finding your MP…';
+    var mp;
+    getJSON(API + 'Location/Constituency/Search?take=1&searchText=' + encodeURIComponent(pc))
+      .then(function (d) {
+        var c = d.items && d.items[0] && d.items[0].value;
+        var m = c && c.currentRepresentation && c.currentRepresentation.member && c.currentRepresentation.member.value;
+        if (!m) throw new Error('notfound');
+        mp = {id: m.id, name: m.nameDisplayAs, title: m.nameFullTitle || m.nameDisplayAs, seat: c.name,
+              party: m.latestParty ? m.latestParty.name : ''};
+        return getJSON(API + 'Members/' + mp.id + '/Contact');
+      })
+      .then(function (d) {
+        var list = (d.value || []).filter(function (x) { return x.email; });
+        var pick = list.filter(function (x) { return /parliament/i.test(x.type || ''); })[0] || list[0];
+        mp.email = pick ? pick.email.trim() : '';
+        var tpl = document.getElementById('tpl');
+        letter = (tpl ? tpl.textContent.trim() : '').replace('[MP name]', mp.name);
+        var s = encodeURIComponent(SUBJECT), b = encodeURIComponent(letter), to = encodeURIComponent(mp.email);
+        q('.pc-mp').textContent = 'Your MP is ' + mp.title + (mp.party ? ' (' + mp.party + ')' : '') + ', ' + mp.seat + '.';
+        q('.pc-mail').href = 'mailto:' + mp.email + '?subject=' + s + '&body=' + b;
+        q('.pc-mail').textContent = 'Email ' + mp.name;
+        q('.pc-gmail').href = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + to + '&su=' + s + '&body=' + b;
+        q('.pc-outlook').href = 'https://outlook.live.com/mail/0/deeplink/compose?to=' + to + '&subject=' + s + '&body=' + b;
+        q('.pc-addr').textContent = mp.email || 'your MP (contact details at members.parliament.uk)';
+        ok.hidden = false;
+        q('.pc-mail').focus();
+      })
+      .catch(function (e) {
+        fail(e && e.message === 'notfound'
+          ? 'We couldn’t find an MP for that postcode. Please check it and try again.'
+          : 'Sorry, we couldn’t reach UK Parliament’s MP finder just now. Please try again, or copy the letter and find your MP at members.parliament.uk.');
+      })
+      .then(function () { btn.disabled = false; btn.textContent = label; });
   });
 });
 

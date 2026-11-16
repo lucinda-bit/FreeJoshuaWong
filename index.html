@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=b6bb3466">
+<link rel="stylesheet" href="assets/site.css?v=55109fb8">
 </head>
 <body>
 <nav class="top" aria-label="Main">
@@ -42,7 +42,7 @@
       <div class="r now"><span class="y">2026</span><b>Prisoner vs. Superpower</b></div>
       <div class="r cell-row"><span class="y">Now</span>
         <div class="cell" role="timer" aria-label="Days Joshua Wong has spent in prison">
-          <div class="cell-in"><span class="n" id="days">2,184</span><span class="u">days<br>behind bars</span></div>
+          <div class="cell-in"><span class="n" id="days">2,185</span><span class="u">days<br>behind bars</span></div>
           <div class="tick" aria-hidden="true">and counting: <span id="clock">0h 00m 00s</span></div>
         </div>
       </div>
@@ -152,14 +152,18 @@
 <section class="h4-act" id="write">
   <div class="wrap">
     <h2>Tell your MP: summon China’s Ambassador</h2>
-    <p>Two minutes. We’ve written the letter. Put in your postcode, and we’ll copy it and take you straight to your MP. <a href="act.html#mp">Read the letter first</a></p>
-    <form class="pcbox" data-mp action="https://www.writetothem.com/" method="get" target="_blank">
+    <p>Two minutes. We’ve written the letter. Put in your postcode and we’ll find your MP and open an email to them with the letter filled in. <a href="act.html#mp">Read the letter first</a></p>
+    <form class="pcbox" data-mp novalidate>
       <label for="pc-a">Your postcode</label>
       <div class="pc-row"><input id="pc-a" name="pc" autocomplete="postal-code" placeholder="e.g. SW1A 1AA" required>
-      <input type="hidden" name="a" value="westminstermp"><input type="hidden" name="message_type" value="campaigning">
-      <button type="submit" class="btn dark">Copy the letter and write to my MP</button></div>
-      <p class="pc-ok" hidden>The letter is copied. Paste it into the message box on WriteToThem, add your name and address, and send.</p>
-      <p class="pc-note">WriteToThem is run independently by mySociety. We don’t see or store your postcode or anything you send.</p>
+      <button type="submit" class="btn dark">Find my MP and write</button></div>
+      <p class="pc-err" hidden></p>
+      <div class="pc-ok" hidden>
+        <p class="pc-mp"></p>
+        <p class="pc-links"><a class="btn pc-mail" href="#">Open the email</a> <span class="pc-or">or open in <a class="pc-alt pc-gmail" href="#" target="_blank" rel="noopener">Gmail</a> · <a class="pc-alt pc-outlook" href="#" target="_blank" rel="noopener">Outlook</a></span></p>
+        <p class="pc-tip">The letter is filled in for you. Add your name and full address at the bottom (MPs only reply to their own constituents), then send. If no email opens, <button type="button" class="pc-copy">copy the letter</button> and send it to <b class="pc-addr"></b>.</p>
+      </div>
+      <p class="pc-note">Your postcode is used only to look up your MP on UK Parliament’s website. We don’t see or store it, or anything you send.</p>
     </form>
     <div class="tpl" id="tpl" hidden>Dear [MP name],
 
@@ -242,6 +246,6 @@ Yours sincerely,
   </div>
 </footer>
 <script src="assets/messages.js"></script>
-<script src="assets/site.js?v=b6bb3466"></script>
+<script src="assets/site.js?v=55109fb8"></script>
 </body>
 </html>

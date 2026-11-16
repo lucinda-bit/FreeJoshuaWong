@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=b6bb3466">
+<link rel="stylesheet" href="assets/site.css?v=55109fb8">
 </head>
 <body>
 <nav class="top" aria-label="Main">
@@ -45,14 +45,18 @@
       <div>
         <div class="label" style="color:#6f6a2a">In the UK</div>
         <h3>Tell your MP: summon China’s Ambassador</h3>
-        <p>Two minutes. We’ve written the letter. Put in your postcode, and we’ll copy the letter and take you straight to your MP.</p>
-        <form class="pcbox" data-mp action="https://www.writetothem.com/" method="get" target="_blank">
+        <p>Two minutes. We’ve written the letter. Put in your postcode and we’ll find your MP and open an email to them with the letter already filled in.</p>
+        <form class="pcbox" data-mp novalidate>
       <label for="pc-a">Your postcode</label>
       <div class="pc-row"><input id="pc-a" name="pc" autocomplete="postal-code" placeholder="e.g. SW1A 1AA" required>
-      <input type="hidden" name="a" value="westminstermp"><input type="hidden" name="message_type" value="campaigning">
-      <button type="submit" class="btn dark">Copy the letter and write to my MP</button></div>
-      <p class="pc-ok" hidden>The letter is copied. Paste it into the message box on WriteToThem, add your name and address, and send.</p>
-      <p class="pc-note">WriteToThem is run independently by mySociety. We don’t see or store your postcode or anything you send.</p>
+      <button type="submit" class="btn dark">Find my MP and write</button></div>
+      <p class="pc-err" hidden></p>
+      <div class="pc-ok" hidden>
+        <p class="pc-mp"></p>
+        <p class="pc-links"><a class="btn pc-mail" href="#">Open the email</a> <span class="pc-or">or open in <a class="pc-alt pc-gmail" href="#" target="_blank" rel="noopener">Gmail</a> · <a class="pc-alt pc-outlook" href="#" target="_blank" rel="noopener">Outlook</a></span></p>
+        <p class="pc-tip">The letter is filled in for you. Add your name and full address at the bottom (MPs only reply to their own constituents), then send. If no email opens, <button type="button" class="pc-copy">copy the letter</button> and send it to <b class="pc-addr"></b>.</p>
+      </div>
+      <p class="pc-note">Your postcode is used only to look up your MP on UK Parliament’s website. We don’t see or store it, or anything you send.</p>
     </form>
       </div>
       <div>
@@ -136,6 +140,6 @@ Yours sincerely,
     </div>
   </div>
 </footer>
-<script src="assets/site.js?v=b6bb3466"></script>
+<script src="assets/site.js?v=55109fb8"></script>
 </body>
 </html>

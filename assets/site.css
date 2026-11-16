@@ -202,6 +202,7 @@ nav .btn{padding:10px 16px;font-size:11px}
 .mp .copy{color:var(--ink);border-color:var(--ink);margin-top:12px}
 .mp .copy:hover,.mp .copy.done{background:var(--ink);color:var(--accent)}
 @media(max-width:900px){.asks,.mp{grid-template-columns:1fr}.mp{padding:32px 26px}}
+.mp>div{min-width:0}.mp h3{overflow-wrap:break-word}
 
 footer{padding:56px 0 70px;border-top:1px solid rgba(244,242,236,.1);font-family:var(--label);font-size:13px;color:var(--muted)}
 footer .wrap{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
@@ -887,7 +888,16 @@ html[lang^="zh"] .phead h1{font-family:var(--display),"PingFang HK","Noto Sans T
 .pc-row{display:flex;gap:10px;flex-wrap:wrap}
 .pc-row input{flex:1 1 180px;min-height:52px;font:600 18px var(--label);padding:0 16px;border:2px solid var(--ink);background:#fff;color:var(--ink);text-transform:uppercase;border-radius:0}
 .pc-row .btn{min-height:52px;flex:0 0 auto}
-.pc-ok{margin:12px 0 0;font-family:var(--label);font-weight:700;font-size:15px;background:var(--ink);color:var(--accent);padding:10px 14px}
+.pc-ok{margin:12px 0 0;font-family:var(--label);font-size:15px;background:var(--ink);color:#fff;padding:14px 16px}
+.pc-ok p{margin:0 0 10px}.pc-ok p:last-child{margin:0}
+.pc-mp{font-weight:700;color:var(--accent)}
+.pc-links{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.pc-ok .pc-mail{background:var(--accent);color:var(--ink);min-height:46px}
+.pc-alt{color:#fff;font-weight:700;text-decoration:underline}
+.pc-tip{font-size:14px;opacity:.9}
+.pc-copy{font:inherit;color:var(--accent);background:none;border:0;padding:0;text-decoration:underline;cursor:pointer}
+.pc-addr{overflow-wrap:anywhere}
+.pc-err{margin:12px 0 0;font-family:var(--label);font-weight:700;font-size:15px;background:#fff;color:#b00020;border:2px solid #b00020;padding:10px 14px}
 .pc-note{font-size:14px;margin:12px 0 0;opacity:.7}
 .h4-act .pcbox label,.h4-act .pc-note{color:var(--ink)}
 @media(max-width:600px){.pc-row .btn{width:100%}}
@@ -895,7 +905,8 @@ html[lang^="zh"] .phead h1{font-family:var(--display),"PingFang HK","Noto Sans T
 .pc-row input::placeholder{text-transform:none;font-weight:500}
 .home4 .h4-act h2{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(40px,5.2vw,76px);line-height:.95;color:var(--ink);max-width:16ch;margin:0 auto}
 .home4 .h4-act p{max-width:46ch;margin-left:auto;margin-right:auto}
-.home4 .h4-act p a{color:var(--ink);text-decoration:underline;text-underline-offset:3px;font-weight:600}
+.home4 .h4-act p a:not(.btn){color:var(--ink);text-decoration:underline;text-underline-offset:3px;font-weight:600}
+.home4 .h4-act .pc-ok a.pc-alt{color:#fff}.home4 .h4-act .pc-ok a.pc-mail{text-decoration:none;color:var(--ink)}.home4 .h4-act .pc-ok .pc-copy{color:var(--accent)}
 .h4-demand{font-size:clamp(30px,2.9vw,44px);margin:26px 0 0;max-width:18ch}
 .h4-demand+.h4-lead{margin-top:14px}
 .intro .h4-demand{animation:fjw-rise .7s ease-out 3.1s both}

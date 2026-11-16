@@ -277,7 +277,7 @@ def home():
 <section class="h4-act" id="write">
   <div class="wrap">
     <h2>Tell your MP: summon China’s Ambassador</h2>
-    <p>Two minutes. We’ve written the letter. Put in your postcode, and we’ll copy it and take you straight to your MP. <a href="act.html#mp">Read the letter first</a></p>
+    <p>Two minutes. We’ve written the letter. Put in your postcode and we’ll find your MP and open an email to them with the letter filled in. <a href="act.html#mp">Read the letter first</a></p>
     """ + mp_box() + """
     <div class="tpl" id="tpl" hidden>""" + LETTER + """</div>
   </div>
@@ -684,13 +684,17 @@ def releases_html():
 
 # ---------------- TAKE ACTION ----------------
 def mp_box(dark=False):
-    return f"""<form class="pcbox{' on-dark' if dark else ''}" data-mp action="https://www.writetothem.com/" method="get" target="_blank">
+    return f"""<form class="pcbox{' on-dark' if dark else ''}" data-mp novalidate>
       <label for="pc-{'h' if dark else 'a'}">Your postcode</label>
       <div class="pc-row"><input id="pc-{'h' if dark else 'a'}" name="pc" autocomplete="postal-code" placeholder="e.g. SW1A 1AA" required>
-      <input type="hidden" name="a" value="westminstermp"><input type="hidden" name="message_type" value="campaigning">
-      <button type="submit" class="btn{' dark' if not dark else ''}">Copy the letter and write to my MP</button></div>
-      <p class="pc-ok" hidden>The letter is copied. Paste it into the message box on WriteToThem, add your name and address, and send.</p>
-      <p class="pc-note">WriteToThem is run independently by mySociety. We don’t see or store your postcode or anything you send.</p>
+      <button type="submit" class="btn{' dark' if not dark else ''}">Find my MP and write</button></div>
+      <p class="pc-err" hidden></p>
+      <div class="pc-ok" hidden>
+        <p class="pc-mp"></p>
+        <p class="pc-links"><a class="btn pc-mail" href="#">Open the email</a> <span class="pc-or">or open in <a class="pc-alt pc-gmail" href="#" target="_blank" rel="noopener">Gmail</a> · <a class="pc-alt pc-outlook" href="#" target="_blank" rel="noopener">Outlook</a></span></p>
+        <p class="pc-tip">The letter is filled in for you. Add your name and full address at the bottom (MPs only reply to their own constituents), then send. If no email opens, <button type="button" class="pc-copy">copy the letter</button> and send it to <b class="pc-addr"></b>.</p>
+      </div>
+      <p class="pc-note">Your postcode is used only to look up your MP on UK Parliament’s website. We don’t see or store it, or anything you send.</p>
     </form>"""
 
 def act():
@@ -703,7 +707,7 @@ def act():
       <div>
         <div class="label" style="color:#6f6a2a">In the UK</div>
         <h3>Tell your MP: summon China’s Ambassador</h3>
-        <p>Two minutes. We’ve written the letter. Put in your postcode, and we’ll copy the letter and take you straight to your MP.</p>
+        <p>Two minutes. We’ve written the letter. Put in your postcode and we’ll find your MP and open an email to them with the letter already filled in.</p>
         """ + mp_box() + """
       </div>
       <div>
@@ -1176,9 +1180,9 @@ def zh():
     <div class="zh-act">
       <div>
         <h3>寫信給你的國會議員</h3>
-        <p>請你選區的國會議員向外相提出黃之鋒的個案。我們已準備好英文信件範本，你只需複製，加上姓名和地址，再透過 WriteToThem 網站輸入郵遞區號寄出。</p>
-        <p><a class="btn" href="act.html#mp">取得英文信件範本</a></p>
-        <p class="zh-small">WriteToThem 由獨立機構 mySociety 營運。本網站不會看到或儲存你寄出的內容。</p>
+        <p>請你選區的國會議員向外相提出黃之鋒的個案。我們已準備好英文信件範本：輸入郵遞區號，網站會找出你的議員，並在電郵中填好信件，你只需加上姓名和地址再寄出。</p>
+        <p><a class="btn" href="act.html#mp">寫信給你的議員</a></p>
+        <p class="zh-small">郵遞區號只用於在英國國會網站查找你的議員。本網站不會看到或儲存你的郵遞區號或寄出的內容。</p>
       </div>
       <div>
         <h3>分享他的故事</h3>
