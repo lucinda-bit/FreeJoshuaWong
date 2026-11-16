@@ -835,7 +835,7 @@ TRACKER = [
      "letters/open-letter-prime-minister-sept-2026.html", "Read the letter"),
     ("2026-09-08", "weak", "What has the UK said to Hong Kong about Joshua’s case?",
      "Six written questions from Gregory Stafford MP. One answer for all six: the Government “continues to monitor” the case.",
-     "parliament.html", "On the record"),
+     "https://qna.files.parliament.uk/qnadailyreports/Written-Questions-Answers-Statements-Daily-Report-Commons-2026-09-08.pdf", "Read the answer (p.478)"),
     ("2026-09-01", "noupdate", "Take Joshua’s case up with China",
      "Sir Iain Duncan Smith in the Commons. The Foreign Secretary, Ed Miliband, said he would. No update has been made public.",
      "parliament.html#exchange", "Watch the exchange"),
@@ -856,7 +856,7 @@ def tracker(h="Asked and answered"):
     return f"""<div class="waiting h4-wait tracker">
       <h3>{h}</h3>
       <p class="tk-lede">What ministers have been asked about Joshua since September, and what they have said.</p>{rows}
-      <p class="tk-foot">For comparison: the Foreign Office summoned the Chinese Ambassador over Jimmy Lai’s conviction on 15 December 2025. <a href="https://www.gov.uk/government/news/statement-fcdo-summons-chinese-ambassador-15-december-2025" target="_blank" rel="noopener">GOV.UK</a></p>
+      <p class="tk-foot">For comparison: when Jimmy Lai was convicted on 15 December 2025, the Foreign Office <a href="https://www.gov.uk/government/news/statement-fcdo-summons-chinese-ambassador-15-december-2025" target="_blank" rel="noopener">summoned the Chinese Ambassador the same day</a>. Joshua was sentenced <b data-since="2026-11-05">0</b> days ago. There has been no public word of the Ambassador being summoned over his case.</p>
     </div>"""
 
 VIDEOS = [
