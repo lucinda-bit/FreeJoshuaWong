@@ -1045,3 +1045,14 @@ nav.top .links a[href$="write.html"]{color:var(--accent)}
 nav.top .links a,nav.top .btn{white-space:nowrap}
 @media(max-width:1200px) and (min-width:901px){nav.top .links{gap:14px}nav.top .links a{font-size:14px;margin:0}nav.top .brand{font-size:21px}}
 .mw-paper{transform:none}
+/* tracker status labels: a soft buzz every few seconds, like a phone on a table */
+@keyframes tk-buzz{0%,88%,100%{transform:translateX(0) rotate(0)}89.5%{transform:translateX(-1.5px) rotate(-1deg)}91%{transform:translateX(1.5px) rotate(1deg)}92.5%{transform:translateX(-1px) rotate(-.6deg)}94%{transform:translateX(1px) rotate(.6deg)}95.5%{transform:translateX(0) rotate(0)}}
+@keyframes tk-dot{0%{box-shadow:0 0 0 0 currentColor;opacity:1}70%{box-shadow:0 0 0 7px transparent;opacity:.85}100%{box-shadow:0 0 0 0 transparent;opacity:1}}
+.tracker .tk-st{display:inline-flex;align-items:center;gap:7px;animation:tk-buzz 4.5s ease-in-out infinite;transform-origin:center}
+.tracker .tk-st:before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor;animation:tk-dot 2.2s ease-out infinite}
+.tracker .wait-row:nth-of-type(2) .tk-st{animation-delay:.7s}
+.tracker .wait-row:nth-of-type(3) .tk-st{animation-delay:1.5s}
+.tracker .wait-row:nth-of-type(4) .tk-st{animation-delay:2.2s}
+.tracker .wait-row:nth-of-type(5) .tk-st{animation-delay:3s}
+.tracker .wait-row:nth-of-type(6) .tk-st{animation-delay:3.7s}
+@media(prefers-reduced-motion:reduce){.tracker .tk-st,.tracker .tk-st:before{animation:none}}
