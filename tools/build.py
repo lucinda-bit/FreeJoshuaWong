@@ -229,16 +229,10 @@ def home():
   </div>
 </section>
 
-<section class="h4-words has-loop">
-  <div class="wrap words-grid">
-    <figure class="words-loop">
-      <video src="media/joshua-loop.mp4" poster="images/joshua-loop-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Joshua at home with his family, and campaigning on the streets of Hong Kong as a teenager"></video>
-      <figcaption>Joshua at home, and on the streets of Hong Kong at 15. From <a href="film.html">the film</a>.</figcaption>
-    </figure>
-    <div>
-      <blockquote>“The only thing I worry about is that people will forget Hong Kong.”</blockquote>
-      <p class="by">Joshua Wong, in a letter to a friend from prison, published in November 2026</p>
-    </div>
+<section class="h4-words">
+  <div class="wrap">
+    <blockquote>“The only thing I worry about is that people will forget Hong Kong.”</blockquote>
+    <p class="by">Joshua Wong, in a letter to a friend from prison, published in November 2026</p>
   </div>
 </section>
 
