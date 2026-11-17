@@ -1072,14 +1072,14 @@ def voices():
     return head("Voices", "What parliamentarians, governments and human rights leaders are saying about Joshua Wong.", "voices.html") + nav("voices.html") + page_head(
         "Voices", "They are <em>speaking up</em>",
         "Parliamentarians, governments and human rights leaders, in their own words. Every quote links to where it was said.") + """
-<section class="voices-page" style="border-top:0;padding-top:0">
+<section class="voices-page v-intro" style="border-top:0;padding-top:0">
   <div class="wrap">
     <div class="v-stats" id="v-stats"></div>
     <a class="to-socials" href="socials.html"><b>On social media</b><span>See what MPs, ministers, governments and campaigners are posting about Joshua</span></a>
   </div>
 </section>
 """ + gov_section() + """
-<section class="voices-page" style="border-top:0">
+<section class="voices-page v-rest" style="border-top:0">
   <div class="wrap">
     <div class="v-sec"><h2 class="sec">Parliamentarians and <em>rights groups</em></h2><p>In Parliament, in Congress, and from human rights organisations.</p></div>
     <div class="filters v-bar" role="group" aria-label="Filter voices">

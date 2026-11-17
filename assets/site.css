@@ -1132,3 +1132,6 @@ nav.top .links a,nav.top .btn{white-space:nowrap}
 .gov-by{margin-top:8px;font-family:var(--label);font-size:14px;opacity:.85}
 .gov-row .src{display:inline-block;margin-top:8px;font-family:var(--label);font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
 @media(max-width:700px){.gov-row{grid-template-columns:1fr;gap:6px}.gov-row blockquote{font-size:19px}}
+.voices-page.v-intro{padding-bottom:24px}
+.gov-sec{padding-bottom:40px}
+.voices-page.v-rest{padding-top:40px}
