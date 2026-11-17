@@ -42,7 +42,7 @@ window.VOICES = [
   {date:"2026-11-05", kind:"parliament", who:"Congressional-Executive Commission on China", role:"US Congress", country:"US", where:"Statement", via:"The Epoch Times",
    quote:"His case again shows how Hong Kong’s courts are being weaponized to advance repression, and today’s sentence should be globally condemned.",
    url:"https://www.theepochtimes.com/china/hong-kong-pro-democracy-activist-joshua-wong-sentenced-to-10-years-in-prison-6118318"},
-  {date:"2026-11-06", kind:"social", who:"Marco Rubio", role:"US Secretary of State", country:"US", where:"On X", via:"VOA",
+  {date:"2026-11-06", kind:"social", who:"Marco Rubio", role:"US Secretary of State", country:"US", where:"On X", via:"VOA", gov:true,
    quote:"[The United States] strongly condemns the Hong Kong Court’s decision to once again sentence Joshua Wong for exercising his freedom of speech.",
    url:"https://www.voanews.com/a/us-condemns-hong-kong-courts-sentencing-of-pro-democracy-activist-joshua-wong-20261106/8219799.html"},
   {date:"2026-11-05", kind:"social", who:"Sir Iain Duncan Smith MP", role:"Conservative, Chingford and Woodford Green", country:"UK", where:"On X", via:"The Epoch Times", id:"iain-duncan-smith-x-2026-11-05",

@@ -224,7 +224,7 @@ document.querySelectorAll('[data-since]').forEach(function (el) {
   var soc = document.getElementById('vsocial');
   if (soc) soc.innerHTML = V.filter(function (v) { return v.kind === 'social'; }).map(card).join('');
   function render(k) {
-    wall.innerHTML = V.filter(function (v) { return v.kind !== 'social' && (k === 'all' || v.kind === k); }).map(card).join('');
+    wall.innerHTML = V.filter(function (v) { return v.kind !== 'social' && v.kind !== 'government' && (k === 'all' || v.kind === k); }).map(card).join('');
   }
   var chips = document.querySelectorAll('.v-bar .chip');
   chips.forEach(function (c) {

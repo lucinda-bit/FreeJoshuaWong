@@ -260,7 +260,7 @@ def home():
   <div class="wrap">
     <h2>The pressure is building</h2>
     <div class="pstats">
-      <a href="voices.html"><b>11</b><span>governments, plus the EU, condemned his sentence</span></a>
+      <a href="voices.html#governments"><b>11</b><span>governments, plus the EU, condemned his sentence</span></a>
       <a href="letters/open-letter-prime-minister-sept-2026.html"><b>""" + str(len(SIGNATORIES)) + """</b><span>MPs, peers and rights leaders signed the open letter to the Prime Minister</span></a>
       <a href="parliament.html"><b>""" + str(sum(1 for r in RECORD if r[1] not in ("event", "letter") and r[0] >= "2025-06-06")) + """</b><span>times raised in Parliament since the new charge in June 2025</span></a>
       <a href="newsroom.html"><b>""" + str(PRESS_COUNT) + """</b><span>reports, podcasts and editorials since June 2025</span></a>
@@ -1043,6 +1043,31 @@ def parliament():
 """ + CTA.replace("{up}", "") + footer()
 
 # ---------------- VOICES ----------------
+def gov_section():
+    import html as _h, sys
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import quotecards
+    V = [v for v in quotecards.load_voices() if v["kind"] == "government" or v.get("gov")]
+    V.sort(key=lambda v: (v.get("country") != "UK", "" if False else v["date"]), reverse=False)
+    uk = sorted([v for v in V if v.get("country") == "UK"], key=lambda v: v["date"], reverse=True)
+    rest = sorted([v for v in V if v.get("country") != "UK"], key=lambda v: v["date"], reverse=True)
+    def dfmt(d):
+        y, m, dd = d.split("-"); return f"{int(dd)} {MONTHS[int(m)-1]} {y}"
+    def row(v):
+        ext = ' target="_blank" rel="noopener"' if v["url"].startswith("http") else ""
+        src = "As reported by " + v["via"] if v.get("via") else ("Hansard" if "hansard" in v["url"] else "See the post" if "On X" in v.get("where", "") else "Read the statement")
+        return f"""<div class="gov-row"><div class="gov-d">{dfmt(v["date"])}<span>{_h.escape(v.get("country",""))}</span></div><div><blockquote>“{_h.escape(v["quote"])}”</blockquote><div class="gov-by"><b>{_h.escape(v["who"])}</b> · {_h.escape(v["role"])}</div><a class="src" href="{_h.escape(v["url"])}"{ext}>{src}</a></div></div>"""
+    return f"""<section class="gov-sec" id="governments">
+  <div class="wrap">
+    <div class="v-sec"><h2 class="sec">What governments <em>have said</em></h2><p>Official statements on Joshua’s case, starting with the UK Government. For every question put to UK ministers and their answers, see <a href="parliament.html">Parliament</a>.</p></div>
+    <h3 class="gov-h">UK Government</h3>
+    <div class="gov-list">{"".join(row(v) for v in uk)}</div>
+    <h3 class="gov-h">Other governments and the EU</h3>
+    <div class="gov-list">{"".join(row(v) for v in rest)}</div>
+  </div>
+</section>
+"""
+
 def voices():
     return head("Voices", "What parliamentarians, governments and human rights leaders are saying about Joshua Wong.", "voices.html") + nav("voices.html") + page_head(
         "Voices", "They are <em>speaking up</em>",
@@ -1051,11 +1076,15 @@ def voices():
   <div class="wrap">
     <div class="v-stats" id="v-stats"></div>
     <a class="to-socials" href="socials.html"><b>On social media</b><span>See what MPs, ministers, governments and campaigners are posting about Joshua</span></a>
-    <div class="v-sec"><h2 class="sec">On the <em>record</em></h2><p>In Parliament, in Congress, and in official statements.</p></div>
+  </div>
+</section>
+""" + gov_section() + """
+<section class="voices-page" style="border-top:0">
+  <div class="wrap">
+    <div class="v-sec"><h2 class="sec">Parliamentarians and <em>rights groups</em></h2><p>In Parliament, in Congress, and from human rights organisations.</p></div>
     <div class="filters v-bar" role="group" aria-label="Filter voices">
       <button class="chip" data-k="all" aria-pressed="true">Everyone</button>
       <button class="chip" data-k="parliament" aria-pressed="false">Parliamentarians</button>
-      <button class="chip" data-k="government" aria-pressed="false">Governments</button>
       <button class="chip" data-k="rights" aria-pressed="false">Rights groups</button>
     </div>
     <div class="vwall2" id="vwall"></div>

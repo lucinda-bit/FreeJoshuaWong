@@ -1121,3 +1121,14 @@ nav.top .links a,nav.top .btn{white-space:nowrap}
 .film-note p a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
 .res p a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;font-weight:600}
 .rec-d em.k-letter{background:var(--accent);border-color:var(--accent);color:#0C0C0B}
+/* Voices: what governments have said */
+.gov-sec{border-top:0;padding-top:10px}
+.gov-sec .v-sec p a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+.gov-h{font-family:var(--label);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:34px 0 6px}
+.gov-row{display:grid;grid-template-columns:150px 1fr;gap:28px;padding:22px 0;border-top:1px solid rgba(244,242,236,.12)}
+.gov-d{font-family:var(--label);font-weight:700;font-size:14px}
+.gov-d span{display:block;font-weight:600;font-size:12px;letter-spacing:.1em;text-transform:uppercase;opacity:.6;margin-top:6px}
+.gov-row blockquote{margin:0;font-family:var(--serif);font-size:21px;line-height:1.4}
+.gov-by{margin-top:8px;font-family:var(--label);font-size:14px;opacity:.85}
+.gov-row .src{display:inline-block;margin-top:8px;font-family:var(--label);font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+@media(max-width:700px){.gov-row{grid-template-columns:1fr;gap:6px}.gov-row blockquote{font-size:19px}}
