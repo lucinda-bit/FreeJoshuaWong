@@ -17,7 +17,7 @@ NAV = [("case.html", "The case"), ("film.html", "Watch"), ("newsroom.html", "New
 
 # Visitor counting (GoatCounter: no cookies, nothing that identifies visitors).
 # Put the site code from goatcounter.com here, e.g. "freejoshuawong". Leave empty to switch counting off.
-GOATCOUNTER = ""
+GOATCOUNTER = "freejoshuawong"
 
 def analytics():
     if not GOATCOUNTER:
