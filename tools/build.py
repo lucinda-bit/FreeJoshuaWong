@@ -24,6 +24,30 @@ def analytics():
         return ""
     return f'<script data-goatcounter="https://{GOATCOUNTER}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>\n'
 
+import re
+# Party labels for sitting parliamentarians (checked against members.parliament.uk). Key = text that appears in the name.
+PARTY = {
+    "Alton": "CB", "Bennett of Manor Castle": "Green", "Bob Blackman": "Con", "Alistair Carmichael": "LD",
+    "Graeme Downie": "Lab", "Iain Duncan Smith": "Con", "Foster of Aghadrumsee": "NA", "Jeremy Hunt": "Con",
+    "Alicia Kearns": "Con", "Kennedy of The Shaws": "Lab", "Andrew Mitchell": "Con", "James Naish": "Lab",
+    "Patten of Barnes": "Con", "Tom Tugendhat": "Con", "Bobby Dean": "LD", "Lord Garnier": "Con",
+    "Alex Barros-Curtis": "Lab", "Emily Darlington": "Lab", "Lord Shinkwin": "Con", "Richard Holden": "Con",
+    "Marie Rimmer": "Lab", "Catherine West": "Lab", "Gregory Stafford": "Con", "Luke Akehurst": "Lab", "Alyn Smith": "SNP",
+}
+PARTY_NAME = {"Con": "Conservative", "Lab": "Labour", "LD": "Liberal Democrat", "Green": "Green Party", "SNP": "SNP", "CB": "Crossbench", "NA": "Non-affiliated"}
+def party_tag(name):
+    for k, p in PARTY.items():
+        if k in name:
+            return f'<span class="pty pty-{p.lower()}" title="{PARTY_NAME[p]}">{p}</span>'
+    return ""
+def tag_names(text):
+    """Add a party label after each parliamentarian named in a short line of text (first mention each)."""
+    for k, p in PARTY.items():
+        m = re.search(re.escape(k) + r"[^,·<]*?(?: MP)?(?=$|[,·<]| \()", text)
+        if m and 'class="pty' not in text[m.end():m.end()+30]:
+            text = text[:m.end()] + " " + party_tag(k) + text[m.end():]
+    return text
+
 # One date per count, so every "days" number on the site agrees.
 JAILED_DATE = "2020-11-23"   # in custody continuously since
 PROMISE_DATE = "2026-09-01"  # the Foreign Secretary said he would take up the case
@@ -624,7 +648,7 @@ SIGNATORIES = [
 ]
 
 def letter_pm():
-    sig = "".join(f"<li>{n}{f'<small>{r}</small>' if r else ''}</li>" for n, r in SIGNATORIES)
+    sig = "".join(f"<li>{n} {party_tag(n)}{f'<small>{r}</small>' if r else ''}</li>" for n, r in SIGNATORIES)
     return head("Open letter to the Prime Minister", "Parliamentarians and human rights organisations ask the Prime Minister to raise Joshua Wong’s case with the Chinese Ambassador.", "letters/open-letter-prime-minister-sept-2026.html", 1) + nav("newsroom.html", 1) + page_head(
         "", "Britain should <em>stand for something</em>",
         "An open letter to the Prime Minister, Andy Burnham, sent on 13 September 2026.",
@@ -930,7 +954,7 @@ def parliament():
         wait = f'<div class="rec-wait"><b data-since="{since}">—</b> days, no update</div>' if since else ""
         rows += f"""<article class="rec" data-k="{k}"{' id="rec-'+d+'"' if since else ''}>
         <div class="rec-d"><span>{dfmt(d)}</span><em class="k-{k}">{label[k]}</em></div>
-        <div><div class="rec-who">{who}</div><h3>{title}</h3><p>{body}</p>{wait}<a class="src" href="{url}"{tgt}>{link}</a></div>
+        <div><div class="rec-who">{tag_names(who)}</div><h3>{title}</h3><p>{body}</p>{wait}<a class="src" href="{url}"{tgt}>{link}</a></div>
       </article>"""
     return head("Parliament", "Every time Joshua Wong’s case has been raised at Westminster, with the clips.", "parliament.html") + nav("parliament.html") + page_head(
         "Parliament", "On the <em>record</em>",
@@ -1179,7 +1203,7 @@ TIMES_SIGNATORIES = ["Emily Darlington MP", "Bobby Dean MP", "Lord David Alton o
     "Sir Geoffrey Nice KC", "Sir Malcolm Rifkind", "Lord Shinkwin", "Baroness Bennett of Manor Castle"]
 
 def letter_times():
-    sig = "".join(f"<li>{n}</li>" for n in TIMES_SIGNATORIES)
+    sig = "".join(f"<li>{n} {party_tag(n)}</li>" for n in TIMES_SIGNATORIES)
     return head("Unjust prosecution: letter to The Times", "MPs and peers write to The Times: Britain should summon the Chinese ambassador, sanction those responsible and say what further consequences will follow.", "letters/times-letter-nov-2026.html", 1) + nav("newsroom.html", 1) + page_head(
         "", "Unjust <em>prosecution</em>",
         "A letter to the editor of The Times from MPs and peers across the parties, published on 11 November 2026.",
