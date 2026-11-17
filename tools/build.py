@@ -341,7 +341,7 @@ LATEST = [
 # ---------------- THE CASE ----------------
 TIMELINE = [
     ("Born", "Oct 1996", "", "Born in Hong Kong", "Joshua Wong Chi-fung grows up in a city promised a high degree of autonomy until 2047."),
-    ("15", "Sep 2012", "", "Defeats “national education”", "With the student group Scholarism, which he co-founded at 14, he leads the protests that force the Hong Kong government to shelve a compulsory “national education” curriculum."),
+    ("15", "Sep 2012", "", "Defeats “national education”", "With Scholarism, the student group he co-founded the year before, he leads the protests that force the Hong Kong government to shelve a compulsory “national education” curriculum."),
     ("17", "Sep 2014", "", "The Umbrella Movement", "His arrest at Civic Square helps spark 79 days of street occupation demanding genuine universal suffrage. <em>Time</em> puts him on its cover."),
     ("19", "Oct 2016", "", "Detained at Bangkok airport", "Held and deported by Thai authorities on his way to speak at a university, an early sign of how far Beijing’s pressure would reach."),
     ("20", "2017", "", "First prison sentence, and the film", "Jailed over the 2014 Civic Square protest; Hong Kong’s top court later quashes the sentence. <em>Joshua: Teenager vs. Superpower</em> premieres at Sundance and wins the audience award."),
@@ -399,6 +399,7 @@ def case():
       <div><div class="label">His life so far</div><h2 class="sec">From 15 <em>to 40</em></h2></div>
       <a class="btn ghost" href="newsroom.html#presskit">Download the fact sheet</a>
     </div>
+    <p class="tl-note">Joshua was born on 13 October 1996, so each age shown is his age at the time.</p>
     <div class="timeline life">""" + items + """</div>
   </div>
 </section>
