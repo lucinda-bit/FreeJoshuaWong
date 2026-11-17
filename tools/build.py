@@ -673,7 +673,7 @@ def letter_pm():
         <p><strong>Britain signed the Joint Declaration and guaranteed Hong Kong’s freedoms for fifty years. Joshua Wong only ever asked his government to keep its word. We are asking ours to keep it too.</strong></p>
         <p class="sign">Written before Joshua was sentenced on 5 November 2026.</p>
         <p class="no-print" style="font-family:var(--label);font-size:14px">After the sentence, eight MPs and peers followed up with <a href="times-letter-nov-2026.html">a letter to <em>The Times</em></a> (11 November 2026).</p>
-        <p class="no-print" style="font-family:var(--label);font-size:14px">Published by <a href="https://www.hongkongwatch.org/all-posts/2026/9/14/cross-party-coalition-of-parliamentarians-and-human-rights-leaders-calls-on-prime-minister-to-act-on-hong-kong" target="_blank" rel="noopener">Hong Kong Watch</a> · <a href="https://static1.squarespace.com/static/58ecfa82e3df284d3a13dd41/t/6aa7a88c44264858a83ca2a9/1789372557008/Open+Letter+to+PM+-+Joshua+Wong.pdf" target="_blank" rel="noopener">Download the original letter (PDF)</a></p>
+        <p class="no-print" style="font-family:var(--label);font-size:14px">Published by <a href="https://www.hongkongwatch.org/all-posts/2026/9/14/cross-party-coalition-of-parliamentarians-and-human-rights-leaders-calls-on-prime-minister-to-act-on-hong-kong" target="_blank" rel="noopener">Hong Kong Watch</a> · <a href="open-letter-prime-minister-sept-2026.pdf" download>Download the letter (PDF)</a></p>
         <div class="no-print" style="margin-top:26px" data-share data-url="https://freejoshuawong.org/letters/open-letter-prime-minister-sept-2026.html" data-text="Open letter to the Prime Minister on Joshua Wong"></div>
       </article>
       <aside class="signs">
