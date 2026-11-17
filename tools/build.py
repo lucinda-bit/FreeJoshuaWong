@@ -46,7 +46,7 @@ def tag_names(text):
         m = re.search(re.escape(k) + r"[^,·<]*?(?: MP)?(?=$|[,·<]| \()", text)
         if m and 'class="pty' not in text[m.end():m.end()+30]:
             text = text[:m.end()] + " " + party_tag(k) + text[m.end():]
-    return text
+    return text.replace("</span>, ", "</span>&emsp;")
 
 # One date per count, so every "days" number on the site agrees.
 JAILED_DATE = "2020-11-23"   # in custody continuously since
