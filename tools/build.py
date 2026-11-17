@@ -205,7 +205,6 @@ def home():
       <div class="r cell-row"><span class="y">Now</span>
         <div class="cell" role="timer" aria-label="Days Joshua Wong has spent in prison">
           <div class="cell-in"><span class="n" id="days">2,181</span><span class="u">days<br>behind bars</span></div>
-          <div class="tick" aria-hidden="true">and counting: <span id="clock">0h 00m 00s</span></div>
         </div>
       </div>
     </div>
@@ -308,15 +307,11 @@ def home():
   window.addEventListener('resize',fit);
 })();
 (function(){
-  var start=Date.UTC(2020,10,22,16,0,0), el=document.getElementById('days'), clock=document.getElementById('clock');
+  var start=Date.UTC(2020,10,22,16,0,0), el=document.getElementById('days');
   if(!el) return;
   var fmt=function(n){return n.toLocaleString('en-GB');}, pl=function(n,w){return n+' '+w+(n===1?'':'s');};
   var total=Math.floor((Date.now()-start)/864e5);
   var intro=document.documentElement.classList.contains('intro');
-  var p2=function(n){return (n<10?'0':'')+n;};
-  function tick(){var ms=(Date.now()-start)%864e5, s=Math.floor(ms/1000);
-    if(clock) clock.textContent=Math.floor(s/3600)+'h '+p2(Math.floor(s/60)%60)+'m '+p2(s%60)+'s';}
-  tick(); setInterval(tick,1000);
   if(!intro){el.textContent=fmt(total);}
   else{el.textContent='0';setTimeout(function(){var t0=null;requestAnimationFrame(function step(ts){if(!t0)t0=ts;var k=Math.min(1,(ts-t0)/1700);k=1-Math.pow(1-k,3);el.textContent=fmt(Math.round(total*k));if(k<1)requestAnimationFrame(step);});},2000);}
   setInterval(function(){el.textContent=fmt(Math.floor((Date.now()-start)/864e5));},60000);
