@@ -694,7 +694,11 @@ PRESSKIT = """    <div class="facts-sheet">
 """
 
 # Campaign press releases, newest first: (date, title, summary, url or "")
-RELEASES = []
+RELEASES = [
+    ("4 Nov 2026", "Ahead of Joshua Wong’s sentencing, cross-party MPs urge Government to summon Chinese Ambassador",
+     "Issued the evening before sentencing, with comment from Andrew Duncan, Nathan Law, Sir Iain Duncan Smith MP and James Naish MP. <a href=\"press/2026-11-04-joshua-wong-sentencing-press-release.pdf\" download>Download the release (PDF)</a>",
+     "press/2026-11-04-joshua-wong-sentencing-press-release.pdf"),
+]
 
 def releases_html():
     if not RELEASES:
