@@ -98,5 +98,5 @@ window.VOICES = [
    url:"parliament.html#exchange", watch:"parliament.html#exchange"},
   {date:"2025-12-17", kind:"parliament", who:"Lord Alton of Liverpool", role:"Crossbench peer", country:"UK", where:"House of Lords",
    quote:"What are we doing to raise the cases of hundreds of pro-democracy supporters, such as Joshua Wong and Andy Li, who continue to languish in CCP prisons?",
-   url:"https://parallelparliament.co.uk/debate/2025-12-17/lords/lords-chamber/jimmy-lai-conviction"}
+   url:"https://hansard.parliament.uk/Lords/2025-12-17/debates/6CF28FA8-3A92-4C34-808D-A4BDD6322D85/JimmyLaiConviction"}
 ];

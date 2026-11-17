@@ -503,7 +503,7 @@ STATEMENTS = """<div class="timeline">
           <div class="flags"><span>UK</span></div>
           <h3>The UK is “deeply concerned”</h3>
           <p>Answering a written question from Alicia Kearns MP, the Foreign Office said it was deeply concerned by the news of further charges against Joshua.</p>
-          <a class="src" href="https://www.parallelparliament.co.uk/question/63014/hong-kong-politics-and-government" target="_blank" rel="noopener">Parliamentary answer</a></div></div>
+          <a class="src" href="https://questions-statements.parliament.uk/written-questions/detail/2025-06-26/63014" target="_blank" rel="noopener">Parliamentary answer</a></div></div>
       <div class="titem"><div class="d">2 Dec 2020</div><div>
           <div class="who">UK Government · Foreign Secretary</div>
           <div class="flags"><span>UK</span></div>
@@ -782,7 +782,7 @@ RECORD = [
      "https://questions-statements.parliament.uk/written-questions/detail/2026-10-27/38519", "Parliamentary answer", ""),
     ("2026-11-03", "written", "The Chinese Embassy and Joshua’s treatment", "Written question · Alex Barros-Curtis MP",
      "Alex Barros-Curtis MP asked whether Joshua’s treatment would be taken into account in any further approvals for the proposed Chinese Embassy at Royal Mint Court. Minister Chris Elmore replied that the planning decision was taken independently and that the Government does not comment on ongoing legal proceedings.",
-     "https://www.parallelparliament.co.uk/mp/alex-barros-curtis/writtenanswers?document_type=writtenanswers&memb_pk=5175&page=1", "Parliamentary answer", ""),
+     "https://questions-statements.parliament.uk/written-questions/detail/2026-10-22/37356", "Parliamentary answer", ""),
     ("2026-10-28", "written", "How often has Joshua’s case been raised?", "Written questions · James Naish MP",
      "James Naish MP asked what steps the Foreign Office has taken to raise Joshua’s case with Chinese counterparts since 1 September, on how many occasions and at what level, and whether the next six-monthly report would set out the Government’s assessment of his case. Answering on 28 October, Minister Chris Elmore said the further charges reinforce concerns about national security legislation and that the UK continues to call for the law’s repeal. He did not say how often the case had been raised, or at what level.",
      "https://questions-statements.parliament.uk/written-questions/detail/2026-10-20/36419", "Parliamentary answer", ""),
@@ -800,7 +800,7 @@ RECORD = [
      "#exchange", "Watch the exchange", "2026-09-01"),
     ("2025-12-17", "lords", "Named in the Lords after Jimmy Lai’s conviction", "Jimmy Lai Conviction · House of Lords",
      "Lord Alton asked what the Government is doing to raise the cases of pro-democracy prisoners “such as Joshua Wong and Andy Li”.",
-     "https://parallelparliament.co.uk/debate/2025-12-17/lords/lords-chamber/jimmy-lai-conviction", "Read the debate", ""),
+     "https://hansard.parliament.uk/Lords/2025-12-17/debates/6CF28FA8-3A92-4C34-808D-A4BDD6322D85/JimmyLaiConviction", "Read the debate", ""),
     ("2025-10-28", "commons", "Hong Kong human rights violations", "Foreign Office Questions · Luke Akehurst MP",
      "At questions led by Alison Bennett MP, Luke Akehurst MP raised Joshua’s rearrest and the new charges against him, and asked whether the National Security Law is being used to erode rights.",
      "https://hansard.parliament.uk/Commons/2025-10-28/debates/FCFA35AB-A007-4F6D-BF8A-3D80321D4046/HongKongHumanRightsViolations", "Hansard", ""),
@@ -809,13 +809,13 @@ RECORD = [
      "https://www.gov.uk/government/publications/six-monthly-report-on-hong-kong-january-to-june-2025/six-monthly-report-on-hong-kong-1-january-to-30-june-2025", "GOV.UK", ""),
     ("2025-07-03", "written", "The UK is “deeply concerned”", "Written question · Alicia Kearns MP",
      "Answering Alicia Kearns MP, the Foreign Office said it was deeply concerned by the further charges against Joshua.",
-     "https://www.parallelparliament.co.uk/question/63014/hong-kong-politics-and-government", "Parliamentary answer", ""),
+     "https://questions-statements.parliament.uk/written-questions/detail/2025-06-26/63014", "Parliamentary answer", ""),
     ("2024-12-19", "lords", "China: human rights and security", "Debate · House of Lords · Lord Alton",
      "Opening a Lords debate on China, Lord Alton urged the Government to condemn the jailing of the Hong Kong pro-democracy leaders, including Joshua and Benny Tai.",
-     "https://parallelparliament.co.uk/debate/2024-12-19/lords/lords-chamber/china-human-rights-and-security", "Read the debate", ""),
+     "https://hansard.parliament.uk/Lords/2024-12-19/debates/EC75B825-49A1-4C49-888E-BC9DD4576DB1/ChinaHumanRightsAndSecurity", "Read the debate", ""),
     ("2024-11-28", "written", "Raised during a ministerial visit?", "Written question · Lord Alton (HL2535)",
      "Lord Alton asked whether the minister raised political prisoners, including Joshua, Gwyneth Ho, Jimmy Lai and Owen Chow, during her visit to Hong Kong. Answered by Baroness Chapman.",
-     "https://parallelparliament.co.uk/question/HL2535/hong-kong-human-rights", "Parliamentary answer", ""),
+     "https://questions-statements.parliament.uk/written-questions/detail/2024-11-14/HL2535", "Parliamentary answer", ""),
     ("2020-12-07", "commons", "Urgent question on Joshua’s sentencing", "Urgent question · Alyn Smith MP",
      "The Commons held an urgent question on the sentencing of Joshua, Agnes Chow and Ivan Lam for their part in the 2019 protests.",
      "https://www.parliament.uk/business/news/2020/december/this-week-in-the-commons-7---11-december/", "UK Parliament", ""),
@@ -834,7 +834,7 @@ TRACKER = [
      "parliament.html#exchange-nov", "Watch the exchange"),
     ("2026-11-03", "weak", "Will Joshua’s treatment count in decisions on China’s new embassy?",
      "Written question from Alex Barros-Curtis MP. The Government said it does not comment on ongoing legal proceedings.",
-     "https://www.parallelparliament.co.uk/mp/alex-barros-curtis/writtenanswers?document_type=writtenanswers&memb_pk=5175&page=1", "The answer"),
+     "https://questions-statements.parliament.uk/written-questions/detail/2026-10-22/37356", "The answer"),
     ("2026-09-13", "none", "Summon China’s Ambassador to raise Joshua’s case",
      "The open letter to the Prime Minister, Andy Burnham, signed by 31 MPs, peers and rights leaders. No reply.",
      "letters/open-letter-prime-minister-sept-2026.html", "Read the letter"),
