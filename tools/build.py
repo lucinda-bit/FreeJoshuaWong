@@ -387,8 +387,8 @@ def case():
     <p class="pull">He is serving a sentence for believing us.</p>
     <div class="why">
       <div><div class="k">1984</div><h4>Britain gave its word</h4><p>The UK signed the Joint Declaration and guaranteed Hong Kong’s freedoms for fifty years. The Government has itself declared China in breach of it.</p></div>
+      <div><div class="k">1996</div><h4>Britain was responsible for him the day he was born. It still is.</h4><p>Joshua was born under British rule, shortly before the handover. His generation was promised fifty years of freedom. Britain must keep its promise.</p></div>
       <div><div class="k">2026</div><h4>It has reached our streets</h4><p>Two men were convicted at the Old Bailey this year of spying on Hong Kong dissidents in Britain, and jailed. Hong Kongers settled here have bounties on their heads.</p></div>
-      <div><div class="k">1996</div><h4>Britain was responsible for him the day he was born. It still is.</h4><p>Joshua was born in Hong Kong in October 1996, eight months before the handover, under the British flag. Britain cannot look away from the people it once governed.</p></div>
     </div>
   </div>
 </section>
