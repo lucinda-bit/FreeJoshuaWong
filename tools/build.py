@@ -771,8 +771,8 @@ RECORD = [
     ("2026-11-10", "commons", "“Calling for Joshua Wong’s release”", "Urgent question on China · House of Commons",
      "At an urgent question secured by Sir Iain Duncan Smith on China obtaining MPs’ phone and financial records, Emily Darlington MP asked the Government to summon the Chinese Ambassador and call for Joshua’s release, as it did for Jimmy Lai. Security Minister Dan Jarvis replied that the Government share the concerns about Joshua and Jimmy Lai. For the Opposition, Alicia Kearns MP said both remain imprisoned for speaking out for democracy. <a href=\"https://hansard.parliament.uk/Commons/2026-11-10/debates/E43553F9-3D50-41D2-844C-D23E5DCFBF96/ChinaBreachOfUKParliamentariansData\" target=\"_blank\" rel=\"noopener\">Read it in Hansard</a>",
      "#exchange-nov", "Watch the clip", ""),
-    ("2026-11-10", "written", "Six written questions in one day", "Written questions · Richard Holden MP, Alex Barros-Curtis MP, Marie Rimmer MP",
-     "After the sentence, three MPs tabled six questions to the Foreign Secretary, including whether he has summoned the Chinese Ambassador, what diplomatic steps he is taking to secure Joshua’s release, and whether the Government will consider sanctions on the officials responsible. Answers were due on 12 November. None had been published by 16 November.",
+    ("2026-11-10", "written", "Seven written questions in one day", "Written questions · Richard Holden MP, Alex Barros-Curtis MP, Marie Rimmer MP",
+     "After the sentence, three MPs tabled seven questions to the Foreign Secretary, including whether he has summoned the Chinese Ambassador, what diplomatic steps he is taking to secure Joshua’s release, and whether the Government will consider sanctions on the officials responsible. Answers were due on 12 November. None had been published by 16 November.",
      "https://commonsbusiness.parliament.uk/Document/108853/Html?subType=Standard", "Questions tabled", ""),
     ("2026-11-09", "written", "Named in a Lords answer on a ministerial visit", "Written question · Lord Alton (HL4687)",
      "Lord Alton asked what the minister raised during her visit to Hong Kong on 29 October. Answering, Baroness Winterton said she raised concerns including Jimmy Lai’s continued detention, and pointed to the six-monthly report, which highlights Joshua’s case.",
@@ -827,7 +827,7 @@ MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec
 # (date asked, status, what was asked, who/when detail, link, link text). Newest first. Status: "none" | "noupdate" | "weak" | "due".
 TRACKER = [
     ("2026-11-10", "due", "Has the Foreign Secretary summoned the Chinese Ambassador over Joshua?",
-     "Written question from Alex Barros-Curtis MP, one of six tabled after the sentence. The answer was due on 12 November and is now overdue.",
+     "Written question from Alex Barros-Curtis MP, one of seven tabled after the sentence. The answer was due on 12 November and is now overdue.",
      "https://questions-statements.parliament.uk/written-questions/detail/2026-11-10/41576", "The question"),
     ("2026-11-10", "weak", "Summon the Ambassador and call for Joshua’s release, as the Government did for Jimmy Lai",
      "Emily Darlington MP in the Commons. The Security Minister said the Government “share the concerns” but made no commitment.",
