@@ -1082,9 +1082,9 @@ nav.top .links a,nav.top .btn{white-space:nowrap}
 /* Phones: headline, the sentence line and "Email your MP" all on the first screen */
 @media(max-width:900px){
   .h4-hero{min-height:0}
-  .h4-pic{height:min(40vh,320px)}
+  .h4-pic{height:min(37.5vh,300px)}
   /* show the whole figure, from the V sign to his chin: scale the photo to the box height and fade the sides into the black */
-  .h4-pic img{inset:auto 0 0 0;margin:0 auto;height:calc(100% / .75);width:auto;max-width:none;object-fit:contain;
+  .h4-pic img{inset:auto 0 0 0;margin:0 auto;height:calc(100% / .70);width:auto;max-width:none;object-fit:contain;
     -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 16%,#000 84%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 16%,#000 84%,transparent 100%)}
   .h4-pic:after{background:linear-gradient(0deg,#000 0%,rgba(0,0,0,0) 12%)}
   .h4-pic figcaption{top:10px;bottom:auto;right:12px}
