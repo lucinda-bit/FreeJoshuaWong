@@ -277,7 +277,7 @@ def home():
       <div><h3>Review the Hong Kong Economic and Trade Office’s privileges</h3><p>Its London office keeps diplomatic-style privileges, even after a senior manager there was convicted of spying on Hong Kongers in Britain.</p></div>
       <div><h3>Sanction those responsible</h3><p>Hold the officials behind National Security Law prosecutions to account, together with Britain’s allies.</p></div>
     </div>
-    <p class="h4-who"><b>Are you a parliamentarian or journalist?</b> <a href="parliament.html">For parliamentarians</a> <a href="newsroom.html#presskit">Press kit</a></p>
+    <p class="h4-who"><b>Are you a parliamentarian or journalist?</b> <a href="parliament.html">MPs and peers: what’s been raised in Parliament</a> <a href="newsroom.html#presskit">Journalists: the press kit</a></p>
     """ + tracker() + """
     <p class="h4-more"><a href="case.html">Read the full case</a></p>
   </div>
