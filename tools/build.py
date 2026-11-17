@@ -631,20 +631,24 @@ def newsroom():
 """ + footer(0, '<script src="assets/press.js"></script>\n')
 
 # ---------------- LETTER PAGE ----------------
-SIGNATORIES = [
-    ("Lord Alton of Liverpool", ""), ("Baroness Bennett of Manor Castle", ""), ("Bob Blackman CBE MP", ""),
-    ("Sir Bill Browder KCMG", ""), ("The Rt Hon Alistair Carmichael MP", ""),
-    ("Mark Clifford", "President, The Committee for Freedom in Hong Kong Foundation"), ("Graeme Downie MP", ""),
-    ("Andrew Duncan", "Co-Founder, RT Weatherman Foundation"), ("The Rt Hon Sir Iain Duncan Smith MP", ""),
-    ("Jamie Fly", "CEO, Freedom House"), ("Fortify Rights", ""), ("The Rt Hon the Baroness Foster of Aghadrumsee DBE", ""),
-    ("Hong Kong Watch", ""), ("The Rt Hon Sir Jeremy Hunt MP", "Former Foreign Secretary"),
-    ("Alicia Kearns MP", "Shadow Minister for Foreign Affairs"), ("Baroness Kennedy of The Shaws KC", ""),
-    ("Tim Loughton", "Chair, Conservative Party Human Rights Commission"), ("The Rt Hon Sir Andrew Mitchell KCMG MP", ""),
-    ("Meaghan Mobbs", "President, RT Weatherman Foundation"), ("James Naish MP", ""), ("Sir Geoffrey Nice KC", ""),
+SIGNATORIES = [  # as in the final letter (Lucy, 17 Nov 2026)
+    ("Lord Alton of Liverpool", ""), ("Alex Barros-Curtis MP", ""), ("Baroness Bennett of Manor Castle", ""),
+    ("Bob Blackman CBE MP", ""), ("Sir Bill Browder KCMG", ""), ("The Rt Hon Alistair Carmichael MP", ""),
+    ("Mark Clifford", "President, The Committee for Freedom in Hong Kong Foundation"), ("Bobby Dean MP", ""),
+    ("Graeme Downie MP", ""), ("Andrew Duncan", "Co-Founder, RT Weatherman Foundation"),
+    ("The Rt Hon Sir Iain Duncan Smith MP", ""), ("Fortify Rights", ""),
+    ("The Rt Hon the Baroness Foster of Aghadrumsee DBE", ""), ("The Rt Hon The Lord Garnier KC", ""),
+    ("The Rt Hon Sir Jeremy Hunt MP", "Former Foreign Secretary"), ("Jamie Fly", "CEO, Freedom House"), ("Hong Kong Watch", ""),
+    ("Alicia Kearns MP", "Shadow Minister for Foreign Affairs and Chair of the APPG on Arbitrary Detention and Hostage Affairs"),
+    ("Baroness Kennedy of The Shaws KC", "Director of the International Bar Association’s Human Rights Institute"),
+    ("Tim Loughton", "Former Member of Parliament and current Chair of the Conservative Party Human Rights Commission"),
+    ("The Rt Hon Sir Andrew Mitchell KCMG MP", ""), ("Meaghan Mobbs", "President, RT Weatherman Foundation"),
+    ("Sir Geoffrey Nice KC", "Chair of the Uyghur Tribunal and China Tribunal"), ("James Naish MP", ""),
     ("The Rt Hon the Lord Patten of Barnes KG CH", ""), ("The Rt Hon Sir Malcolm Rifkind KCMG KC", ""),
-    ("Benedict Rogers", "Co-founder and Chair, Hong Kong Watch; Senior Director, Fortify Rights"), ("Jemimah Steinfeld", "Chief Executive, Index on Censorship"),
-    ("The Rt Hon Tom Tugendhat MBE VR MP", "Shadow Foreign Secretary"), ("Bess Weatherman", "Co-Founder, RT Weatherman Foundation"),
-    ("Sara Wilbourne", "ARTICLE 19"), ("Bobby Dean MP", ""), ("Lord Garnier KC", ""), ("Alex Barros-Curtis MP", ""),
+    ("Benedict Rogers", "Co-founder and Chair of Hong Kong Watch and Senior Director of Fortify Rights"),
+    ("Jemimah Steinfeld", "Chief Executive, Index on Censorship"),
+    ("The Rt Hon Tom Tugendhat MBE VR MP", "Shadow Foreign Secretary"),
+    ("Sara Wilbourne", "Acting Deputy Executive Director, ARTICLE 19"), ("Bess Weatherman", "Co-Founder, RT Weatherman Foundation"),
 ]
 
 def letter_pm():
