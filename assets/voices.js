@@ -6,9 +6,15 @@
 // via: if we link to a news report of the post rather than the post itself, name the outlet here.
 // id: optional; needed if one person has two quotes on the same date.
 window.VOICES = [
-  {date:"2026-11-06", kind:"government", who:"Ten foreign ministries, including the UK", role:"The UK and nine allies", country:"UK", where:"Joint statement",
+  {date:"2026-11-06", kind:"government", who:"Ten foreign ministries, including the UK", role:"Foreign Office statement with nine allies", country:"UK", where:"Joint statement",
    quote:"We call for an immediate end to all unjust prosecutions of individuals charged under the NSL.",
-   url:"https://www.dfat.gov.au/news/statement-sentencing-joshua-wong"},
+   url:"https://www.gov.uk/government/news/statement-on-the-sentencing-of-joshua-wong"},
+  {date:"2026-10-22", kind:"government", who:"UK Government", role:"Six-monthly Report on Hong Kong, January to June 2026", country:"UK", where:"Report to Parliament", id:"six-monthly-report-2026-10-22",
+   quote:"His case … has reinforced concerns about the increasingly broad application of national security legislation.",
+   url:"https://www.gov.uk/government/publications/six-monthly-report-on-hong-kong-january-to-june-2026/six-monthly-report-on-hong-kong-1-january-to-30-june-2026"},
+  {date:"2025-10-23", kind:"government", who:"Catherine West MP", role:"then Minister for the Indo-Pacific, in the Six-monthly Report on Hong Kong, January to June 2025", country:"UK", where:"Report to Parliament", id:"six-monthly-report-2025-10-23",
+   quote:"The UK is deeply concerned by the news of further charges under the National Security Law against Joshua Wong.",
+   url:"https://www.gov.uk/government/publications/six-monthly-report-on-hong-kong-january-to-june-2025/six-monthly-report-on-hong-kong-1-january-to-30-june-2025"},
   {date:"2026-11-05", kind:"government", who:"US Consulate General, Hong Kong", role:"US Government", country:"US", where:"Statement", via:"AP",
    quote:"Beijing will go to extraordinary lengths to silence those who advocate for fundamental freedoms in Hong Kong.",
    url:"https://www.wamc.org/2026-11-05/hong-kong-activist-joshua-wong-is-sentenced-to-10-more-years-in-prison"},

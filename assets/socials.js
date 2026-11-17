@@ -27,7 +27,7 @@ window.SOCIALS = [
    text:"The U.S. strongly condemns the Hong Kong Court’s decision to once again sentence Joshua Wong for exercising his freedom of speech. He has used peaceful means to defend the rights promised to all individuals in Hong Kong.\n\nWe call for his immediate release and that of all unjustly detained persons."},
   {id:"fcdo", date:"2026-11-06", name:"Foreign, Commonwealth & Development Office", handle:"FCDOGovUK", group:"gov", role:"UK Government",
    text:"Joint statement on the sentencing of Joshua Wong ⬇️",
-   link:{site:"Statement", title:"Ten foreign ministries, including the UK: “We call for an immediate end to all unjust prosecutions of individuals charged under the NSL”", url:"https://www.dfat.gov.au/news/statement-sentencing-joshua-wong"}},
+   link:{site:"Statement", title:"Ten foreign ministries, including the UK: “We call for an immediate end to all unjust prosecutions of individuals charged under the NSL”", url:"https://www.gov.uk/government/news/statement-on-the-sentencing-of-joshua-wong"}},
   {id:"alton-statement", date:"2026-11-06", name:"Lord (David) Alton", handle:"DavidAltonHL", group:"uk", role:"Crossbench peer",
    text:"Statement on the sentencing of Joshua Wong from the foreign ministries of Australia, Canada, France, Germany, Italy, Japan, the Netherlands, New Zealand, the United Kingdom, and the United States."},
   {id:"cfhk", date:"2026-11-06", name:"The Committee for Freedom in Hong Kong Foundation", handle:"", group:"campaign", profile:"https://thecfhk.org",

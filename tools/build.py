@@ -384,7 +384,7 @@ TIMELINE = [
     ("28", "Jun 2025", "", "Collusion case: charged again in prison", "Charged with conspiracy to collude with foreign forces, carrying a maximum of life imprisonment. The evidence is his own advocacy and public statements."),
     ("29", "Sep 2026", "", "Raised in Parliament, then a guilty plea", "On 1 September Sir Iain Duncan Smith <a href=\"parliament.html#exchange\">raises his case in the Commons</a> and the Foreign Secretary says he will take it up. The next day Joshua pleads guilty in the collusion case. On 13 September, 31 MPs, peers and rights leaders sign <a href=\"letters/open-letter-prime-minister-sept-2026.html\">an open letter to the Prime Minister</a>."),
     ("30", "13 Oct 2026", "", "Turns thirty in prison", "Parliamentarians mark his birthday with a screening of <a href=\"film.html\">the new film</a> in the Houses of Parliament."),
-    ("30", "5 Nov 2026", "", "Collusion case: ten more years", "A Hong Kong court sentences him to ten years for conspiracy to collude with foreign forces. Ten governments, including the UK, condemn it in <a href=\"https://www.dfat.gov.au/news/statement-sentencing-joshua-wong\" target=\"_blank\" rel=\"noopener\">a joint statement</a>. <a href=\"https://focustaiwan.tw/politics/202611050018\" target=\"_blank\" rel=\"noopener\">Taiwan</a> and <a href=\"https://www.eeas.europa.eu/eeas/hong-kong-statement-spokesperson-sentencing-joshua-wong_en\" target=\"_blank\" rel=\"noopener\">the EU</a> condemn it too."),
+    ("30", "5 Nov 2026", "", "Collusion case: ten more years", "A Hong Kong court sentences him to ten years for conspiracy to collude with foreign forces. Ten governments, including the UK, condemn it in <a href=\"https://www.gov.uk/government/news/statement-on-the-sentencing-of-joshua-wong\" target=\"_blank\" rel=\"noopener\">a joint statement</a>. <a href=\"https://focustaiwan.tw/politics/202611050018\" target=\"_blank\" rel=\"noopener\">Taiwan</a> and <a href=\"https://www.eeas.europa.eu/eeas/hong-kong-statement-spokesperson-sentencing-joshua-wong_en\" target=\"_blank\" rel=\"noopener\">the EU</a> condemn it too."),
     ("30", "10 Nov 2026", "", "Raised again in the Commons", "Five days after the sentence, Emily Darlington MP <a href=\"parliament.html#exchange-nov\">asks the Government</a> to summon the Chinese Ambassador and call for Joshua’s release. The next day she and seven other MPs and peers set out the same demands in <a href=\"letters/times-letter-nov-2026.html\">a letter to <em>The Times</em></a>."),
     ("40", "c. 2036", "future", "Release, if nothing changes", "Unless governments act, Joshua may not walk free until he is around 40, having spent most of his adult life in prison."),
 ]
@@ -500,7 +500,7 @@ STATEMENTS = """<div class="timeline">
           <div class="flags"><span>UK</span><span>US</span><span>Australia</span><span>Canada</span><span>France</span><span>Germany</span><span>Italy</span><span>Japan</span><span>Netherlands</span><span>New Zealand</span></div>
           <h3>Ten governments, including the UK, condemn the sentence</h3>
           <p>The day after sentencing, the foreign ministries said the case shows how the National Security Law is used to target people for political expression. They called for an end to unjust NSL prosecutions and for the rights promised under the 1984 Sino-British Joint Declaration to be honoured.</p>
-          <a class="src" href="https://www.dfat.gov.au/news/statement-sentencing-joshua-wong" target="_blank" rel="noopener">Read the statement</a></div></div>
+          <a class="src" href="https://www.gov.uk/government/news/statement-on-the-sentencing-of-joshua-wong" target="_blank" rel="noopener">Read the statement</a></div></div>
       <div class="titem"><div class="d">6 Nov 2026</div><div>
           <div class="who">US Secretary of State</div>
           <div class="flags"><span>US</span></div>
@@ -1087,7 +1087,7 @@ def gov_section():
         y, m, dd = d.split("-"); return f"{int(dd)} {MONTHS[int(m)-1]} {y}"
     def row(v):
         ext = ' target="_blank" rel="noopener"' if v["url"].startswith("http") else ""
-        src = "As reported by " + v["via"] if v.get("via") else ("Hansard" if "hansard" in v["url"] else "See the post" if "On X" in v.get("where", "") else "Read the statement")
+        src = "As reported by " + v["via"] if v.get("via") else ("Hansard" if "hansard" in v["url"] else "Read the report" if "six-monthly-report" in v["url"] else "See the post" if "On X" in v.get("where", "") else "Read the statement")
         return f"""<div class="gov-row"><div class="gov-d">{dfmt(v["date"])}<span>{_h.escape(v.get("country",""))}</span></div><div><blockquote>“{_h.escape(v["quote"])}”</blockquote><div class="gov-by"><b>{_h.escape(v["who"])}</b> · {_h.escape(v["role"])}</div><a class="src" href="{_h.escape(v["url"])}"{ext}>{src}</a></div></div>"""
     return f"""<section class="gov-sec" id="governments">
   <div class="wrap">
