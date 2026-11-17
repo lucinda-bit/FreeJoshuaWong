@@ -1101,3 +1101,20 @@ nav.top .links a,nav.top .btn{white-space:nowrap}
 .h4-who b{font-weight:700}
 .h4-who a{font-weight:600;color:var(--paper);text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:4px}
 .tl-note{font-family:var(--label);font-size:14px;opacity:.7;margin:-8px 0 22px}
+/* case page: cases at a glance */
+.cases{margin:48px 0 0}
+.cases h3{margin:0 0 14px}
+.cases table{width:100%;border-collapse:collapse;font-size:16px}
+.cases th{font-family:var(--label);font-size:12px;letter-spacing:.08em;text-transform:uppercase;text-align:left;padding:10px 12px;border-bottom:2px solid var(--accent);opacity:.85}
+.cases td{padding:12px;border-bottom:1px solid rgba(244,242,236,.15);vertical-align:top}
+.cases td:first-child{font-family:var(--label);font-weight:700;white-space:nowrap}
+.cases tr.now td{background:rgba(255,225,53,.08)}
+.cases tr.now td:nth-child(2),.cases tr.now td:last-child{color:var(--accent);font-weight:600}
+@media(max-width:700px){
+  .cases thead{display:none}
+  .cases tr{display:block;border-bottom:1px solid rgba(244,242,236,.15);padding:10px 0}
+  .cases td{display:block;border:0;padding:2px 0}
+  .cases td:nth-child(2){font-weight:700}
+  .cases tr.now{background:rgba(255,225,53,.08);padding:10px}
+  .cases tr.now td{background:none}
+}

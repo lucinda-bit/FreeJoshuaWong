@@ -346,16 +346,17 @@ TIMELINE = [
     ("19", "Apr 2016", "", "Co-founds Demosistō", "With Nathan Law and other Umbrella Movement leaders, he launches Demosistō, a new political party campaigning for democracy in Hong Kong."),
     ("19", "Sep 2016", "", "Gets his friend Nathan Law elected", "Too young to stand himself, Joshua campaigns for Demosistō’s chairman, Nathan Law, who wins a seat on Hong Kong Island and becomes the youngest lawmaker in Hong Kong’s history, at 23. Nathan is disqualified the following year."),
     ("19", "Oct 2016", "", "Detained at Bangkok airport", "Held and deported by Thai authorities on his way to speak at a university, an early sign of how far Beijing’s pressure would reach."),
-    ("20", "2017", "", "First prison sentence, and the film", "Jailed over the 2014 Civic Square protest; Hong Kong’s top court later quashes the sentence. <em>Joshua: Teenager vs. Superpower</em> premieres at Sundance and wins the audience award."),
+    ("20", "Jan 2017", "", "The film", "<em>Joshua: Teenager vs. Superpower</em> premieres at Sundance and wins the World Cinema Documentary Audience Award."),
+    ("20", "Aug 2017", "", "First prison sentence: unlawful assembly", "Jailed for six months for unlawful assembly over the 2014 Civic Square protest. Hong Kong’s top court quashes the sentence in February 2018."),
     ("22", "Sep 2019", "", "Testifies to the US Congress", "Gives evidence to the Congressional-Executive Commission on China on human rights in Hong Kong. Years later, prosecutors cite his lobbying in Washington against him."),
     ("23", "Jun 2020", "", "The National Security Law", "Beijing imposes the National Security Law on Hong Kong. His party, Demosistō, disbands the same day."),
-    ("24", "Nov 2020", "", "Into prison, where he remains", "Jailed over a 2019 protest outside police headquarters. He has not been free since."),
-    ("24", "Jan 2021", "", "Arrested as one of the Hong Kong 47", "Arrested in prison under the National Security Law for taking part in an unofficial pro-democracy primary election, and charged with subversion in February."),
-    ("28", "Nov 2024", "", "Sentenced to 4 years 8 months", "Sentenced in the largest national security trial in Hong Kong’s history. His release date is set for early 2027."),
-    ("28", "Jun 2025", "", "Charged again from his cell", "Charged with conspiracy to collude with foreign forces, carrying a maximum of life imprisonment. The evidence is his own advocacy and public statements."),
-    ("29", "Sep 2026", "", "Raised in Parliament, then a guilty plea", "On 1 September Sir Iain Duncan Smith raises his case in the Commons and the Foreign Secretary says he will take it up. The next day Joshua pleads guilty. On 13 September, 31 MPs, peers and rights leaders sign an open letter to the Prime Minister."),
+    ("24", "Nov 2020", "", "Jailed over protests, and never released", "Sentenced to 13½ months for unauthorised assembly over a 2019 protest outside police headquarters. More protest sentences follow in 2021, including for joining a Tiananmen vigil. He has not been free since."),
+    ("24", "Jan 2021", "", "Subversion case: arrested as one of the Hong Kong 47", "Arrested in prison under the National Security Law for taking part in an unofficial pro-democracy primary election, and charged with subversion in February."),
+    ("28", "Nov 2024", "", "Subversion case: 4 years 8 months", "Sentenced in the largest national security trial in Hong Kong’s history. His release date is set for early 2027."),
+    ("28", "Jun 2025", "", "Collusion case: charged again in prison", "Charged with conspiracy to collude with foreign forces, carrying a maximum of life imprisonment. The evidence is his own advocacy and public statements."),
+    ("29", "Sep 2026", "", "Raised in Parliament, then a guilty plea", "On 1 September Sir Iain Duncan Smith raises his case in the Commons and the Foreign Secretary says he will take it up. The next day Joshua pleads guilty in the collusion case. On 13 September, 31 MPs, peers and rights leaders sign an open letter to the Prime Minister."),
     ("30", "13 Oct 2026", "", "Turns thirty in prison", "Parliamentarians mark his birthday with a screening of the new film in the Houses of Parliament."),
-    ("30", "5 Nov 2026", "", "Ten more years", "A Hong Kong court sentences him to ten years. Ten governments, including the UK, condemn the sentence the next day."),
+    ("30", "5 Nov 2026", "", "Collusion case: ten more years", "A Hong Kong court sentences him to ten years for conspiracy to collude with foreign forces. Ten governments, including the UK, condemn the sentence the next day."),
     ("30", "10 Nov 2026", "", "Raised again in the Commons", "Five days after the sentence, Emily Darlington MP asks the Government to summon the Chinese Ambassador and call for Joshua’s release. The next day she and seven other MPs and peers set out the same demands in a letter to The Times."),
     ("40", "c. 2036", "future", "Release, if nothing changes", "Unless governments act, Joshua may not walk free until he is around 40, having spent most of his adult life in prison."),
 ]
@@ -376,7 +377,7 @@ def case():
         <p>Joshua Wong has campaigned for democracy in Hong Kong since he was a schoolboy. At fifteen he stopped a Beijing-backed “national education” curriculum; at seventeen he was the face of the Umbrella Movement, on the cover of TIME as <a href="https://time.com/3482556/hong-kong-protest-teenagers/" target="_blank" rel="noopener">“The Face of Protest”</a>; at twenty he was the subject of an award-winning Netflix documentary. At thirty, he is in a maximum-security prison.</p>
       </div>
       <div>
-        <h3>What he is charged with</h3>
+        <h3>What his latest sentence is for</h3>
         <p>“Conspiracy to collude with foreign forces” under the National Security Law, a law imposed by Beijing in 2020.</p>
         <ul>
           <li><strong>The evidence is his own words:</strong> his meetings with foreign politicians, social media posts, op-eds and interviews.</li>
@@ -385,6 +386,18 @@ def case():
           <li><strong>The result:</strong> ten more years, handed down on 5 November 2026.</li>
         </ul>
       </div>
+    </div>
+    <div class="cases">
+      <h3>His cases at a glance</h3>
+      <table>
+        <thead><tr><th>Sentenced</th><th>Charge</th><th>What it was for</th><th>Sentence</th></tr></thead>
+        <tbody>
+          <tr><td>2017</td><td>Unlawful assembly</td><td>The 2014 Civic Square protest that helped spark the Umbrella Movement</td><td>6 months, quashed by Hong Kong’s top court in 2018</td></tr>
+          <tr><td>2020–21</td><td>Unauthorised assembly</td><td>Protests in 2019 and 2020, including a Tiananmen vigil</td><td>Several sentences, the longest 13½ months. He has been in prison since November 2020</td></tr>
+          <tr><td>2024</td><td>Subversion (Hong Kong 47)</td><td>Taking part in an unofficial pro-democracy primary election in 2020</td><td>4 years 8 months, due to end in early 2027</td></tr>
+          <tr class="now"><td>2026</td><td>Collusion with foreign forces</td><td>His advocacy abroad: meetings with foreign politicians, posts and interviews</td><td>10 years</td></tr>
+        </tbody>
+      </table>
     </div>
     <p class="pull">He is serving a sentence for believing us.</p>
     <div class="why">
