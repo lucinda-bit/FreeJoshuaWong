@@ -1120,3 +1120,4 @@ nav.top .links a,nav.top .btn{white-space:nowrap}
 }
 .film-note p a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
 .res p a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;font-weight:600}
+.rec-d em.k-letter{background:var(--accent);border-color:var(--accent);color:#0C0C0B}

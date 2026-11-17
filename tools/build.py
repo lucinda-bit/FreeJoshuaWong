@@ -262,7 +262,7 @@ def home():
     <div class="pstats">
       <a href="newsroom.html#statements"><b>11</b><span>governments, plus the EU, condemned his sentence</span></a>
       <a href="letters/open-letter-prime-minister-sept-2026.html"><b>""" + str(len(SIGNATORIES)) + """</b><span>MPs, peers and rights leaders signed the open letter to the Prime Minister</span></a>
-      <a href="parliament.html"><b>""" + str(sum(1 for r in RECORD if r[1] != "event" and r[0] >= "2025-06-06")) + """</b><span>times raised in Parliament since the new charge in June 2025</span></a>
+      <a href="parliament.html"><b>""" + str(sum(1 for r in RECORD if r[1] not in ("event", "letter") and r[0] >= "2025-06-06")) + """</b><span>times raised in Parliament since the new charge in June 2025</span></a>
       <a href="newsroom.html"><b>""" + str(PRESS_COUNT) + """</b><span>reports, podcasts and editorials since June 2025</span></a>
     </div>
   </div>
@@ -647,6 +647,7 @@ def letter_pm():
         <p>It is time that you called the Chinese Ambassador to raise Joshua’s case and that of the others imprisoned for standing up for democracy.</p>
         <p><strong>Britain signed the Joint Declaration and guaranteed Hong Kong’s freedoms for fifty years. Joshua Wong only ever asked his government to keep its word. We are asking ours to keep it too.</strong></p>
         <p class="sign">Written before Joshua was sentenced on 5 November 2026.</p>
+        <p class="no-print" style="font-family:var(--label);font-size:14px">After the sentence, eight MPs and peers followed up with <a href="times-letter-nov-2026.html">a letter to <em>The Times</em></a> (11 November 2026).</p>
         <p class="no-print" style="font-family:var(--label);font-size:14px">Published by <a href="https://www.hongkongwatch.org/all-posts/2026/9/14/cross-party-coalition-of-parliamentarians-and-human-rights-leaders-calls-on-prime-minister-to-act-on-hong-kong" target="_blank" rel="noopener">Hong Kong Watch</a> · <a href="https://static1.squarespace.com/static/58ecfa82e3df284d3a13dd41/t/6aa7a88c44264858a83ca2a9/1789372557008/Open+Letter+to+PM+-+Joshua+Wong.pdf" target="_blank" rel="noopener">Download the original letter (PDF)</a></p>
         <div class="no-print" style="margin-top:26px" data-share data-url="https://freejoshuawong.org/letters/open-letter-prime-minister-sept-2026.html" data-text="Open letter to the Prime Minister on Joshua Wong"></div>
       </article>
@@ -786,6 +787,9 @@ RECORD = [
     ("2026-11-11", "written", "Sanctions on the officials responsible?", "Written question · Richard Holden MP",
      "Richard Holden MP asked whether the Foreign Secretary will assess the merits of targeted sanctions on the Chinese and Hong Kong officials responsible for jailing Joshua and other activists. The answer was due on 13 November.",
      "https://questions-statements.parliament.uk/written-questions/detail/2026-11-11/42157", "The question", ""),
+    ("2026-11-11", "letter", "“A treaty broken without cost invites the next breach”", "Letter to The Times · Eight MPs and peers",
+     "The day after the urgent question, Emily Darlington MP, Lord Alton, Lord Patten and five other MPs and peers wrote to The Times asking the Government to summon the Chinese Ambassador, sanction those responsible and tell Parliament what further consequences will follow.",
+     "letters/times-letter-nov-2026.html", "Read the letter", ""),
     ("2026-11-10", "commons", "“Not, sadly, like the islanders Joshua Wong and Jimmy Lai”", "Commonwealth Heads of Government Meeting statement · House of Commons",
      "The same day, responding to the Government’s statement on the Commonwealth summit, Shadow Foreign Secretary Tom Tugendhat contrasted the dignity owed to Caribbean islanders with the treatment of Joshua and Jimmy Lai in Hong Kong.",
      "#exchange-tugendhat", "Watch the clip", ""),
@@ -813,6 +817,9 @@ RECORD = [
     ("2026-10-13", "event", "The film is shown in Parliament", "Committee Room 15 · Houses of Parliament",
      "<em>Joshua: Prisoner vs. Superpower</em> was first shown to parliamentarians on Joshua’s 30th birthday.",
      "film.html", "Watch the film", ""),
+    ("2026-09-13", "letter", "Open letter to the Prime Minister", "Open letter · 31 MPs, peers and rights leaders",
+     "MPs and peers from across the parties, former Foreign Secretaries and human rights leaders asked the Prime Minister to call in the Chinese Ambassador and raise Joshua’s case. No reply has been made public.",
+     "letters/open-letter-prime-minister-sept-2026.html", "Read the letter", ""),
     ("2026-09-08", "written", "Six questions, one answer", "Written questions · Gregory Stafford MP",
      "Gregory Stafford MP asked six questions on Joshua’s case, including what representations the UK has made to the Hong Kong authorities and its assessment of the rule of law in his case. Minister Chris Elmore gave a single answer: the Government continues to monitor the case, reports on it in the six-monthly reports, and repeats its call for the National Security Law to be repealed.",
      "https://qna.files.parliament.uk/qnadailyreports/Written-Questions-Answers-Statements-Daily-Report-Commons-2026-09-08.pdf", "Daily Report, p.478", ""),
@@ -841,7 +848,7 @@ RECORD = [
      "The Commons held an urgent question on the sentencing of Joshua, Agnes Chow and Ivan Lam for their part in the 2019 protests.",
      "https://hansard.parliament.uk/Commons/2020-12-07/debates/B5D3C0DB-2F7C-48F4-91B0-0BD2E87227CE/HongKongSentencingOfPro-DemocracyActivists", "Hansard", ""),
 ]
-KINDS = [("commons", "Commons"), ("lords", "Lords"), ("written", "Written questions"), ("report", "Government reports"), ("event", "In Parliament")]
+KINDS = [("commons", "Commons"), ("lords", "Lords"), ("written", "Written questions"), ("letter", "Letters"), ("report", "Government reports"), ("event", "In Parliament")]
 MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
 
 # ===== Asked and answered: the accountability tracker (home page and Newsroom) =====
@@ -943,7 +950,7 @@ def parliament():
         <div class="px-sp">
           <div class="px-name">Emily Darlington MP</div>
           <div class="px-role">Labour, Milton Keynes Central</div>
-          <p>At an urgent question secured by Sir Iain Duncan Smith on China obtaining MPs’ data, five days after Joshua was sentenced, she asked the Government to summon the Chinese Ambassador and call for his release, as it did for Jimmy Lai.</p>
+          <p>At an urgent question secured by Sir Iain Duncan Smith on China obtaining MPs’ data, five days after Joshua was sentenced, she asked the Government to summon the Chinese Ambassador and call for his release, as it did for Jimmy Lai. The next day she and seven other MPs and peers made the same case in <a href="letters/times-letter-nov-2026.html">a letter to <em>The Times</em></a>.</p>
         </div>
         <div class="px-sp">
           <div class="px-name">Dan Jarvis MP</div>
@@ -1012,7 +1019,7 @@ def parliament():
         <div class="px-sp">
           <div class="px-name">Sir Iain Duncan Smith</div>
           <div class="px-role">Conservative, Chingford and Woodford Green</div>
-          <p>Asked the Government to raise Joshua’s case with Beijing.</p>
+          <p>Asked the Government to raise Joshua’s case with Beijing. Twelve days later he was among 31 MPs, peers and rights leaders who signed <a href="letters/open-letter-prime-minister-sept-2026.html">an open letter to the Prime Minister</a>.</p>
         </div>
         <div class="px-sp">
           <div class="px-name">Ed Miliband</div>
@@ -1160,6 +1167,7 @@ def letter_times():
         <p>Your leading article is right to ask what Britain will do for Joshua Wong (“Supine Silence”, Nov 6). The government has joined nine allies in calling for an end to “unjust prosecutions” under Hong Kong’s national security law, but condemnation is a statement, not a policy. Joshua Wong, who has been sentenced to ten years’ imprisonment, stood up for the Sino-British joint declaration, a treaty Britain signed and registered at the United Nations, which our own government says China has breached. <strong>A treaty broken without cost invites the next breach.</strong></p>
         <p>The government should summon the Chinese ambassador, as it did for Jimmy Lai; sanction those responsible for national security law prosecutions, as the US has; and tell parliament what further consequences will follow if Jimmy Lai, Joshua Wong and Benny Tai are not freed.</p>
         <p class="no-print" style="font-family:var(--label);font-size:14px">Published in The Times: <a href="https://www.thetimes.com/comment/letters-to-editor/article/times-letters-civil-service-needs-urgent-reform-wq3bcj955" target="_blank" rel="noopener">read it on thetimes.com</a> (subscription may be needed). The letter responds to The Times’s leading article, <a href="https://www.thetimes.com/comment/the-times-view/article/joshua-wong-jailed-hong-kong-uk-china-nn9c6vpzc" target="_blank" rel="noopener">“Supine Silence”</a>.</p>
+        <p class="no-print" style="font-family:var(--label);font-size:14px">It follows <a href="open-letter-prime-minister-sept-2026.html">the open letter to the Prime Minister</a> signed by 31 MPs, peers and rights leaders in September 2026.</p>
         <div class="no-print" style="margin-top:26px" data-share data-url="https://freejoshuawong.org/letters/times-letter-nov-2026.html" data-text="“A treaty broken without cost invites the next breach.” MPs and peers write to The Times on Joshua Wong"></div>
       </article>
       <aside class="signs">
