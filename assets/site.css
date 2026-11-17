@@ -184,7 +184,7 @@ nav .btn{padding:10px 16px;font-size:11px}
 .post p b{color:var(--accent);font-weight:500}
 .copy{flex-shrink:0;font-family:var(--label);font-weight:800;font-size:11px;letter-spacing:.14em;text-transform:uppercase;background:transparent;color:var(--accent);border:1.5px solid var(--accent);padding:8px 12px;cursor:pointer;border-radius:2px}
 .copy:hover,.copy.done{background:var(--accent);color:var(--ink)}
-.hashtag{font-family:var(--display);font-size:clamp(46px,8vw,110px);text-transform:uppercase;line-height:.9;color:var(--ink);background:var(--accent);padding:26px 28px 22px;margin-top:80px;text-align:center;letter-spacing:.01em}
+.hashtag{font-family:var(--display);font-size:clamp(30px,9vw,110px);overflow-wrap:anywhere;text-transform:uppercase;line-height:.9;color:var(--ink);background:var(--accent);padding:26px 28px 22px;margin-top:80px;text-align:center;letter-spacing:.01em}
 .hashtag small{display:block;font-size:.32em;margin-top:10px;letter-spacing:.02em}
 @media(max-width:900px){.voices,.share{grid-template-columns:1fr}}
 
