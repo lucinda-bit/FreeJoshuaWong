@@ -333,7 +333,7 @@ def home():
 LATEST = [
     ("Australian Senate", "“Some call it collusion. I call it courage.” Senator Raff Ciccone on Joshua’s sentence", "16 Nov 2026", "https://www.abc.net.au/news/2026-11-16/federal-politics-live-blog-senate-gas-nov-16/107388656"),
     ("The Times · Letters", "Unjust prosecution: MPs and peers ask what Britain will do for Joshua Wong", "11 Nov 2026", "letters/times-letter-nov-2026.html"),
-    ("The Guardian · Today in Focus", "Podcast: Teen prodigy, Netflix star, prisoner, with Nathan Law", "13 Nov 2026", "https://podcasts.apple.com/gb/podcast/today-in-focus/id1440133626"),
+    ("The Guardian · Today in Focus", "Podcast: Teen prodigy, Netflix star, prisoner, with Nathan Law", "13 Nov 2026", "https://www.theguardian.com/news/audio/2026/nov/13/teen-prodigy-netflix-star-prisoner-the-story-of-hong-kong-dissident-joshua-wong-podcast"),
     ("House of Commons", "Emily Darlington MP asks the Government to call for Joshua’s release", "10 Nov 2026", "parliament.html#exchange-nov"),
     ("House of Lords", "A minister’s answer to Lord Alton points to Joshua’s case", "9 Nov 2026", "parliament.html"),
 ]
@@ -868,7 +868,7 @@ VIDEOS = [
     ("film.html", "Film", "Joshua: Prisoner vs. Superpower", "The new short film, first shown in Parliament on 13 October 2026.", "images/film-poster.jpg", False),
     ("#exchange-nov", "House of Commons · 10 Nov 2026", "Emily Darlington MP", "Asks the Government to call for Joshua’s release, five days after his sentence.", "images/commons-2026-11-10-poster.jpg", False),
     ("#exchange-kearns", "House of Commons · 10 Nov 2026", "Alicia Kearns MP", "For the Opposition: Joshua and Jimmy Lai remain imprisoned for speaking out for democracy.", "images/commons-2026-11-10-kearns-poster.jpg", False),
-    ("https://podcasts.apple.com/gb/podcast/today-in-focus/id1440133626", "The Guardian · Today in Focus · 13 Nov 2026", "Teen prodigy, Netflix star, prisoner", "Podcast: Nathan Law and journalist Danny Vincent on Joshua’s story and his new sentence.", "images/covers/guardian-podcast.jpg", True),
+    ("https://www.theguardian.com/news/audio/2026/nov/13/teen-prodigy-netflix-star-prisoner-the-story-of-hong-kong-dissident-joshua-wong-podcast", "The Guardian · Today in Focus · 13 Nov 2026", "Teen prodigy, Netflix star, prisoner", "Podcast: Nathan Law and journalist Danny Vincent on Joshua’s story and his new sentence.", "images/covers/guardian-podcast.jpg", True),
     ("https://x.com/SkyNews/status/2118468483625189737", "Sky News · 5 Nov 2026", "Nathan Law on Sky News", "On the day of the sentence, Nathan tells Yalda Hakim that democracy and human rights are “losing ground globally”.", "images/covers/sky-nathan.jpg", True),
     ("https://www.youtube.com/watch?v=gwQ1bK0KSJE", "Byline Times TV", "Andrew Duncan on Joshua’s story", "Video: the filmmaker behind both Joshua films on where Joshua is now.", "images/covers/byline-tv.jpg", True),
     ("#exchange-tugendhat", "House of Commons · 10 Nov 2026", "Tom Tugendhat MP", "The Shadow Foreign Secretary names Joshua in the Commonwealth summit statement.", "images/commons-2026-11-10-tugendhat-poster.jpg", False),
@@ -888,7 +888,7 @@ def video_cards(skip_film=False):
         tgt = ' target="_blank" rel="noopener"' if ext else ""
         art = f'<img src="{img}" alt="" loading="lazy">' if img else f'<span class="vc-mark">{kicker.split(" · ")[0]}</span>'
         cards += f"""<a class="vcard{" has-cover" if "images/covers" in img else ""}" href="{url}"{tgt}>
-        <div class="vc-img">{art}<span class="vc-play"></span>{'<span class="vc-ext">Opens on '+ ('YouTube' if 'youtube' in url else 'Apple Podcasts' if 'podcasts.apple' in url else 'Facebook' if 'facebook.com' in url else 'X' if 'x.com/' in url else 'their site') +'</span>' if ext else ''}</div>
+        <div class="vc-img">{art}<span class="vc-play"></span>{'<span class="vc-ext">Opens on '+ ('YouTube' if 'youtube' in url else 'Apple Podcasts' if 'podcasts.apple' in url else 'Facebook' if 'facebook.com' in url else 'X' if 'x.com/' in url else 'the Guardian' if 'theguardian.com' in url else 'their site') +'</span>' if ext else ''}</div>
         <div class="vc-k">{kicker}</div><h3>{title}</h3><p>{blurb}</p></a>"""
     return cards
 
