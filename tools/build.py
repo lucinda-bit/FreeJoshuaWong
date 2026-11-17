@@ -260,7 +260,7 @@ def home():
   <div class="wrap">
     <h2>The pressure is building</h2>
     <div class="pstats">
-      <a href="newsroom.html#statements"><b>11</b><span>governments, plus the EU, condemned his sentence</span></a>
+      <a href="voices.html"><b>11</b><span>governments, plus the EU, condemned his sentence</span></a>
       <a href="letters/open-letter-prime-minister-sept-2026.html"><b>""" + str(len(SIGNATORIES)) + """</b><span>MPs, peers and rights leaders signed the open letter to the Prime Minister</span></a>
       <a href="parliament.html"><b>""" + str(sum(1 for r in RECORD if r[1] not in ("event", "letter") and r[0] >= "2025-06-06")) + """</b><span>times raised in Parliament since the new charge in June 2025</span></a>
       <a href="newsroom.html"><b>""" + str(PRESS_COUNT) + """</b><span>reports, podcasts and editorials since June 2025</span></a>
@@ -544,7 +544,6 @@ def newsroom():
     <div class="tabs" role="tablist">
       <a href="#coverage" role="tab">Coverage</a>
       <a href="#releases" role="tab">Press releases</a>
-      <a href="#statements" role="tab">Government statements</a>
       <a href="#letters" role="tab">Letters</a>
       <a href="#presskit" role="tab">Press kit</a>
     </div>
@@ -566,12 +565,6 @@ def newsroom():
       </div>
       <div id="cov-feature"></div>
       <div id="cov-list" class="cov-list"></div>
-    </div>
-
-    <div class="panel" id="panel-statements" hidden>
-      <p class="lede" style="margin-bottom:40px">What governments have said officially about Joshua: ministers, foreign ministries and official reports. For what MPs, peers and members of Congress have said, see <a href="parliament.html">Parliament</a> and <a href="voices.html">Voices</a>.</p>
-      """ + tracker() + """
-      """ + STATEMENTS + """
     </div>
 
     <div class="panel" id="panel-releases" hidden>

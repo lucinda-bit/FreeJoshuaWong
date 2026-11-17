@@ -6,6 +6,15 @@
 // via: if we link to a news report of the post rather than the post itself, name the outlet here.
 // id: optional; needed if one person has two quotes on the same date.
 window.VOICES = [
+  {date:"2026-11-06", kind:"government", who:"Ten foreign ministries, including the UK", role:"The UK and nine allies", country:"UK", where:"Joint statement",
+   quote:"We call for an immediate end to all unjust prosecutions of individuals charged under the NSL.",
+   url:"https://www.dfat.gov.au/news/statement-sentencing-joshua-wong"},
+  {date:"2026-11-05", kind:"government", who:"US Consulate General, Hong Kong", role:"US Government", country:"US", where:"Statement", via:"AP",
+   quote:"Beijing will go to extraordinary lengths to silence those who advocate for fundamental freedoms in Hong Kong.",
+   url:"https://www.wamc.org/2026-11-05/hong-kong-activist-joshua-wong-is-sentenced-to-10-more-years-in-prison"},
+  {date:"2026-11-05", kind:"government", who:"Karen Kuo", role:"Spokesperson, Presidential Office, Taiwan", country:"Taiwan", where:"Statement", via:"Focus Taiwan",
+   quote:"Seeking democracy should not be a crime, and young people should not have to sacrifice their freedom for their ideals.",
+   url:"https://focustaiwan.tw/politics/202611050018"},
   {date:"2026-11-16", kind:"parliament", who:"Senator Raff Ciccone", role:"Chair, Parliamentary Joint Committee on Intelligence and Security", country:"Australia", where:"Australian Senate", via:"ABC News",
    quote:"Some call it collusion. I call it courage.",
    url:"https://www.abc.net.au/news/2026-11-16/federal-politics-live-blog-senate-gas-nov-16/107388656"},

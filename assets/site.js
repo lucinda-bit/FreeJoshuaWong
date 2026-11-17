@@ -90,7 +90,7 @@ var SITE_URL = 'https://freejoshuawong.org'; // see SITE in tools/build.py
     });
   }
 
-  // Tabs (newsroom): #coverage, #releases, #statements, #letters, #presskit
+  // Tabs (newsroom): #coverage, #releases, #letters, #presskit
   var tabs = document.querySelectorAll('.tabs a');
   if (tabs.length) {
     var show = function () {
