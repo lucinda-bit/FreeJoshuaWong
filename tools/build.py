@@ -61,7 +61,7 @@ def nav(current, depth=0):
 
 COLLEAGUES = [
     ("Hong Kong Watch", "https://www.hongkongwatch.org"),
-    ("Committee for Freedom in Hong Kong Foundation", "https://www.cfhk.org"),
+    ("Committee for Freedom in Hong Kong Foundation", "https://thecfhk.org"),
     ("Index on Censorship", "https://www.indexoncensorship.org"),
     ("Fortify Rights", "https://www.fortifyrights.org"),
     ("Inter-Parliamentary Alliance on China", "https://www.ipac.global"),

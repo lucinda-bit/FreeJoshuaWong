@@ -30,7 +30,7 @@ window.SOCIALS = [
    link:{site:"Statement", title:"Ten foreign ministries, including the UK: “We call for an immediate end to all unjust prosecutions of individuals charged under the NSL”", url:"newsroom.html#statements"}},
   {id:"alton-statement", date:"2026-11-06", name:"Lord (David) Alton", handle:"DavidAltonHL", group:"uk", role:"Crossbench peer",
    text:"Statement on the sentencing of Joshua Wong from the foreign ministries of Australia, Canada, France, Germany, Italy, Japan, the Netherlands, New Zealand, the United Kingdom, and the United States."},
-  {id:"cfhk", date:"2026-11-06", name:"The Committee for Freedom in Hong Kong Foundation", handle:"", group:"campaign", profile:"https://www.cfhk.org",
+  {id:"cfhk", date:"2026-11-06", name:"The Committee for Freedom in Hong Kong Foundation", handle:"", group:"campaign", profile:"https://thecfhk.org",
    text:"A regime that feels threatened by a peaceful young democracy activist is a regime exposing its own weakness.\n\nJoshua Wong has sacrificed his youth for Hong Kong’s freedom. His imprisonment is an indictment of Beijing, not of him.\nBritain must stand firm. Freedom must not be …",
    link:{site:"spectator.com", title:"Joshua Wong’s imprisonment shows China is running scared", url:"https://www.spectator.com.au/?p=10947071"}},
   {id:"eroglu", date:"2026-11-06", name:"Engin Eroglu", handle:"EnginEroglu_FW", group:"world", role:"Member of the European Parliament",
