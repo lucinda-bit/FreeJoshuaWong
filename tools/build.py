@@ -241,7 +241,7 @@ def home():
 <section class="h4-words">
   <div class="wrap">
     <blockquote>“The only thing I worry about is that people will forget Hong Kong.”</blockquote>
-    <p class="by">Joshua Wong, in a letter to a friend from prison, published by <a href="https://www.inkl.com/news/i-worry-people-will-forget-hong-kong-joshua-wong-laments-citys-fate-from-inside-maximum-security-prison" target="_blank" rel="noopener"><em>The Guardian</em></a>, 5 November 2026</p>
+    <p class="by">Joshua Wong, in a letter to a friend from prison, published by <a href="https://www.theguardian.com/world/2026/nov/05/joshua-wong-hong-kong-prison-letters-sentenced-10-years" target="_blank" rel="noopener"><em>The Guardian</em></a>, 5 November 2026</p>
   </div>
 </section>
 
@@ -710,7 +710,7 @@ def mp_box(dark=False):
 def act():
     return head("Take action", "Write to your MP about Joshua Wong and share his story.", "act.html") + nav("act.html") + page_head(
         "Take action", "Don’t let him <em>be forgotten</em>",
-        "“The only thing I worry about is that people will forget Hong Kong.” Joshua, in a letter to a friend from prison, published by <a href=\"https://www.inkl.com/news/i-worry-people-will-forget-hong-kong-joshua-wong-laments-citys-fate-from-inside-maximum-security-prison\" target=\"_blank\" rel=\"noopener\"><em>The Guardian</em></a>, 5 November 2026.") + """
+        "“The only thing I worry about is that people will forget Hong Kong.” Joshua, in a letter to a friend from prison, published by <a href=\"https://www.theguardian.com/world/2026/nov/05/joshua-wong-hong-kong-prison-letters-sentenced-10-years\" target=\"_blank\" rel=\"noopener\"><em>The Guardian</em></a>, 5 November 2026.") + """
 <section style="border-top:0;padding-top:30px" id="mp">
   <div class="wrap">
     <div class="mp" style="margin-top:0">
