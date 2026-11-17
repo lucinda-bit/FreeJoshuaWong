@@ -1079,3 +1079,19 @@ nav.top .links a,nav.top .btn{white-space:nowrap}
 .words-loop figcaption a{color:var(--accent)}
 @media(max-width:900px){.words-grid{grid-template-columns:1fr;gap:32px}}
 @media(prefers-reduced-motion:reduce){.words-loop video{display:none}.words-loop{background:url(../images/joshua-loop-poster.jpg) center/cover;aspect-ratio:16/9}}
+/* Phones: headline, the sentence line and "Email your MP" all on the first screen */
+@media(max-width:900px){
+  .h4-hero{min-height:0}
+  .h4-pic{height:min(36vh,300px)}
+  .h4-pic img{object-position:50% 96%}
+  .h4-pic:after{background:linear-gradient(0deg,#000 0%,rgba(0,0,0,0) 12%)}
+  .h4-pic figcaption{top:10px;bottom:auto;right:12px}
+  .h4-text{padding-top:16px;padding-bottom:44px}
+  .h4-text h1{order:1}
+  .h4-text .h4-lead{order:2;margin-top:14px;font-size:19px}
+  .h4-text .h4-cta{order:3;margin-top:18px}
+  .h4-text .h4-titles{order:4;margin-top:32px}
+  .intro .h4-lead{animation-delay:.5s}
+  .intro .h4-cta{animation-delay:.7s}
+}
+@media(max-width:360px){nav.top .brand{font-size:18px}nav.top .menu-btn{padding-left:10px;padding-right:10px}}
