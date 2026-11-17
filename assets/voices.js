@@ -6,6 +6,9 @@
 // via: if we link to a news report of the post rather than the post itself, name the outlet here.
 // id: optional; needed if one person has two quotes on the same date.
 window.VOICES = [
+  {date:"2026-11-06", kind:"government", who:"UK Foreign Office", role:"Foreign Office spokesperson, on the sentence", country:"UK", where:"Statement", via:"The Independent", id:"uk-foreign-office-2026-11-06",
+   quote:"… a clear example of how the National Security Law is being used to target individuals for political expression and participation.",
+   url:"https://sg.news.yahoo.com/uk-us-condemn-hong-kong-114501146.html"},
   {date:"2026-11-06", kind:"government", who:"Ten foreign ministries, including the UK", role:"Foreign Office statement with nine allies", country:"UK", where:"Joint statement",
    quote:"We call for an immediate end to all unjust prosecutions of individuals charged under the NSL.",
    url:"https://www.gov.uk/government/news/statement-on-the-sentencing-of-joshua-wong"},
