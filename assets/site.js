@@ -405,3 +405,14 @@ document.querySelectorAll('form[data-mp]').forEach(function (f) {
     s.hidden = false; s.scrollIntoView({ block: 'center' });
   });
 })();
+
+// ===== Count video plays (only when GoatCounter is switched on in tools/build.py) =====
+document.querySelectorAll('video').forEach(function (v) {
+  var counted = false;
+  v.addEventListener('play', function () {
+    if (counted || !window.goatcounter || !window.goatcounter.count) return;
+    counted = true;
+    var src = (v.currentSrc || (v.querySelector('source') || {}).src || '').split('/').pop().replace(/\.[a-z0-9]+$/i, '');
+    window.goatcounter.count({path: 'play/' + src, title: 'Video played: ' + src, event: true});
+  });
+});

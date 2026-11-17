@@ -15,6 +15,15 @@ PRESS_COUNT = len(_re.findall(r'^\s*\{date:', open(os.path.join(ROOT, "assets/pr
 
 NAV = [("case.html", "The case"), ("film.html", "Watch"), ("newsroom.html", "Newsroom"), ("parliament.html", "Parliament"), ("voices.html", "Voices"), ("socials.html", "Socials"), ("write.html", "Write to Joshua")]
 
+# Visitor counting (GoatCounter: no cookies, nothing that identifies visitors).
+# Put the site code from goatcounter.com here, e.g. "freejoshuawong". Leave empty to switch counting off.
+GOATCOUNTER = ""
+
+def analytics():
+    if not GOATCOUNTER:
+        return ""
+    return f'<script data-goatcounter="https://{GOATCOUNTER}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>\n'
+
 def head(title, desc, path, depth=0):
     up = "../" * depth
     full = "Free Joshua Wong" if title == "Free Joshua Wong" else f"{title} — Free Joshua Wong"
@@ -41,7 +50,7 @@ def head(title, desc, path, depth=0):
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{up}assets/site.css">
-</head>
+{analytics()}</head>
 <body>
 """
 

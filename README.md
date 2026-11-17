@@ -21,3 +21,5 @@ Hosted on Netlify: every change pushed to `main` goes live automatically.
 - Write to Joshua page (write.html): unlisted for now. Set `WRITE_TO` in `tools/build.py` to the email address messages should go to; then link it from the menu/home page.
 - Approved messages for Joshua: add them to `assets/messages.js` (first name, town, date, text). They appear on the wall (write.html) and, once there are any, in a strip on the home page.
 - Print page for his friends: messages-print.html (unlisted). Pick a month and press Print.
+
+- Visitor counting: set `GOATCOUNTER` in `tools/build.py` to the site code from goatcounter.com, then rebuild. No cookies; counts page visits and plays of each video (shown in GoatCounter as `play/<video name>`). Leave it empty to switch counting off.
