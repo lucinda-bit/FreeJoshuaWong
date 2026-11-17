@@ -348,7 +348,7 @@ TIMELINE = [
     ("22", "Sep 2019", "", "Testifies to the US Congress", "Gives evidence to the Congressional-Executive Commission on China on human rights in Hong Kong. Years later, prosecutors cite his lobbying in Washington against him."),
     ("23", "Jun 2020", "", "The National Security Law", "Beijing imposes the National Security Law on Hong Kong. His party, Demosistō, disbands the same day."),
     ("24", "Nov 2020", "", "Into prison, where he remains", "Jailed over a 2019 protest outside police headquarters. He has not been free since."),
-    ("24", "Jan 2021", "", "Arrested as one of the Hong Kong 47", "Arrested in his cell under the National Security Law for taking part in an unofficial pro-democracy primary election, and charged with subversion in February."),
+    ("24", "Jan 2021", "", "Arrested as one of the Hong Kong 47", "Arrested in prison under the National Security Law for taking part in an unofficial pro-democracy primary election, and charged with subversion in February."),
     ("28", "Nov 2024", "", "Sentenced to 4 years 8 months", "Sentenced in the largest national security trial in Hong Kong’s history. His release date is set for early 2027."),
     ("28", "Jun 2025", "", "Charged again from his cell", "Charged with conspiracy to collude with foreign forces, carrying a maximum of life imprisonment. The evidence is his own advocacy and public statements."),
     ("29", "Sep 2026", "", "Raised in Parliament, then a guilty plea", "On 1 September Sir Iain Duncan Smith raises his case in the Commons and the Foreign Secretary says he will take it up. The next day Joshua pleads guilty. On 13 September, 31 MPs, peers and rights leaders sign an open letter to the Prime Minister."),
