@@ -171,10 +171,16 @@ var SITE_URL = 'https://freejoshuawong.org'; // see SITE in tools/build.py
   });
 })();
 
-// ===== "Still waiting" day counters =====
+// ===== Day counters: whole calendar days in UK time since a date, so every count on the site agrees =====
+window.daysSince = function (iso) {
+  var t;
+  try { t = new Intl.DateTimeFormat('en-CA', {timeZone: 'Europe/London', year: 'numeric', month: '2-digit', day: '2-digit'}).format(new Date()); }
+  catch (e) { var n = new Date(); t = n.getFullYear() + '-' + (n.getMonth() + 1) + '-' + n.getDate(); }
+  var a = iso.split('-'), b = t.split('-');
+  return Math.round((Date.UTC(+b[0], +b[1] - 1, +b[2]) - Date.UTC(+a[0], +a[1] - 1, +a[2])) / 864e5);
+};
 document.querySelectorAll('[data-since]').forEach(function (el) {
-  var p = el.getAttribute('data-since').split('-');
-  var d = Math.floor((Date.now() - Date.UTC(+p[0], +p[1] - 1, +p[2])) / 864e5);
+  var d = window.daysSince(el.getAttribute('data-since'));
   if (d >= 0) el.textContent = d;
 });
 

@@ -24,6 +24,10 @@ def analytics():
         return ""
     return f'<script data-goatcounter="https://{GOATCOUNTER}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>\n'
 
+# One date per count, so every "days" number on the site agrees.
+JAILED_DATE = "2020-11-23"   # in custody continuously since
+PROMISE_DATE = "2026-09-01"  # the Foreign Secretary said he would take up the case
+
 def head(title, desc, path, depth=0):
     up = "../" * depth
     full = "Free Joshua Wong" if title == "Free Joshua Wong" else f"{title} — Free Joshua Wong"
@@ -204,7 +208,7 @@ def home():
       <div class="r now"><span class="y">2026</span><b>Prisoner vs. Superpower</b></div>
       <div class="r cell-row"><span class="y">Now</span>
         <div class="cell" role="timer" aria-label="Days Joshua Wong has spent in prison">
-          <div class="cell-in"><span class="n" id="days">2,181</span><span class="u">days<br>behind bars</span></div>
+          <div class="cell-in"><span class="n" id="days" """ + 'data-jailed="' + JAILED_DATE + '"' + """>2,181</span><span class="u">days<br>behind bars</span></div>
         </div>
       </div>
     </div>
@@ -307,16 +311,16 @@ def home():
   fit(); if(document.fonts&&document.fonts.ready) document.fonts.ready.then(fit);
   window.addEventListener('resize',fit);
 })();
-(function(){
-  var start=Date.UTC(2020,10,22,16,0,0), el=document.getElementById('days');
-  if(!el) return;
+window.addEventListener('DOMContentLoaded',function(){
+  var el=document.getElementById('days');
+  if(!el || !window.daysSince) return;
   var fmt=function(n){return n.toLocaleString('en-GB');}, pl=function(n,w){return n+' '+w+(n===1?'':'s');};
-  var total=Math.floor((Date.now()-start)/864e5);
+  var total=window.daysSince(el.getAttribute('data-jailed'));
   var intro=document.documentElement.classList.contains('intro');
   if(!intro){el.textContent=fmt(total);}
   else{el.textContent='0';setTimeout(function(){var t0=null;requestAnimationFrame(function step(ts){if(!t0)t0=ts;var k=Math.min(1,(ts-t0)/1700);k=1-Math.pow(1-k,3);el.textContent=fmt(Math.round(total*k));if(k<1)requestAnimationFrame(step);});},2000);}
-  setInterval(function(){el.textContent=fmt(Math.floor((Date.now()-start)/864e5));},60000);
-})();
+  setInterval(function(){el.textContent=fmt(window.daysSince(el.getAttribute('data-jailed')));},60000);
+});
 (function(){ // scroll moments: the life bar fills year by year; the pressure numbers count up
   if(!document.documentElement.classList.contains('intro')||!('IntersectionObserver' in window)) return;
   var bar=document.querySelector('.lifebar');
@@ -818,7 +822,7 @@ RECORD = [
      "https://qna.files.parliament.uk/qnadailyreports/Written-Questions-Answers-Statements-Daily-Report-Commons-2026-09-08.pdf", "Daily Report, p.478", ""),
     ("2026-09-01", "commons", "“Enough is enough”", "Foreign Office Questions · House of Commons",
      "Sir Iain Duncan Smith urged the Government to raise Joshua’s case with Beijing. Foreign Secretary Ed Miliband said he would take it up. No update has been made public since.",
-     "#exchange", "Watch the exchange", "2026-09-01"),
+     "#exchange", "Watch the exchange", PROMISE_DATE),
     ("2025-12-17", "lords", "Named in the Lords after Jimmy Lai’s conviction", "Jimmy Lai Conviction · House of Lords",
      "Lord Alton asked what the Government is doing to raise the cases of pro-democracy prisoners “such as Joshua Wong and Andy Li”.",
      "https://hansard.parliament.uk/Lords/2025-12-17/debates/6CF28FA8-3A92-4C34-808D-A4BDD6322D85/JimmyLaiConviction", "Read the debate", ""),
@@ -862,7 +866,7 @@ TRACKER = [
     ("2026-09-08", "weak", "What has the UK said to Hong Kong about Joshua’s case?",
      "Six written questions from Gregory Stafford MP. One answer for all six: the Government “continues to monitor” the case.",
      "https://qna.files.parliament.uk/qnadailyreports/Written-Questions-Answers-Statements-Daily-Report-Commons-2026-09-08.pdf", "Read the answer (p.478)"),
-    ("2026-09-01", "noupdate", "Take Joshua’s case up with China",
+    (PROMISE_DATE, "noupdate", "Take Joshua’s case up with China",
      "Sir Iain Duncan Smith in the Commons. The Foreign Secretary, Ed Miliband, said he would. No update has been made public.",
      "parliament.html#exchange", "Watch the exchange"),
 ]
@@ -1019,7 +1023,7 @@ def parliament():
           <div class="px-role">Foreign Secretary</div>
           <p>Said he would take up Joshua’s case.</p>
         </div>
-        <div class="px-count"><b data-since="2026-09-01">73</b><span>days since that promise.<br>No update has been made public.</span></div>
+        <div class="px-count"><b """ + 'data-since="' + PROMISE_DATE + '"' + """>—</b><span>days since that promise.<br>No update has been made public.</span></div>
         <div data-share data-url="https://freejoshuawong.org/parliament.html" data-text="The Foreign Secretary promised to take up Joshua Wong’s case. No update since. #FreeJoshuaWong #JoshuaWong"></div>
       </div>
     </div>
@@ -1210,7 +1214,7 @@ def zh():
 <div class="wrap"><p class="zh-demand">召見中國大使，釋放黃之鋒。</p></div>
 <section class="zh" style="border-top:0;padding-top:20px">
   <div class="wrap zh-body">
-    <div class="zh-count"><b data-since="2020-11-22">—</b><span>日<br>身陷囹圄</span></div>
+    <div class="zh-count"><b """ + 'data-since="' + JAILED_DATE + '"' + """>—</b><span>日<br>身陷囹圄</span></div>
 
     <h2 class="zh-h">他是誰</h2>
     <p>黃之鋒十四歲時與同學創立學民思潮，2012年帶領反對國民教育科的運動。2014年雨傘運動期間，他是學生領袖之一。2016年，他與羅冠聰等人創立香港眾志。</p>
@@ -1365,13 +1369,13 @@ PAGES = {
 def bake_numbers(html):
     """Write today's counts into the page so they are right even before the page's script runs."""
     import re, datetime
-    from sharecard import days_inside
-    today = datetime.date.today()
+    from sharecard import days_inside, uk_today
+    today = uk_today()
     def since(m):
         y, mo, d = map(int, m.group(1).split("-"))
         return f'data-since="{m.group(1)}">{(today - datetime.date(y, mo, d)).days}<'
     html = re.sub(r'data-since="(\d{4}-\d{2}-\d{2})">[^<]*<', since, html)
-    html = re.sub(r'(id="days">)[^<]*(<)', lambda m: f"{m.group(1)}{days_inside():,}{m.group(2)}", html)
+    html = re.sub(r'(id="days" data-jailed="[^"]*">)[^<]*(<)', lambda m: f"{m.group(1)}{days_inside():,}{m.group(2)}", html)
     return html
 
 if __name__ == "__main__":

@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=69d6f5fb">
+<link rel="stylesheet" href="assets/site.css?v=5256de66">
 <script data-goatcounter="https://freejoshuawong.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -43,7 +43,7 @@
       <div class="r now"><span class="y">2026</span><b>Prisoner vs. Superpower</b></div>
       <div class="r cell-row"><span class="y">Now</span>
         <div class="cell" role="timer" aria-label="Days Joshua Wong has spent in prison">
-          <div class="cell-in"><span class="n" id="days">2,185</span><span class="u">days<br>behind bars</span></div>
+          <div class="cell-in"><span class="n" id="days" data-jailed="2020-11-23">2,185</span><span class="u">days<br>behind bars</span></div>
         </div>
       </div>
     </div>
@@ -197,16 +197,16 @@ Yours sincerely,
   fit(); if(document.fonts&&document.fonts.ready) document.fonts.ready.then(fit);
   window.addEventListener('resize',fit);
 })();
-(function(){
-  var start=Date.UTC(2020,10,22,16,0,0), el=document.getElementById('days');
-  if(!el) return;
+window.addEventListener('DOMContentLoaded',function(){
+  var el=document.getElementById('days');
+  if(!el || !window.daysSince) return;
   var fmt=function(n){return n.toLocaleString('en-GB');}, pl=function(n,w){return n+' '+w+(n===1?'':'s');};
-  var total=Math.floor((Date.now()-start)/864e5);
+  var total=window.daysSince(el.getAttribute('data-jailed'));
   var intro=document.documentElement.classList.contains('intro');
   if(!intro){el.textContent=fmt(total);}
   else{el.textContent='0';setTimeout(function(){var t0=null;requestAnimationFrame(function step(ts){if(!t0)t0=ts;var k=Math.min(1,(ts-t0)/1700);k=1-Math.pow(1-k,3);el.textContent=fmt(Math.round(total*k));if(k<1)requestAnimationFrame(step);});},2000);}
-  setInterval(function(){el.textContent=fmt(Math.floor((Date.now()-start)/864e5));},60000);
-})();
+  setInterval(function(){el.textContent=fmt(window.daysSince(el.getAttribute('data-jailed')));},60000);
+});
 (function(){ // scroll moments: the life bar fills year by year; the pressure numbers count up
   if(!document.documentElement.classList.contains('intro')||!('IntersectionObserver' in window)) return;
   var bar=document.querySelector('.lifebar');
@@ -244,6 +244,6 @@ Yours sincerely,
   </div>
 </footer>
 <script src="assets/messages.js"></script>
-<script src="assets/site.js?v=69d6f5fb"></script>
+<script src="assets/site.js?v=5256de66"></script>
 </body>
 </html>

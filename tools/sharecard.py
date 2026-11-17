@@ -6,12 +6,18 @@ from PIL import Image, ImageDraw, ImageFont, ImageOps
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
-START = datetime.datetime(2020, 11, 22, 16, 0, tzinfo=datetime.timezone.utc)  # in custody (23 Nov, Hong Kong time)
+JAILED = datetime.date(2020, 11, 23)  # in custody since 23 Nov 2020. One date for every "days" count on the site.
 INK, LEMON, PAPER = (12, 12, 11), (255, 225, 53), (244, 242, 236)
 
-def days_inside(now=None):
-    now = now or datetime.datetime.now(datetime.timezone.utc)
-    return (now - START).days
+def uk_today():
+    try:
+        from zoneinfo import ZoneInfo
+        return datetime.datetime.now(ZoneInfo("Europe/London")).date()
+    except Exception:
+        return datetime.date.today()
+
+def days_inside(today=None):
+    return ((today or uk_today()) - JAILED).days
 
 def make():
     W, H = 1200, 630
