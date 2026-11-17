@@ -356,7 +356,7 @@ TIMELINE = [
     ("28", "Jun 2025", "", "Collusion case: charged again in prison", "Charged with conspiracy to collude with foreign forces, carrying a maximum of life imprisonment. The evidence is his own advocacy and public statements."),
     ("29", "Sep 2026", "", "Raised in Parliament, then a guilty plea", "On 1 September Sir Iain Duncan Smith raises his case in the Commons and the Foreign Secretary says he will take it up. The next day Joshua pleads guilty in the collusion case. On 13 September, 31 MPs, peers and rights leaders sign an open letter to the Prime Minister."),
     ("30", "13 Oct 2026", "", "Turns thirty in prison", "Parliamentarians mark his birthday with a screening of the new film in the Houses of Parliament."),
-    ("30", "5 Nov 2026", "", "Collusion case: ten more years", "A Hong Kong court sentences him to ten years for conspiracy to collude with foreign forces. Ten governments, including the UK, condemn it in a joint statement, and Taiwan and the EU issue their own."),
+    ("30", "5 Nov 2026", "", "Collusion case: ten more years", "A Hong Kong court sentences him to ten years for conspiracy to collude with foreign forces. Ten governments, including the UK, condemn it in a joint statement. Taiwan and the EU condemn it too."),
     ("30", "10 Nov 2026", "", "Raised again in the Commons", "Five days after the sentence, Emily Darlington MP asks the Government to summon the Chinese Ambassador and call for Joshua’s release. The next day she and seven other MPs and peers set out the same demands in a letter to The Times."),
     ("40", "c. 2036", "future", "Release, if nothing changes", "Unless governments act, Joshua may not walk free until he is around 40, having spent most of his adult life in prison."),
 ]
