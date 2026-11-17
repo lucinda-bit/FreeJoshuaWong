@@ -116,7 +116,7 @@ Britain guaranteed Hong Kong’s freedoms in the Joint Declaration. Joshua only 
 
 On 1 September the Foreign Secretary told the House of Commons he would take up Joshua’s case. There has been no public update since.
 
-Please urge the Government to summon the Chinese Ambassador over Joshua’s case, as it did for Jimmy Lai, and tell me what it is doing to secure his release.
+Please urge the Foreign Secretary to summon the Chinese Ambassador over Joshua’s case, as the Foreign Office did for Jimmy Lai, and tell me what it is doing to secure his release.
 
 Yours sincerely,
 [Name, address]"""
@@ -133,7 +133,7 @@ def page_head(label, title_html, lede, crumbs=None):
 """
 
 ASKS = """<div class="asks">
-      <div class="ask ask-lead"><h3>Summon China’s Ambassador</h3><p>The Prime Minister should call in the Ambassador and raise Joshua and the others imprisoned for standing up for democracy, by name, as the Government did for Jimmy Lai.</p></div>
+      <div class="ask ask-lead"><h3>Summon China’s Ambassador</h3><p>The Foreign Secretary should summon the Chinese Ambassador and raise Joshua and the others imprisoned for standing up for democracy, by name, as the Foreign Office did for Jimmy Lai.</p></div>
       <div class="ask"><h3>Review the Hong Kong trade office’s privileges</h3><p>The Hong Kong Economic and Trade Office in London keeps diplomatic-style privileges, even after a senior manager there was convicted of spying on Hong Kongers in Britain.</p></div>
       <div class="ask"><h3>Sanction those responsible</h3><p>Hold to account the officials behind National Security Law prosecutions, working with Britain’s allies.</p></div>
     </div>"""
@@ -265,7 +265,7 @@ def home():
     <h2>What Britain should do</h2>
     <p class="h4-sub">Britain guaranteed Hong Kong’s freedoms in 1984. Ten governments, including our own, signed a joint statement condemning Joshua’s sentence. Now words need to become action.</p>
     <div class="asklist">
-      <div class="ask-lead"><span class="ask-tag">Our first ask</span><h3>Summon China’s Ambassador</h3><p>The Prime Minister should call in the Ambassador and name Joshua and the others jailed for standing up for democracy, as the Government did for Jimmy Lai.</p><a class="btn" href="letters/open-letter-prime-minister-sept-2026.html">Read the open letter</a></div>
+      <div class="ask-lead"><span class="ask-tag">Our first ask</span><h3>Summon China’s Ambassador</h3><p>The Foreign Secretary should summon the Chinese Ambassador and name Joshua and the others jailed for standing up for democracy, as the Foreign Office did for Jimmy Lai.</p><a class="btn" href="letters/open-letter-prime-minister-sept-2026.html">Read the open letter</a></div>
       <div><h3>Review the Hong Kong trade office</h3><p>Its London office keeps diplomatic-style privileges, even after a senior manager there was convicted of spying on Hong Kongers in Britain.</p></div>
       <div><h3>Sanction those responsible</h3><p>Hold the officials behind National Security Law prosecutions to account, together with Britain’s allies.</p></div>
     </div>
@@ -277,7 +277,7 @@ def home():
 <section class="h4-act" id="write">
   <div class="wrap">
     <h2>Tell your MP: summon China’s Ambassador</h2>
-    <p>Two minutes. We’ve written the letter. Put in your postcode and we’ll find your MP and open an email to them with the letter filled in. <a href="act.html#mp">Read the letter first</a></p>
+    <p>Two minutes. We’ve written the letter, asking your MP to urge the Foreign Secretary to summon the Chinese Ambassador. Put in your postcode and we’ll find your MP and open an email to them with the letter filled in. <a href="act.html#mp">Read the letter first</a></p>
     """ + mp_box() + """
     <div class="tpl" id="tpl" hidden>""" + LETTER + """</div>
   </div>
@@ -658,7 +658,7 @@ PRESSKIT = """    <div class="facts-sheet">
         <dt>The evidence</dt><dd>His own advocacy: meetings with foreign politicians, social media posts, op-eds and interviews, much of it from before the law existed.</dd>
         <dt>International response</dt><dd>Joint statement of 6 November 2026 by Australia, Canada, France, Germany, Italy, Japan, the Netherlands, New Zealand, the UK and the US condemning the sentence. Taiwan and the EU issued their own statements.</dd>
         <dt>Why the UK</dt><dd>The UK signed the 1984 Joint Declaration guaranteeing Hong Kong’s freedoms for fifty years, and has declared China in breach of it.</dd>
-        <dt>The asks</dt><dd>Raise Joshua’s case with the Chinese Ambassador; review the privileges of the Hong Kong Economic and Trade Office in London; sanction officials responsible for NSL prosecutions, with allies.</dd>
+        <dt>The asks</dt><dd>The Foreign Secretary to summon the Chinese Ambassador and raise Joshua’s case; review the privileges of the Hong Kong Economic and Trade Office in London; sanction officials responsible for NSL prosecutions, with allies.</dd>
         <dt>Press contact</dt><dd>press@freejoshuawong.org</dd>
       </dl>
       <p class="no-print" style="margin:26px 0 0;font-family:var(--label);font-size:13px;color:rgba(12,12,11,.65)">To save as a PDF, use your browser’s Print option and choose “Save as PDF”.</p>
@@ -708,7 +708,7 @@ def act():
       <div>
         <div class="label" style="color:#6f6a2a">In the UK</div>
         <h3>Tell your MP: summon China’s Ambassador</h3>
-        <p>Two minutes. We’ve written the letter. Put in your postcode and we’ll find your MP and open an email to them with the letter already filled in.</p>
+        <p>Two minutes. We’ve written the letter, asking your MP to urge the Foreign Secretary to summon the Chinese Ambassador. Put in your postcode and we’ll find your MP and open an email to them with the letter already filled in.</p>
         """ + mp_box() + """
       </div>
       <div>
@@ -830,7 +830,7 @@ TRACKER = [
     ("2026-11-03", "weak", "Will Joshua’s treatment count in decisions on China’s new embassy?",
      "Written question from Alex Barros-Curtis MP. The Government said it does not comment on ongoing legal proceedings.",
      "https://www.parallelparliament.co.uk/mp/alex-barros-curtis/writtenanswers?document_type=writtenanswers&memb_pk=5175&page=1", "The answer"),
-    ("2026-09-13", "none", "Call in China’s Ambassador to raise Joshua’s case",
+    ("2026-09-13", "none", "Summon China’s Ambassador to raise Joshua’s case",
      "The open letter to the Prime Minister, Andy Burnham, signed by 31 MPs, peers and rights leaders. No reply.",
      "letters/open-letter-prime-minister-sept-2026.html", "Read the letter"),
     ("2026-09-08", "weak", "What has the UK said to Hong Kong about Joshua’s case?",
@@ -1178,7 +1178,7 @@ def zh():
 
     <h2 class="zh-h">我們要求英國政府</h2>
     <div class="zh-asks">
-      <div class="ask-lead"><h3>召見中國駐英大使</h3><p>首相應召見中國大使，點名提出黃之鋒及其他因爭取民主而入獄的人士的個案，正如英國政府曾為黎智英所做的一樣。</p></div>
+      <div class="ask-lead"><h3>召見中國駐英大使</h3><p>外相應召見中國大使，點名提出黃之鋒及其他因爭取民主而入獄的人士的個案，正如英國外交部曾為黎智英所做的一樣。</p></div>
       <div><h3>檢討香港駐倫敦經濟貿易辦事處</h3><p>該辦事處仍享有類似外交機構的特權，即使其一名高級經理已被裁定在英國監視港人罪成。</p></div>
       <div><h3>制裁相關官員</h3><p>聯同英國的盟友，追究負責《國安法》檢控的官員。</p></div>
     </div>
