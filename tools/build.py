@@ -864,7 +864,7 @@ TRACKER = [
      "Written question from Alex Barros-Curtis MP. The Government said it does not comment on ongoing legal proceedings.",
      "https://questions-statements.parliament.uk/written-questions/detail/2026-10-22/37356", "The answer"),
     ("2026-09-13", "none", "Summon China’s Ambassador to raise Joshua’s case",
-     "The open letter to the Prime Minister, Andy Burnham, signed by 31 MPs, peers and rights leaders. No reply.",
+     "<a href=\"letters/open-letter-prime-minister-sept-2026.html\">The open letter to the Prime Minister</a>, Andy Burnham, signed by 31 MPs, peers and rights leaders. No reply.",
      "letters/open-letter-prime-minister-sept-2026.html", "Read the letter"),
     ("2026-09-08", "weak", "What has the UK said to Hong Kong about Joshua’s case?",
      "Six written questions from Gregory Stafford MP. One answer for all six: the Government “continues to monitor” the case.",
@@ -1217,7 +1217,7 @@ def zh():
     </div>
 
     <h2 class="zh-h">仍在等待回應</h2>
-    <p>2026年9月1日，外相文禮彬（Ed Miliband）在下議院表示會跟進黃之鋒的個案，至今沒有公開的進展。9月13日，31名國會議員、上議院議員及人權界人士聯署公開信致首相，至今未獲回覆。</p>
+    <p>2026年9月1日，外相文禮彬（Ed Miliband）在下議院表示會跟進黃之鋒的個案，至今沒有公開的進展。9月13日，31名國會議員、上議院議員及人權界人士聯署<a href="letters/open-letter-prime-minister-sept-2026.html">公開信致首相</a>，至今未獲回覆。</p>
 
     <h2 class="zh-h">身在英國的你可以怎樣幫忙</h2>
     <div class="zh-act">
