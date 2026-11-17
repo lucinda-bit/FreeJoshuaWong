@@ -241,7 +241,7 @@ def home():
 <section class="h4-words">
   <div class="wrap">
     <blockquote>“The only thing I worry about is that people will forget Hong Kong.”</blockquote>
-    <p class="by">Joshua Wong, in a letter to a friend from prison, published by <em>The Guardian</em>, 5 November 2026</p>
+    <p class="by">Joshua Wong, in a letter to a friend from prison, published by <a href="https://www.inkl.com/news/i-worry-people-will-forget-hong-kong-joshua-wong-laments-citys-fate-from-inside-maximum-security-prison" target="_blank" rel="noopener"><em>The Guardian</em></a>, 5 November 2026</p>
   </div>
 </section>
 
