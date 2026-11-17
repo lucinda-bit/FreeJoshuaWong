@@ -200,7 +200,7 @@ CTA = """<section class="cta-band">
 """
 
 # ---------------- HOME ----------------
-PLAYER = '''<div class="screen vid"><video controls preload="none" playsinline poster="images/film-poster.jpg"><source src="media/joshua-prisoner-vs-superpower.mp4" type="video/mp4">Your browser can’t play this video.</video></div>'''
+PLAYER = '''<div class="screen vid"><video controls preload="none" playsinline poster="images/film-poster.jpg?v=2"><source src="media/joshua-prisoner-vs-superpower.mp4" type="video/mp4">Your browser can’t play this video.</video></div>'''
 
 FLAGS = ["UK","US","Australia","Canada","France","Germany","Italy","Japan","Netherlands","New Zealand"]
 
@@ -457,7 +457,7 @@ def film():
   <div class="wrap">
     <div class="film-card">
       <!-- FILM: self-hosted in media/ -->
-      <div class="screen vid"><video controls preload="none" playsinline poster="images/film-poster.jpg"><source src="media/joshua-prisoner-vs-superpower.mp4" type="video/mp4">Your browser can’t play this video.</video></div>
+      <div class="screen vid"><video controls preload="none" playsinline poster="images/film-poster.jpg?v=2"><source src="media/joshua-prisoner-vs-superpower.mp4" type="video/mp4">Your browser can’t play this video.</video></div>
       <div class="film-copy">
         <div class="label dim">Producer Andrew Duncan</div>
         <h3>Joshua: <span>Prisoner</span> vs. Superpower</h3>
@@ -918,7 +918,7 @@ def tracker(h="Asked and answered"):
     </div>"""
 
 VIDEOS = [
-    ("film.html", "Film", "Joshua: Prisoner vs. Superpower", "The new short film, first shown in Parliament on 13 October 2026.", "images/film-poster.jpg", False),
+    ("film.html", "Film", "Joshua: Prisoner vs. Superpower", "The new short film, first shown in Parliament on 13 October 2026.", "images/film-poster.jpg?v=2", False),
     ("#exchange-nov", "House of Commons · 10 Nov 2026", "Emily Darlington MP", "Asks the Government to call for Joshua’s release, five days after his sentence.", "images/commons-2026-11-10-poster.jpg", False),
     ("#exchange-kearns", "House of Commons · 10 Nov 2026", "Alicia Kearns MP", "For the Opposition: Joshua and Jimmy Lai remain imprisoned for speaking out for democracy.", "images/commons-2026-11-10-kearns-poster.jpg", False),
     ("https://podcasts.apple.com/gb/podcast/today-in-focus/id1440133626?i=1000801652639", "The Guardian · Today in Focus · 13 Nov 2026", "Teen prodigy, Netflix star, prisoner", "Podcast: Nathan Law and journalist Danny Vincent on Joshua’s story and his new sentence.", "images/covers/guardian-podcast.jpg", True),
@@ -927,7 +927,7 @@ VIDEOS = [
     ("#exchange-tugendhat", "House of Commons · 10 Nov 2026", "Tom Tugendhat MP", "The Shadow Foreign Secretary names Joshua in the Commonwealth summit statement.", "images/commons-2026-11-10-tugendhat-poster.jpg", False),
     ("#exchange", "House of Commons · 1 Sep 2026", "Duncan Smith and the Foreign Secretary", "The exchange at Foreign Office Questions, the day before Joshua’s plea.", "images/commons-poster.jpg", False),
     ("https://www.channel4.com/news/hong-kong-pro-democracy-activist-joshua-wong-pleads-guilty-to-colluding-with-foreign-entities", "Channel 4 News · 2 Sep 2026", "Joshua pleads guilty", "Channel 4 News reports on the plea, with analysis on China and the UK.", "images/covers/c4-plea.jpg", True),
-    ("https://pelosi.house.gov/news/press-releases/pelosi-calls-joshua-wongs-freedom-house-floor-we-want-be-sure-they-know-we", "US House of Representatives · 2 Sep 2026", "Pelosi on the House floor", "Speaker Emerita Nancy Pelosi calls for Joshua’s freedom.", "images/covers/pelosi-floor.jpg", True),
+    ("https://pelosi.house.gov/news/press-releases/pelosi-calls-joshua-wongs-freedom-house-floor-we-want-be-sure-they-know-we", "US House of Representatives · 2 Sep 2026", "Pelosi on the House floor", "Speaker Emerita Nancy Pelosi calls for Joshua’s freedom.", "images/stills/pelosi-floor.jpg", True),
 ]
 
 def video_cards(skip_film=False):
