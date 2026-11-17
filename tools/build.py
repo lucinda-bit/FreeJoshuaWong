@@ -143,7 +143,7 @@ def page_head(label, title_html, lede, crumbs=None):
 
 ASKS = """<div class="asks">
       <div class="ask ask-lead"><h3>Summon China’s Ambassador</h3><p>The Foreign Secretary should summon the Chinese Ambassador and raise Joshua and the others imprisoned for standing up for democracy, by name, as the Foreign Office did for Jimmy Lai.</p></div>
-      <div class="ask"><h3>Review the Hong Kong trade office’s privileges</h3><p>The Hong Kong Economic and Trade Office in London keeps diplomatic-style privileges, even after a senior manager there was convicted of spying on Hong Kongers in Britain.</p></div>
+      <div class="ask"><h3>Review the Hong Kong Economic and Trade Office’s privileges</h3><p>The Hong Kong Economic and Trade Office in London keeps diplomatic-style privileges, even after a senior manager there was convicted of spying on Hong Kongers in Britain.</p></div>
       <div class="ask"><h3>Sanction those responsible</h3><p>Hold to account the officials behind National Security Law prosecutions, working with Britain’s allies.</p></div>
     </div>"""
 
@@ -274,7 +274,7 @@ def home():
     <p class="h4-sub">Britain guaranteed Hong Kong’s freedoms in 1984. Ten governments, including our own, signed a joint statement condemning Joshua’s sentence. Now words need to become action.</p>
     <div class="asklist">
       <div class="ask-lead"><span class="ask-tag">Our first ask</span><h3>Summon China’s Ambassador</h3><p>The Foreign Secretary should summon the Chinese Ambassador and name Joshua and the others jailed for standing up for democracy, as the Foreign Office did for Jimmy Lai.</p><a class="btn" href="letters/open-letter-prime-minister-sept-2026.html">Read the open letter</a></div>
-      <div><h3>Review the Hong Kong trade office</h3><p>Its London office keeps diplomatic-style privileges, even after a senior manager there was convicted of spying on Hong Kongers in Britain.</p></div>
+      <div><h3>Review the Hong Kong Economic and Trade Office</h3><p>Its London office keeps diplomatic-style privileges, even after a senior manager there was convicted of spying on Hong Kongers in Britain.</p></div>
       <div><h3>Sanction those responsible</h3><p>Hold the officials behind National Security Law prosecutions to account, together with Britain’s allies.</p></div>
     </div>
     """ + tracker() + """
