@@ -343,6 +343,8 @@ TIMELINE = [
     ("Born", "Oct 1996", "", "Born in Hong Kong", "Joshua Wong Chi-fung grows up in a city promised a high degree of autonomy until 2047."),
     ("15", "Sep 2012", "", "Defeats “national education”", "With Scholarism, the student group he co-founded the year before, he leads the protests that force the Hong Kong government to shelve a compulsory “national education” curriculum."),
     ("17", "Sep 2014", "", "The Umbrella Movement", "His arrest at Civic Square helps spark 79 days of street occupation demanding genuine universal suffrage. <em>Time</em> puts him on its cover."),
+    ("19", "Apr 2016", "", "Co-founds Demosistō", "With Nathan Law and other Umbrella Movement leaders, he launches Demosistō, a new political party campaigning for democracy in Hong Kong."),
+    ("19", "Sep 2016", "", "Gets his friend Nathan Law elected", "Too young to stand himself, Joshua campaigns for Demosistō’s chairman, Nathan Law, who wins a seat on Hong Kong Island and becomes the youngest lawmaker in Hong Kong’s history, at 23. Nathan is disqualified the following year."),
     ("19", "Oct 2016", "", "Detained at Bangkok airport", "Held and deported by Thai authorities on his way to speak at a university, an early sign of how far Beijing’s pressure would reach."),
     ("20", "2017", "", "First prison sentence, and the film", "Jailed over the 2014 Civic Square protest; Hong Kong’s top court later quashes the sentence. <em>Joshua: Teenager vs. Superpower</em> premieres at Sundance and wins the audience award."),
     ("22", "Sep 2019", "", "Testifies to the US Congress", "Gives evidence to the Congressional-Executive Commission on China on human rights in Hong Kong. Years later, prosecutors cite his lobbying in Washington against him."),
