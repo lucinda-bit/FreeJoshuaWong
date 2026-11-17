@@ -439,15 +439,16 @@ def film():
       </div>
     </div>
 
+    <div class="film-note">
+      <div class="big">#1</div>
+      <p>In September 2026, Hong Kong’s Security Bureau said “follow-up steps were under way” over the original documentary, which is still on Netflix in the city (<a href="https://www.dimsumdaily.hk/security-bureau-reviewing-netflix-film-on-joshua-wong/" target="_blank" rel="noopener">Dimsum Daily</a>). Hong Kongers responded by sending it to number one on Netflix there (<a href="https://www.theepochtimes.com/china/documentary-on-joshua-wong-surges-to-no-1-on-netflix-hong-kong-after-criticism-6093687" target="_blank" rel="noopener">The Epoch Times</a>).</p>
+    </div>
+
     <div class="watch-wall" id="watch">
       <div class="sec-head"><div><div class="label">Watch and listen</div><h2 class="sec">Interviews, clips and <em>podcasts</em></h2></div></div>
       <div class="vwall">""" + video_cards(skip_film=True) + """</div>
     </div>
 
-    <div class="film-note">
-      <div class="big">#1</div>
-      <p>In September 2026, Hong Kong’s Security Bureau said it was taking “follow-up action” over the original documentary, which is still on Netflix in the city. Hong Kongers responded by sending it to the top of Netflix’s most-watched list there.</p>
-    </div>
 
     <div class="res-grid">
       <div class="res"><div class="label">The original</div><h3>Teenager vs. Superpower</h3><p>The 2017 documentary, winner of the Sundance World Cinema Documentary Audience Award. Available on Netflix.</p></div>

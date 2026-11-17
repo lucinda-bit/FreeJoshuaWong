@@ -1118,3 +1118,4 @@ nav.top .links a,nav.top .btn{white-space:nowrap}
   .cases tr.now{background:rgba(255,225,53,.08);padding:10px}
   .cases tr.now td{background:none}
 }
+.film-note p a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
