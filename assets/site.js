@@ -41,7 +41,7 @@ var SITE_URL = 'https://freejoshuawong.org'; // see SITE in tools/build.py
 
   // Share links
   window.shareRow = function (url, text) {
-    var u = encodeURIComponent(url), t = encodeURIComponent(text + ' #FreeJoshuaWong');
+    var u = encodeURIComponent(url), t = encodeURIComponent(String(text).replace(/\s*#(Free)?JoshuaWong/g, '') + ' #FreeJoshuaWong #JoshuaWong');
     return '<div class="share-row"><span class="lbl">Share</span>' +
       '<a class="sh" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?text=' + t + '&url=' + u + '">X</a>' +
       '<a class="sh" target="_blank" rel="noopener" href="https://wa.me/?text=' + t + '%20' + u + '">WhatsApp</a>' +
@@ -207,7 +207,7 @@ document.querySelectorAll('[data-since]').forEach(function (el) {
       var ext = /^https?:/.test(v.url) ? ' target="_blank" rel="noopener"' : '';
       var slug = v.id || (v.who + '-' + v.date).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
       var page = 'voices/' + slug + '.html', full = SITE_URL + '/' + page;
-      var t = '“' + v.quote + '” — ' + v.who + ' #FreeJoshuaWong';
+      var t = '“' + v.quote + '” — ' + v.who + ' #FreeJoshuaWong #JoshuaWong';
       return '<figure class="vq k-' + v.kind + size + '">' +
         '<div class="vq-top"><span class="vq-where">' + esc(v.where) + '</span><span class="vq-date">' + d(v.date) + '</span></div>' +
         '<a class="vq-q" href="' + page + '"><blockquote>' + esc(v.quote) + '</blockquote></a>' +
@@ -253,7 +253,7 @@ document.querySelectorAll('[data-since]').forEach(function (el) {
   function card(p, lead) {
     var link = p.url || (p.handle ? 'https://x.com/' + p.handle : p.profile);
     var here = SITE_URL + '/socials.html#' + p.id;
-    var t = p.name + ' on #FreeJoshuaWong';
+    var t = p.name + ' on #FreeJoshuaWong #JoshuaWong';
     var src = p.via
       ? '<a href="' + esc(p.viaUrl) + '" target="_blank" rel="noopener">Posted on ' + esc(p.platform || 'X') + ' · as reported by ' + esc(p.via) + '</a>'
       : '<a href="' + esc(link) + '" target="_blank" rel="noopener">' + (p.url ? 'See the post on X' : (p.handle ? 'See @' + esc(p.handle) + ' on X' : 'Visit their site')) + '</a>';

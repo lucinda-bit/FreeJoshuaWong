@@ -725,13 +725,13 @@ def act():
       <div>
         <div class="label">Share</div>
         <h3>Post it.<br><span>Tag your MP.</span></h3>
-        <p class="lede" style="font-size:18px">Copy a line, add your MP’s handle, and use #FreeJoshuaWong.</p>
+        <p class="lede" style="font-size:18px">Copy a line, add your MP’s handle, and use #FreeJoshuaWong and #JoshuaWong.</p>
         <div data-share data-url="https://freejoshuawong.org" data-text="Joshua Wong spoke up for Hong Kong. Now he faces ten more years."></div>
       </div>
       <div>
-        <div class="post"><p>Joshua Wong was two months from freedom. Hong Kong has given him ten more years for speaking up to foreign parliaments. <b>#FreeJoshuaWong</b></p><button class="copy" type="button">Copy</button></div>
-        <div class="post"><p>Britain guaranteed Hong Kong’s freedoms for fifty years. Joshua Wong only asked us to keep our word. <b>#FreeJoshuaWong</b></p><button class="copy" type="button">Copy</button></div>
-        <div class="post"><p>He has been in prison since he was 24. He may not walk free until he is 40. <b>#FreeJoshuaWong</b></p><button class="copy" type="button">Copy</button></div>
+        <div class="post"><p>Joshua Wong was two months from freedom. Hong Kong has given him ten more years for speaking up to foreign parliaments. <b>#FreeJoshuaWong #JoshuaWong</b></p><button class="copy" type="button">Copy</button></div>
+        <div class="post"><p>Britain guaranteed Hong Kong’s freedoms for fifty years. Joshua Wong only asked us to keep our word. <b>#FreeJoshuaWong #JoshuaWong</b></p><button class="copy" type="button">Copy</button></div>
+        <div class="post"><p>He has been in prison since he was 24. He may not walk free until he is 40. <b>#FreeJoshuaWong #JoshuaWong</b></p><button class="copy" type="button">Copy</button></div>
       </div>
     </div>
 
@@ -740,7 +740,7 @@ def act():
       <div class="voice"><q>Joshua Wong’s bravery in speaking truth to power should be commended.</q><div class="by"><a href="https://www.amnestyusa.org/press-releases/hong-kong-cruel-joshua-wong-sentence-a-grim-reminder-of-authorities-disdain-for-human-rights/" target="_blank" rel="noopener">Sarah Brooks</a><small>Amnesty International</small></div></div>
       <div class="voice"><q>Joshua Wong deserves to be honoured and applauded, not jailed.</q><div class="by"><a href="https://www.spectator.com.au/?p=10947071" target="_blank" rel="noopener">Benedict Rogers</a><small>Hong Kong Watch, in The Spectator</small></div></div>
     </div>
-    <div class="hashtag">#FreeJoshuaWong</div>
+    <div class="hashtag">#FreeJoshuaWong<small>and #JoshuaWong</small></div>
   </div>
 </section>
 
@@ -927,7 +927,7 @@ def parliament():
         </div>
 
         <p class="px-link"><a href="https://hansard.parliament.uk/Commons/2026-11-10/debates/580a4a8b-77d1-4dad-b849-9f1d47824e1c/CommonsChamber" target="_blank" rel="noopener">Read the exchange in Hansard</a></p>
-        <div data-share data-url="https://freejoshuawong.org/parliament.html#exchange-nov" data-text="In the Commons, Emily Darlington MP asked the Government to call for Joshua Wong’s release. #FreeJoshuaWong"></div>
+        <div data-share data-url="https://freejoshuawong.org/parliament.html#exchange-nov" data-text="In the Commons, Emily Darlington MP asked the Government to call for Joshua Wong’s release. #FreeJoshuaWong #JoshuaWong"></div>
       </div>
     </div>
   </div>
@@ -948,7 +948,7 @@ def parliament():
           <p>Responding for the Opposition in the same urgent question, she reminded the House that Jimmy Lai and Joshua Wong remain imprisoned in Hong Kong for speaking out for democracy.</p>
         </div>
         <p class="px-link"><a href="https://hansard.parliament.uk/Commons/2026-11-10/debates/580a4a8b-77d1-4dad-b849-9f1d47824e1c/CommonsChamber" target="_blank" rel="noopener">Read it in Hansard</a></p>
-        <div data-share data-url="https://freejoshuawong.org/parliament.html#exchange-kearns" data-text="Alicia Kearns MP in the Commons: Jimmy Lai and Joshua Wong remain imprisoned for speaking out for democracy. #FreeJoshuaWong"></div>
+        <div data-share data-url="https://freejoshuawong.org/parliament.html#exchange-kearns" data-text="Alicia Kearns MP in the Commons: Jimmy Lai and Joshua Wong remain imprisoned for speaking out for democracy. #FreeJoshuaWong #JoshuaWong"></div>
       </div>
     </div>
   </div>
@@ -969,7 +969,7 @@ def parliament():
           <p>Responding to the Government’s statement on the Commonwealth summit, he asked about Chinese influence in the Caribbean, so that islanders there are treated with dignity, “not, sadly, like the islanders Joshua Wong and Jimmy Lai in Hong Kong”.</p>
         </div>
         <p class="px-link"><a href="https://hansard.parliament.uk/Commons/2026-11-10/debates/580a4a8b-77d1-4dad-b849-9f1d47824e1c/CommonsChamber" target="_blank" rel="noopener">Read it in Hansard</a></p>
-        <div data-share data-url="https://freejoshuawong.org/parliament.html#exchange-tugendhat" data-text="Tom Tugendhat MP raises Joshua Wong in the Commons. #FreeJoshuaWong"></div>
+        <div data-share data-url="https://freejoshuawong.org/parliament.html#exchange-tugendhat" data-text="Tom Tugendhat MP raises Joshua Wong in the Commons. #FreeJoshuaWong #JoshuaWong"></div>
       </div>
     </div>
   </div>
@@ -995,7 +995,7 @@ def parliament():
           <p>Said he would take up Joshua’s case.</p>
         </div>
         <div class="px-count"><b data-since="2026-09-01">73</b><span>days since that promise.<br>No update has been made public.</span></div>
-        <div data-share data-url="https://freejoshuawong.org/parliament.html" data-text="The Foreign Secretary promised to take up Joshua Wong’s case. No update since. #FreeJoshuaWong"></div>
+        <div data-share data-url="https://freejoshuawong.org/parliament.html" data-text="The Foreign Secretary promised to take up Joshua Wong’s case. No update since. #FreeJoshuaWong #JoshuaWong"></div>
       </div>
     </div>
   </div>
@@ -1043,12 +1043,12 @@ def voices():
       <div>
         <div class="label">Add your voice</div>
         <h2 class="sec">Post it. <em>Tag your MP.</em></h2>
-        <p class="lede">Copy a line, add your MP’s handle, and post it with #FreeJoshuaWong. If you are a parliamentarian or public figure and have spoken about Joshua, tell us at press@freejoshuawong.org and we’ll add you here.</p>
+        <p class="lede">Copy a line, add your MP’s handle, and post it with #FreeJoshuaWong and #JoshuaWong. If you are a parliamentarian or public figure and have spoken about Joshua, tell us at press@freejoshuawong.org and we’ll add you here.</p>
       </div>
       <div class="av-posts">
-        <div class="post"><p>Joshua Wong was two months from freedom. Hong Kong has given him ten more years for speaking up to foreign parliaments. <b>#FreeJoshuaWong</b></p><button class="copy" type="button">Copy</button><a class="sh-x" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?text=Joshua%20Wong%20was%20two%20months%20from%20freedom.%20Hong%20Kong%20has%20given%20him%20ten%20more%20years%20for%20speaking%20up%20to%20foreign%20parliaments.%20%23FreeJoshuaWong&url=https%3A%2F%2Ffreejoshuawong.org">Post on X</a></div>
-        <div class="post"><p>The Foreign Secretary promised to take up Joshua Wong’s case on 1 September. We’re still waiting. <b>#FreeJoshuaWong</b></p><button class="copy" type="button">Copy</button><a class="sh-x" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?text=The%20Foreign%20Secretary%20promised%20to%20take%20up%20Joshua%20Wong%E2%80%99s%20case%20on%201%20September.%20We%E2%80%99re%20still%20waiting.%20%23FreeJoshuaWong&url=https%3A%2F%2Ffreejoshuawong.org%2Fparliament.html">Post on X</a></div>
-        <div class="post"><p>He has been in prison since he was 24. He may not walk free until he is 40. <b>#FreeJoshuaWong</b></p><button class="copy" type="button">Copy</button><a class="sh-x" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?text=He%20has%20been%20in%20prison%20since%20he%20was%2024.%20He%20may%20not%20walk%20free%20until%20he%20is%2040.%20%23FreeJoshuaWong&url=https%3A%2F%2Ffreejoshuawong.org">Post on X</a></div>
+        <div class="post"><p>Joshua Wong was two months from freedom. Hong Kong has given him ten more years for speaking up to foreign parliaments. <b>#FreeJoshuaWong #JoshuaWong</b></p><button class="copy" type="button">Copy</button><a class="sh-x" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?text=Joshua%20Wong%20was%20two%20months%20from%20freedom.%20Hong%20Kong%20has%20given%20him%20ten%20more%20years%20for%20speaking%20up%20to%20foreign%20parliaments.%20%23FreeJoshuaWong%20%23JoshuaWong&url=https%3A%2F%2Ffreejoshuawong.org">Post on X</a></div>
+        <div class="post"><p>The Foreign Secretary promised to take up Joshua Wong’s case on 1 September. We’re still waiting. <b>#FreeJoshuaWong #JoshuaWong</b></p><button class="copy" type="button">Copy</button><a class="sh-x" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?text=The%20Foreign%20Secretary%20promised%20to%20take%20up%20Joshua%20Wong%E2%80%99s%20case%20on%201%20September.%20We%E2%80%99re%20still%20waiting.%20%23FreeJoshuaWong%20%23JoshuaWong&url=https%3A%2F%2Ffreejoshuawong.org%2Fparliament.html">Post on X</a></div>
+        <div class="post"><p>He has been in prison since he was 24. He may not walk free until he is 40. <b>#FreeJoshuaWong #JoshuaWong</b></p><button class="copy" type="button">Copy</button><a class="sh-x" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?text=He%20has%20been%20in%20prison%20since%20he%20was%2024.%20He%20may%20not%20walk%20free%20until%20he%20is%2040.%20%23FreeJoshuaWong%20%23JoshuaWong&url=https%3A%2F%2Ffreejoshuawong.org">Post on X</a></div>
       </div>
     </div>
   </div>
@@ -1064,7 +1064,7 @@ def quote_page(v):
     ext = v["url"].startswith("http")
     orig = v["url"] if ext else "../" + v["url"]
     watch = f'<a class="btn ghost" href="../{e(v["watch"])}">Watch the clip</a>' if v.get("watch") else ""
-    page = head(title, f"{v['who']} on Joshua Wong. #FreeJoshuaWong", f"voices/{v['slug']}.html", 1)
+    page = head(title, f"{v['who']} on Joshua Wong. #FreeJoshuaWong #JoshuaWong", f"voices/{v['slug']}.html", 1)
     page = page.replace(f"{SITE}/images/share-card.jpg", f"{SITE}/images/quotes/{v['slug']}.jpg")
     return page + nav("voices.html", 1) + f"""
 <section class="qpage" style="border-top:0">
@@ -1105,11 +1105,11 @@ def socials():
       <div>
         <div class="label">Add your voice</div>
         <h2 class="sec">Post it. <em>Tag your MP.</em></h2>
-        <p class="lede">Copy a line, add your MP’s handle, and post it with #FreeJoshuaWong.</p>
+        <p class="lede">Copy a line, add your MP’s handle, and post it with #FreeJoshuaWong and #JoshuaWong.</p>
       </div>
       <div class="av-posts">
-        <div class="post"><p>Joshua Wong was two months from freedom. Hong Kong has given him ten more years for speaking up to foreign parliaments. <b>#FreeJoshuaWong</b></p><button class="copy" type="button">Copy</button><a class="sh-x" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?text=Joshua%20Wong%20was%20two%20months%20from%20freedom.%20Hong%20Kong%20has%20given%20him%20ten%20more%20years%20for%20speaking%20up%20to%20foreign%20parliaments.%20%23FreeJoshuaWong&url=https%3A%2F%2Ffreejoshuawong.org">Post on X</a></div>
-        <div class="post"><p>The Foreign Secretary promised to take up Joshua Wong’s case on 1 September. We’re still waiting. <b>#FreeJoshuaWong</b></p><button class="copy" type="button">Copy</button><a class="sh-x" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?text=The%20Foreign%20Secretary%20promised%20to%20take%20up%20Joshua%20Wong%E2%80%99s%20case%20on%201%20September.%20We%E2%80%99re%20still%20waiting.%20%23FreeJoshuaWong&url=https%3A%2F%2Ffreejoshuawong.org%2Fparliament.html">Post on X</a></div>
+        <div class="post"><p>Joshua Wong was two months from freedom. Hong Kong has given him ten more years for speaking up to foreign parliaments. <b>#FreeJoshuaWong #JoshuaWong</b></p><button class="copy" type="button">Copy</button><a class="sh-x" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?text=Joshua%20Wong%20was%20two%20months%20from%20freedom.%20Hong%20Kong%20has%20given%20him%20ten%20more%20years%20for%20speaking%20up%20to%20foreign%20parliaments.%20%23FreeJoshuaWong%20%23JoshuaWong&url=https%3A%2F%2Ffreejoshuawong.org">Post on X</a></div>
+        <div class="post"><p>The Foreign Secretary promised to take up Joshua Wong’s case on 1 September. We’re still waiting. <b>#FreeJoshuaWong #JoshuaWong</b></p><button class="copy" type="button">Copy</button><a class="sh-x" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?text=The%20Foreign%20Secretary%20promised%20to%20take%20up%20Joshua%20Wong%E2%80%99s%20case%20on%201%20September.%20We%E2%80%99re%20still%20waiting.%20%23FreeJoshuaWong%20%23JoshuaWong&url=https%3A%2F%2Ffreejoshuawong.org%2Fparliament.html">Post on X</a></div>
       </div>
     </div>
   </div>
@@ -1196,7 +1196,7 @@ def zh():
       </div>
       <div>
         <h3>分享他的故事</h3>
-        <p>使用標籤 #FreeJoshuaWong，並標註你的國會議員。</p>
+        <p>使用標籤 #FreeJoshuaWong 及 #JoshuaWong，並標註你的國會議員。</p>
         <p class="zh-small">如你在香港有家人，或擔心自身安全，可以只轉發本網站或其他公開內容，無須公開表態。請先照顧好自己。</p>
       </div>
       <div>
