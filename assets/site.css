@@ -35,7 +35,7 @@ nav.top .wrap{display:flex;align-items:center;justify-content:space-between;heig
 .btn.ghost{background:transparent;color:var(--paper);box-shadow:inset 0 0 0 1.5px rgba(244,242,236,.5)}
 .btn.ghost:hover{box-shadow:inset 0 0 0 1.5px var(--accent);color:var(--accent)}
 nav .btn{padding:10px 16px;font-size:11px}
-@media(max-width:900px){.links{display:none}}
+@media(max-width:1000px){.links{display:none}}
 
 /* HERO — Joshua in his own column, never covered by text */
 .hero{padding:0;border:0;background:#0C0C0B}
@@ -214,7 +214,7 @@ footer p{margin:6px 0 0;max-width:52ch;line-height:1.6}
 .brand{font-size:24px;white-space:nowrap}
 .links a[aria-current="page"]{color:var(--accent)}
 .menu-btn{display:none;background:transparent;border:1.5px solid rgba(244,242,236,.4);color:var(--paper);font-family:var(--label);font-weight:800;font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:9px 12px;border-radius:2px;cursor:pointer}
-@media(max-width:900px){
+@media(max-width:1000px){
   .menu-btn{display:inline-block}
   nav.top .btn{display:none}
   nav.top.open .links{display:flex;position:absolute;top:64px;left:0;right:0;flex-direction:column;gap:0;background:var(--ink);border-bottom:1px solid rgba(244,242,236,.12)}
@@ -331,7 +331,7 @@ footer nav a{display:block;color:var(--muted);margin-top:6px}
 footer nav a:hover{color:var(--accent)}
 @media print{nav.top,footer,.no-print,.colleagues{display:none!important}body{background:#fff}.facts-sheet{padding:0}}
 .links .mob-only{display:none}
-@media(max-width:900px){nav.top.open .links .mob-only{display:block}}
+@media(max-width:1000px){nav.top.open .links .mob-only{display:block}}
 .screen.yt{border:0;width:100%;cursor:pointer;background-size:cover;background-position:center;font:inherit;color:inherit;padding:0}
 .yt-frame{width:100%;aspect-ratio:16/9;border:0;display:block;background:#000}
 .screen.vid{display:block;padding:0;background:#000}
@@ -1055,7 +1055,7 @@ body:has(.mp-print){background:#fff}
 .mp-tools select{font-size:15px;padding:6px}
 @media print{.mp-tools{display:none}.mp-print{padding:0}}
 nav.top .links a,nav.top .btn{white-space:nowrap}
-@media(max-width:1200px) and (min-width:901px){nav.top .links{gap:14px}nav.top .links a{font-size:14px;margin:0}nav.top .brand{font-size:21px}}
+@media(max-width:1200px) and (min-width:1001px){nav.top .links{gap:14px}nav.top .links a{font-size:14px;margin:0}nav.top .brand{font-size:21px}}
 .mw-paper{transform:none}
 /* tracker status labels: a soft buzz every few seconds, like a phone on a table */
 @keyframes tk-buzz{0%,88%,100%{transform:translateX(0) rotate(0)}89.5%{transform:translateX(-1.5px) rotate(-1deg)}91%{transform:translateX(1.5px) rotate(1deg)}92.5%{transform:translateX(-1px) rotate(-.6deg)}94%{transform:translateX(1px) rotate(.6deg)}95.5%{transform:translateX(0) rotate(0)}}
@@ -1139,3 +1139,7 @@ nav.top .links a,nav.top .btn{white-space:nowrap}
 .pty{display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;position:relative;top:-1px;height:17px;padding:3px 6px 0;box-sizing:border-box;font-family:var(--label);font-weight:800;font-size:10px;letter-spacing:.06em;line-height:1;border-radius:3px;margin-left:5px;color:#fff;background:#555;text-transform:uppercase}
 .pty-con{background:#0087DC}.pty-lab{background:#E4003B}.pty-ld{background:#FAA61A;color:#0C0C0B}.pty-green{background:#02A95B}
 .pty-snp{background:#FDF38E;color:#0C0C0B}.pty-cb{background:#7a7a72}.pty-na{background:#7a7a72}
+/* case page: key facts one per row on phones */
+@media(max-width:600px){.facts .wrap{grid-template-columns:1fr}.fact{border-right:0!important;border-bottom:1px solid rgba(12,12,11,.18)}.fact:last-child{border-bottom:0}}
+/* life, year by year: every date on the same row */
+.lifemarks .m.end,.lifemarks .m.last{grid-row:1;margin-top:0}
