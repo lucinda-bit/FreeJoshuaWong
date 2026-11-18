@@ -472,6 +472,25 @@ def film():
       <p>In September 2026, Hong Kong’s Security Bureau said <a href="https://www.dimsumdaily.hk/security-bureau-reviewing-netflix-film-on-joshua-wong/" target="_blank" rel="noopener">“follow-up steps were under way”</a> over <a href="https://www.netflix.com/watch/80169348" target="_blank" rel="noopener">the original documentary</a>, which is still on Netflix in the city. Hong Kongers responded by sending it to <a href="https://www.theepochtimes.com/china/documentary-on-joshua-wong-surges-to-no-1-on-netflix-hong-kong-after-criticism-6093687" target="_blank" rel="noopener">number one on Netflix</a> there.</p>
     </div>
 
+    <section class="parl-feature" id="badenoch" style="border-top:0;padding:10px 0 30px">
+      <div class="px">
+        <div class="px-vid">
+          <div class="screen vid"><video controls preload="none" playsinline poster="images/badenoch-2026-11-03-poster.jpg"><source src="media/badenoch-2026-11-03.mp4" type="video/mp4">Your browser can’t play this video.</video></div>
+          <p class="px-cap">Conservative Party rally, HMS Wellington, London, 3 November 2026.</p>
+        </div>
+        <div class="px-side">
+          <div class="px-when">3 November 2026 · Conservative rally, London</div>
+          <div class="px-sp">
+            <div class="px-name">Kemi Badenoch MP</div>
+            <div class="px-role">Conservative, North West Essex · Leader of the Opposition</div>
+            <p>Two days before Joshua was sentenced, the Conservative leader was asked about China. She said Britain should not do business as usual while Beijing holds dissidents and British citizens in its prisons: “I would be going and getting those people released.”</p>
+          </div>
+          <p class="px-link"><a href="https://thenightly.com.au/politics/uk-oppposition-leader-kemi-badenoch-demands-prisoner-release-before-xi-talks-rejects-chogm-reparations-c-23113763" target="_blank" rel="noopener">Read the report</a></p>
+          <div data-share data-url="https://freejoshuawong.org/film.html#badenoch" data-text="Kemi Badenoch on China’s political prisoners: “I would be going and getting those people released.”"></div>
+        </div>
+      </div>
+    </section>
+
     <div class="watch-wall" id="watch">
       <div class="sec-head"><div><div class="label">Watch and listen</div><h2 class="sec">Interviews, clips and <em>podcasts</em></h2></div></div>
       <div class="vwall">""" + video_cards(skip_film=True) + """</div>
@@ -923,6 +942,7 @@ VIDEOS = [
     ("#exchange-kearns", "House of Commons · 10 Nov 2026", "Alicia Kearns MP", "For the Opposition: Joshua and Jimmy Lai remain imprisoned for speaking out for democracy.", "images/commons-2026-11-10-kearns-poster.jpg", False),
     ("https://podcasts.apple.com/gb/podcast/today-in-focus/id1440133626?i=1000801652639", "The Guardian · Today in Focus · 13 Nov 2026", "Teen prodigy, Netflix star, prisoner", "Podcast: Nathan Law and journalist Danny Vincent on Joshua’s story and his new sentence.", "images/covers/guardian-podcast.jpg", True),
     ("https://www.youtube.com/live/iw5a5aQKgNM?t=2400", "Sky News · 5 Nov 2026", "Nathan Law on Sky News", "On the day of the sentence, Nathan tells Yalda Hakim that democracy and human rights are “losing ground globally”.", "images/stills/sky-nathan.jpg", True),
+    ("film.html#badenoch", "Conservative rally · 3 Nov 2026", "Kemi Badenoch on China’s political prisoners", "Two days before the sentence, the Conservative leader says she would be “going and getting those people released”.", "images/stills/badenoch-rally.jpg", False),
     ("https://www.youtube.com/watch?v=gwQ1bK0KSJE", "Byline Times TV · 26 Oct 2026", "China versus Joshua Wong", "Video: filmmaker Andrew Duncan tells Joshua’s story to Adrian Goldberg.", "images/stills/byline-andrew.jpg", True),
     ("#exchange-tugendhat", "House of Commons · 10 Nov 2026", "Tom Tugendhat MP", "The Shadow Foreign Secretary names Joshua in the Commonwealth summit statement.", "images/commons-2026-11-10-tugendhat-poster.jpg", False),
     ("#exchange", "House of Commons · 1 Sep 2026", "Duncan Smith and the Foreign Secretary", "The exchange at Foreign Office Questions, the day before Joshua’s plea.", "images/commons-poster.jpg", False),
