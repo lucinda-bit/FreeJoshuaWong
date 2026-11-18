@@ -472,7 +472,8 @@ def film():
       <p>In September 2026, Hong Kong’s Security Bureau said <a href="https://www.dimsumdaily.hk/security-bureau-reviewing-netflix-film-on-joshua-wong/" target="_blank" rel="noopener">“follow-up steps were under way”</a> over <a href="https://www.netflix.com/watch/80169348" target="_blank" rel="noopener">the original documentary</a>, which is still on Netflix in the city. Hong Kongers responded by sending it to <a href="https://www.theepochtimes.com/china/documentary-on-joshua-wong-surges-to-no-1-on-netflix-hong-kong-after-criticism-6093687" target="_blank" rel="noopener">number one on Netflix</a> there.</p>
     </div>
 
-    <section class="parl-feature" id="badenoch" style="border-top:0;padding:10px 0 30px">
+    <section class="parl-feature kb-feature" id="badenoch">
+      <div class="label" style="margin-bottom:22px">Also on the record</div>
       <div class="px">
         <div class="px-vid">
           <div class="screen vid"><video controls preload="none" playsinline poster="images/badenoch-2026-11-03-poster.jpg"><source src="media/badenoch-2026-11-03.mp4" type="video/mp4">Your browser can’t play this video.</video></div>

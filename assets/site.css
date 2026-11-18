@@ -1143,3 +1143,6 @@ nav.top .links a,nav.top .btn{white-space:nowrap}
 @media(max-width:600px){.facts .wrap{grid-template-columns:1fr}.fact{border-right:0!important;border-bottom:1px solid rgba(12,12,11,.18)}.fact:last-child{border-bottom:0}}
 /* life, year by year: every date on the same row */
 .lifemarks .m.end,.lifemarks .m.last{grid-row:1;margin-top:0}
+/* Watch: Kemi Badenoch feature, spaced like the other Watch sections */
+.kb-feature{border-top:1px solid var(--rule);margin-top:44px;padding:40px 0 10px}
+.kb-feature .sec-head{margin-bottom:28px}
