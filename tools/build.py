@@ -360,10 +360,10 @@ window.addEventListener('DOMContentLoaded',function(){
 
 LATEST = [
     ("The Washington Post · Opinion", "Joshua Wong and the APEC summit: calling Hong Kong’s bluff", "17 Nov 2026", "https://www.washingtonpost.com/opinions/2026/11/17/joshua-wong-apec-call-hong-kong-bluff/"),
+    ("Latin Times", "Joshua’s earliest release date pushed into the mid-2030s", "15 Nov 2026", "https://latintimes.com/joshua-wong-10-year-sentence-hong-kong-601373"),
     ("Australian Senate", "“Some call it collusion. I call it courage.” Senator Raff Ciccone on Joshua’s sentence", "16 Nov 2026", "https://www.abc.net.au/news/2026-11-16/federal-politics-live-blog-senate-gas-nov-16/107388656"),
     ("The Times · Letters", "Unjust prosecution: MPs and peers ask what Britain will do for Joshua Wong", "11 Nov 2026", "letters/times-letter-nov-2026.html"),
     ("The Guardian · Today in Focus", "Podcast: Teen prodigy, Netflix star, prisoner, with Nathan Law", "13 Nov 2026", "https://podcasts.apple.com/gb/podcast/today-in-focus/id1440133626?i=1000801652639"),
-    ("House of Commons", "Emily Darlington MP asks the Government to call for Joshua’s release", "10 Nov 2026", "parliament.html#exchange-nov"),
 ]
 
 # ---------------- THE CASE ----------------
