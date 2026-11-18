@@ -1146,3 +1146,8 @@ nav.top .links a,nav.top .btn{white-space:nowrap}
 /* Watch: Kemi Badenoch feature, spaced like the other Watch sections */
 .kb-feature{border-top:1px solid var(--rule);margin-top:44px;padding:40px 0 10px}
 .kb-feature .sec-head{margin-bottom:28px}
+/* Watch: #1 note centred between its two dividers, number centred against the text */
+.film-note{align-items:center;padding:34px 0;border-bottom:0}
+.film-note .big{font-size:84px;line-height:.8}
+.kb-feature{margin-top:0;padding-top:40px}
+@media(max-width:600px){.film-note{gap:16px}.film-note .big{font-size:56px}}
