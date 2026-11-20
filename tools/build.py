@@ -135,7 +135,7 @@ def footer(depth=0, scripts=""):
       </nav>
       <div>
         <p style="font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:11px;color:var(--accent);margin:0">Press enquiries</p>
-        <p>press@freejoshuawong.org</p>
+        <p style="margin-top:10px"><a class="btn small-btn" href="{up}contact.html">Contact us</a></p>
       </div>
     </div>
   </div>
@@ -501,7 +501,7 @@ def film():
     <div class="res-grid">
       <div class="res"><div class="label">The original</div><h3>Teenager vs. Superpower</h3><p>The 2017 documentary, winner of the Sundance World Cinema Documentary Audience Award. <a href="https://www.netflix.com/watch/80169348" target="_blank" rel="noopener">Watch it on Netflix</a>.</p></div>
       <div class="res"><div class="label">For social</div><h3>Trailer clip</h3><p>A short clip for sharing on X, Instagram and WhatsApp.</p><span class="soon">Coming soon</span></div>
-      <div class="res"><div class="label">Screenings</div><h3>Host a screening</h3><p>Parliamentarians, universities and community groups can request a screening with a short panel.</p><p><strong>press@freejoshuawong.org</strong></p></div>
+      <div class="res"><div class="label">Screenings</div><h3>Host a screening</h3><p>Parliamentarians, universities and community groups can request a screening with a short panel.</p><p><a class="btn small-btn" href="contact.html?topic=screening">Request a screening</a></p></div>
     </div>
   </div>
 </section>
@@ -728,15 +728,15 @@ PRESSKIT = """    <div class="facts-sheet">
         <dt>Why the UK</dt><dd>The UK signed the 1984 Joint Declaration guaranteeing Hong Kong’s freedoms for fifty years, and has declared China in breach of it.</dd>
         <dt>UK Government</dt><dd>Says it remains “deeply concerned” by his continued imprisonment (written answer, 17 November 2026). Asked in writing whether the Chinese Ambassador has been summoned, the minister did not say (18 November 2026).</dd>
         <dt>The asks</dt><dd>The Foreign Secretary to summon the Chinese Ambassador and raise Joshua’s case; review the privileges of the Hong Kong Economic and Trade Office in London; sanction officials responsible for NSL prosecutions, with allies.</dd>
-        <dt>Press contact</dt><dd>press@freejoshuawong.org</dd>
+        <dt>Press contact</dt><dd>freejoshuawong.org/contact.html</dd>
       </dl>
       <p class="no-print" style="margin:26px 0 0;font-family:var(--label);font-size:13px;color:rgba(12,12,11,.65)">To save as a PDF, use your browser’s Print option and choose “Save as PDF”.</p>
     </div>
 
     <div class="res-grid">
-      <div class="res" id="press-kit"><div class="label">Press kit</div><h3>Photos &amp; stills</h3><p>Approved images of Joshua and stills from <em>Prisoner vs. Superpower</em>, cleared for editorial use.</p><p>Available on request: <strong>press@freejoshuawong.org</strong></p></div>
+      <div class="res" id="press-kit"><div class="label">Press kit</div><h3>Photos &amp; stills</h3><p>Approved images of Joshua and stills from <em>Prisoner vs. Superpower</em>, cleared for editorial use.</p><p><a class="btn small-btn" href="contact.html?topic=press">Request images</a></p></div>
       <div class="res" id="briefs"><div class="label">Policy briefs</div><h3>Transnational repression</h3><p>How Beijing’s National Security Law reaches Hong Kongers in Britain, and what the UK can do about it.</p><span class="soon">Coming soon</span></div>
-      <div class="res"><div class="label">Interviews</div><h3>Speak to us</h3><p>Interviews with the film’s producer and campaign spokespeople can be arranged.</p><p><strong>press@freejoshuawong.org</strong></p></div>
+      <div class="res"><div class="label">Interviews</div><h3>Speak to us</h3><p>Interviews with the film’s producer and campaign spokespeople can be arranged.</p><p><a class="btn small-btn" href="contact.html?topic=interview">Request an interview</a></p></div>
     </div>
 """
 
@@ -749,7 +749,7 @@ RELEASES = [
 
 def releases_html():
     if not RELEASES:
-        return """<div class="empty-rel"><h3>Press releases will appear here</h3><p>The campaign’s statements and releases will be published on this page, newest first. For comment or interviews, email <strong>press@freejoshuawong.org</strong>.</p></div>"""
+        return """<div class="empty-rel"><h3>Press releases will appear here</h3><p>The campaign’s statements and releases will be published on this page, newest first. For comment or interviews, <a href="contact.html?topic=press">contact us</a>.</p></div>"""
     out = ""
     for d, t, summ, u in RELEASES:
         out += f"""<div class="rel"><div class="d">{d}</div><div><div class="type">Press release</div><h3>{'<a href="'+u+'">'+t+'</a>' if u else t}</h3><p>{summ}</p></div></div>"""
@@ -1100,7 +1100,7 @@ def parliament():
     <div class="sec-head"><div><div class="label">The record</div><h2 class="sec">Raised at <em>Westminster</em></h2></div></div>
     <div class="filters rec-bar" role="group" aria-label="Filter the record">""" + chips + """</div>
     <div class="recs">""" + rows + """</div>
-    <p class="rec-note">Know of a mention we’ve missed? Tell us at press@freejoshuawong.org.</p>
+    <p class="rec-note">Know of a mention we’ve missed? <a href="contact.html?topic=parliament">Tell us</a>.</p>
   </div>
 </section>
 """ + CTA.replace("{up}", "") + footer()
@@ -1160,7 +1160,7 @@ def voices():
       <div>
         <div class="label">Add your voice</div>
         <h2 class="sec">Post it. <em>Tag your MP.</em></h2>
-        <p class="lede">Copy a line, add your MP’s handle, and post it with #FreeJoshuaWong and #JoshuaWong. If you are a parliamentarian or public figure and have spoken about Joshua, tell us at press@freejoshuawong.org and we’ll add you here.</p>
+        <p class="lede">Copy a line, add your MP’s handle, and post it with #FreeJoshuaWong and #JoshuaWong. If you are a parliamentarian or public figure and have spoken about Joshua, <a href="contact.html">tell us</a> and we’ll add you here.</p>
       </div>
       <div class="av-posts">
         <div class="post"><p>Joshua Wong was two months from freedom. Hong Kong has given him ten more years for speaking up to foreign parliaments. <b>#FreeJoshuaWong #JoshuaWong</b></p><button class="copy" type="button">Copy</button><a class="sh-x" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?text=Joshua%20Wong%20was%20two%20months%20from%20freedom.%20Hong%20Kong%20has%20given%20him%20ten%20more%20years%20for%20speaking%20up%20to%20foreign%20parliaments.%20%23FreeJoshuaWong%20%23JoshuaWong&url=https%3A%2F%2Ffreejoshuawong.org">Post on X</a></div>
@@ -1212,7 +1212,7 @@ def socials():
       <div class="filters s-bar" role="group" aria-label="Filter posts" id="s-bar"></div>
     </div>
     <div class="s-wall" id="s-wall"></div>
-    <p class="rec-note">Seen a post we’ve missed? Send the link to press@freejoshuawong.org. We link to posts rather than embedding them, so your visit here isn’t tracked by social media companies.</p>
+    <p class="rec-note">Seen a post we’ve missed? <a href="contact.html">Send us the link</a>. We link to posts rather than embedding them, so your visit here isn’t tracked by social media companies.</p>
   </div>
 </section>
 
@@ -1474,9 +1474,59 @@ def video():
 </section>
 """ + CTA.replace("{up}", "") + footer()
 
+# ---------------- CONTACT ----------------
+# Messages are sent by Web3Forms to the inbox tied to this key (the address itself never appears on the site).
+FORM_KEY = ""   # paste the Web3Forms access key here
+CONTACT_TOPICS = [("press", "Press or media enquiry"), ("interview", "Interview request"), ("screening", "Screening request"),
+                  ("parliament", "Parliament or government"), ("other", "Something else")]
+
+def contact():
+    opts = "".join(f'<option value="{label}" data-k="{k}">{label}</option>' for k, label in CONTACT_TOPICS)
+    return head("Contact", "Contact the Free Joshua Wong campaign.", "contact.html") + nav("contact.html") + page_head(
+        "Contact", "Get in <em>touch</em>",
+        "Press, interviews, screenings, Parliament, or anything else. Send us a message and we’ll reply by email.") + f"""
+<section class="contact-sec">
+  <div class="wrap">
+    <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="{FORM_KEY}">
+      <input type="hidden" name="subject" value="Free Joshua Wong website: new message">
+      <input type="hidden" name="from_name" value="freejoshuawong.org">
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label>What is it about?<select name="topic" id="cf-topic">{opts}</select></label>
+      <label>Your name<input type="text" name="name" required autocomplete="name"></label>
+      <label>Your email<input type="email" name="email" required autocomplete="email"></label>
+      <label>Organisation <small>(optional)</small><input type="text" name="organisation" autocomplete="organization"></label>
+      <label>Message<textarea name="message" rows="7" required></textarea></label>
+      <button class="btn" type="submit">Send message</button>
+      <p class="cf-status" id="cf-status" role="status" aria-live="polite"></p>
+      <p class="cf-small">We only use your details to reply to you.</p>
+    </form>
+  </div>
+</section>
+<script>
+(function () {{
+  var f = document.getElementById('contact-form'), st = document.getElementById('cf-status'), sel = document.getElementById('cf-topic');
+  var t = new URLSearchParams(location.search).get('topic');
+  if (t) {{ for (var i = 0; i < sel.options.length; i++) if (sel.options[i].getAttribute('data-k') === t) sel.selectedIndex = i; }}
+  f.addEventListener('submit', function (e) {{
+    e.preventDefault();
+    var b = f.querySelector('button'); b.disabled = true; st.textContent = 'Sending…';
+    fetch(f.action, {{ method: 'POST', headers: {{ 'Accept': 'application/json' }}, body: new FormData(f) }})
+      .then(function (r) {{ return r.json(); }})
+      .then(function (d) {{
+        if (d.success) {{ f.reset(); st.textContent = 'Thank you. Your message has been sent and we’ll reply by email.'; }}
+        else {{ st.textContent = 'Sorry, that didn’t send. Please try again in a moment.'; }}
+        b.disabled = false;
+      }})
+      .catch(function () {{ st.textContent = 'Sorry, that didn’t send. Please check your connection and try again.'; b.disabled = false; }});
+  }});
+}})();
+</script>
+""" + footer()
+
 PAGES = {
     "index.html": home, "case.html": case, "film.html": film, "newsroom.html": newsroom,
-    "resources.html": resources, "act.html": act, "zh.html": zh, "write.html": write, "messages-print.html": messages_print, "parliament.html": parliament, "voices.html": voices, "socials.html": socials, "video.html": video,
+    "resources.html": resources, "act.html": act, "zh.html": zh, "write.html": write, "messages-print.html": messages_print, "parliament.html": parliament, "voices.html": voices, "socials.html": socials, "video.html": video, "contact.html": contact,
     "letters/open-letter-prime-minister-sept-2026.html": letter_pm,
     "letters/times-letter-nov-2026.html": letter_times,
 }

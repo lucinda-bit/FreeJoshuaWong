@@ -1172,3 +1172,17 @@ nav.top .links a,nav.top .btn{white-space:nowrap}
   .reel-player video{width:auto;max-width:100%;max-height:78vh;margin:0 auto}
   .reel-h{font-size:42px}
 }
+
+/* Contact page */
+.contact-sec{padding:48px 0 90px}
+.contact-form{max-width:640px;display:grid;gap:18px}
+.contact-form label{display:grid;gap:8px;font-family:var(--label);font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--paper)}
+.contact-form label small{font-weight:500;text-transform:none;letter-spacing:0;opacity:.7}
+.contact-form input,.contact-form select,.contact-form textarea{font:inherit;font-family:var(--body,inherit);font-size:17px;text-transform:none;letter-spacing:0;font-weight:400;color:#fff;background:var(--ink-2);border:1px solid rgba(244,242,236,.25);border-radius:0;padding:12px 14px;width:100%;box-sizing:border-box}
+.contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
+.contact-form .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.contact-form button{justify-self:start}
+.cf-status{margin:0;min-height:1.4em;color:var(--accent)}
+.cf-small{margin:0;font-size:14px;opacity:.65}
+.btn.small-btn{padding:10px 16px;font-size:13px}
+.res a.btn,.res a.btn:hover,a.btn.small-btn{color:var(--ink);text-decoration:none}
