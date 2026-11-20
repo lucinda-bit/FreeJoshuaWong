@@ -1410,8 +1410,9 @@ def messages_print():
 
 # ---------------- CAMPAIGN VIDEO (launch: Monday 23 Nov 2026, six years in prison) ----------------
 # Put the files here, then rebuild. Leave REEL_CAPTIONED empty if there is only one version.
-REEL = "https://www.dropbox.com/scl/fi/058g8h7rcxwf18gsdcwek/Joshua-Wong-V6.MP4?rlkey=cie50qik24mvrl21lzpk7wz9b&st=hvhwy902&raw=1"   # main video, full quality, hosted on Dropbox (raw=1 plays in the page)
-REEL_DOWNLOAD = "https://www.dropbox.com/scl/fi/058g8h7rcxwf18gsdcwek/Joshua-Wong-V6.MP4?rlkey=cie50qik24mvrl21lzpk7wz9b&st=hvhwy902&dl=1"   # same file, dl=1 makes it download
+REEL = "media/what-has-the-pm-done.mp4"   # main video (portrait 1080x1920, captions burned in), hosted on the site
+REEL_DOWNLOAD = REEL
+REEL_POSTER = "images/what-has-the-pm-done-poster.jpg"
 REEL_CAPTIONED = ""  # add a link here if there is a separate captioned version  # captioned version for posting directly
 REEL_IMAGE = "images/what-has-the-pm-done-share.jpg"         # share image (also used as the poster)
 REEL_URL = "https://freejoshuawong.org/video.html"
@@ -1429,13 +1430,13 @@ def video():
     if REEL_UNLISTED:
         h = h.replace("<title>", '<meta name="robots" content="noindex">\n<title>', 1)
     has = lambda f: bool(f) and (f.startswith("http") or os.path.exists(os.path.join(ROOT, f)))
-    dl = f'<a class="btn" href="{REEL_DOWNLOAD}">Download the video (MP4, full quality)</a>' if has(REEL) else ""
+    dl = f'<a class="btn" href="{REEL_DOWNLOAD}" download="Free-Joshua-Wong-video.mp4">Download the video (MP4, with captions)</a>' if has(REEL) else ""
     if has(REEL_CAPTIONED):
         dl += f'\n        <a class="btn" href="{REEL_CAPTIONED}" download>Download with captions (MP4)</a>'
     if has(REEL_IMAGE):
         dl += f'\n        <a class="btn ghost" href="{REEL_IMAGE}" download>Download the share image</a>'
-    poster = f' poster="{REEL_IMAGE}"' if has(REEL_IMAGE) else ""
-    player = (f'<div class="reel-player"><video controls preload="metadata" playsinline{poster}><source src="{REEL}" type="video/mp4">Your browser can’t play this video. <a href="{REEL_DOWNLOAD}">Download it instead.</a></video></div>'
+    poster = f' poster="{REEL_POSTER}"' if has(REEL_POSTER) else ""
+    player = (f'<div class="reel-player"><video controls preload="metadata" playsinline{poster}><source src="{REEL}" type="video/mp4">Your browser can’t play this video. <a href="{REEL_DOWNLOAD}" download="Free-Joshua-Wong-video.mp4">Download it instead.</a></video></div>'
               if has(REEL) else '<div class="screen" style="display:flex;align-items:center;justify-content:center;aspect-ratio:16/9;background:var(--ink-2)"><p style="margin:0;font-size:20px">The video will be here shortly.</p></div>')
     posts = "".join(
         f'\n        <div class="post"><p>{t} <b>#FreeJoshuaWong #JoshuaWong</b></p><button class="copy" type="button">Copy</button></div>'
@@ -1449,7 +1450,7 @@ def video():
     <div class="video-dl" style="display:flex;flex-wrap:wrap;gap:12px;margin-top:24px">
         {dl}
     </div>
-    <p style="margin-top:14px;font-size:15px;opacity:.75">Free to share and to post on your own channels. Please don’t edit it. The download is the full-quality file (about 100&nbsp;MB), so it may take a moment on a phone.</p>
+    <p style="margin-top:14px;font-size:15px;opacity:.75">Free to share and to post on your own channels. Please don’t edit it. Full HD, portrait, about 50&nbsp;MB. On a phone, if the video opens instead of downloading, press and hold the button and choose “Download” or “Save”.</p>
   </div>
 </section>
 
