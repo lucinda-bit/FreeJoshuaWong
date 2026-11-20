@@ -844,7 +844,7 @@ a.s-link:hover{background:#f6f4ec}
 /* Asked and answered tracker */
 .tracker .tk-lede{font-size:18px;color:rgba(244,242,236,.8);margin:0 0 8px;max-width:60ch}
 .tracker .tk-st{display:inline-block;font-style:normal;font-family:var(--label);font-weight:800;font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:4px 9px;border-radius:2px;margin-bottom:8px}
-.tracker .st-none{background:#C8352B;color:#fff}
+.tracker .st-none,.tracker .st-dodged{background:#C8352B;color:#fff}
 .tracker .st-weak{background:rgba(244,242,236,.14);color:#fff}
 .tracker .st-due{background:var(--accent);color:var(--ink)}
 .tracker .wait-n span{font-size:56px}

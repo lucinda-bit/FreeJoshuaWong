@@ -359,11 +359,11 @@ window.addEventListener('DOMContentLoaded',function(){
 """ + footer(0, '<script src="assets/messages.js"></script>\n')
 
 LATEST = [
+    ("Parliament · Written answers", "Asked whether the Ambassador was summoned, the minister doesn’t say", "18–19 Nov 2026", "parliament.html"),
     ("Global Voices", "‘Who will respond?’ Joshua fears being forgotten amid his 10-year sentence", "18 Nov 2026", "https://globalvoices.org/2026/11/18/who-will-respond-jailed-hong-kong-pro-democracy-activist-joshua-wong-fears-being-forgotten-amid-10-year-sentence/"),
     ("The Washington Post · Opinion", "Joshua Wong and the APEC summit: calling Hong Kong’s bluff", "17 Nov 2026", "https://www.washingtonpost.com/opinions/2026/11/17/joshua-wong-apec-call-hong-kong-bluff/"),
     ("Latin Times", "Joshua’s earliest release date pushed into the mid-2030s", "15 Nov 2026", "https://latintimes.com/joshua-wong-10-year-sentence-hong-kong-601373"),
     ("Australian Senate", "“Some call it collusion. I call it courage.” Senator Raff Ciccone on Joshua’s sentence", "16 Nov 2026", "https://www.abc.net.au/news/2026-11-16/federal-politics-live-blog-senate-gas-nov-16/107388656"),
-    ("The Guardian · Today in Focus", "Podcast: Teen prodigy, Netflix star, prisoner, with Nathan Law", "13 Nov 2026", "https://podcasts.apple.com/gb/podcast/today-in-focus/id1440133626?i=1000801652639"),
 ]
 
 # ---------------- THE CASE ----------------
@@ -829,9 +829,15 @@ def act():
 # ---------------- PARLIAMENT ----------------
 # kind: commons | lords | written | report | event
 RECORD = [
-    ("2026-11-11", "written", "Sanctions on the officials responsible?", "Written question · Richard Holden MP",
-     "Richard Holden MP asked whether the Foreign Secretary will assess the merits of targeted sanctions on the Chinese and Hong Kong officials responsible for jailing Joshua and other activists. The answer was due on 13 November.",
-     "https://questions-statements.parliament.uk/written-questions/detail/2026-11-11/42157", "The question", ""),
+    ("2026-11-19", "written", "Sanctions on the officials responsible?", "Written question · Richard Holden MP",
+     "Richard Holden MP asked whether the Foreign Secretary will assess the merits of targeted sanctions on the Chinese and Hong Kong officials responsible for jailing Joshua and other activists. Answering on 19 November, Minister Chris Elmore pointed to the joint statement issued with international partners after the sentence and said it “would not be appropriate for me to speculate on future measures”.",
+     "https://questions-statements.parliament.uk/written-questions/detail/2026-11-11/42157", "Parliamentary answer", ""),
+    ("2026-11-18", "written", "Seven questions, one cross-reference", "Written answers · Chris Elmore MP, Foreign Office minister",
+     "On 18 November the minister answered the seven questions tabled on 10 November by Richard Holden MP, Alex Barros-Curtis MP and Marie Rimmer MP, including whether the Foreign Secretary has summoned the Chinese Ambassador, what steps he is taking to secure Joshua’s release, and whether sanctions will be considered. Each answer simply referred to his answer to Alex Barros-Curtis on 17 November. None said whether the Ambassador has been summoned.",
+     "https://questions-statements.parliament.uk/written-questions/detail/2026-11-10/41576", "The answer on the Ambassador", ""),
+    ("2026-11-17", "written", "“Deeply concerned”", "Written question · Alex Barros-Curtis MP",
+     "Alex Barros-Curtis MP asked what discussions the Foreign Secretary has had with international partners on Joshua’s case. Minister Chris Elmore said the Government remains “deeply concerned by Joshua Wong's continued imprisonment” and pointed to the joint statement issued with international partners after the sentence.",
+     "https://questions-statements.parliament.uk/written-questions/detail/2026-11-04/41010", "Parliamentary answer", ""),
     ("2026-11-11", "letter", "“A treaty broken without cost invites the next breach”", "Letter to The Times · Eight MPs and peers",
      "The day after the urgent question, Emily Darlington MP, Lord Alton, Lord Patten and five other MPs and peers wrote to The Times asking the Government to summon the Chinese Ambassador, sanction those responsible and tell Parliament what further consequences will follow.",
      "letters/times-letter-nov-2026.html", "Read the letter", ""),
@@ -842,7 +848,7 @@ RECORD = [
      "At an urgent question secured by Sir Iain Duncan Smith on China obtaining MPs’ phone and financial records, Emily Darlington MP asked the Government to summon the Chinese Ambassador and call for Joshua’s release, as it did for Jimmy Lai. Security Minister Dan Jarvis replied that the Government share the concerns about Joshua and Jimmy Lai. For the Opposition, Alicia Kearns MP said both remain imprisoned for speaking out for democracy. <a href=\"https://hansard.parliament.uk/Commons/2026-11-10/debates/E43553F9-3D50-41D2-844C-D23E5DCFBF96/ChinaBreachOfUKParliamentariansData\" target=\"_blank\" rel=\"noopener\">Read it in Hansard</a>",
      "#exchange-nov", "Watch the clip", ""),
     ("2026-11-10", "written", "Seven written questions in one day", "Written questions · Richard Holden MP, Alex Barros-Curtis MP, Marie Rimmer MP",
-     "After the sentence, three MPs tabled seven questions to the Foreign Secretary, including whether he has summoned the Chinese Ambassador, what diplomatic steps he is taking to secure Joshua’s release, and whether the Government will consider sanctions on the officials responsible. Answers were due on 12 November. None had been published by 16 November.",
+     "After the sentence, three MPs tabled seven questions to the Foreign Secretary, including whether he has summoned the Chinese Ambassador, what diplomatic steps he is taking to secure Joshua’s release, and whether the Government will consider sanctions on the officials responsible. They were answered on 18 November (see above).",
      "https://commonsbusiness.parliament.uk/Document/108853/Html?subType=Standard", "Questions tabled", ""),
     ("2026-11-09", "written", "Named in a Lords answer on a ministerial visit", "Written question · Lord Alton (HL4687)",
      "Lord Alton asked what the minister raised during her visit to Hong Kong on 29 October. Answering, Baroness Winterton said she raised concerns including Jimmy Lai’s continued detention, and pointed to the six-monthly report, which highlights Joshua’s case.",
@@ -897,11 +903,14 @@ KINDS = [("commons", "Commons"), ("lords", "Lords"), ("written", "Written questi
 MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
 
 # ===== Asked and answered: the accountability tracker (home page and Newsroom) =====
-# (date asked, status, what was asked, who/when detail, link, link text). Newest first. Status: "none" | "noupdate" | "weak" | "due".
+# (date asked, status, what was asked, who/when detail, link, link text). Newest first. Status: "none" | "dodged" | "noupdate" | "weak" | "due".
 TRACKER = [
-    ("2026-11-10", "due", "Has the Foreign Secretary summoned the Chinese Ambassador over Joshua?",
-     "Written question from Alex Barros-Curtis MP, one of seven tabled after the sentence. The answer was due on 12 November and is now overdue.",
-     "https://questions-statements.parliament.uk/written-questions/detail/2026-11-10/41576", "The question"),
+    ("2026-11-11", "weak", "Will the UK consider sanctions on those responsible?",
+     "Written question from Richard Holden MP. Answering on 19 November, the minister said it “would not be appropriate for me to speculate on future measures”.",
+     "https://questions-statements.parliament.uk/written-questions/detail/2026-11-11/42157", "The answer"),
+    ("2026-11-10", "dodged", "Has the Foreign Secretary summoned the Chinese Ambassador over Joshua?",
+     "Written question from Alex Barros-Curtis MP, one of seven tabled after the sentence. Answered on 18 November with a reference to another answer, which does not say whether the Ambassador has been summoned.",
+     "https://questions-statements.parliament.uk/written-questions/detail/2026-11-10/41576", "The answer"),
     ("2026-11-10", "weak", "Summon the Ambassador and call for Joshua’s release, as the Government did for Jimmy Lai",
      "Emily Darlington MP in the Commons. The Security Minister said the Government “share the concerns” but made no commitment.",
      "parliament.html#exchange-nov", "Watch the exchange"),
@@ -918,7 +927,7 @@ TRACKER = [
      "Sir Iain Duncan Smith in the Commons. The Foreign Secretary, Ed Miliband, said he would. No update has been made public.",
      "parliament.html#exchange", "Watch the exchange"),
 ]
-STATUS = {"none": "No reply", "noupdate": "No update", "weak": "No action", "due": "Awaiting answer"}
+STATUS = {"none": "No reply", "dodged": "Not answered", "noupdate": "No update", "weak": "No action", "due": "Awaiting answer"}
 
 def tracker(h="Asked and answered"):
     rows = ""
