@@ -1476,7 +1476,7 @@ def video():
 
 # ---------------- CONTACT ----------------
 # Messages are sent by Web3Forms to the inbox tied to this key (the address itself never appears on the site).
-FORM_KEY = ""   # paste the Web3Forms access key here
+FORM_KEY = "18ce9861-069f-475d-8545-d5e5ece43276"   # paste the Web3Forms access key here
 CONTACT_TOPICS = [("press", "Press or media enquiry"), ("interview", "Interview request"), ("screening", "Screening request"),
                   ("parliament", "Parliament or government"), ("other", "Something else")]
 
