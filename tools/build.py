@@ -1418,7 +1418,7 @@ REEL_URL = "https://freejoshuawong.org/video.html"
 REEL_UNLISTED = True   # hidden from search and not linked anywhere until launch on Monday 23 Nov; set False then
 REEL_POSTS = [
     "When Jimmy Lai was convicted, the UK summoned the Chinese Ambassador the same day. Joshua Wong was sentenced to ten years on 5 November. There has been no public word of the Ambassador being summoned.",
-    "Britain signed the Joint Declaration in 1984 and guaranteed Hong Kong’s freedoms for fifty years. Joshua Wong only asked us to keep our word. He has now been sentenced to ten years. Watch:",
+    "Britain signed the Joint Declaration in 1984 and guaranteed Hong Kong’s freedoms for fifty years. Joshua Wong only asked us to keep our word. He has now been sentenced to ten years.",
 ]
 
 def video():
@@ -1438,7 +1438,7 @@ def video():
     player = (f'<div class="reel-player"><video controls preload="metadata" playsinline{poster}><source src="{REEL}" type="video/mp4">Your browser can’t play this video. <a href="{REEL_DOWNLOAD}">Download it instead.</a></video></div>'
               if has(REEL) else '<div class="screen" style="display:flex;align-items:center;justify-content:center;aspect-ratio:16/9;background:var(--ink-2)"><p style="margin:0;font-size:20px">The video will be here shortly.</p></div>')
     posts = "".join(
-        f'\n        <div class="post"><p>{t} {REEL_URL} <b>#FreeJoshuaWong #JoshuaWong</b></p><button class="copy" type="button">Copy</button></div>'
+        f'\n        <div class="post"><p>{t} <b>#FreeJoshuaWong #JoshuaWong</b></p><button class="copy" type="button">Copy</button></div>'
         for t in REEL_POSTS)
     return h + nav("video.html") + page_head(
         "Campaign video", "What has the Prime Minister<br><em>done for Joshua?</em>",
@@ -1459,7 +1459,7 @@ def video():
       <div>
         <div class="label">Share</div>
         <h3>Post it.<br><span>Tag your MP.</span></h3>
-        <p class="lede" style="font-size:18px">Upload the video or share this page, with a line in your own words. Or copy one of ours.</p>
+        <p class="lede" style="font-size:18px">Download the video and post it on your own channels, with a line in your own words. Or copy one of ours.</p>
         <div data-share data-url="{REEL_URL}" data-text="What has the Prime Minister done for Joshua Wong?"></div>
       </div>
       <div>{posts}
