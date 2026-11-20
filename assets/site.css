@@ -1152,6 +1152,23 @@ nav.top .links a,nav.top .btn{white-space:nowrap}
 .kb-feature{margin-top:0;padding-top:40px}
 @media(max-width:600px){.film-note{gap:16px}.film-note .big{font-size:56px}}
 
-/* Campaign video page: the player takes the reel's own shape (portrait, square or landscape), never cropped */
-.reel-player{display:flex;justify-content:center}
-.reel-player video{display:block;width:auto;max-width:100%;height:auto;max-height:80vh;min-height:240px;background:#000;border:1px solid rgba(244,242,236,.1)}
+/* Campaign video page: portrait reel on the left, everything to do with it on the right */
+.reel-sec{padding:64px 0 80px}
+.reel-wrap{display:grid;grid-template-columns:minmax(0,400px) minmax(0,1fr);gap:64px;align-items:start}
+.reel-player{display:flex;justify-content:center;position:sticky;top:96px}
+.reel-player video{display:block;width:100%;height:auto;max-height:82vh;object-fit:contain;background:#000;border:1px solid rgba(244,242,236,.12)}
+.reel-h{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:56px;line-height:.92;margin:12px 0 16px}
+.reel-h span{color:var(--accent)}
+.reel-p{font-size:19px;margin:0 0 22px;max-width:560px}
+.video-dl{display:flex;flex-wrap:wrap;gap:12px}
+.reel-note{margin:12px 0 30px;font-size:14px;opacity:.7;max-width:560px}
+.reel-posts .post{margin-bottom:12px}
+.reel-posts .post p{font-size:17px}
+.reel-more{margin-top:28px}
+@media(max-width:860px){
+  .reel-sec{padding:28px 0 56px}
+  .reel-wrap{grid-template-columns:1fr;gap:32px}
+  .reel-player{position:static}
+  .reel-player video{width:auto;max-width:100%;max-height:78vh;margin:0 auto}
+  .reel-h{font-size:42px}
+}

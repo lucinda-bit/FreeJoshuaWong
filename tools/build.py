@@ -1412,7 +1412,7 @@ def messages_print():
 # Put the files here, then rebuild. Leave REEL_CAPTIONED empty if there is only one version.
 REEL = "media/what-has-the-pm-done.mp4"   # main video (portrait 1080x1920, captions burned in), hosted on the site
 REEL_DOWNLOAD = REEL
-REEL_POSTER = "images/what-has-the-pm-done-poster.jpg"
+REEL_POSTER = "images/what-has-the-pm-done-poster.jpg?v=2"
 REEL_CAPTIONED = ""  # add a link here if there is a separate captioned version  # captioned version for posting directly
 REEL_IMAGE = "images/what-has-the-pm-done-share.jpg"         # share image (also used as the poster)
 REEL_URL = "https://freejoshuawong.org/video.html"
@@ -1429,7 +1429,7 @@ def video():
         h = h.replace(f"{SITE}/images/share-card.jpg", f"{SITE}/{REEL_IMAGE}")
     if REEL_UNLISTED:
         h = h.replace("<title>", '<meta name="robots" content="noindex">\n<title>', 1)
-    has = lambda f: bool(f) and (f.startswith("http") or os.path.exists(os.path.join(ROOT, f)))
+    has = lambda f: bool(f) and (f.startswith("http") or os.path.exists(os.path.join(ROOT, f.split("?")[0])))
     dl = f'<a class="btn" href="{REEL_DOWNLOAD}" download="Free-Joshua-Wong-video.mp4">Download the video (MP4, with captions)</a>' if has(REEL) else ""
     if has(REEL_CAPTIONED):
         dl += f'\n        <a class="btn" href="{REEL_CAPTIONED}" download>Download with captions (MP4)</a>'
@@ -1444,29 +1444,22 @@ def video():
     return h + nav("video.html") + page_head(
         "Campaign video", "What has the Prime Minister<br><em>done for Joshua?</em>",
         "Joshua Wong has been in prison since 23 November 2020. On 5 November 2026 he was given ten more years. Watch the video, download it and share it.") + f"""
-<section class="film" style="border-top:0">
-  <div class="wrap">
+<section class="reel-sec">
+  <div class="wrap reel-wrap">
     {player}
-    <div class="video-dl" style="display:flex;flex-wrap:wrap;gap:12px;margin-top:24px">
+    <div class="reel-side">
+      <div class="label">Watch. Download. Post.</div>
+      <h3 class="reel-h">Post it.<br><span>Tag your MP.</span></h3>
+      <p class="reel-p">Download the video and post it on your own channels, with a line in your own words, or copy one of ours.</p>
+      <div class="video-dl">
         {dl}
-    </div>
-    <p style="margin-top:14px;font-size:15px;opacity:.75">Free to share and to post on your own channels. Please don’t edit it. Full HD, portrait, about 50&nbsp;MB. On a phone, if the video opens instead of downloading, press and hold the button and choose “Download” or “Save”.</p>
-  </div>
-</section>
-
-<section id="share">
-  <div class="wrap">
-    <div class="share" style="margin-top:0">
-      <div>
-        <div class="label">Share</div>
-        <h3>Post it.<br><span>Tag your MP.</span></h3>
-        <p class="lede" style="font-size:18px">Download the video and post it on your own channels, with a line in your own words. Or copy one of ours.</p>
-        <div data-share data-url="{REEL_URL}" data-text="What has the Prime Minister done for Joshua Wong?"></div>
       </div>
-      <div>{posts}
+      <p class="reel-note">Full HD, portrait, about 50&nbsp;MB, captions included. Free to share; please don’t edit it. On a phone, if the video opens instead of downloading, press and hold the button and choose “Download” or “Save”.</p>
+      <div class="reel-posts">{posts}
       </div>
+      <div data-share data-url="{REEL_URL}" data-text="What has the Prime Minister done for Joshua Wong?"></div>
+      <p class="reel-more">Want to do more? <a href="act.html#mp">Ask your MP to raise Joshua’s case</a>, or see what ministers have been <a href="index.html#asked">asked and what they have said</a>.</p>
     </div>
-    <p style="margin-top:40px">Want to do more? <a href="act.html#mp">Ask your MP to raise Joshua’s case</a>, or see what ministers have been <a href="index.html#asked">asked and what they have said</a>.</p>
   </div>
 </section>
 """ + CTA.replace("{up}", "") + footer()
