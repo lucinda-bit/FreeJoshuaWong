@@ -733,7 +733,6 @@ PRESSKIT = """    <div class="facts-sheet">
     </div>
 
     <div class="res-grid">
-      <div class="res" id="video"><div class="label">Campaign video</div><h3>What has the Prime Minister done for Joshua?</h3><p>Watch and download the video, with or without captions, and the share image.</p><p><a href="video.html">Go to the video page</a></p></div>
       <div class="res" id="press-kit"><div class="label">Press kit</div><h3>Photos &amp; stills</h3><p>Approved images of Joshua and stills from <em>Prisoner vs. Superpower</em>, cleared for editorial use.</p><p>Available on request: <strong>press@freejoshuawong.org</strong></p></div>
       <div class="res" id="briefs"><div class="label">Policy briefs</div><h3>Transnational repression</h3><p>How Beijing’s National Security Law reaches Hong Kongers in Britain, and what the UK can do about it.</p><span class="soon">Coming soon</span></div>
       <div class="res"><div class="label">Interviews</div><h3>Speak to us</h3><p>Interviews with the film’s producer and campaign spokespeople can be arranged.</p><p><strong>press@freejoshuawong.org</strong></p></div>
@@ -1415,6 +1414,7 @@ REEL = "media/what-has-the-pm-done.mp4"                     # main video
 REEL_CAPTIONED = "media/what-has-the-pm-done-captioned.mp4"  # captioned version for posting directly
 REEL_IMAGE = "images/what-has-the-pm-done-share.jpg"         # share image (also used as the poster)
 REEL_URL = "https://freejoshuawong.org/video.html"
+REEL_UNLISTED = True   # hidden from search and not linked anywhere until launch on Monday 23 Nov; set False then
 REEL_POSTS = [
     "When Jimmy Lai was convicted, the UK summoned the Chinese Ambassador the same day. Joshua Wong was sentenced to ten years on 5 November. There has been no public word of the Ambassador being summoned.",
     "Britain signed the Joint Declaration in 1984 and guaranteed Hong Kong’s freedoms for fifty years. Joshua Wong only asked us to keep our word. He has now been sentenced to ten years. Watch:",
@@ -1423,11 +1423,19 @@ REEL_POSTS = [
 def video():
     h = head("What has the Prime Minister done for Joshua?",
              "A short video from the Free Joshua Wong campaign. Watch, download and share it.", "video.html")
-    h = h.replace(f"{SITE}/images/share-card.jpg", f"{SITE}/{REEL_IMAGE}")
-    dl = f'<a class="btn" href="{REEL}" download>Download the video (MP4)</a>'
-    if REEL_CAPTIONED:
+    if os.path.exists(os.path.join(ROOT, REEL_IMAGE)):
+        h = h.replace(f"{SITE}/images/share-card.jpg", f"{SITE}/{REEL_IMAGE}")
+    if REEL_UNLISTED:
+        h = h.replace("<title>", '<meta name="robots" content="noindex">\n<title>', 1)
+    has = lambda f: f and os.path.exists(os.path.join(ROOT, f))
+    dl = f'<a class="btn" href="{REEL}" download>Download the video (MP4)</a>' if has(REEL) else ""
+    if has(REEL_CAPTIONED):
         dl += f'\n        <a class="btn" href="{REEL_CAPTIONED}" download>Download with captions (MP4)</a>'
-    dl += f'\n        <a class="btn ghost" href="{REEL_IMAGE}" download>Download the share image</a>'
+    if has(REEL_IMAGE):
+        dl += f'\n        <a class="btn ghost" href="{REEL_IMAGE}" download>Download the share image</a>'
+    poster = f' poster="{REEL_IMAGE}"' if has(REEL_IMAGE) else ""
+    player = (f'<div class="screen vid"><video controls preload="metadata" playsinline{poster}><source src="{REEL}" type="video/mp4">Your browser can’t play this video. <a href="{REEL}" download>Download it instead.</a></video></div>'
+              if has(REEL) else '<div class="screen" style="display:flex;align-items:center;justify-content:center;aspect-ratio:16/9;background:var(--ink-2)"><p style="margin:0;font-size:20px">The video will be here shortly.</p></div>')
     posts = "".join(
         f'\n        <div class="post"><p>{t} {REEL_URL} <b>#FreeJoshuaWong #JoshuaWong</b></p><button class="copy" type="button">Copy</button></div>'
         for t in REEL_POSTS)
@@ -1436,7 +1444,7 @@ def video():
         "Joshua Wong has been in prison since 23 November 2020. On 5 November 2026 he was given ten more years. Watch the video, download it and share it.") + f"""
 <section class="film" style="border-top:0">
   <div class="wrap">
-    <div class="screen vid"><video controls preload="metadata" playsinline poster="{REEL_IMAGE}"><source src="{REEL}" type="video/mp4">Your browser can’t play this video. <a href="{REEL}" download>Download it instead.</a></video></div>
+    {player}
     <div class="video-dl" style="display:flex;flex-wrap:wrap;gap:12px;margin-top:24px">
         {dl}
     </div>
