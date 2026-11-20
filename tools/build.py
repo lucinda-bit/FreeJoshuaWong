@@ -1435,7 +1435,7 @@ def video():
     if has(REEL_IMAGE):
         dl += f'\n        <a class="btn ghost" href="{REEL_IMAGE}" download>Download the share image</a>'
     poster = f' poster="{REEL_IMAGE}"' if has(REEL_IMAGE) else ""
-    player = (f'<div class="screen vid"><video controls preload="metadata" playsinline{poster}><source src="{REEL}" type="video/mp4">Your browser can’t play this video. <a href="{REEL_DOWNLOAD}">Download it instead.</a></video></div>'
+    player = (f'<div class="reel-player"><video controls preload="metadata" playsinline{poster}><source src="{REEL}" type="video/mp4">Your browser can’t play this video. <a href="{REEL_DOWNLOAD}">Download it instead.</a></video></div>'
               if has(REEL) else '<div class="screen" style="display:flex;align-items:center;justify-content:center;aspect-ratio:16/9;background:var(--ink-2)"><p style="margin:0;font-size:20px">The video will be here shortly.</p></div>')
     posts = "".join(
         f'\n        <div class="post"><p>{t} {REEL_URL} <b>#FreeJoshuaWong #JoshuaWong</b></p><button class="copy" type="button">Copy</button></div>'

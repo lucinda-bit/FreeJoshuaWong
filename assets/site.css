@@ -1151,3 +1151,7 @@ nav.top .links a,nav.top .btn{white-space:nowrap}
 .film-note .big{font-size:84px;line-height:.8}
 .kb-feature{margin-top:0;padding-top:40px}
 @media(max-width:600px){.film-note{gap:16px}.film-note .big{font-size:56px}}
+
+/* Campaign video page: the player takes the reel's own shape (portrait, square or landscape), never cropped */
+.reel-player{display:flex;justify-content:center}
+.reel-player video{display:block;width:auto;max-width:100%;height:auto;max-height:80vh;min-height:240px;background:#000;border:1px solid rgba(244,242,236,.1)}
