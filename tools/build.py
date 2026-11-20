@@ -733,6 +733,7 @@ PRESSKIT = """    <div class="facts-sheet">
     </div>
 
     <div class="res-grid">
+      <div class="res" id="video"><div class="label">Campaign video</div><h3>What has the Prime Minister done for Joshua?</h3><p>Watch and download the video, with or without captions, and the share image.</p><p><a href="video.html">Go to the video page</a></p></div>
       <div class="res" id="press-kit"><div class="label">Press kit</div><h3>Photos &amp; stills</h3><p>Approved images of Joshua and stills from <em>Prisoner vs. Superpower</em>, cleared for editorial use.</p><p>Available on request: <strong>press@freejoshuawong.org</strong></p></div>
       <div class="res" id="briefs"><div class="label">Policy briefs</div><h3>Transnational repression</h3><p>How Beijing’s National Security Law reaches Hong Kongers in Britain, and what the UK can do about it.</p><span class="soon">Coming soon</span></div>
       <div class="res"><div class="label">Interviews</div><h3>Speak to us</h3><p>Interviews with the film’s producer and campaign spokespeople can be arranged.</p><p><strong>press@freejoshuawong.org</strong></p></div>
@@ -931,7 +932,7 @@ def tracker(h="Asked and answered"):
         <div class="wait-n"><span data-since="{d}">0</span><small>days since {when}</small></div>
         <div><em class="tk-st st-{st}">{STATUS[st]}</em><h4>{ask}</h4><p>{detail} <a href="{url}"{ext}>{link}</a></p></div>
       </div>"""
-    return f"""<div class="waiting h4-wait tracker">
+    return f"""<div class="waiting h4-wait tracker" id="asked">
       <h3>{h}</h3>
       <p class="tk-lede">What ministers have been asked about Joshua since September, and what they have said.</p>{rows}
       <p class="tk-foot">For comparison: when Jimmy Lai was convicted on 15 December 2025, the Foreign Office <a href="https://www.gov.uk/government/news/statement-fcdo-summons-chinese-ambassador-15-december-2025" target="_blank" rel="noopener">summoned the Chinese Ambassador the same day</a>. Joshua was sentenced <b data-since="2026-11-05">0</b> days ago. There has been no public word of the Ambassador being summoned over his case.</p>
@@ -1408,9 +1409,61 @@ def messages_print():
 </script>
 </body></html>"""
 
+# ---------------- CAMPAIGN VIDEO (launch: Monday 23 Nov 2026, six years in prison) ----------------
+# Put the files here, then rebuild. Leave REEL_CAPTIONED empty if there is only one version.
+REEL = "media/what-has-the-pm-done.mp4"                     # main video
+REEL_CAPTIONED = "media/what-has-the-pm-done-captioned.mp4"  # captioned version for posting directly
+REEL_IMAGE = "images/what-has-the-pm-done-share.jpg"         # share image (also used as the poster)
+REEL_URL = "https://freejoshuawong.org/video.html"
+REEL_POSTS = [
+    "When Jimmy Lai was convicted, the UK summoned the Chinese Ambassador the same day. Joshua Wong was sentenced to ten years on 5 November. There has been no public word of the Ambassador being summoned.",
+    "Britain signed the Joint Declaration in 1984 and guaranteed Hong Kong’s freedoms for fifty years. Joshua Wong only asked us to keep our word. He has now been sentenced to ten years. Watch:",
+]
+
+def video():
+    h = head("What has the Prime Minister done for Joshua?",
+             "A short video from the Free Joshua Wong campaign. Watch, download and share it.", "video.html")
+    h = h.replace(f"{SITE}/images/share-card.jpg", f"{SITE}/{REEL_IMAGE}")
+    dl = f'<a class="btn" href="{REEL}" download>Download the video (MP4)</a>'
+    if REEL_CAPTIONED:
+        dl += f'\n        <a class="btn" href="{REEL_CAPTIONED}" download>Download with captions (MP4)</a>'
+    dl += f'\n        <a class="btn ghost" href="{REEL_IMAGE}" download>Download the share image</a>'
+    posts = "".join(
+        f'\n        <div class="post"><p>{t} {REEL_URL} <b>#FreeJoshuaWong #JoshuaWong</b></p><button class="copy" type="button">Copy</button></div>'
+        for t in REEL_POSTS)
+    return h + nav("video.html") + page_head(
+        "Campaign video", "What has the Prime Minister<br><em>done for Joshua?</em>",
+        "Joshua Wong has been in prison since 23 November 2020. On 5 November 2026 he was given ten more years. Watch the video, download it and share it.") + f"""
+<section class="film" style="border-top:0">
+  <div class="wrap">
+    <div class="screen vid"><video controls preload="metadata" playsinline poster="{REEL_IMAGE}"><source src="{REEL}" type="video/mp4">Your browser can’t play this video. <a href="{REEL}" download>Download it instead.</a></video></div>
+    <div class="video-dl" style="display:flex;flex-wrap:wrap;gap:12px;margin-top:24px">
+        {dl}
+    </div>
+    <p style="margin-top:14px;font-size:15px;opacity:.75">Free to share and to post on your own channels. Please don’t edit it. On a phone, if the download opens the video instead, press and hold the button and choose “Download” or “Save”.</p>
+  </div>
+</section>
+
+<section id="share">
+  <div class="wrap">
+    <div class="share" style="margin-top:0">
+      <div>
+        <div class="label">Share</div>
+        <h3>Post it.<br><span>Tag your MP.</span></h3>
+        <p class="lede" style="font-size:18px">Upload the video or share this page, with a line in your own words. Or copy one of ours.</p>
+        <div data-share data-url="{REEL_URL}" data-text="What has the Prime Minister done for Joshua Wong?"></div>
+      </div>
+      <div>{posts}
+      </div>
+    </div>
+    <p style="margin-top:40px">Want to do more? <a href="act.html#mp">Ask your MP to raise Joshua’s case</a>, or see what ministers have been <a href="index.html#asked">asked and what they have said</a>.</p>
+  </div>
+</section>
+""" + CTA.replace("{up}", "") + footer()
+
 PAGES = {
     "index.html": home, "case.html": case, "film.html": film, "newsroom.html": newsroom,
-    "resources.html": resources, "act.html": act, "zh.html": zh, "write.html": write, "messages-print.html": messages_print, "parliament.html": parliament, "voices.html": voices, "socials.html": socials,
+    "resources.html": resources, "act.html": act, "zh.html": zh, "write.html": write, "messages-print.html": messages_print, "parliament.html": parliament, "voices.html": voices, "socials.html": socials, "video.html": video,
     "letters/open-letter-prime-minister-sept-2026.html": letter_pm,
     "letters/times-letter-nov-2026.html": letter_times,
 }
