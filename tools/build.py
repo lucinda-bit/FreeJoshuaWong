@@ -716,7 +716,7 @@ def resources():
 
 PRESSKIT = """    <div class="facts-sheet">
       <h2 id="factsheet">Joshua Wong: fact sheet</h2>
-      <div class="sub">Updated 13 November 2026</div>
+      <div class="sub">Updated 20 November 2026</div>
       <dl>
         <dt>Who</dt><dd>Joshua Wong Chi-fung, born 13 October 1996, Hong Kong. Democracy campaigner since age 14; leader of the 2012 campaign against a Beijing-backed “national education” curriculum and a face of the 2014 Umbrella Movement.</dd>
         <dt>In prison since</dt><dd>November 2020, continuously.</dd>
@@ -726,6 +726,7 @@ PRESSKIT = """    <div class="facts-sheet">
         <dt>The evidence</dt><dd>His own advocacy: meetings with foreign politicians, social media posts, op-eds and interviews, much of it from before the law existed.</dd>
         <dt>International response</dt><dd>Joint statement of 6 November 2026 by Australia, Canada, France, Germany, Italy, Japan, the Netherlands, New Zealand, the UK and the US condemning the sentence. Taiwan and the EU issued their own statements.</dd>
         <dt>Why the UK</dt><dd>The UK signed the 1984 Joint Declaration guaranteeing Hong Kong’s freedoms for fifty years, and has declared China in breach of it.</dd>
+        <dt>UK Government</dt><dd>Says it remains “deeply concerned” by his continued imprisonment (written answer, 17 November 2026). Asked in writing whether the Chinese Ambassador has been summoned, the minister did not say (18 November 2026).</dd>
         <dt>The asks</dt><dd>The Foreign Secretary to summon the Chinese Ambassador and raise Joshua’s case; review the privileges of the Hong Kong Economic and Trade Office in London; sanction officials responsible for NSL prosecutions, with allies.</dd>
         <dt>Press contact</dt><dd>press@freejoshuawong.org</dd>
       </dl>
