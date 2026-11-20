@@ -1454,7 +1454,7 @@ def video():
       <div class="video-dl">
         {dl}
       </div>
-      <p class="reel-note">Full HD, portrait, about 50&nbsp;MB, captions included. Free to share; please don’t edit it. On a phone, if the video opens instead of downloading, press and hold the button and choose “Download” or “Save”.</p>
+      <p class="reel-note">On a phone, if it opens instead of downloading, press and hold the button and choose “Save”.</p>
       <div class="reel-posts">{posts}
       </div>
       <div data-share data-url="{REEL_URL}" data-text="What has the Prime Minister done for Joshua Wong?"></div>
