@@ -6,6 +6,9 @@
 // via: if we link to a news report of the post rather than the post itself, name the outlet here.
 // id: optional; needed if one person has two quotes on the same date.
 window.VOICES = [
+  {date:"2026-11-20", kind:"parliament", who:"Senator Josh Hawley", role:"US Senator for Missouri, in a letter to Secretary of State Marco Rubio", country:"US", where:"US Senate",
+   quote:"Joshua is a patriot who is being persecuted by the CCP for standing up to tyranny.",
+   url:"https://www.hawley.senate.gov/hawley-urges-state-department-to-advocate-for-release-of-hong-kong-rights-champion-joshua-wong/"},
   {date:"2026-11-06", kind:"government", who:"UK Foreign Office", role:"Foreign Office spokesperson, on the sentence", country:"UK", where:"Statement", via:"The Independent", id:"uk-foreign-office-2026-11-06",
    quote:"… a clear example of how the National Security Law is being used to target individuals for political expression and participation.",
    url:"https://sg.news.yahoo.com/uk-us-condemn-hong-kong-114501146.html"},

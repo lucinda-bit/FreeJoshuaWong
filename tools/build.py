@@ -359,11 +359,11 @@ window.addEventListener('DOMContentLoaded',function(){
 """ + footer(0, '<script src="assets/messages.js"></script>\n')
 
 LATEST = [
+    ("US Senate", "Senator Josh Hawley urges the Secretary of State to press for Joshua’s release", "20 Nov 2026", "https://www.hawley.senate.gov/hawley-urges-state-department-to-advocate-for-release-of-hong-kong-rights-champion-joshua-wong/"),
     ("Parliament · Written answers", "Asked whether the Ambassador was summoned, the minister doesn’t say", "18–19 Nov 2026", "parliament.html"),
+    ("Human Rights Research Center", "Hong Kong pro-democracy activist Joshua Wong sentenced to ten years", "18 Nov 2026", "https://www.humanrightsresearch.org/post/hong-kong-pro-democracy-activist-joshua-wong-sentenced-to-ten-years"),
     ("Global Voices", "‘Who will respond?’ Joshua fears being forgotten amid his 10-year sentence", "18 Nov 2026", "https://globalvoices.org/2026/11/18/who-will-respond-jailed-hong-kong-pro-democracy-activist-joshua-wong-fears-being-forgotten-amid-10-year-sentence/"),
     ("The Washington Post · Opinion", "Joshua Wong and the APEC summit: calling Hong Kong’s bluff", "17 Nov 2026", "https://www.washingtonpost.com/opinions/2026/11/17/joshua-wong-apec-call-hong-kong-bluff/"),
-    ("Latin Times", "Joshua’s earliest release date pushed into the mid-2030s", "15 Nov 2026", "https://latintimes.com/joshua-wong-10-year-sentence-hong-kong-601373"),
-    ("Australian Senate", "“Some call it collusion. I call it courage.” Senator Raff Ciccone on Joshua’s sentence", "16 Nov 2026", "https://www.abc.net.au/news/2026-11-16/federal-politics-live-blog-senate-gas-nov-16/107388656"),
 ]
 
 # ---------------- THE CASE ----------------

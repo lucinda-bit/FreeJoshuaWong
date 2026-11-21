@@ -11,6 +11,7 @@ window.MOMENTS = [
   {id:"sentence", label:"Ten more years",     when:"November 2026"}
 ];
 window.PRESS = [
+  {date:"2026-11-18", outlet:"Human Rights Research Center", type:"rights", region:"Global", moment:"sentence", title:"Hong Kong Pro-Democracy Activist Joshua Wong Sentenced To Ten Years", url:"https://www.humanrightsresearch.org/post/hong-kong-pro-democracy-activist-joshua-wong-sentenced-to-ten-years"},
   {date:"2026-11-06", outlet:"The Times", type:"opinion", region:"UK", moment:"sentence", paywall:true, feature:false, title:"Leading article: Supine Silence", url:"https://www.thetimes.com/comment/the-times-view/article/joshua-wong-jailed-hong-kong-uk-china-nn9c6vpzc"},
   {date:"2026-11-11", outlet:"The Times", type:"opinion", region:"UK", moment:"sentence", paywall:true, by:"Emily Darlington MP, Lord Alton, Lord Patten and five others", title:"Letter: Unjust prosecution", url:"https://www.thetimes.com/comment/letters-to-editor/article/times-letters-civil-service-needs-urgent-reform-wq3bcj955"},
   {date:"2026-11-05", outlet:"Sky News", type:"news", region:"UK", moment:"sentence", title:"Video: Friend of Joshua Wong, Nathan Law, on The World with Yalda Hakim", url:"https://www.youtube.com/live/iw5a5aQKgNM?t=2400"},
