@@ -204,11 +204,15 @@ PLAYER = '''<div class="screen vid"><video controls preload="none" playsinline p
 
 FLAGS = ["UK","US","Australia","Canada","France","Germany","Italy","Japan","Netherlands","New Zealand"]
 
+# Years with shorter spells in prison before 2020: Aug-Oct 2017 (unlawful assembly, sentence later quashed);
+# Jan 2018 and May-Jun 2019 (contempt of court, Mong Kok clearance).
+BRIEF_YEARS = {2017, 2018, 2019}
+
 def life_bar():
     cells, labels = [], []
     marks = {1996:"Born", 2012:"Age 15", 2020:"Age 24, jailed", 2027:"Was due out", 2036:"Age 40, possible release"}
     for i, y in enumerate(range(1996, 2037)):
-        state = "s-free" if y < 2020 else ("s-in" if y <= 2026 else "s-ahead")
+        state = "s-brief" if y in BRIEF_YEARS else ("s-free" if y < 2020 else ("s-in" if y <= 2026 else "s-ahead"))
         cells.append(f'<span class="c {state}" title="{y}"></span>')
     for y, t in marks.items():
         col = y - 1996 + 1
@@ -252,9 +256,9 @@ def home():
   <div class="wrap">
     <h2 id="life-h">His life, year by year</h2>
     <p class="h4-sub">If the sentence stands, Joshua will spend the years from 24 to 40 in prison: his late twenties and almost all of his thirties.</p>
-    <div class="lifebar" role="img" aria-label="A bar of 41 years from 1996 to 2036. 1996 to 2019 free; 2020 to 2026 in prison; 2027 to 2036 still to serve.">""" + cells + """</div>
+    <div class="lifebar" role="img" aria-label="A bar of 41 years from 1996 to 2036. 1996 to 2016 free; 2017 to 2019 free apart from shorter spells in prison; 2020 to 2026 in prison; 2027 to 2036 still to serve.">""" + cells + """</div>
     <div class="lifemarks" aria-hidden="true">""" + labels + """</div>
-    <ul class="key"><li><i class="s-free"></i>Free</li><li><i class="s-in"></i>In prison</li><li><i class="s-ahead"></i>Still to serve</li></ul>
+    <ul class="key"><li><i class="s-free"></i>Free</li><li><i class="s-brief"></i>Shorter spells in prison</li><li><i class="s-in"></i>In prison</li><li><i class="s-ahead"></i>Still to serve</li></ul>
   </div>
 </section>
 
@@ -376,10 +380,10 @@ TIMELINE = [
     ("19", "Oct 2016", "", "Detained at Bangkok airport", "Held and deported by Thai authorities on his way to speak at a university, an early sign of how far Beijing’s pressure would reach."),
     ("20", "Jan 2017", "", "The film", "<em>Joshua: Teenager vs. Superpower</em> premieres at Sundance and wins the World Cinema Documentary Audience Award."),
     ("20", "Aug 2017", "", "First prison sentence: unlawful assembly", "Jailed for six months for unlawful assembly over the 2014 Civic Square protest. Released on bail after about two months, in October 2017; Hong Kong’s top court quashes the sentence in February 2018."),
-    ("21", "2018–19", "", "Second prison term: contempt of court", "Jailed for contempt of court over the 2014 clearance of the Mong Kok protest site. He serves the sentence in separate periods, the last in May–June 2019."),
+    ("21–22", "2018–19", "", "Second prison term: contempt of court", "Jailed for contempt of court over the 2014 clearance of the Mong Kok protest site. He serves the sentence in separate periods, the last in May–June 2019."),
     ("22", "Sep 2019", "", "Testifies to the US Congress", "Gives evidence to the Congressional-Executive Commission on China on human rights in Hong Kong. Years later, prosecutors cite his lobbying in Washington against him."),
     ("23", "Jun 2020", "", "The National Security Law", "Beijing imposes the National Security Law on Hong Kong. His party, Demosistō, disbands the same day."),
-    ("24", "Nov 2020", "", "Jailed over protests, and never released", "Sentenced to 13½ months for unauthorised assembly over a 2019 protest outside police headquarters. More protest sentences follow in 2021, including for joining a Tiananmen vigil. He has not been free since."),
+    ("24", "Nov 2020", "", "Jailed over protests, and never released", "Held in custody from 23 November after pleading guilty, he is sentenced in December to 13½ months for unauthorised assembly over a 2019 protest outside police headquarters. More protest sentences follow in 2021, including for joining a Tiananmen vigil. He has not been free since."),
     ("24", "Jan 2021", "", "Subversion case: arrested as one of the Hong Kong 47", "Arrested in prison under the National Security Law for taking part in an unofficial pro-democracy primary election, and charged with subversion in February."),
     ("28", "Nov 2024", "", "Subversion case: 4 years 8 months", "Sentenced in the largest national security trial in Hong Kong’s history. His release date is set for early 2027."),
     ("28", "Jun 2025", "", "Collusion case: charged again in prison", "Charged with conspiracy to collude with foreign forces, carrying a maximum of life imprisonment. The evidence is his own advocacy and public statements."),
@@ -1270,7 +1274,7 @@ def letter_times():
 
 def zh():
     h = head("釋放黃之鋒", "黃之鋒自2020年11月起身陷囹圄，2026年11月再被加判十年。了解他的案件，以及身在英國的你可以怎樣幫忙。", "zh.html")
-    h = h.replace('<html lang="en-GB">', '<html lang="zh-Hant-HK">').replace("<title>", '<meta name="robots" content="noindex">\n<title>', 1)
+    h = h.replace('<html lang="en-GB">', '<html lang="zh-Hant-HK">')
     return h + nav("zh.html") + page_head("中文",
         "釋放<em>黃之鋒</em>",
         "他原定於2027年1月出獄。如今，他被加判十年。") + """
@@ -1281,6 +1285,7 @@ def zh():
 
     <h2 class="zh-h">他是誰</h2>
     <p>黃之鋒十四歲時與同學創立學民思潮，2012年帶領反對國民教育科的運動。2014年雨傘運動期間，他是學生領袖之一。2016年，他與羅冠聰等人創立香港眾志。</p>
+    <p>他此前曾兩度入獄：2017年因2014年重奪公民廣場一事被判非法集結罪成，入獄約兩個月後獲准保釋，刑罰其後被終審法院撤銷；2018至2019年因2014年旺角清場藐視法庭，分段服刑，最後一段為2019年5月至6月。</p>
     <p>他自2020年11月起一直被羈押。</p>
 
     <h2 class="zh-h">發生了甚麼事</h2>
