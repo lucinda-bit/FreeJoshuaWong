@@ -399,7 +399,7 @@ def case():
         f'<div class="titem{" future" if fut else ""}"><div class="d">{d}<span class="age">{age if age=="Born" else "Age " + age}</span></div><div><h3>{h}</h3><p>{p}</p></div></div>'
         for age, d, fut, h, p in TIMELINE)
     return head("The case", "Who Joshua Wong is, what he is charged with, and why Britain has a responsibility to act.", "case.html") + nav("case.html") + page_head(
-        "The case", "He kept his&nbsp;word.<br><em>Will&nbsp;we?</em>",
+        "The case", "Ten more years for asking the world to <em>stand up for Hong&nbsp;Kong</em>",
         "Joshua Wong has spent his adult life asking Beijing to keep the promises it made to Hong Kong. He is now serving ten more years for it.") + """
 """ + FACTS + """
 <section>
