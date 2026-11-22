@@ -258,7 +258,7 @@ document.querySelectorAll('[data-since]').forEach(function (el) {
   }
   function card(p, lead) {
     var link = p.url || (p.handle ? 'https://x.com/' + p.handle : p.profile);
-    var here = SITE_URL + '/socials.html#' + p.id;
+    var here = SITE_URL + '/voices.html#' + p.id;
     var t = p.name + ' on #FreeJoshuaWong #JoshuaWong';
     var src = p.via
       ? '<a href="' + esc(p.viaUrl) + '" target="_blank" rel="noopener">Posted on ' + esc(p.platform || 'X') + ' · as reported by ' + esc(p.via) + '</a>'

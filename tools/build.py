@@ -13,7 +13,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 import re as _re
 PRESS_COUNT = len(_re.findall(r'^\s*\{date:', open(os.path.join(ROOT, "assets/press.js")).read(), _re.M))
 
-NAV = [("case.html", "The case"), ("film.html", "Watch"), ("newsroom.html", "Newsroom"), ("parliament.html", "Parliament"), ("voices.html", "Voices"), ("socials.html", "Socials"), ("write.html", "Write to Joshua")]
+NAV = [("case.html", "The case"), ("film.html", "Watch"), ("newsroom.html", "Newsroom"), ("parliament.html", "Parliament"), ("voices.html", "Voices")]
 
 # Visitor counting (GoatCounter: no cookies, nothing that identifies visitors).
 # Put the site code from goatcounter.com here, e.g. "freejoshuawong". Leave empty to switch counting off.
@@ -130,7 +130,7 @@ def footer(depth=0, scripts=""):
     </div>
     <div class="cols">
       <nav aria-label="Footer">
-        <a href="{up}case.html">The case</a><a href="{up}film.html">Watch</a><a href="{up}newsroom.html">Newsroom</a><a href="{up}parliament.html">Parliament</a><a href="{up}voices.html">Voices</a><a href="{up}socials.html">Socials</a>
+        <a href="{up}case.html">The case</a><a href="{up}film.html">Watch</a><a href="{up}newsroom.html">Newsroom</a><a href="{up}parliament.html">Parliament</a><a href="{up}voices.html">Voices</a>
         <a href="{up}newsroom.html#presskit">Press kit</a><a href="{up}act.html">Take action</a>
       </nav>
       <div>
@@ -586,7 +586,7 @@ STATEMENTS = """<div class="timeline">
           <div class="flags"><span>UK</span></div>
           <h3>“Deeply concerned about the arrest of Joshua Wong”</h3>
           <p>Dominic Raab said the arrest was another example of the Hong Kong authorities targeting activists, and that Chinese and Hong Kong authorities must respect the rights and freedoms protected in the Joint Declaration.</p>
-          <a class="src" href="socials.html#raab-2020">See the post</a></div></div>
+          <a class="src" href="voices.html#raab-2020">See the post</a></div></div>
     </div>"""
 
 def newsroom():
@@ -600,6 +600,7 @@ def newsroom():
       <a href="#releases" role="tab">Press releases</a>
       <a href="#letters" role="tab">Letters</a>
       <a href="#presskit" role="tab">Press kit</a>
+      <a href="voices.html#governments">Government statements →</a>
     </div>
 
     <div class="panel" id="panel-coverage">
@@ -780,7 +781,7 @@ def mp_box(dark=False):
     </form>"""
 
 def act():
-    return head("Take action", "Write to your MP about Joshua Wong and share his story.", "act.html") + nav("act.html") + page_head(
+    return head("Take action", "Write to your MP about Joshua Wong, share his story and send him a message.", "act.html") + nav("act.html") + page_head(
         "Take action", "Don’t let him <em>be forgotten</em>",
         "“The only thing I worry about is that people will forget Hong Kong.” Joshua, in a letter to a friend from prison, published by <a href=\"https://www.theguardian.com/world/2026/nov/05/joshua-wong-hong-kong-prison-letters-sentenced-10-years\" target=\"_blank\" rel=\"noopener\"><em>The Guardian</em></a>, 5 November 2026.") + """
 <section style="border-top:0;padding-top:30px" id="mp">
@@ -822,6 +823,12 @@ def act():
       <div class="voice"><q>Joshua Wong deserves to be honoured and applauded, not jailed.</q><div class="by"><a href="https://www.spectator.com.au/?p=10947071" target="_blank" rel="noopener">Benedict Rogers</a><small>Hong Kong Watch, in The Spectator</small></div></div>
     </div>
     <div class="hashtag">#FreeJoshuaWong<small>and #JoshuaWong</small></div>
+  </div>
+</section>
+
+<section id="write" style="border-top:0;padding-top:0">
+  <div class="wrap">
+    <a class="to-socials" href="write.html"><b>Write to Joshua</b><span>Send him a message of hope. We read every one before it goes on the wall.</span></a>
   </div>
 </section>
 
@@ -1140,13 +1147,13 @@ def gov_section():
 """
 
 def voices():
-    return head("Voices", "What parliamentarians, governments and human rights leaders are saying about Joshua Wong.", "voices.html") + nav("voices.html") + page_head(
+    return head("Voices", "What parliamentarians, governments and human rights leaders are saying and posting about Joshua Wong.", "voices.html") + nav("voices.html") + page_head(
         "Voices", "They are <em>speaking up</em>",
         "Parliamentarians, governments and human rights leaders, in their own words. Every quote links to where it was said.") + """
 <section class="voices-page v-intro" style="border-top:0;padding-top:0">
   <div class="wrap">
     <div class="v-stats" id="v-stats"></div>
-    <a class="to-socials" href="socials.html"><b>On social media</b><span>See what MPs, ministers, governments and campaigners are posting about Joshua</span></a>
+    <a class="to-socials" href="#social"><b>On social media</b><span>See what MPs, ministers, governments and campaigners are posting about Joshua</span></a>
   </div>
 </section>
 """ + gov_section() + """
@@ -1159,6 +1166,19 @@ def voices():
       <button class="chip" data-k="rights" aria-pressed="false">Rights groups</button>
     </div>
     <div class="vwall2" id="vwall"></div>
+  </div>
+</section>
+
+<section class="socials-page" id="social">
+  <div class="wrap">
+    <div class="v-sec"><h2 class="sec">On <em>social media</em></h2><p>What MPs, ministers, governments and campaigners are posting about Joshua. Every post links back to the original.</p></div>
+    <div id="s-lead"></div>
+    <div class="s-head">
+      <div class="v-stats" id="s-stats"></div>
+      <div class="filters s-bar" role="group" aria-label="Filter posts" id="s-bar"></div>
+    </div>
+    <div class="s-wall" id="s-wall"></div>
+    <p class="rec-note">Seen a post we’ve missed? <a href="contact.html">Send us the link</a>. We link to posts rather than embedding them, so your visit here isn’t tracked by social media companies.</p>
   </div>
 </section>
 
@@ -1178,7 +1198,7 @@ def voices():
     </div>
   </div>
 </section>
-""" + footer(0, '<script src="assets/voices.js"></script>\n')
+""" + footer(0, '<script src="assets/voices.js"></script>\n<script src="assets/socials.js"></script>\n')
 
 # ---------------- ONE PAGE PER QUOTE (for sharing) ----------------
 def quote_page(v):
@@ -1209,37 +1229,15 @@ def quote_page(v):
 
 # ---------------- SOCIALS ----------------
 def socials():
-    return head("Socials", "What MPs, ministers, governments and campaigners are posting about Joshua Wong.", "socials.html") + nav("socials.html") + page_head(
-        "Socials", "#Free<wbr><em>JoshuaWong</em>",
-        "What MPs, ministers, governments and campaigners are posting about Joshua. Every post links back to the original.") + """
-<section class="socials-page" style="border-top:0;padding-top:0">
-  <div class="wrap">
-    <div id="s-lead"></div>
-    <div class="s-head">
-      <div class="v-stats" id="s-stats"></div>
-      <div class="filters s-bar" role="group" aria-label="Filter posts" id="s-bar"></div>
-    </div>
-    <div class="s-wall" id="s-wall"></div>
-    <p class="rec-note">Seen a post we’ve missed? <a href="contact.html">Send us the link</a>. We link to posts rather than embedding them, so your visit here isn’t tracked by social media companies.</p>
-  </div>
-</section>
-
-<section class="add-voice">
-  <div class="wrap">
-    <div class="av">
-      <div>
-        <div class="label">Add your voice</div>
-        <h2 class="sec">Post it. <em>Tag your MP.</em></h2>
-        <p class="lede">Copy a line, add your MP’s handle, and post it with #FreeJoshuaWong and #JoshuaWong.</p>
-      </div>
-      <div class="av-posts">
-        <div class="post"><p>Joshua Wong was two months from freedom. Hong Kong has given him ten more years for speaking up to foreign parliaments. <b>#FreeJoshuaWong #JoshuaWong</b></p><button class="copy" type="button">Copy</button><a class="sh-x" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?text=Joshua%20Wong%20was%20two%20months%20from%20freedom.%20Hong%20Kong%20has%20given%20him%20ten%20more%20years%20for%20speaking%20up%20to%20foreign%20parliaments.%20%23FreeJoshuaWong%20%23JoshuaWong&url=https%3A%2F%2Ffreejoshuawong.org">Post on X</a></div>
-        <div class="post"><p>The Foreign Secretary promised to take up Joshua Wong’s case on 1 September. We’re still waiting. <b>#FreeJoshuaWong #JoshuaWong</b></p><button class="copy" type="button">Copy</button><a class="sh-x" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?text=The%20Foreign%20Secretary%20promised%20to%20take%20up%20Joshua%20Wong%E2%80%99s%20case%20on%201%20September.%20We%E2%80%99re%20still%20waiting.%20%23FreeJoshuaWong%20%23JoshuaWong&url=https%3A%2F%2Ffreejoshuawong.org%2Fparliament.html">Post on X</a></div>
-      </div>
-    </div>
-  </div>
-</section>
-""" + footer(0, '<script src="assets/socials.js"></script>\n')
+    # Folded into Voices (22 Nov 2026). Kept as a redirect so old links and shared post links (socials.html#id) still work.
+    return """<!doctype html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>On social media · Free Joshua Wong</title><meta name="robots" content="noindex">
+<link rel="canonical" href="https://freejoshuawong.org/voices.html#social">
+<meta http-equiv="refresh" content="0; url=voices.html#social">
+<script>location.replace('voices.html' + (location.hash || '#social'));</script>
+</head><body><p>This page has moved to <a href="voices.html#social">Voices: on social media</a>.</p></body></html>
+"""
 
 # ---------------- LETTER TO THE TIMES ----------------
 TIMES_SIGNATORIES = ["Emily Darlington MP", "Bobby Dean MP", "Lord David Alton of Liverpool", "Lord Patten of Barnes",

@@ -13,7 +13,7 @@ Hosted on Netlify: every change pushed to `main` goes live automatically.
 - Then run `python3 tools/build.py` — it rebuilds every page, refreshes the day counts and regenerates `images/share-card.jpg` (the picture shown when the site is shared).
 - Push to `main`; GitHub Pages publishes automatically.
 - Each quote in `assets/voices.js` automatically gets its own share page (`voices/<name>-<date>.html`) and share picture (`images/quotes/`). If two quotes share a speaker and date, give one an `id:"..."`.
-- Social posts: `assets/socials.js` (Socials page). Copy post text exactly; add the post's own link as `url` when you have it.
+- Social posts: `assets/socials.js` (the "On social media" section of the Voices page; socials.html redirects there). Copy post text exactly; add the post's own link as `url` when you have it.
 
 - Asked and answered tracker (home page and Newsroom): edit `TRACKER` in `tools/build.py`. When an answer comes in, change its status and wording.
 - Chinese page: `zh()` in `tools/build.py` (zh.html). Reviewed by Danny; public and linked from the menu (中文).
