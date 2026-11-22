@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css?v=5df58f00">
+<link rel="stylesheet" href="assets/site.css?v=6d41409b">
 <script data-goatcounter="https://freejoshuawong.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
@@ -58,9 +58,11 @@
 <section class="mw" id="write-box">
   <div class="wrap">
     <div class="mw-grid">
-      <form class="mw-form" name="joshua-messages" method="POST" action="write.html?sent=1#sent" data-netlify="true" netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="joshua-messages">
-        <p hidden><label>Leave this empty <input name="bot-field"></label></p>
+      <form class="mw-form" name="joshua-messages" method="POST" action="https://api.web3forms.com/submit">
+        <input type="hidden" name="access_key" value="18ce9861-069f-475d-8545-d5e5ece43276">
+        <input type="hidden" name="subject" value="Message for Joshua: please read and approve">
+        <input type="hidden" name="from_name" value="freejoshuawong.org · Write to Joshua">
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
         <div class="mw-paper">
           <div class="mw-dear">Dear Joshua,</div>
           <label for="mw-msg" class="sr">Your message to Joshua</label>
@@ -115,6 +117,6 @@
   </div>
 </footer>
 <script src="assets/messages.js"></script>
-<script src="assets/site.js?v=5df58f00"></script>
+<script src="assets/site.js?v=6d41409b"></script>
 </body>
 </html>

@@ -18,7 +18,7 @@ Hosted on Netlify: every change pushed to `main` goes live automatically.
 - Asked and answered tracker (home page and Newsroom): edit `TRACKER` in `tools/build.py`. When an answer comes in, change its status and wording.
 - Chinese page: `zh()` in `tools/build.py` (zh.html). Reviewed by Danny; public and linked from the menu (中文).
 
-- Write to Joshua page (write.html): unlisted for now. Set `WRITE_TO` in `tools/build.py` to the email address messages should go to; then link it from the menu/home page.
+- Write to Joshua page (write.html): live, linked from Take action. Messages are sent by Web3Forms (same access key as the Contact form, `FORM_KEY` in `tools/build.py`) to the campaign inbox, subject "Message for Joshua: please read and approve". Nothing appears on the site until approved.
 - Approved messages for Joshua: add them to `assets/messages.js` (first name, town, date, text). They appear on the wall (write.html) and, once there are any, in a strip on the home page.
 - Print page for his friends: messages-print.html (unlisted). Pick a month and press Print.
 

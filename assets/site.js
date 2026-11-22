@@ -400,15 +400,25 @@ document.querySelectorAll('form[data-mp]').forEach(function (f) {
   sec.hidden = false;
 })();
 
-// Until the site moves to Netlify, the form can't deliver messages: say so kindly instead of losing them
+// Write to Joshua: send the message to the campaign inbox (Web3Forms) for reading and approval
 (function () {
   var f = document.querySelector('.mw-form'); if (!f) return;
-  if (!/github\.io$/.test(location.hostname)) return;
   f.addEventListener('submit', function (e) {
     e.preventDefault();
-    var s = document.getElementById('sent');
-    s.textContent = 'Thank you. Messages open in the next few days. Please keep your words and come back to send them soon.';
-    s.hidden = false; s.scrollIntoView({ block: 'center' });
+    var b = f.querySelector('button[type=submit]'), s = document.getElementById('sent');
+    b.disabled = true; b.textContent = 'Sending…';
+    fetch(f.action, { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(f) })
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (d.success) { f.reset(); var l = document.getElementById('mw-left'); if (l) l.textContent = '600';
+          s.textContent = 'Thank you. Your message is on its way, and will appear on the wall once it has been read.'; }
+        else { s.textContent = 'Sorry, that didn’t send. Please try again in a moment.'; }
+        s.hidden = false; s.scrollIntoView({ block: 'center' }); b.disabled = false; b.textContent = 'Send my message';
+      })
+      .catch(function () {
+        s.textContent = 'Sorry, that didn’t send. Please check your connection and try again.';
+        s.hidden = false; b.disabled = false; b.textContent = 'Send my message';
+      });
   });
 })();
 

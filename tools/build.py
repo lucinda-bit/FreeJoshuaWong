@@ -1340,7 +1340,7 @@ def zh():
 # until it is approved and copied into assets/messages.js.
 def write():
     h = head("Messages for Joshua", "Write Joshua Wong a message of hope.", "write.html")
-    return h + nav("write.html") + """
+    return (h + nav("write.html") + """
 <header class="mw-hero">
   <div class="wrap mw-hero-in">
     <div>
@@ -1366,9 +1366,11 @@ def write():
 <section class="mw" id="write-box">
   <div class="wrap">
     <div class="mw-grid">
-      <form class="mw-form" name="joshua-messages" method="POST" action="write.html?sent=1#sent" data-netlify="true" netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="joshua-messages">
-        <p hidden><label>Leave this empty <input name="bot-field"></label></p>
+      <form class="mw-form" name="joshua-messages" method="POST" action="https://api.web3forms.com/submit">
+        <input type="hidden" name="access_key" value="__FORM_KEY__">
+        <input type="hidden" name="subject" value="Message for Joshua: please read and approve">
+        <input type="hidden" name="from_name" value="freejoshuawong.org · Write to Joshua">
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
         <div class="mw-paper">
           <div class="mw-dear">Dear Joshua,</div>
           <label for="mw-msg" class="sr">Your message to Joshua</label>
@@ -1397,7 +1399,7 @@ def write():
     </div>
   </div>
 </section>
-""" + footer(0, '<script src="assets/messages.js"></script>\n')
+""" + footer(0, '<script src="assets/messages.js"></script>\n')).replace("__FORM_KEY__", FORM_KEY)
 
 def messages_print():
     h = head("Messages for Joshua: print", "Approved messages for Joshua, ready to print.", "messages-print.html")
