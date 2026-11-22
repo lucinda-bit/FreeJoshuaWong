@@ -734,6 +734,7 @@ PRESSKIT = """    <div class="facts-sheet">
     </div>
 
     <div class="res-grid">
+      <div class="res" id="video"><div class="label">Campaign video</div><h3>What has the Prime Minister done for Joshua?</h3><p>Watch and download the video, with captions, and the share image.</p><p><a href="video.html">Go to the video page</a></p></div>
       <div class="res" id="press-kit"><div class="label">Press kit</div><h3>Photos &amp; stills</h3><p>Approved images of Joshua and stills from <em>Prisoner vs. Superpower</em>, cleared for editorial use.</p><p><a class="btn small-btn" href="contact.html?topic=press">Request images</a></p></div>
       <div class="res" id="briefs"><div class="label">Policy briefs</div><h3>Transnational repression</h3><p>How Beijing’s National Security Law reaches Hong Kongers in Britain, and what the UK can do about it.</p><span class="soon">Coming soon</span></div>
       <div class="res"><div class="label">Interviews</div><h3>Speak to us</h3><p>Interviews with the film’s producer and campaign spokespeople can be arranged.</p><p><a class="btn small-btn" href="contact.html?topic=interview">Request an interview</a></p></div>
@@ -1426,7 +1427,7 @@ REEL_POSTER = "images/what-has-the-pm-done-poster.jpg?v=3"
 REEL_CAPTIONED = ""  # add a link here if there is a separate captioned version  # captioned version for posting directly
 REEL_IMAGE = "images/what-has-the-pm-done-share.jpg"         # share image (also used as the poster)
 REEL_URL = "https://freejoshuawong.org/video.html"
-REEL_UNLISTED = True   # hidden from search and not linked anywhere until launch on Monday 23 Nov; set False then
+REEL_UNLISTED = False  # True hides the page from search engines (noindex)
 REEL_POSTS = [
     "When Jimmy Lai was convicted, the UK summoned the Chinese Ambassador the same day. Joshua Wong was sentenced to ten years on 5 November. There has been no public word of the Ambassador being summoned.",
     "Britain signed the Joint Declaration in 1984 and guaranteed Hong Kong’s freedoms for fifty years. Joshua Wong only asked us to keep our word. He has now been sentenced to ten years.",
