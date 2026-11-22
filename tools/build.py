@@ -718,10 +718,11 @@ def resources():
 
 PRESSKIT = """    <div class="facts-sheet">
       <h2 id="factsheet">Joshua Wong: fact sheet</h2>
-      <div class="sub">Updated 20 November 2026</div>
+      <div class="sub">Updated 22 November 2026</div>
       <dl>
         <dt>Who</dt><dd>Joshua Wong Chi-fung, born 13 October 1996, Hong Kong. Democracy campaigner since age 14; leader of the 2012 campaign against a Beijing-backed “national education” curriculum and a face of the 2014 Umbrella Movement.</dd>
         <dt>In prison since</dt><dd>November 2020, continuously.</dd>
+        <dt>Earlier prison terms</dt><dd>2017, for unlawful assembly over the 2014 Civic Square protest (released on bail after about two months; the sentence was later overturned), and 2018–19, for contempt of court over the clearance of the Mong Kok protest site (served in separate periods, the last in May–June 2019).</dd>
         <dt>Latest sentence</dt><dd>Ten years, handed down 5 November 2026, for “conspiracy to collude with foreign forces” under the National Security Law.</dd>
         <dt>Previous release date</dt><dd>January 2027, at the end of his 4 year 8 month sentence in the Hong Kong 47 case.</dd>
         <dt>Possible release</dt><dd>Around 2036, when he will be about 40.</dd>
