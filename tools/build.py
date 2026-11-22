@@ -375,7 +375,8 @@ TIMELINE = [
     ("19", "Sep 2016", "", "Gets his friend Nathan Law elected", "Too young to stand himself, Joshua campaigns for Demosistō’s chairman, Nathan Law, who wins a seat on Hong Kong Island and becomes the youngest lawmaker in Hong Kong’s history, at 23. Nathan is disqualified the following year."),
     ("19", "Oct 2016", "", "Detained at Bangkok airport", "Held and deported by Thai authorities on his way to speak at a university, an early sign of how far Beijing’s pressure would reach."),
     ("20", "Jan 2017", "", "The film", "<em>Joshua: Teenager vs. Superpower</em> premieres at Sundance and wins the World Cinema Documentary Audience Award."),
-    ("20", "Aug 2017", "", "First prison sentence: unlawful assembly", "Jailed for six months for unlawful assembly over the 2014 Civic Square protest. Hong Kong’s top court quashes the sentence in February 2018."),
+    ("20", "Aug 2017", "", "First prison sentence: unlawful assembly", "Jailed for six months for unlawful assembly over the 2014 Civic Square protest. Released on bail after about two months, in October 2017; Hong Kong’s top court quashes the sentence in February 2018."),
+    ("21", "2018–19", "", "Second prison term: contempt of court", "Jailed for contempt of court over the 2014 clearance of the Mong Kok protest site. He serves the sentence in separate periods, the last in May–June 2019."),
     ("22", "Sep 2019", "", "Testifies to the US Congress", "Gives evidence to the Congressional-Executive Commission on China on human rights in Hong Kong. Years later, prosecutors cite his lobbying in Washington against him."),
     ("23", "Jun 2020", "", "The National Security Law", "Beijing imposes the National Security Law on Hong Kong. His party, Demosistō, disbands the same day."),
     ("24", "Nov 2020", "", "Jailed over protests, and never released", "Sentenced to 13½ months for unauthorised assembly over a 2019 protest outside police headquarters. More protest sentences follow in 2021, including for joining a Tiananmen vigil. He has not been free since."),
@@ -420,7 +421,8 @@ def case():
       <table>
         <thead><tr><th>Sentenced</th><th>Charge</th><th>What it was for</th><th>Sentence</th></tr></thead>
         <tbody>
-          <tr><td>2017</td><td>Unlawful assembly</td><td>The 2014 Civic Square protest that helped spark the Umbrella Movement</td><td>6 months, quashed by Hong Kong’s top court in 2018</td></tr>
+          <tr><td>2017</td><td>Unlawful assembly</td><td>The 2014 Civic Square protest that helped spark the Umbrella Movement</td><td>6 months; released on bail after about two months, and the sentence was quashed by Hong Kong’s top court in 2018</td></tr>
+          <tr><td>2018</td><td>Contempt of court</td><td>The 2014 clearance of the Mong Kok protest site</td><td>Served in separate periods, the last in May–June 2019</td></tr>
           <tr><td>2020–21</td><td>Unauthorised assembly</td><td>Protests in 2019 and 2020, including a Tiananmen vigil</td><td>Several sentences, the longest 13½ months. He has been in prison since November 2020</td></tr>
           <tr><td>2024</td><td>Subversion (Hong Kong 47)</td><td>Taking part in an unofficial pro-democracy primary election in 2020</td><td>4 years 8 months, due to end in early 2027</td></tr>
           <tr class="now"><td>2026</td><td>Collusion with foreign forces</td><td>His advocacy abroad: meetings with foreign politicians, posts and interviews</td><td>10 years</td></tr>
