@@ -204,15 +204,11 @@ PLAYER = '''<div class="screen vid"><video controls preload="none" playsinline p
 
 FLAGS = ["UK","US","Australia","Canada","France","Germany","Italy","Japan","Netherlands","New Zealand"]
 
-# Years with shorter spells in prison before 2020: Aug-Oct 2017 (unlawful assembly, sentence later quashed);
-# Jan 2018 and May-Jun 2019 (contempt of court, Mong Kok clearance).
-BRIEF_YEARS = {2017, 2018, 2019}
-
 def life_bar():
     cells, labels = [], []
     marks = {1996:"Born", 2012:"Age 15", 2020:"Age 24, jailed", 2027:"Was due out", 2036:"Age 40, possible release"}
     for i, y in enumerate(range(1996, 2037)):
-        state = "s-brief" if y in BRIEF_YEARS else ("s-free" if y < 2020 else ("s-in" if y <= 2026 else "s-ahead"))
+        state = "s-free" if y < 2020 else ("s-in" if y <= 2026 else "s-ahead")
         cells.append(f'<span class="c {state}" title="{y}"></span>')
     for y, t in marks.items():
         col = y - 1996 + 1
@@ -256,9 +252,9 @@ def home():
   <div class="wrap">
     <h2 id="life-h">His life, year by year</h2>
     <p class="h4-sub">If the sentence stands, Joshua will spend the years from 24 to 40 in prison: his late twenties and almost all of his thirties.</p>
-    <div class="lifebar" role="img" aria-label="A bar of 41 years from 1996 to 2036. 1996 to 2016 free; 2017 to 2019 free apart from shorter spells in prison; 2020 to 2026 in prison; 2027 to 2036 still to serve.">""" + cells + """</div>
+    <div class="lifebar" role="img" aria-label="A bar of 41 years from 1996 to 2036. 1996 to 2019 free; 2020 to 2026 in prison; 2027 to 2036 still to serve.">""" + cells + """</div>
     <div class="lifemarks" aria-hidden="true">""" + labels + """</div>
-    <ul class="key"><li><i class="s-free"></i>Free</li><li><i class="s-brief"></i>Shorter spells in prison</li><li><i class="s-in"></i>In prison</li><li><i class="s-ahead"></i>Still to serve</li></ul>
+    <ul class="key"><li><i class="s-free"></i>Free</li><li><i class="s-in"></i>In prison</li><li><i class="s-ahead"></i>Still to serve</li></ul>
   </div>
 </section>
 

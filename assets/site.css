@@ -432,13 +432,12 @@ footer nav a:hover{color:var(--accent)}
 .lifebar .c{display:block;border-radius:1px}
 .lifebar .c.s-free{background:rgba(244,242,236,.16)}
 .lifebar .c.s-in{background:var(--accent)}
-.lifebar .c.s-brief,.key i.s-brief{background:linear-gradient(to top,var(--accent) 0 40%,rgba(244,242,236,.16) 40%)}
 .lifebar .c.s-ahead{background:repeating-linear-gradient(135deg,var(--accent) 0 3px,transparent 3px 7px);box-shadow:inset 0 0 0 1px rgba(255,225,53,.6)}
 .lifemarks{display:grid;grid-template-columns:repeat(41,1fr);gap:3px;margin-top:14px;min-height:64px}
 .lifemarks .m{grid-row:1;position:relative;border-left:1px solid rgba(244,242,236,.35);padding:6px 0 0 8px;font-family:var(--label);font-size:12px;line-height:1.35;color:rgba(244,242,236,.7);white-space:nowrap;overflow:visible;width:0}
 .lifemarks .m b{display:block;color:#fff;font-weight:600}
 .lifemarks .m.end{grid-row:2;margin-top:6px}
-.key{list-style:none;display:flex;flex-wrap:wrap;gap:12px 28px;padding:0;margin:40px 0 0;font-family:var(--label);font-size:13px;color:rgba(244,242,236,.75)}
+.key{list-style:none;display:flex;gap:28px;padding:0;margin:40px 0 0;font-family:var(--label);font-size:13px;color:rgba(244,242,236,.75)}
 .key li{display:flex;align-items:center;gap:10px}
 .key i{width:22px;height:14px;display:inline-block}
 .key i.s-free{background:rgba(244,242,236,.16)}.key i.s-in{background:var(--accent)}
