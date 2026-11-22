@@ -1420,9 +1420,9 @@ def messages_print():
 
 # ---------------- CAMPAIGN VIDEO (launch: Monday 23 Nov 2026, six years in prison) ----------------
 # Put the files here, then rebuild. Leave REEL_CAPTIONED empty if there is only one version.
-REEL = "media/what-has-the-pm-done.mp4"   # main video (portrait 1080x1920, captions burned in), hosted on the site
+REEL = "media/what-has-the-pm-done.mp4?v=7"   # main video (portrait 1080x1920, captions burned in), hosted on the site
 REEL_DOWNLOAD = REEL
-REEL_POSTER = "images/what-has-the-pm-done-poster.jpg?v=2"
+REEL_POSTER = "images/what-has-the-pm-done-poster.jpg?v=3"
 REEL_CAPTIONED = ""  # add a link here if there is a separate captioned version  # captioned version for posting directly
 REEL_IMAGE = "images/what-has-the-pm-done-share.jpg"         # share image (also used as the poster)
 REEL_URL = "https://freejoshuawong.org/video.html"
