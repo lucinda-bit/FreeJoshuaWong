@@ -140,23 +140,7 @@ def frame(key, src, kind, outlet, title, credit, focus=0.55):  # a still from th
     d.text((W - 24 - d.textlength(credit, font=cf), H - 34), credit, font=cf, fill=PAPER, stroke_width=2, stroke_fill=INK)
     return save(img, key, "images/stills")
 
-def pm_video(key):  # Campaign video: Joshua's photo centred on black, no text, so it survives any crop of the card
-    src = Image.open(os.path.join(ROOT, "images/joshua.jpg")).convert("L").crop((120, 380, 1175, 1485))
-    src = ImageOps.autocontrast(src, cutoff=1)
-    ph = H; pw = int(src.width * ph / src.height)
-    fr = src.resize((pw, ph), Image.LANCZOS).convert("RGB")
-    img = Image.new("RGB", (W, H), INK).convert("RGBA")
-    x0 = (W - pw) // 2
-    img.paste(fr, (x0, 0))
-    ov = Image.new("RGBA", (W, H), (0, 0, 0, 0)); od = ImageDraw.Draw(ov)
-    for i in range(120):
-        a = int(255 * (1 - i / 120) ** 1.4)
-        od.line([(x0 + i, 0), (x0 + i, H)], fill=INK + (a,))
-        od.line([(x0 + pw - 1 - i, 0), (x0 + pw - 1 - i, H)], fill=INK + (a,))
-    img = Image.alpha_composite(img, ov).convert("RGB")
-    return save(img, key, "images/stills")
-
-COVERS = {"pm-video": pm_video, "guardian-podcast": waveform, "byline-podcast": versus, "byline-tv": duotone,
+COVERS = {"guardian-podcast": waveform, "byline-podcast": versus, "byline-tv": duotone,
           "sky-nathan": rings,
           "c4-plea": datestamp, "pelosi-floor": stripes}
 

@@ -494,6 +494,20 @@ def film():
       </div>
     </section>
 
+    <section class="reel-feature" id="campaign-video">
+      <div class="label" style="margin-bottom:22px">Campaign video</div>
+      <div class="reel-wrap">
+        <div class="reel-player"><video controls preload="none" playsinline poster="images/what-has-the-pm-done-poster.jpg?v=3"><source src="media/what-has-the-pm-done.mp4?v=7" type="video/mp4">Your browser can’t play this video. <a href="video.html">Go to the video page</a>.</video></div>
+        <div class="reel-side">
+          <h3 class="reel-h">What has the<br>Prime Minister<br><span>done for Joshua?</span></h3>
+          <p class="reel-p">Our one-minute video. Watch it, download it and post it on your own channels, and tag your MP.</p>
+          <div class="video-dl">
+            <a class="btn" href="video.html">Download and share</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <div class="watch-wall" id="watch">
       <div class="sec-head"><div><div class="label">Watch and listen</div><h2 class="sec">Interviews, clips and <em>podcasts</em></h2></div></div>
       <div class="vwall">""" + video_cards(skip_film=True) + """</div>
@@ -960,7 +974,6 @@ def tracker(h="Asked and answered"):
 
 VIDEOS = [
     ("film.html", "Film", "Joshua: Prisoner vs. Superpower", "The new short film, first shown in Parliament on 13 October 2026.", "images/film-poster.jpg?v=2", False),
-    ("video.html", "Campaign video · Nov 2026", "What has the Prime Minister done for Joshua?", "The one-minute campaign video. Watch it, download it and post it, and tag your MP.", "images/stills/pm-video.jpg?v=4", False),
     ("#exchange-nov", "House of Commons · 10 Nov 2026", "Emily Darlington MP", "Asks the Government to call for Joshua’s release, five days after his sentence.", "images/commons-2026-11-10-poster.jpg", False),
     ("#exchange-kearns", "House of Commons · 10 Nov 2026", "Alicia Kearns MP", "For the Opposition: Joshua and Jimmy Lai remain imprisoned for speaking out for democracy.", "images/commons-2026-11-10-kearns-poster.jpg", False),
     ("https://podcasts.apple.com/gb/podcast/today-in-focus/id1440133626?i=1000801652639", "The Guardian · Today in Focus · 13 Nov 2026", "Teen prodigy, Netflix star, prisoner", "Podcast: Nathan Law and journalist Danny Vincent on Joshua’s story and his new sentence.", "images/covers/guardian-podcast.jpg", True),
