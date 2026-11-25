@@ -432,3 +432,22 @@ document.querySelectorAll('video').forEach(function (v) {
     window.goatcounter.count({path: 'play/' + src, title: 'Video played: ' + src, event: true});
   });
 });
+
+// Upright videos on cards (data-play): open in a player over the page instead of leaving it.
+document.addEventListener('click', function (e) {
+  var a = e.target.closest && e.target.closest('a[data-play]');
+  if (!a || e.metaKey || e.ctrlKey || e.shiftKey) return;
+  e.preventDefault();
+  var box = document.createElement('div');
+  box.className = 'vlight';
+  box.setAttribute('role', 'dialog');
+  box.setAttribute('aria-modal', 'true');
+  box.setAttribute('aria-label', a.querySelector('h3') ? a.querySelector('h3').textContent : 'Video');
+  box.innerHTML = '<button class="vlight-x" aria-label="Close">×</button><video controls autoplay playsinline poster="' + a.dataset.poster + '"><source src="' + a.dataset.play + '" type="video/mp4"></video><a class="vlight-more" href="' + a.getAttribute('href') + '">Download and share this video</a>';
+  function close() { var v = box.querySelector('video'); if (v) v.pause(); box.remove(); document.removeEventListener('keydown', esc); a.focus(); }
+  function esc(k) { if (k.key === 'Escape') close(); }
+  box.addEventListener('click', function (ev) { if (ev.target === box || ev.target.classList.contains('vlight-x')) close(); });
+  document.addEventListener('keydown', esc);
+  document.body.appendChild(box);
+  box.querySelector('.vlight-x').focus();
+});
