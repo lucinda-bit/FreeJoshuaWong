@@ -359,11 +359,11 @@ window.addEventListener('DOMContentLoaded',function(){
 """ + footer(0, '<script src="assets/messages.js"></script>\n')
 
 LATEST = [
+    ("Asia Democracy Chronicles · Andrew Shum", "Silenced, not forgotten: Joshua Wong’s long imprisonment", "23 Nov 2026", "https://democracylocal.substack.com/p/asia-democracy-chronicles-silenced"),
     ("Committee for Freedom in Hong Kong Foundation", "APEC’s blind spot: Hong Kong’s political prisoners, including Joshua, at the Shenzhen summit", "20 Nov 2026", "https://hkuncensored.substack.com/p/apecs-blind-spot"),
     ("Engelsberg Ideas · Jeffrey Wasserstrom", "Xi’s Shenzhen summit was less novel than it seemed", "20 Nov 2026", "https://engelsbergideas.com/notebook/xis-shenzhen-summit-was-less-novel-than-it-seemed/"),
     ("US Senate", "Senator Josh Hawley urges the Secretary of State to press for Joshua’s release", "20 Nov 2026", "https://www.hawley.senate.gov/hawley-urges-state-department-to-advocate-for-release-of-hong-kong-rights-champion-joshua-wong/"),
     ("Parliament · Written answers", "Asked whether the Ambassador was summoned, the minister doesn’t say", "18–19 Nov 2026", "parliament.html"),
-    ("Human Rights Research Center", "Hong Kong pro-democracy activist Joshua Wong sentenced to ten years", "18 Nov 2026", "https://www.humanrightsresearch.org/post/hong-kong-pro-democracy-activist-joshua-wong-sentenced-to-ten-years"),
 ]
 
 # ---------------- THE CASE ----------------

@@ -11,6 +11,8 @@ window.MOMENTS = [
   {id:"sentence", label:"Ten more years",     when:"November 2026"}
 ];
 window.PRESS = [
+  {date:"2026-11-23", outlet:"Asia Democracy Chronicles (via Democracy Local)", type:"opinion", region:"Global", moment:"sentence", by:"Andrew Shum", title:"Silenced, Not Forgotten: Joshua Wong’s Long Imprisonment", url:"https://democracylocal.substack.com/p/asia-democracy-chronicles-silenced"},
+  {date:"2026-11-18", outlet:"Consequence Forum", type:"opinion", region:"Asia", moment:"sentence", by:"C. J. Anderson-Wu", title:"Hong Kong Activist Joshua Wong Receives Another Ten-Year Sentence", url:"https://consequenceforum.substack.com/p/hong-kong-activist-joshua-wong-receives"},
   {date:"2026-11-20", outlet:"Committee for Freedom in Hong Kong Foundation", type:"rights", region:"US", moment:"sentence", title:"APEC’s Blind Spot", url:"https://hkuncensored.substack.com/p/apecs-blind-spot"},
   {date:"2026-11-20", outlet:"Engelsberg Ideas", type:"opinion", region:"Europe", moment:"sentence", by:"Jeffrey Wasserstrom", title:"Xi’s Shenzhen summit was less novel than it seemed", url:"https://engelsbergideas.com/notebook/xis-shenzhen-summit-was-less-novel-than-it-seemed/"},
   {date:"2026-11-11", outlet:"Radio Taiwan International", type:"opinion", region:"Asia", moment:"sentence", title:"被畫上休止符的青春 黃之鋒十年刑期與香港的世代斷層 (Youth brought to a full stop: Joshua Wong’s ten-year sentence and Hong Kong’s generational rift)", url:"https://www.rti.org.tw/news?uid=3&pid=1050764"},
