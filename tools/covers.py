@@ -140,22 +140,20 @@ def frame(key, src, kind, outlet, title, credit, focus=0.55):  # a still from th
     d.text((W - 24 - d.textlength(credit, font=cf), H - 34), credit, font=cf, fill=PAPER, stroke_width=2, stroke_fill=INK)
     return save(img, key, "images/stills")
 
-def pm_video(key):  # Campaign video: Joshua's photo right, the question left
-    fw = 640
-    src = Image.open(os.path.join(ROOT, "images/joshua.jpg")).convert("L").crop((180, 400, 1175, 1485))
-    fr = ImageOps.fit(ImageOps.autocontrast(src, cutoff=1), (fw, H), Image.LANCZOS, centering=(0.5, 0.5)).convert("RGB")
+def pm_video(key):  # Campaign video: Joshua's photo centred on black, no text, so it survives any crop of the card
+    src = Image.open(os.path.join(ROOT, "images/joshua.jpg")).convert("L").crop((120, 380, 1175, 1485))
+    src = ImageOps.autocontrast(src, cutoff=1)
+    ph = H; pw = int(src.width * ph / src.height)
+    fr = src.resize((pw, ph), Image.LANCZOS).convert("RGB")
     img = Image.new("RGB", (W, H), INK).convert("RGBA")
-    img.paste(fr, (W - fw, 0))
+    x0 = (W - pw) // 2
+    img.paste(fr, (x0, 0))
     ov = Image.new("RGBA", (W, H), (0, 0, 0, 0)); od = ImageDraw.Draw(ov)
-    for i in range(180):
-        od.line([(W - fw + i, 0), (W - fw + i, H)], fill=INK + (int(255 * (1 - i / 180) ** 1.4),))
+    for i in range(120):
+        a = int(255 * (1 - i / 120) ** 1.4)
+        od.line([(x0 + i, 0), (x0 + i, H)], fill=INK + (a,))
+        od.line([(x0 + pw - 1 - i, 0), (x0 + pw - 1 - i, H)], fill=INK + (a,))
     img = Image.alpha_composite(img, ov).convert("RGB")
-    d = ImageDraw.Draw(img)
-    pill(d, 70, 64, "CAMPAIGN VIDEO", LEMON, INK)
-    d.text((70, 128), "Free Joshua Wong · 1 minute", font=f("Montserrat-Bold.ttf", 28), fill=PAPER)
-    ft = f("Anton.ttf", 104); lh = 112; y = 212
-    for ln, col in (("WHAT HAS THE", PAPER), ("PRIME MINISTER", PAPER), ("DONE FOR", PAPER), ("JOSHUA?", LEMON)):
-        d.text((70, y), ln, font=ft, fill=col); y += lh
     return save(img, key, "images/stills")
 
 COVERS = {"pm-video": pm_video, "guardian-podcast": waveform, "byline-podcast": versus, "byline-tv": duotone,
