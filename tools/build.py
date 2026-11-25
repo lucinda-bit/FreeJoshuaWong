@@ -960,6 +960,7 @@ def tracker(h="Asked and answered"):
 
 VIDEOS = [
     ("film.html", "Film", "Joshua: Prisoner vs. Superpower", "The new short film, first shown in Parliament on 13 October 2026.", "images/film-poster.jpg?v=2", False),
+    ("video.html", "Campaign video · Nov 2026", "What has the Prime Minister done for Joshua?", "The one-minute campaign video. Watch it, download it and post it, and tag your MP.", "images/stills/pm-video.jpg?v=2", False),
     ("#exchange-nov", "House of Commons · 10 Nov 2026", "Emily Darlington MP", "Asks the Government to call for Joshua’s release, five days after his sentence.", "images/commons-2026-11-10-poster.jpg", False),
     ("#exchange-kearns", "House of Commons · 10 Nov 2026", "Alicia Kearns MP", "For the Opposition: Joshua and Jimmy Lai remain imprisoned for speaking out for democracy.", "images/commons-2026-11-10-kearns-poster.jpg", False),
     ("https://podcasts.apple.com/gb/podcast/today-in-focus/id1440133626?i=1000801652639", "The Guardian · Today in Focus · 13 Nov 2026", "Teen prodigy, Netflix star, prisoner", "Podcast: Nathan Law and journalist Danny Vincent on Joshua’s story and his new sentence.", "images/covers/guardian-podcast.jpg", True),
