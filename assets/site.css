@@ -1187,10 +1187,3 @@ nav.top .links a,nav.top .btn{white-space:nowrap}
 .btn.small-btn{padding:10px 16px;font-size:13px}
 .res a.btn,.res a.btn:hover,a.btn.small-btn{color:var(--ink);text-decoration:none}
 
-.reel-card{grid-template-columns:150px minmax(0,1fr);max-width:640px;margin-top:28px}
-.reel-screen{background:#000;border-right:1px solid rgba(244,242,236,.1)}
-.reel-screen video{display:block;width:100%;aspect-ratio:9/16;height:auto;object-fit:cover;background:#000}
-.reel-card .film-copy{align-self:center;padding:24px 28px}
-.reel-card .film-copy h3{font-size:30px;margin:8px 0 10px}
-.reel-card .film-copy p{font-size:16px;margin:0}
-@media (max-width:820px){.reel-card{grid-template-columns:110px minmax(0,1fr)}.reel-card .film-copy{padding:16px 18px}.reel-card .film-copy h3{font-size:22px}}

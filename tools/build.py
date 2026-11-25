@@ -469,16 +469,6 @@ def film():
       </div>
     </div>
 
-    <div class="film-card reel-card" id="campaign-video">
-      <div class="reel-screen"><video controls preload="none" playsinline poster="images/what-has-the-pm-done-poster.jpg?v=3"><source src="media/what-has-the-pm-done.mp4?v=7" type="video/mp4">Your browser can’t play this video. <a href="video.html">Go to the video page</a>.</video></div>
-      <div class="film-copy">
-        <div class="label dim">Campaign video · 1 minute</div>
-        <h3>What has the Prime Minister <span>done for Joshua?</span></h3>
-        <p>Watch it, download it, post it and tag your MP.</p>
-        <p style="margin:16px 0 0"><a class="btn small-btn" href="video.html">Download the video</a></p>
-      </div>
-    </div>
-
     <div class="film-note">
       <div class="big">#1</div>
       <p>In September 2026, Hong Kong’s Security Bureau said <a href="https://www.dimsumdaily.hk/security-bureau-reviewing-netflix-film-on-joshua-wong/" target="_blank" rel="noopener">“follow-up steps were under way”</a> over <a href="https://www.netflix.com/watch/80169348" target="_blank" rel="noopener">the original documentary</a>, which is still on Netflix in the city. Hong Kongers responded by sending it to <a href="https://www.theepochtimes.com/china/documentary-on-joshua-wong-surges-to-no-1-on-netflix-hong-kong-after-criticism-6093687" target="_blank" rel="noopener">number one on Netflix</a> there.</p>
