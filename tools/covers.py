@@ -140,7 +140,25 @@ def frame(key, src, kind, outlet, title, credit, focus=0.55):  # a still from th
     d.text((W - 24 - d.textlength(credit, font=cf), H - 34), credit, font=cf, fill=PAPER, stroke_width=2, stroke_fill=INK)
     return save(img, key, "images/stills")
 
-COVERS = {"guardian-podcast": waveform, "byline-podcast": versus, "byline-tv": duotone,
+def pm_video(key):  # Campaign video: same layout as the interview stills (title left, picture right)
+    fw = int(W * 0.5)
+    src = Image.open(os.path.join(ROOT, "images/joshua.jpg")).convert("L").crop((150, 380, 1175, 1485))
+    fr = ImageOps.fit(ImageOps.autocontrast(src, cutoff=1), (fw, H), Image.LANCZOS, centering=(0.55, 0.45)).convert("RGB")
+    img = Image.new("RGB", (W, H), INK).convert("RGBA")
+    img.paste(fr, (W - fw, 0))
+    ov = Image.new("RGBA", (W, H), (0, 0, 0, 0)); od = ImageDraw.Draw(ov)
+    for i in range(140):
+        od.line([(W - fw + i, 0), (W - fw + i, H)], fill=INK + (int(255 * (1 - i / 140) ** 1.5),))
+    img = Image.alpha_composite(img, ov).convert("RGB")
+    d = ImageDraw.Draw(img)
+    pill(d, 60, 64, "CAMPAIGN VIDEO", LEMON, INK)
+    d.text((60, 128), "Free Joshua Wong · 1 minute", font=f("Montserrat-Bold.ttf", 28), fill=PAPER)
+    ft = f("Anton.ttf", 92); lh = 100; y = 236
+    for ln, col in (("WHAT HAS THE PM", PAPER), ("DONE FOR", PAPER), ("JOSHUA?", LEMON)):
+        d.text((60, y), ln, font=ft, fill=col); y += lh
+    return save(img, key, "images/stills")
+
+COVERS = {"pm-video": pm_video, "guardian-podcast": waveform, "byline-podcast": versus, "byline-tv": duotone,
           "sky-nathan": rings,
           "c4-plea": datestamp, "pelosi-floor": stripes}
 
