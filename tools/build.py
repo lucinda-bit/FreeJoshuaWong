@@ -474,10 +474,8 @@ def film():
       <div class="film-copy">
         <div class="label dim">Campaign video · 1 minute</div>
         <h3>What has the Prime Minister <span>done for Joshua?</span></h3>
-        <p>When Jimmy Lai was convicted, the UK summoned the Chinese Ambassador the same day. Joshua was sentenced to ten more years on 5 November. Our short video asks why not him.</p>
-        <p>Download it, post it on your own channels and tag your MP.</p>
-        <p style="margin:22px 0 18px"><a class="btn" href="video.html">Download the video</a></p>
-        <div data-share data-url="https://freejoshuawong.org/video.html" data-text="What has the Prime Minister done for Joshua Wong?"></div>
+        <p>Watch it, download it, post it and tag your MP.</p>
+        <p style="margin:16px 0 0"><a class="btn small-btn" href="video.html">Download the video</a></p>
       </div>
     </div>
 
