@@ -1187,8 +1187,8 @@ nav.top .links a,nav.top .btn{white-space:nowrap}
 .btn.small-btn{padding:10px 16px;font-size:13px}
 .res a.btn,.res a.btn:hover,a.btn.small-btn{color:var(--ink);text-decoration:none}
 
-.reel-feature{margin:72px 0 80px;padding-top:56px;border-top:1px solid rgba(244,242,236,.12)}
-.reel-feature .reel-wrap{grid-template-columns:minmax(0,360px) minmax(0,1fr);align-items:center}
-@media (max-width:820px){.reel-feature .reel-wrap{grid-template-columns:1fr}}
-.reel-feature .reel-player{position:static}
-.reel-feature .reel-player video{aspect-ratio:9/16;height:auto;width:100%;max-width:360px;max-height:none;object-fit:cover;margin:0 auto}
+.reel-card{grid-template-columns:300px minmax(0,1fr);margin-top:28px}
+.reel-screen{background:#000;border-right:1px solid rgba(244,242,236,.1)}
+.reel-screen video{display:block;width:100%;aspect-ratio:9/16;height:auto;object-fit:cover;background:#000}
+.reel-card .film-copy{align-self:center}
+@media (max-width:820px){.reel-card{grid-template-columns:1fr}.reel-screen{border-right:0;border-bottom:1px solid rgba(244,242,236,.1)}.reel-screen video{max-width:240px;margin:0 auto}}
