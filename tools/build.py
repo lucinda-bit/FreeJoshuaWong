@@ -359,11 +359,11 @@ window.addEventListener('DOMContentLoaded',function(){
 """ + footer(0, '<script src="assets/messages.js"></script>\n')
 
 LATEST = [
+    ("Euronews", "European Parliament calls for the release of Au Kam San and Joshua Wong (in Italian)", "27 Nov 2026", "https://it.euronews.com/2026/11/27/parlamento-europeo-chiede-la-liberazione-dellattivista-di-macao-au-kam-san-e-di-joshua-won"),
     ("Hong Kong Watch", "European Parliament calls to free Joshua Wong and Au Kam San", "26 Nov 2026", "https://www.hongkongwatch.org/all-posts/2026/11/26/european-parliament-calls-to-free-joshua-wong-and-au-kam-san"),
     ("Hong Kong Watch", "China and Hong Kong abusing Interpol’s Red Notice system, as world police chiefs meet in Hong Kong", "25 Nov 2026", "https://www.hongkongwatch.org/all-posts/2026/11/25/china-and-hong-kong-abusing-interpols-red-notice-system-as-world-police-chiefs-meet-in-hong-kong"),
     ("Asia Democracy Chronicles · Andrew Shum", "Silenced, not forgotten: Joshua Wong’s long imprisonment", "23 Nov 2026", "https://democracylocal.substack.com/p/asia-democracy-chronicles-silenced"),
     ("Committee for Freedom in Hong Kong Foundation", "APEC’s blind spot: Hong Kong’s political prisoners, including Joshua, at the Shenzhen summit", "20 Nov 2026", "https://hkuncensored.substack.com/p/apecs-blind-spot"),
-    ("Engelsberg Ideas · Jeffrey Wasserstrom", "Xi’s Shenzhen summit was less novel than it seemed", "20 Nov 2026", "https://engelsbergideas.com/notebook/xis-shenzhen-summit-was-less-novel-than-it-seemed/"),
 ]
 
 # ---------------- THE CASE ----------------

@@ -11,6 +11,7 @@ window.MOMENTS = [
   {id:"sentence", label:"Ten more years",     when:"November 2026"}
 ];
 window.PRESS = [
+  {date:"2026-11-27", outlet:"Euronews (Italian)", type:"news", region:"Europe", moment:"sentence", by:"Lina Ferreira", title:"Parlamento europeo chiede la liberazione dell’attivista di Macao Au Kam San e di Joshua Wong", url:"https://it.euronews.com/2026/11/27/parlamento-europeo-chiede-la-liberazione-dellattivista-di-macao-au-kam-san-e-di-joshua-won"},
   {date:"2026-11-26", outlet:"Hong Kong Watch", type:"rights", region:"UK", moment:"sentence", by:"Megan Khoo", title:"European Parliament calls to free Joshua Wong and Au Kam San", url:"https://www.hongkongwatch.org/all-posts/2026/11/26/european-parliament-calls-to-free-joshua-wong-and-au-kam-san"},
   {date:"2026-11-25", outlet:"Hong Kong Watch", type:"rights", region:"UK", moment:"sentence", by:"Frances Bell", title:"China and Hong Kong abusing Interpol’s Red Notice system, as world police chiefs meet in Hong Kong", url:"https://www.hongkongwatch.org/all-posts/2026/11/25/china-and-hong-kong-abusing-interpols-red-notice-system-as-world-police-chiefs-meet-in-hong-kong"},
   {date:"2026-11-19", outlet:"Kong Tsung-gan (Substack)", type:"opinion", region:"Global", moment:"sentence", by:"Kong Tsung-gan", title:"As 2026 comes to a close, there are still 25 Hong Kong pro-democracy leaders in prison", url:"https://briankernkongtsunggan.substack.com/p/as-2026-comes-to-a-close-there-are"},
