@@ -11,6 +11,7 @@ window.MOMENTS = [
   {id:"sentence", label:"Ten more years",     when:"November 2026"}
 ];
 window.PRESS = [
+  {date:"2026-11-26", outlet:"Hong Kong Watch", type:"rights", region:"UK", moment:"sentence", by:"Megan Khoo", title:"European Parliament calls to free Joshua Wong and Au Kam San", url:"https://www.hongkongwatch.org/all-posts/2026/11/26/european-parliament-calls-to-free-joshua-wong-and-au-kam-san"},
   {date:"2026-11-25", outlet:"Hong Kong Watch", type:"rights", region:"UK", moment:"sentence", by:"Frances Bell", title:"China and Hong Kong abusing Interpol’s Red Notice system, as world police chiefs meet in Hong Kong", url:"https://www.hongkongwatch.org/all-posts/2026/11/25/china-and-hong-kong-abusing-interpols-red-notice-system-as-world-police-chiefs-meet-in-hong-kong"},
   {date:"2026-11-19", outlet:"Kong Tsung-gan (Substack)", type:"opinion", region:"Global", moment:"sentence", by:"Kong Tsung-gan", title:"As 2026 comes to a close, there are still 25 Hong Kong pro-democracy leaders in prison", url:"https://briankernkongtsunggan.substack.com/p/as-2026-comes-to-a-close-there-are"},
   {date:"2026-10-16", outlet:"Committee for Freedom in Hong Kong Foundation", type:"rights", region:"US", moment:"birthday", title:"‘The Most Disciplined Activist’: Joshua Wong Turns 30 Behind Bars", url:"https://thecfhk.org/9393-2/"},
