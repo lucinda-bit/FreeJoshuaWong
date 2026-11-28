@@ -11,6 +11,9 @@ window.MOMENTS = [
   {id:"sentence", label:"Ten more years",     when:"November 2026"}
 ];
 window.PRESS = [
+  {date:"2026-11-11", outlet:"Human Rights in China", type:"rights", region:"Global", moment:"sentence", title:"HRIC Weekly Brief, 10 November 2026: Joshua Wong and Au Kam San sentenced", url:"https://news.hrichina.org/p/hric-weekly-brief-928"},
+  {date:"2026-11-05", outlet:"The Reporter (報導者)", type:"news", region:"Asia", moment:"sentence", by:"謝馥伊", title:"「不要忘記他」：黃之鋒獄中被控「勾結外國勢力」再判10年，延至2036年出獄", url:"https://www.twreporter.org/a/hong-kong-joshua-wong-gets-10-more-years-in-jail-for-foreign-collusion"},
+  {date:"2026-09-02", outlet:"ECR Group, European Parliament", type:"opinion", region:"Europe", moment:"plea", title:"Procaccini: Joshua Wong is being punished for defending freedom", url:"https://ecrgroup.eu/procaccini-joshua-wong-is-being-punished-for-defending-freedom/"},
   {date:"2026-11-27", outlet:"Euronews (Italian)", type:"news", region:"Europe", moment:"sentence", by:"Lina Ferreira", title:"Parlamento europeo chiede la liberazione dell’attivista di Macao Au Kam San e di Joshua Wong", url:"https://it.euronews.com/2026/11/27/parlamento-europeo-chiede-la-liberazione-dellattivista-di-macao-au-kam-san-e-di-joshua-won"},
   {date:"2026-11-26", outlet:"Hong Kong Watch", type:"rights", region:"UK", moment:"sentence", by:"Megan Khoo", title:"European Parliament calls to free Joshua Wong and Au Kam San", url:"https://www.hongkongwatch.org/all-posts/2026/11/26/european-parliament-calls-to-free-joshua-wong-and-au-kam-san"},
   {date:"2026-11-25", outlet:"Hong Kong Watch", type:"rights", region:"UK", moment:"sentence", by:"Frances Bell", title:"China and Hong Kong abusing Interpol’s Red Notice system, as world police chiefs meet in Hong Kong", url:"https://www.hongkongwatch.org/all-posts/2026/11/25/china-and-hong-kong-abusing-interpols-red-notice-system-as-world-police-chiefs-meet-in-hong-kong"},
